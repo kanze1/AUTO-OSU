@@ -245,7 +245,8 @@ powershell -ExecutionPolicy Bypass -File scripts/build_exe.ps1            # dist
 
 协作时不直接向 `master` 推送开发改动，不强推或删除主分支。版本标签和官方 Release 由维护者管理。
 外部贡献先 fork，再在自己的仓库建分支提交 PR；新模式单独开发，并验证原有 osu!standard 流程。
-具体步骤和 PR 要求见 [CONTRIBUTING.md](CONTRIBUTING.md#中文)。
+GitHub 已启用主分支保护，要求 PR、文档检查与双平台测试通过，禁止强推和删除；使用 squash 合并。
+具体步骤和 PR 要求见 [CONTRIBUTING.md](CONTRIBUTING.md#中文)，配置说明见 [仓库规范](docs/governance.md)，实施状态见 [任务队列](docs/TASKS.md)。
 
 ## 开源合作协议
 

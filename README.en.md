@@ -247,7 +247,8 @@ See the [detailed task plan and analysis](docs/roadmap-2026-09-24.md) (Chinese) 
 
 Keep development changes off direct pushes to `master`; do not force-push or delete the main branch. Maintainers manage version tags and official Releases.
 External contributors should fork the repository, work on a branch, and open a PR. Develop new game modes separately and verify the existing osu!standard flow.
-See [CONTRIBUTING.md](CONTRIBUTING.md#english) for steps and PR requirements.
+GitHub main-branch protection requires a PR, documentation checks, and both platform tests; force pushes and deletion are blocked. Use squash merging.
+See [CONTRIBUTING.md](CONTRIBUTING.md#english) for submission steps, [repository workflow](docs/governance.md) for configuration, and the [task queue](docs/TASKS.md) for implementation state.
 
 ## Open-source collaboration agreement
 

@@ -4,7 +4,7 @@ Tasks follow priority and dependencies, without time estimates. This file record
 
 | ID | Priority | Task | Dependencies | State | Acceptance evidence |
 | --- | --- | --- | --- | --- | --- |
-| GOV | P0 | Collaboration rules, templates, CI and branch protection | — | In progress | Bilingual README and CONTRIBUTING; required checks and remote protection still to verify |
+| GOV | P0 | Collaboration rules, templates, CI and branch protection | — | Validated | [Workflow and applied protection](governance.md); local 86 tests passed; merge tracked in [PR #1](https://github.com/kanze1/AUTO-OSU/pull/1) |
 | D1 | P0 | Feasibility of detecting unlabelled v0 outputs | GOV | Planned | Song-grouped positive/human/other-generator evaluation; false positives, recall, abstentions; explicit continue/stop decision |
 | D2 | P0 | Generation provenance and source checker | GOV | Planned | Engine/model identity, manifest, local record, CLI/GUI, honest evidence labels, batch/worker tests |
 | Q1 | P1 | Measured difficulty and fixed evaluation | D2 | Planned | Pinned calculator, NM stable/lazer scope, actual SR and strain, frozen comparison settings |
@@ -22,4 +22,3 @@ States: Planned, In progress, Validated, Merged, or Research gate. Record missin
 - The source checker separates file declarations, matching local records, and calibrated statistical evidence. It never labels non-detection as human authorship.
 - Model quality is tested on held-out songs with reference and automatic timing separated. Developer-tuned samples cannot become the final test set.
 - Actual osu! editor round-trip and gameplay checks are recorded separately from parser tests. Do not claim client testing when only parsing was checked.
-
