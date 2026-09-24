@@ -119,8 +119,9 @@ def prepare_audio(src: Path, workdir: Path) -> Path:
 
 
 def write_osz(beatmaps: List[Beatmap], audio: Path, out_dir: Path, extra_files: Sequence[Path] = (),
-              manifest: Optional[dict] = None) -> Path:
+              manifest: Optional[dict] = None, evaluation: Optional[dict] = None) -> Path:
     from .provenance import MANIFEST_NAME
+    from .metrics import EVALUATION_NAME
 
     out_dir.mkdir(parents=True, exist_ok=True)
     first = beatmaps[0]
@@ -128,6 +129,8 @@ def write_osz(beatmaps: List[Beatmap], audio: Path, out_dir: Path, extra_files: 
     names = [audio.name, *(Path(p).name for p in extra_files), *(sanitize(b.osu_filename()) for b in beatmaps)]
     if manifest is not None:
         names.append(MANIFEST_NAME)
+    if evaluation is not None:
+        names.append(EVALUATION_NAME)
     if len({n.casefold() for n in names}) != len(names):
         raise ValueError("Duplicate filenames in the output archive; choose distinct difficulties and assets")
     temp = None
@@ -142,6 +145,8 @@ def write_osz(beatmaps: List[Beatmap], audio: Path, out_dir: Path, extra_files: 
                 zf.writestr(sanitize(bm.osu_filename()), bm.to_osu().encode("utf-8"))
             if manifest is not None:
                 zf.writestr(MANIFEST_NAME, json.dumps(manifest, ensure_ascii=False, indent=2, allow_nan=False).encode("utf-8"))
+            if evaluation is not None:
+                zf.writestr(EVALUATION_NAME, json.dumps(evaluation, ensure_ascii=False, indent=2, allow_nan=False).encode("utf-8"))
         temp.replace(osz)
     finally:
         if temp is not None:

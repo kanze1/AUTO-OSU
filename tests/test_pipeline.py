@@ -65,6 +65,24 @@ def test_generated_source_record_and_worker_summary(result):
     assert data["generation_id"] == manifest["generation_id"] and data["provenance_recorded"]
 
 
+def test_saved_evaluation_matches_exported_maps(result):
+    import hashlib
+    from autoosu.metrics import EVALUATION_NAME
+    from autoosu.worker import summary
+
+    assert result.evaluation_path.is_file()
+    evaluation = json.loads(result.evaluation_path.read_text(encoding="utf-8"))
+    with zipfile.ZipFile(result.osz) as archive:
+        assert json.loads(archive.read(EVALUATION_NAME)) == evaluation
+        for row in evaluation["maps"]:
+            assert row["raw_sha256"] == hashlib.sha256(archive.read(row["filename"])).hexdigest()
+            assert row["star_condition"] is None  # rules never consumed a model condition
+    assert summary(result)["evaluation_path"] == str(result.evaluation_path)
+    for diff in result.diffs:
+        assert diff.summary()["measured_stars"] == diff.measurement["stars"]
+        assert diff.diagnostics["overlapping_objects"] == 0
+
+
 def sv_at(beatmap, t):
     sv = 1.0
     for tp in sorted(beatmap.timing_points, key=lambda p: (p.time, not p.uninherited)):
@@ -131,4 +149,30 @@ def test_record_write_failure_keeps_the_saved_pack(tmp_path, monkeypatch):
     wav = make_song(tmp_path / "record-failure.wav", bpm=140, bars=8)
     result = generate(wav, ["Hard"], tmp_path / "out", log=lambda *_: None)
     assert result.osz.is_file() and not result.provenance_recorded
-    assert "read-only record store" in result.warnings[0]
+    assert any("read-only record store" in w for w in result.warnings)
+
+
+def test_measurement_failure_still_saves_pack(tmp_path, monkeypatch):
+    import importlib
+    pipeline = importlib.import_module("autoosu.generate")
+    monkeypatch.setattr(pipeline, "measure_difficulty", lambda _: dict(status="error", stars=None, reason="test failure"))
+    wav = make_song(tmp_path / "measurement-failure.wav", bpm=140, bars=8)
+    result = generate(wav, ["Hard"], tmp_path / "out", log=lambda *_: None)
+    assert result.osz.is_file() and result.provenance_recorded
+    assert result.diffs[0].summary()["measured_stars"] is None
+    assert any("test failure" in w for w in result.warnings)
+
+
+def test_separate_report_failure_keeps_pack_and_embedded_report(tmp_path, monkeypatch):
+    import importlib
+    pipeline = importlib.import_module("autoosu.generate")
+
+    def fail(*args):
+        raise OSError("report directory read-only")
+    monkeypatch.setattr(pipeline, "atomic_json", fail)
+    wav = make_song(tmp_path / "report-failure.wav", bpm=140, bars=8)
+    result = generate(wav, ["Hard"], tmp_path / "out", log=lambda *_: None)
+    assert result.evaluation_path is None and result.osz.is_file() and result.provenance_recorded
+    with zipfile.ZipFile(result.osz) as archive:
+        assert json.loads(archive.read("autoosu-evaluation.json"))["maps"]
+    assert any("report directory read-only" in w for w in result.warnings)

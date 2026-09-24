@@ -27,7 +27,7 @@
 I am bad at osu! and I love playing it. The worst part: the songs I want to play have no maps, and I can't map.
 So: AUTO-OSU. Drop in the song you like, and a minute later you can play it.
 
-The published app is **0.2.0**; the source development version is **0.3.0.dev0**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
+The published app is **0.2.0**; the source development version is **0.3.0.dev1**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
 the jumps and streams are learned from over a hundred thousand ranked / approved / loved maps, and all four difficulties come out in one go.
 It will keep getting better: mapper intent, deliberate highlights, longer sliders and multiple red lines for tempo changes
 are all on the roadmap.
@@ -95,7 +95,7 @@ ffmpeg ships with the program; nothing to install.
 | Seed | Another number gives another layout for the same song; the same seed reproduces the same map. |
 | BPM / offset | Blank = detected. Fill in by hand when detection is off (tempo changes, near-empty intros). Offset in ms. |
 | Creator name | Written into the `.osu` as Creator, default AUTO-OSU. |
-| Star rating | Difficulty hint for the models; blank = per-difficulty default: Easy 2.0 / Normal 3.2 / Hard 4.5 / Insane 5.5. This is not the measured rating of the output; measurement and calibration are on the development schedule. |
+| Star condition | Difficulty hint for the models; blank = per-difficulty default: Easy 2.0 / Normal 3.2 / Hard 4.5 / Insane 5.5. The source version separately displays the measured rating (NM / stable) after generation; it may differ from the condition. |
 | Placement quality | Diffusion steps of the coordinate model: fast 50 / standard 100 / fine 200. Standard is plenty. |
 | Engine | "AI models" is the normal mode; "rules only" needs no models and maps in seconds — for comparison or when models are missing. |
 | Preview mp3 | Also saves an mp3 with the song turned down and a click on every object, to check the rhythm without opening osu!. |
@@ -163,7 +163,9 @@ python -m autoosu                                     # open the window
 python -m autoosu "song.mp3" -d Hard Insane -o out    # command line
 ```
 
-Python 3.10 or newer. This is also how to run it on macOS / Linux; the exe is Windows only.
+Python 3.10 or newer; measured difficulty requires Python 3.11 or newer. This is also how to run it on macOS / Linux; the exe is Windows only.
+
+The source version pins `rosu-pp-py 4.0.2` for measured difficulty. Results appear in the log, in `autoosu-evaluation.json` inside the `.osz`, and in a separate `.evaluation.json` beside it. Reports include aim / speed, section strains and structural diagnostics. Folder batch reports also retain each difficulty's measured rating. An unavailable calculator is reported explicitly and does not prevent saving the map. See the [evaluation notes](docs/difficulty-evaluation.md).
 
 ## Quality and limits
 
@@ -245,7 +247,7 @@ Work follows priority and dependency order, without time commitments. Completion
 | --- | --- | --- | --- |
 | P0 · Documentation and collaboration | Usage and attribution guidance, bilingual README, branch and contribution rules, community group | Consistent documentation that distinguishes planned and released features | Updated |
 | P0 · Source identification | Generation records, model identities, content fingerprints, and an in-app source checker; a feasibility study for older v0 outputs | Read `.osu` / `.osz`; report tags, record matches, and experimental detection false positives / recall separately | Source checker implemented in source; statistical screen failed the integration gate |
-| P1 · Difficulty control | Measured star ratings, a fixed evaluation song set, and density / spacing control for higher difficulties | Compare target and measured ratings; validate 6–7★ before extending to 7–8★, including local difficulty peaks and playability | Planned |
+| P1 · Difficulty control | Measured star ratings, a fixed evaluation song set, and density / spacing control for higher difficulties | Compare target and measured ratings; validate 6–7★ before extending to 7–8★, including local difficulty peaks and playability | Measurement implemented in source; condition calibration and playtesting remain |
 | P1 · Musical sections | Highlight control and automatic section selection | Validate manual regions first, then automatic selection; coordinate density, spacing, hitsounds, and kiai through buildup, peak, and release | Planned |
 | P2 · Model iteration | High-star data, finer rhythm representation, slider-length and section conditioning, multiple timing sections | Update released models only after controlled comparisons and the fixed evaluation set show improvement | Depends on earlier experiments |
 

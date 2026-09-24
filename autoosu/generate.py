@@ -13,8 +13,9 @@ from .audio import AudioAnalysis, analyze, load_audio
 from .audio_io import VIDEO_EXTS
 from .beatmap import Beatmap, Break, HitObject, Slider, Spinner, TimingPoint
 from .difficulty import DifficultyPreset, get_preset
+from .metrics import compact_measurement, inspect_structure, measure_difficulty
 from .package import extract_cover, prepare_audio, prepare_background, read_metadata, sanitize, write_osz
-from .provenance import build_manifest, engine_info, fingerprint, model_identity, source_tags, store_record
+from .provenance import atomic_json, build_manifest, engine_info, fingerprint, model_identity, source_tags, store_record
 from .placement import place
 from .rhythm import RhythmEvent, Sections, analyse_sections, build_events
 from .timing import Timing, estimate_timing
@@ -33,8 +34,11 @@ class DiffResult:
     preset: DifficultyPreset
     events: List[RhythmEvent]
     beatmap: Beatmap
+    star_condition: Optional[float] = None
+    measurement: dict = field(default_factory=dict)
+    diagnostics: dict = field(default_factory=dict)
 
-    def summary(self) -> Dict[str, float]:
+    def summary(self) -> dict:
         objs = self.beatmap.hit_objects
         n = len(objs)
         sliders = sum(isinstance(o, Slider) for o in objs)
@@ -42,7 +46,10 @@ class DiffResult:
         span = (objs[-1].end_time - objs[0].time) / 1000.0 if n > 1 else 1.0
         return {"objects": n, "circles": n - sliders - spinners, "sliders": sliders,
                 "spinners": spinners, "nps": round(n / max(span, 1e-6), 2),
-                "length_s": round(span, 1)}
+                "length_s": round(span, 1), "star_condition": self.star_condition,
+                "measured_stars": self.measurement.get("stars"),
+                "measurement_status": self.measurement.get("status", "unavailable"),
+                "measurement": compact_measurement(self.measurement)}
 
 
 @dataclass
@@ -58,6 +65,7 @@ class GenerateResult:
     provenance: Optional[dict] = None
     provenance_recorded: bool = False
     warnings: List[str] = field(default_factory=list)
+    evaluation_path: Optional[Path] = None
 
 
 def approach_ms(ar: float) -> float:
@@ -151,6 +159,8 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
     progress(fraction, message) is called as work advances (for GUIs); log(text) gets the human summary.
     """
     t0 = _time.perf_counter()
+    if star_rating is not None and (not np.isfinite(star_rating) or not 0 < star_rating <= 12):
+        raise ValueError("Star condition must be finite and between 0 and 12")
     audio_path, out_dir = Path(audio_path), Path(out_dir)
     presets = [get_preset(d) for d in difficulties]
     if not presets:
@@ -212,6 +222,7 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
     log("[4/4] generating difficulties")
     diffs: List[DiffResult] = []
     map_records = []
+    evaluations, warnings = [], []
     span = 0.68 / max(1, len(presets))
     for i, preset in enumerate(presets):
         base = 0.28 + i * span
@@ -245,15 +256,28 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
         bm.tags = source_tags(engine)
         if background:
             bm.background = background.name
-        res = DiffResult(preset, events, bm)
+        measurement = measure_difficulty(bm.to_osu())
+        diagnostics = inspect_structure(bm, timing.beat_length, len(overrides))
+        used_star = star if rhythm_model or coord_model else None
+        res = DiffResult(preset, events, bm, used_star, measurement, diagnostics)
         diffs.append(res)
         map_records.append(dict(filename=sanitize(bm.osu_filename()), preset=dataclasses.asdict(preset),
-                                seed=seed * 1000 + i, star_condition=star,
+                                seed=seed * 1000 + i, star_condition=used_star,
+                                measured_difficulty=compact_measurement(measurement),
                                 **fingerprint(bm.to_osu().encode("utf-8"))))
+        evaluations.append(dict(filename=map_records[-1]["filename"], raw_sha256=map_records[-1]["raw_sha256"],
+                                star_condition=used_star, measurement=measurement, diagnostics=diagnostics))
         s = res.summary()
         log(f"      {preset.name:<7} {s['objects']:4d} objects "
             f"({s['circles']} circles, {s['sliders']} sliders, {s['spinners']} spinners) "
             f"{s['nps']:.2f} obj/s" + (f", {len(overrides)} slider(s) shortened" if overrides else ""))
+        if measurement["status"] == "ok":
+            condition = f", model condition {used_star:g}" if used_star is not None else ""
+            log(f"      measured {measurement['stars']:.2f} stars (NM stable){condition}")
+        else:
+            warning = f"{preset.name}: difficulty measurement unavailable: {measurement.get('reason', 'unknown error')}"
+            warnings.append(warning)
+            log(warning)
 
     report(0.97, "package")
     manifest = build_manifest(map_records, engine,
@@ -262,9 +286,17 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                                    temperature=temperature, density=density, density_bias=density_bias,
                                    decode_steps=decode_steps, coord_steps=coord_steps, cfg_scale=cfg_scale, device=dev),
                               audio_path, audio_file)
+    evaluation = dict(schema="autoosu.evaluation/1", generation_id=manifest["generation_id"], maps=evaluations)
     osz = write_osz([d.beatmap for d in diffs], audio_file, out_dir, extra_files=[background] if background else (),
-                    manifest=manifest)
-    recorded, warnings = False, []
+                    manifest=manifest, evaluation=evaluation)
+    evaluation_path = osz.with_suffix(".evaluation.json")
+    try:
+        atomic_json(evaluation_path, evaluation)
+    except OSError as exc:
+        evaluation_path = None
+        warnings.append(f"Evaluation is in the .osz, but its separate report could not be saved: {exc}")
+        log(warnings[-1])
+    recorded = False
     try:
         store_record(manifest, records_dir)
         recorded = True
@@ -274,4 +306,5 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
     report(1.0, "done")
     return GenerateResult(osz=osz, audio_file=audio_file, timing=timing, analysis=analysis, diffs=diffs,
                           elapsed_s=_time.perf_counter() - t0, osu_shift_ms=osu_shift_ms, device=dev,
-                          provenance=manifest, provenance_recorded=recorded, warnings=warnings)
+                          provenance=manifest, provenance_recorded=recorded, warnings=warnings,
+                          evaluation_path=evaluation_path)
