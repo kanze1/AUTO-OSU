@@ -11,7 +11,9 @@
 1. 外部贡献先 fork 仓库，从最新 `master` 创建功能分支。`feat/*` 用于功能，`fix/*` 用于修复，`docs/*` 用于文档；`exp/*` 用于训练与探索。维护者和自动化工作可用 `kanzei/*`。
 2. 一次 PR 聚焦一件事。新模式、模型更换和大规模重构先开 issue 讨论目标、接口与验证方法，实验分支整理后再提交可合入的改动。
 3. 向本仓库 `master` 提交 PR，由维护者审阅、合并。不要直接推送开发改动到主分支，不强推或删除 `master`；官方标签与 Release 由维护者发布。
-4. 合并前保持分支可与最新主线合并，并通过现有 Windows / Ubuntu CI。修改共享生成、批量处理或导出流程时，同时验证原有 osu!standard 行为。
+4. 合并前保持分支可与最新主线合并，并通过仓库文档检查与 Windows / Ubuntu CI；使用 squash 合并。修改共享生成、批量处理或导出流程时，同时验证原有 osu!standard 行为。
+
+任务状态记录在 [docs/TASKS.md](docs/TASKS.md)，按优先级和依赖推进，不写交付时间承诺。
 
 ### PR 需要说明什么
 
@@ -24,6 +26,7 @@
 
 ```bash
 pip install -e ".[dev]"
+python scripts/check_repository.py
 python -m pytest -q
 git diff --check
 ```
@@ -50,7 +53,9 @@ Code, documentation, translations, model experiments, and new game modes are wel
 1. External contributors should fork the repository and branch from the latest `master`. Use `feat/*` for features, `fix/*` for fixes, `docs/*` for documentation, and `exp/*` for training or exploration. Maintainer and automation work may use `kanzei/*`.
 2. Keep each PR focused. Discuss the goals, interfaces, and validation of a new game mode, model replacement, or major refactor in an issue first. Extract mergeable changes from experiments before submitting them.
 3. Open a PR against this repository's `master` for maintainer review and merging. Do not push development changes directly to the main branch, force-push it, or delete it. Maintainers publish official tags and Releases.
-4. Keep the branch mergeable with the latest mainline and pass the existing Windows / Ubuntu CI before merging. Changes to shared generation, batch, or export code must also validate existing osu!standard behavior.
+4. Keep the branch mergeable with the latest mainline and pass the repository documentation checks and Windows / Ubuntu CI before squash merging. Changes to shared generation, batch, or export code must also validate existing osu!standard behavior.
+
+Track task state in [docs/TASKS.md](docs/TASKS.md), following priorities and dependencies without delivery-time commitments.
 
 ### What to include in a PR
 
@@ -63,6 +68,7 @@ Basic local checks:
 
 ```bash
 pip install -e ".[dev]"
+python scripts/check_repository.py
 python -m pytest -q
 git diff --check
 ```

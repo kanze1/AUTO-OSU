@@ -1,0 +1,31 @@
+name: Bug report / 问题反馈
+description: Report a reproducible failure / 反馈可复现的问题
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / 问题
+      description: Expected behavior and actual behavior / 期望结果与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction / 复现步骤
+      description: Include generation settings and seed / 附生成参数和随机种子
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: App version, OS, CPU/GPU and engine / 软件版本、系统、设备和生成引擎
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or examples / 日志或示例
+      description: Remove personal paths and secrets; link only assets you may share / 去除个人路径与密钥，只分享有权提供的素材
+
