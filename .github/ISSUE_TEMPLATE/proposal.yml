@@ -1,0 +1,25 @@
+name: Proposal or experiment / 功能与实验提案
+description: Coordinate a feature, model or game mode / 协调功能、模型或新模式开发
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective / 目标
+      description: What problem should be solved? Include the task ID if available / 要解决什么问题？有任务编号请附上
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Scope and approach / 范围与方案
+      description: Affected mode, interfaces, data and dependencies / 影响的模式、接口、数据和依赖
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation / 验收方法
+      description: Baseline, fixed samples and evidence required / 基线、固定样本与需要的证据
+    validations:
+      required: true
+
