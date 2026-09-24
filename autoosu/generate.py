@@ -19,6 +19,7 @@ from .provenance import atomic_json, build_manifest, engine_info, fingerprint, m
 from .placement import place
 from .rhythm import RhythmEvent, Sections, analyse_sections, build_events
 from .timing import Timing, estimate_timing
+from .watermark import embed_watermark
 
 # osu! convention: ranked beatmaps place hit objects ~26 ms *before* the audio transient as
 # decoded by ffmpeg/librosa (community measurement, and what Mapperatorinator reproduces).
@@ -37,6 +38,7 @@ class DiffResult:
     star_condition: Optional[float] = None
     measurement: dict = field(default_factory=dict)
     diagnostics: dict = field(default_factory=dict)
+    watermark: dict = field(default_factory=dict)
 
     def summary(self) -> dict:
         objs = self.beatmap.hit_objects
@@ -49,7 +51,7 @@ class DiffResult:
                 "length_s": round(span, 1), "star_condition": self.star_condition,
                 "measured_stars": self.measurement.get("stars"),
                 "measurement_status": self.measurement.get("status", "unavailable"),
-                "measurement": compact_measurement(self.measurement)}
+                "measurement": compact_measurement(self.measurement), "watermark": self.watermark}
 
 
 @dataclass
@@ -256,17 +258,18 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
         bm.tags = source_tags(engine)
         if background:
             bm.background = background.name
+        watermark = embed_watermark(bm, engine)
         measurement = measure_difficulty(bm.to_osu())
         diagnostics = inspect_structure(bm, timing.beat_length, len(overrides))
         used_star = star if rhythm_model or coord_model else None
-        res = DiffResult(preset, events, bm, used_star, measurement, diagnostics)
+        res = DiffResult(preset, events, bm, used_star, measurement, diagnostics, watermark)
         diffs.append(res)
         map_records.append(dict(filename=sanitize(bm.osu_filename()), preset=dataclasses.asdict(preset),
                                 seed=seed * 1000 + i, star_condition=used_star,
-                                measured_difficulty=compact_measurement(measurement),
+                                measured_difficulty=compact_measurement(measurement), watermark=watermark,
                                 **fingerprint(bm.to_osu().encode("utf-8"))))
         evaluations.append(dict(filename=map_records[-1]["filename"], raw_sha256=map_records[-1]["raw_sha256"],
-                                star_condition=used_star, measurement=measurement, diagnostics=diagnostics))
+                                star_condition=used_star, measurement=measurement, diagnostics=diagnostics, watermark=watermark))
         s = res.summary()
         log(f"      {preset.name:<7} {s['objects']:4d} objects "
             f"({s['circles']} circles, {s['sliders']} sliders, {s['spinners']} spinners) "
@@ -278,6 +281,7 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
             warning = f"{preset.name}: difficulty measurement unavailable: {measurement.get('reason', 'unknown error')}"
             warnings.append(warning)
             log(warning)
+        log(f"      content watermark: {watermark['status']} ({watermark['ticks']} musical ticks)")
 
     report(0.97, "package")
     manifest = build_manifest(map_records, engine,
