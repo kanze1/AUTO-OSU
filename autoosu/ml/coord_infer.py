@@ -12,7 +12,7 @@ Sequence format (must match the training data loader in coord/osu_diffusion/util
            6 bezier anchor, 7 perfect-circle anchor, 8 catmull anchor, 9 red anchor, 10 last anchor,
            11-15 slider end with repeat class (1, 2, 3, even>=4, odd>=5)
     context = [sinusoidal(time*0.1, 128), sinusoidal(distance to previous, 128), one-hot(16)]  (272)
-Distances are zero: the model was trained with distance dropout and picks the spacing itself.
+Distances default to zero; optional two-pass control restores the trained pixel-distance condition.
 """
 from __future__ import annotations
 
@@ -173,12 +173,30 @@ def build_sequence(events: Sequence[RhythmEvent], preset: DifficultyPreset, timi
     return Sequence(np.asarray(times, dtype=np.float32), np.asarray(types, dtype=np.int64), object_idx, sliders)
 
 
-def sequence_context(seq: Sequence) -> torch.Tensor:
-    """(272, N) context tensor: time embedding, zero-distance embedding, one-hot type."""
+def sequence_context(seq: Sequence, distances: Optional[np.ndarray] = None) -> torch.Tensor:
+    """(272, N): time embedding, raw pixel-distance embedding, one-hot type."""
     t = torch.from_numpy(seq.times)
     onehot = torch.zeros(N_TYPES, len(seq))
     onehot[torch.from_numpy(seq.types), torch.arange(len(seq))] = 1
-    return torch.cat([timestep_embedding(t * 0.1, 128).T, timestep_embedding(torch.zeros_like(t), 128).T, onehot], 0)
+    d = torch.zeros_like(t) if distances is None else torch.as_tensor(distances, dtype=torch.float32)
+    if d.shape != t.shape or not torch.isfinite(d).all() or torch.any(d < 0):
+        raise ValueError("Distances must be finite nonnegative pixels, one per token")
+    return torch.cat([timestep_embedding(t * 0.1, 128).T, timestep_embedding(d, 128).T, onehot], 0)
+
+
+def distance_condition(seq: Sequence, positions: np.ndarray, scale=1., regions=()) -> np.ndarray:
+    from ..controls import envelope
+    positions = np.asarray(positions, dtype=np.float32)
+    if positions.shape != (len(seq), 2) or not np.isfinite(positions).all():
+        raise ValueError("Reference positions must have shape (tokens, 2)")
+    previous = np.vstack(([256., 192.], positions[:-1]))
+    distances = np.linalg.norm(positions - previous, axis=1).astype(np.float32)
+    # Only incoming circle/slider-head distances are scaled. Slider internals,
+    # end tokens and spinner tokens retain their own reference distances.
+    heads = np.isin(seq.types, [T_CIRCLE, T_CIRCLE+1, T_HEAD, T_HEAD+1])
+    factors = scale * (1 + .2 * envelope(seq.times, regions))
+    distances[heads] *= factors[heads]
+    return distances
 
 
 # --------------------------------------------------------------------------- sampling
@@ -195,12 +213,13 @@ def _from_pixels(p: np.ndarray, like: torch.Tensor) -> torch.Tensor:
 @torch.no_grad()
 def sample_positions(cm: CoordModel, seq: Sequence, star: Optional[float], cs: Optional[float], *,
                      steps: int = 100, seed: int = 0, cfg_scale: float = 1.0, max_seq_len: int = 1024,
-                     overlap: int = 128, band: int = 128, progress: Optional[ProgressFn] = None) -> np.ndarray:
+                     overlap: int = 128, band: int = 128, progress: Optional[ProgressFn] = None,
+                     distances: Optional[np.ndarray] = None) -> np.ndarray:
     """Denoise positions for the whole sequence; returns (N, 2) pixel coordinates."""
     n = len(seq)
     device = cm.device
     diffusion = create_diffusion(timestep_respacing=[int(steps)], diffusion_steps=1000, noise_schedule="squaredcos_cap_v2")
-    c_all = sequence_context(seq).to(device)
+    c_all = sequence_context(seq, distances).to(device)
     y = cm.class_vector(star, cs).to(device).unsqueeze(0)
     y_null = cm.class_vector(None, None).to(device).unsqueeze(0)
     gen = torch.Generator(device="cpu").manual_seed(seed)
@@ -283,12 +302,20 @@ class Placement:
 
 def place_with_model(events: List[RhythmEvent], preset: DifficultyPreset, timing: Timing, cm: CoordModel,
                      sv_sections: Sequence[SvSection] = (), *, star: Optional[float] = None, seed: int = 0,
-                     steps: int = 100, cfg_scale: float = 1.0, progress: Optional[ProgressFn] = None) -> Placement:
+                     steps: int = 100, cfg_scale: float = 1.0, progress: Optional[ProgressFn] = None,
+                     spacing_scale: Optional[float] = None, highlight_regions=()) -> Placement:
     rng = np.random.default_rng(seed)
     seq = build_sequence(events, preset, timing, sv_sections, rng)
     if len(seq) == 0:
         return Placement([])
-    pos = sample_positions(cm, seq, star, preset.cs, steps=steps, seed=seed, cfg_scale=cfg_scale, progress=progress)
+    controlled = spacing_scale is not None or bool(highlight_regions)
+    first_progress = (lambda f, m: progress(f*.5, "reference: " + m)) if controlled and progress else progress
+    pos = sample_positions(cm, seq, star, preset.cs, steps=steps, seed=seed, cfg_scale=cfg_scale, progress=first_progress)
+    if controlled:
+        distances = distance_condition(seq, pos, 1. if spacing_scale is None else spacing_scale, highlight_regions)
+        second_progress = (lambda f, m: progress(.5+f*.5, "controlled: " + m)) if progress else None
+        pos = sample_positions(cm, seq, star, preset.cs, steps=steps, seed=seed, cfg_scale=cfg_scale,
+                               progress=second_progress, distances=distances)
     by_head = {sl.anchor_idx[0]: sl for sl in seq.sliders}
     objects: List[HitObject] = []
     overrides: List[Tuple[int, int, float]] = []

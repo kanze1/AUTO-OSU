@@ -46,12 +46,43 @@ def build_parser() -> argparse.ArgumentParser:
     g.add_argument("--coord-steps", type=int, default=100, help="coordinate model: diffusion steps (fewer = faster)")
     g.add_argument("--cfg-scale", type=float, default=1.0, help="coordinate model: classifier-free guidance scale")
     g.add_argument("--star", type=float, help="star rating to condition the models on (default per difficulty)")
+    c = p.add_argument_group("experimental difficulty and highlight controls")
+    c.add_argument("--control-plan", type=Path, help="JSON generation control plan")
+    c.add_argument("--target-star", type=float, help="measured star target; up to three candidates, not a guarantee")
+    c.add_argument("--candidates", type=int, choices=[1, 2, 3], help="maximum target-star candidates")
+    c.add_argument("--spacing-scale", type=float, help="optional incoming-head distance scale, 0.5..1.5; adds a coordinate pass")
+    c.add_argument("--highlight-mode", choices=["legacy", "off", "manual", "auto"])
+    c.add_argument("--highlight", action="append", default=[], metavar="START:END[:STRENGTH]",
+                   help="manual region in original audio seconds; repeat for multiple regions")
+    c.add_argument("--highlight-sv", action="store_true", default=None, help="also apply the preset's kiai slider velocity")
     p.add_argument("--debug-plot", action="store_true", help="save a PNG showing onsets, grid and chosen notes")
     p.add_argument("--preview", action="store_true",
                    help="also write an mp3 per difficulty with click sounds on every object, to check by ear")
     p.add_argument("--dump-events", action="store_true", help="print every generated event")
     p.add_argument("--gui", action="store_true", help="open the graphical interface")
     return p
+
+
+def generation_controls(args):
+    from .controls import load_control_file, validate_controls
+    values = load_control_file(args.control_plan) if args.control_plan else {}
+    for key, value in (("target_stars", args.target_star), ("candidates", args.candidates),
+                       ("spacing_scale", args.spacing_scale), ("highlight_mode", args.highlight_mode),
+                       ("highlight_sv", args.highlight_sv)):
+        if value is not None:
+            values[key] = value
+    if args.highlight:
+        regions = []
+        for token in args.highlight:
+            fields = token.split(":")
+            if len(fields) not in (2, 3):
+                raise ValueError("Use --highlight START:END[:STRENGTH], in audio seconds")
+            regions.append(dict(start_s=float(fields[0]), end_s=float(fields[1]),
+                                strength=float(fields[2]) if len(fields) == 3 else 1.))
+        values["highlights"] = regions
+        if args.highlight_mode is None:
+            values["highlight_mode"] = "manual"
+    return validate_controls(values)
 
 
 def resolve_models(args) -> tuple:
@@ -132,6 +163,11 @@ def main(argv=None) -> int:
     if not audio.exists():
         print(f"error: {audio} not found", file=sys.stderr)
         return 2
+    try:
+        controls = generation_controls(args)
+    except (ValueError, OSError, UnicodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
     rhythm, coord = resolve_models(args)
     if not args.rules and args.device != "cpu" and not os.environ.get("AUTOOSU_MANAGED_WORKER"):
         from .runtime import active_python, popen, probe_python
@@ -166,7 +202,7 @@ def main(argv=None) -> int:
                 rhythm_model=rhythm, temperature=args.temperature, density=args.density,
                 density_bias=args.density_bias, star_rating=args.star, decode_steps=args.decode_steps,
                 coord_model=coord, coord_steps=args.coord_steps, cfg_scale=args.cfg_scale, device=args.device,
-                records_dir=args.records_dir,
+                records_dir=args.records_dir, controls=controls,
                 on_result=_dump_events if args.dump_events else None,
             )
         except (ValueError, OSError, RuntimeError) as exc:
@@ -179,12 +215,16 @@ def main(argv=None) -> int:
         print("error: --recursive requires a folder input", file=sys.stderr)
         return 2
 
-    res = generate(audio, args.difficulty, args.out, seed=args.seed, bpm=args.bpm, offset_ms=args.offset,
-                   title=args.title, artist=args.artist, creator=args.creator, osu_shift_ms=args.osu_shift,
-                   rhythm_model=rhythm, temperature=args.temperature, density=args.density,
-                   density_bias=args.density_bias, star_rating=args.star, decode_steps=args.decode_steps,
-                   coord_model=coord, coord_steps=args.coord_steps, cfg_scale=args.cfg_scale, device=args.device,
-                   records_dir=args.records_dir)
+    try:
+        res = generate(audio, args.difficulty, args.out, seed=args.seed, bpm=args.bpm, offset_ms=args.offset,
+                       title=args.title, artist=args.artist, creator=args.creator, osu_shift_ms=args.osu_shift,
+                       rhythm_model=rhythm, temperature=args.temperature, density=args.density,
+                       density_bias=args.density_bias, star_rating=args.star, decode_steps=args.decode_steps,
+                       coord_model=coord, coord_steps=args.coord_steps, cfg_scale=args.cfg_scale, device=args.device,
+                       records_dir=args.records_dir, controls=controls)
+    except (ValueError, OSError, RuntimeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
 
     if args.dump_events:
         _dump_events(res)

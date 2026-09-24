@@ -37,17 +37,16 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
                     year: int = 2023, density: Optional[float] = None, temperature: float = 0.9,
                     none_bias: float = 0.0, decode_steps: int = 12, context: int = 1024, seed: int = 0,
                     device: str = "cuda") -> List[RhythmEvent]:
-    """density: target objects per measure (conditioning); None = let the model decide."""
+    """density: objects/measure, scalar or one value per tick; None = unknown."""
     bl = timing.beat_length
     step = bl / GRID
-    first_beat = math.ceil(timing.beat_at(0.0))
-    n_ticks = int((len(mel) * FRAME_MS - timing.ms_at(first_beat)) / step)
-    beats = first_beat + np.arange(n_ticks) / GRID
-    times = timing.offset_ms + beats * bl
-    metrical = (np.arange(n_ticks) % (4 * GRID)).astype(np.int64)
+    beats, times, metrical = rhythm_grid(mel, timing)
+    n_ticks = len(times)
+    if not n_ticks:
+        return []
     frames = np.round(times / FRAME_MS).astype(np.int64)
     loud = local_loudness(mel, frames)
-    dens = np.full(n_ticks, float(density), dtype=np.float32) if density is not None else None
+    dens = density_condition(density, n_ticks)
     extra = extra_features(loud, np.full(n_ticks, bl), dens)
     audio = torch.from_numpy(gather_patches(mel, frames).astype(np.float32) / 255.0).to(device)
     extra_t = torch.from_numpy(extra).to(device)
@@ -103,3 +102,21 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
         i += 1
     _combos_and_hitsounds(events, preset)
     return events
+
+
+def rhythm_grid(mel, timing):
+    first = math.ceil(timing.beat_at(0.0))
+    n = max(0, int((len(mel) * FRAME_MS - timing.ms_at(first)) / (timing.beat_length / GRID)))
+    beats = first + np.arange(n) / GRID
+    return beats, timing.offset_ms + beats * timing.beat_length, (np.arange(n) % (4 * GRID)).astype(np.int64)
+
+
+def density_condition(value, n_ticks):
+    if value is None:
+        return None
+    array = np.asarray(value, dtype=np.float32)
+    if array.ndim == 0:
+        array = np.full(n_ticks, float(array), dtype=np.float32)
+    if array.shape != (n_ticks,) or not np.isfinite(array).all() or np.any((array < 0) | (array > 16)):
+        raise ValueError("Density must be 0..16 objects/measure, scalar or one value per rhythm tick")
+    return array
