@@ -13,7 +13,7 @@ STRINGS: Dict[str, Dict[str, str]] = {
     "control.invalid": {"zh": "控制设置无效，请打开设置修正", "en": "Invalid control settings; open the editor to correct them"},
     "control.default": {"zh": "当前使用原有生成方式", "en": "Using original generation behavior"},
     "control.curve_active": {"zh": "已启用密度曲线", "en": "Density curve enabled"},
-    "control.hint": {"zh": "留空保留原有生成方式。目标星级最多尝试 3 个候选，以实测结果为准；跨度控制会增加一次坐标采样。", "en": "Leave blank for the original behavior. A star target tries up to 3 candidates and reports the measured result. Spacing control adds a coordinate pass."},
+    "control.hint": {"zh": "默认自动建议 highlight，也可选手动、关闭或原有 kiai。目标星级最多尝试 3 个候选，以实测为准；跨度控制增加一次坐标采样。", "en": "Automatic highlights are the default; manual, off and original kiai remain available. A star target tries up to 3 candidates and reports the measured result. Spacing adds a coordinate pass."},
     "control.target_stars": {"zh": "目标实测星级（1–12）", "en": "Measured star target (1–12)"},
     "control.density": {"zh": "密度条件（0–16 物件/小节）", "en": "Density (0–16 objects/measure)"},
     "control.spacing_scale": {"zh": "跨度倍率（0.5–1.5）", "en": "Spacing scale (0.5–1.5)"},

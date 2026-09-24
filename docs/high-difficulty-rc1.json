@@ -1,0 +1,3425 @@
+{
+  "schema": "autoosu.difficulty-audition/1",
+  "recipe": {
+    "version": "0.3.0rc1",
+    "base_commit": "a9769b6c72fad3c51951998bfda6b0c5896013c9",
+    "settings": {
+      "seed": 240924,
+      "decode_steps": 12,
+      "coord_steps": 100,
+      "temperature": 0.9,
+      "cfg_scale": 1.0,
+      "device": "cuda"
+    },
+    "targets": [
+      7.0,
+      8.0,
+      9.0
+    ],
+    "groups": [
+      "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45"
+    ],
+    "timing": "reference + export offset",
+    "manual_first_song": "35%-65% of original audio, same region as previous preferred C version",
+    "corpus_sha256": "4475e3b7fa0c93f7706a890e3a203cc8c3f38a41deb5d6eb581b0c71217decee",
+    "code_sha256": {
+      "autoosu/__init__.py": "509dfe94bee9b535920e81d7c34f338de8d2b9d8b6091d0e9816acc3a542e50b",
+      "autoosu/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "autoosu/audio.py": "6cc45383a03bab8914666b6855b5b8104c9172e776239a82868c1bfa13de7703",
+      "autoosu/audio_io.py": "9ff54ce6c293caf55eea9a6525c07d200080aed6091fb598e0f81d76fd24bce3",
+      "autoosu/batch.py": "80ee92c954f7395e12e6bf6d47b7f334b7492740d84f58812124e88360c46769",
+      "autoosu/beatmap.py": "d28f5c4333ec79891140120f95e1aca8dca1b1bdef961c53632644bc28a85776",
+      "autoosu/cli.py": "fbe9c692d07cded5889d65b34e3a280d42a934f7256237c8d206cce370cb3a0d",
+      "autoosu/control_gui.py": "a9a6641aabb495b05575416dbb8ee2e8f4c1f70aff31dd2bc94c7e99bdfe7bd7",
+      "autoosu/controls.py": "1af2847fb8590acde90650be1b48d324712a6a93927eb7138f5ec482bb772133",
+      "autoosu/debug.py": "e74f58a5d5b9bdec77d02630efb797cbf8425f9cabf63ee2dbb94271f09ca398",
+      "autoosu/devices.py": "f1923fbafde4a15531aaa81454cbacc6ae93c785d03ad5b8cb9f3d572a30b71d",
+      "autoosu/difficulty.py": "6fc17c369dd8f379abeb786048206fa5fff1c8d96784b0dcee1cd876b714d9ea",
+      "autoosu/generate.py": "9b7c48b7eb6cf9851b84e5541fb345fb12cfbd505a0373e6fcd8364764602f5e",
+      "autoosu/gui.py": "b512075185932a69dd49b36ffffe2a9dd4959369e1d8aa46a0de34adca5331ae",
+      "autoosu/gui_layout.py": "27b980d8fc02f6e6d19edd12941f7bbc9936846a8a4986d29851f82178641d1a",
+      "autoosu/i18n.py": "083407611d17afb8ff8ad3583fce72eca7ce0ab95323c1f5bdb3d43fabb48a6d",
+      "autoosu/metrics.py": "3610d7c135e2336176249a070af039ee311eab0b96d978aab533fd3ea1423a50",
+      "autoosu/ml/__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946",
+      "autoosu/ml/coord/__init__.py": "0f3dce649301bb382dc67674ff1c6f516a29fd54495154a18e7fdef4dc7ee535",
+      "autoosu/ml/coord/diffusion/__init__.py": "9f69f5f6a6f1dea2d927eb72fa1df6ae2d481180e62fc8c54c051aa93a31e8dc",
+      "autoosu/ml/coord/diffusion/diffusion_utils.py": "8260e221f0f7e4b3bb36678cc7f862f8f5cd7d6271f39b912974d74303d0a110",
+      "autoosu/ml/coord/diffusion/gaussian_diffusion.py": "fe9e2d0be91ab70be5a4505dd8127e72fa2a5fe7054c15dbfd8c3e623c611d2e",
+      "autoosu/ml/coord/diffusion/respace.py": "c553799a2ba693ec6314d766906b2f19340cab240a091de3b5eeb3642c3579d7",
+      "autoosu/ml/coord/models.py": "07c95631eff8ed6884381ee4e594461e0665148957fa7dde49923865f2ec089a",
+      "autoosu/ml/coord/positional_embedding.py": "37ac180579b41e3adb37394c27941574507ad1f1ea0eae7016aa702ae2d87da6",
+      "autoosu/ml/coord_infer.py": "c43f02b0f3ecd18bb9a0d1137978fed1351483ab90df8d1cf80616e83f3f4546",
+      "autoosu/ml/dataset.py": "1420714e5a5fe19d1047547d50a6c57b26acb68eb260951b70f04b7b8b53b232",
+      "autoosu/ml/model.py": "b1927fb8c88555ed388839fa22dbc947898d2279feb2ef01f3195ec26eb4962a",
+      "autoosu/ml/osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+      "autoosu/ml/prepare_data.py": "c055ccb9092bca6afd6dec1a1f0fade5bd557923262dfdf9eb71dc6ca800e7bf",
+      "autoosu/ml/sample.py": "3be262fd6473bf75c76d9769fe5fe2619c08b39ea53315fe42aba43c5bb9c311",
+      "autoosu/ml/train.py": "6cc183cf53eeef5579959187266736129769e597e296679628939600437617be",
+      "autoosu/models.py": "cdbc84c2c611935ceb804f1117bc82384e12a12a12b8382c4404f2db58823bbb",
+      "autoosu/package.py": "1aa96c74c64dee082c660714df9f009244859c4f2ec5a45f71819d19de1fcf19",
+      "autoosu/placement.py": "1b2bf038368e4cbc7ad76136c473bf811fd3cb14827e0934120bfc6fa381399a",
+      "autoosu/preview.py": "87f668eff023f7158f3eba7b8a1a5d74017655e33b5e5052cdec49b7cd09500d",
+      "autoosu/provenance.py": "8bff71f4a3989c38c67bdda89b73a44e3f7a2e877228146ffb8e18e31d1539d7",
+      "autoosu/rhythm.py": "dfe87b90800721cacfc67bac3848d5c0393e5047a0a679040ac923d9ba0e5379",
+      "autoosu/runtime.py": "dd1c60538342679b059359891991ab18ebba5e6cb1e9e439f99c41d044694b3d",
+      "autoosu/sliderpath.py": "a8541ce5067c33631c4b655124792b8b7f03d64e123cbc8e1a916c2e09b2da32",
+      "autoosu/source_check.py": "81b64208db0ca2fd0ddd90a16c4e5957c7e3a6958f7b5d2818db01ebcd860e7c",
+      "autoosu/source_gui.py": "0ee227f17f67794f64f9586734a2ea6bbc6770cf739b42f65a840c4231bc3a5f",
+      "autoosu/timing.py": "60b1e420d8ba19d3967fc5d39dd526347c6baf78b32eae03f8a38a35e1f01da3",
+      "autoosu/watermark.py": "dc2b2be578c42a6c9e028c84f110229d5cf9b034ccb9141be66d07270f618ce4",
+      "autoosu/worker.py": "d1264bc024b23621a6584a4e1a15a8dda8e70ca1f5e12ae3a7a78cac320da53c"
+    },
+    "models": {
+      "rhythm": "e01267c647e103a36801109e3c34f508dd2d04d228b07b4a299cddbd55dd52f6",
+      "coord": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040"
+    },
+    "environment": {
+      "python": "3.12.8",
+      "packages": {
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "librosa": "1.0.0",
+        "rosu-pp-py": "4.0.2"
+      }
+    },
+    "scope": "Known development songs for maintainer audition, not an independent evaluation"
+  },
+  "result_sha256": "32805fc92044661ea38a4c298030ea235dadad192cb532a9112f9a7cb03ddfda",
+  "review_manifest_sha256": "27d0e6d8818bb8a3a3fe1ff4f379ebc5ee27a4b8a02034d3603e5e0b8aac47c2",
+  "maps": 15,
+  "within_half_star": 10,
+  "independent_evaluation": false,
+  "parser": {
+    "parser": "slider",
+    "version": "0.8.2",
+    "maps": 15,
+    "stacking": false,
+    "flagged_sliders": 0,
+    "samples_per_curve": 1001,
+    "paths_outside": 0,
+    "rows": [
+      {
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "variant": "auto-7",
+        "sha256": "a4e84e9e590b42ef5cd826e74ec0e59105b83df70a5113f0ca88f075e39407fa",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "variant": "auto-8",
+        "sha256": "b477c796a827764ed3cf88d5462ec3bc752c02d997e65c2e3eb7f26464062b6f",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "variant": "auto-9",
+        "sha256": "8ec4c9eaf751cdf8240d18cac44d457137f17a40ca0258d3d98e2fc5ab083386",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "variant": "manual-7",
+        "sha256": "041774f375386b7407c70c1c9ae05262ee7eaa5f9efe73e8b331f1e244baae13",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "variant": "manual-8",
+        "sha256": "11848cd0d4d989f6b51000cadca54644853c03958423aeb8bae0c4e0ed23e295",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "variant": "manual-9",
+        "sha256": "bd05ac851c945a34ce2a0f445307bf0d36bc38e090df6d399b1d131ecc7abf35",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+        "variant": "auto-7",
+        "sha256": "325a94f1a9a95ecd7f5d50e93554ddea7d43ee33fff42df62e0f52ce01e30604",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+        "variant": "auto-8",
+        "sha256": "5483569418caaa4e7e4f83dd47f9b979b907a53d4004160fecd0e0d28d5f3db6",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+        "variant": "auto-9",
+        "sha256": "d5589af27ff6cd54765ee050e402a551b965ec7c030a05d4db9bef981b457635",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+        "variant": "auto-7",
+        "sha256": "47860fc2bd63c04fc57e56b638c977f8e2637a9b761a9cf190462dc70e7a7725",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+        "variant": "auto-8",
+        "sha256": "39c1a5da43d3e0b3439531891087d8cfe847b53d0218c03083f92ffcffcfd44d",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+        "variant": "auto-9",
+        "sha256": "5d1b622c6ac3d616534b701de17aa9ff58691ea00eca52ed835705d141d2bb91",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+        "variant": "auto-7",
+        "sha256": "afae8bbee972770ecd20d218242003453a64c36b81d4ce7ac38c31df7c40e8d4",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+        "variant": "auto-8",
+        "sha256": "68862496f70a7c4c33cb95f9b3407e7c551f976b2157290adf09887da93418bf",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      },
+      {
+        "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+        "variant": "auto-9",
+        "sha256": "21a310096f320b8e5ffe9a3cb184688553cb124041ea35731d1384cfa613f97b",
+        "flagged_sliders": 0,
+        "paths_outside": []
+      }
+    ],
+    "limits": "Flagged-anchor curves only; sampled center paths, not exact extrema or client playtesting."
+  },
+  "packaged_source_checks": {
+    "01-1b03caae-high.osz": [
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\01-1b03caae-high.osz :: Auto target 7 - measured 6.60.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\01-1b03caae-high.osz :: Auto target 8 - measured 7.67.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\01-1b03caae-high.osz :: Auto target 9 - measured 8.72.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\01-1b03caae-high.osz :: Manual target 7 - measured 6.75.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\01-1b03caae-high.osz :: Manual target 8 - measured 7.74.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\01-1b03caae-high.osz :: Manual target 9 - measured 8.61.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      }
+    ],
+    "02-193214fe-high.osz": [
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\02-193214fe-high.osz :: Auto target 7 - measured 6.68.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\02-193214fe-high.osz :: Auto target 8 - measured 6.59.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\02-193214fe-high.osz :: Auto target 9 - measured 6.26.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      }
+    ],
+    "03-10483e0c-high.osz": [
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\03-10483e0c-high.osz :: Auto target 7 - measured 6.30.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\03-10483e0c-high.osz :: Auto target 8 - measured 6.04.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\03-10483e0c-high.osz :: Auto target 9 - measured 5.61.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      }
+    ],
+    "04-02f892e2-high.osz": [
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\04-02f892e2-high.osz :: Auto target 7 - measured 6.88.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\04-02f892e2-high.osz :: Auto target 8 - measured 7.80.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      },
+      {
+        "file": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\high-difficulty-rc1\\playtest\\04-02f892e2-high.osz :: Auto target 9 - measured 8.81.osu",
+        "status": "local_record_match",
+        "watermark": "detected"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "auto",
+      "target": 7.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.595755584541769,
+        "aim": 3.758731102902867,
+        "speed": 2.2808375276114106,
+        "slider_factor": 0.999772369279271,
+        "max_combo": 500,
+        "objects": 475
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 475,
+        "circles": 450,
+        "sliders": 25,
+        "spinners": 0,
+        "nps": 5.59,
+        "length_s": 85.0
+      },
+      "diagnostics": {
+        "objects": 475,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 244.20065466273084,
+        "spacing_p95_px": 532.7030130169861
+      },
+      "regions": [
+        {
+          "start_s": 19.757390243902417,
+          "end_s": 40.24519512195118,
+          "strength": 1.0,
+          "attack_s": 1.4634146341463399,
+          "release_s": 2.9268292682926798
+        }
+      ],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 7.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.8277368182828475,
+            "aim": 3.197111702346457,
+            "speed": 2.3336113168921946,
+            "slider_factor": 0.9997331366556095,
+            "max_combo": 569,
+            "objects": 535
+          },
+          "diagnostics": {
+            "objects": 535,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 6,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 231.31851645548966,
+            "spacing_p95_px": 372.1058924680634
+          },
+          "peaks": {
+            "aim": {
+              "max": 247.95247861365863,
+              "p95": 226.3097261336298
+            },
+            "aim_no_sliders": {
+              "max": 247.9524786136055,
+              "p95": 226.30972259111417
+            },
+            "speed": {
+              "max": 134.42138549038577,
+              "p95": 116.53765308472549
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "8d48878bcc272d7f3708c9b49a6c93a3582613efb8aec3455e37246e9ddfd0ab"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 8.172263181717152,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.976877532586594,
+            "aim": 3.3354591349294878,
+            "speed": 2.2648293370022645,
+            "slider_factor": 0.9989478936911023,
+            "max_combo": 500,
+            "objects": 475
+          },
+          "diagnostics": {
+            "objects": 475,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 4,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 173.465229059843,
+            "spacing_p95_px": 394.2681290340894
+          },
+          "peaks": {
+            "aim": {
+              "max": 288.89081404127757,
+              "p95": 249.0656289767646
+            },
+            "aim_no_sliders": {
+              "max": 288.89081177141463,
+              "p95": 248.80662578546892
+            },
+            "speed": {
+              "max": 119.81295813474591,
+              "p95": 111.15406469468026
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "428b265965180ab2bb96d45ec0df2983a39233d87be425a002f4a0f4b7387165"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 8.172263181717152,
+          "density": null,
+          "spacing_scale": 1.3716628163279556,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.595755584541769,
+            "aim": 3.758731102902867,
+            "speed": 2.2808375276114106,
+            "slider_factor": 0.999772369279271,
+            "max_combo": 500,
+            "objects": 475
+          },
+          "diagnostics": {
+            "objects": 475,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 4,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 244.20065466273084,
+            "spacing_p95_px": 532.7030130169861
+          },
+          "peaks": {
+            "aim": {
+              "max": 361.4932712611577,
+              "p95": 310.40105627120045
+            },
+            "aim_no_sliders": {
+              "max": 361.4932712611326,
+              "p95": 310.40105626931575
+            },
+            "speed": {
+              "max": 120.8062002171762,
+              "p95": 111.96731839275583
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "a4e84e9e590b42ef5cd826e74ec0e59105b83df70a5113f0ca88f075e39407fa"
+        }
+      ],
+      "sha256": "a4e84e9e590b42ef5cd826e74ec0e59105b83df70a5113f0ca88f075e39407fa",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 450,
+        "marked_circles": 450,
+        "moved_circles": 352,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 25.44123060000129
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "auto",
+      "target": 8.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 7.672124588115614,
+        "aim": 4.342972593251636,
+        "speed": 2.744521865583733,
+        "slider_factor": 0.9974453570779348,
+        "max_combo": 474,
+        "objects": 462
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 462,
+        "circles": 450,
+        "sliders": 12,
+        "spinners": 0,
+        "nps": 5.63,
+        "length_s": 82.0
+      },
+      "diagnostics": {
+        "objects": 462,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 364.44615514503647,
+        "spacing_p95_px": 596.2424003708559
+      },
+      "regions": [
+        {
+          "start_s": 19.757390243902417,
+          "end_s": 40.24519512195118,
+          "strength": 1.0,
+          "attack_s": 1.4634146341463399,
+          "release_s": 2.9268292682926798
+        }
+      ],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 8.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.822332113615877,
+            "aim": 3.2059689262458275,
+            "speed": 2.306268149382715,
+            "slider_factor": 0.9997101162638053,
+            "max_combo": 502,
+            "objects": 476
+          },
+          "diagnostics": {
+            "objects": 476,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 4,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 161.38463371709216,
+            "spacing_p95_px": 350.77428942485693
+          },
+          "peaks": {
+            "aim": {
+              "max": 258.60379217616094,
+              "p95": 236.27846096542953
+            },
+            "aim_no_sliders": {
+              "max": 258.60379217611165,
+              "p95": 236.27846096486257
+            },
+            "speed": {
+              "max": 127.09955934908064,
+              "p95": 114.14092688867215
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "0d076d96f467687aa97bbfeb1f43efc55812786fccc8d3ffec3db31a2b80a41d"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 10.177667886384123,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.590919826012068,
+            "aim": 3.6267742936997944,
+            "speed": 2.6165572739082874,
+            "slider_factor": 0.9973795549422928,
+            "max_combo": 474,
+            "objects": 462
+          },
+          "diagnostics": {
+            "objects": 462,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 246.60291969074495,
+            "spacing_p95_px": 428.8554535038583
+          },
+          "peaks": {
+            "aim": {
+              "max": 342.7576616756793,
+              "p95": 295.85835587913607
+            },
+            "aim_no_sliders": {
+              "max": 341.5708443876408,
+              "p95": 293.05994939223814
+            },
+            "speed": {
+              "max": 165.70463366338413,
+              "p95": 148.4781379239046
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "bd4a1fda24f27117b6d2f44472c775303217cc41663c97cc2b59bb403d712a4c"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 10.177667886384123,
+          "density": null,
+          "spacing_scale": 1.4732888986646615,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.672124588115614,
+            "aim": 4.342972593251636,
+            "speed": 2.744521865583733,
+            "slider_factor": 0.9974453570779348,
+            "max_combo": 474,
+            "objects": 462
+          },
+          "diagnostics": {
+            "objects": 462,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 364.44615514503647,
+            "spacing_p95_px": 596.2424003708559
+          },
+          "peaks": {
+            "aim": {
+              "max": 469.8857046579754,
+              "p95": 420.5882254759967
+            },
+            "aim_no_sliders": {
+              "max": 463.46953838550894,
+              "p95": 416.2908083054181
+            },
+            "speed": {
+              "max": 181.83762100675418,
+              "p95": 162.2367694473213
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "b477c796a827764ed3cf88d5462ec3bc752c02d997e65c2e3eb7f26464062b6f"
+        }
+      ],
+      "sha256": "b477c796a827764ed3cf88d5462ec3bc752c02d997e65c2e3eb7f26464062b6f",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 450,
+        "marked_circles": 450,
+        "moved_circles": 338,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 10.884661000000051
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "auto",
+      "target": 9.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 8.719738651831987,
+        "aim": 5.039874406448773,
+        "speed": 2.7657767256487875,
+        "slider_factor": 0.9999651174406651,
+        "max_combo": 484,
+        "objects": 479
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 479,
+        "circles": 473,
+        "sliders": 5,
+        "spinners": 1,
+        "nps": 5.16,
+        "length_s": 92.8
+      },
+      "diagnostics": {
+        "objects": 479,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 358.50383540486706,
+        "spacing_p95_px": 576.2210519020144
+      },
+      "regions": [
+        {
+          "start_s": 19.757390243902417,
+          "end_s": 40.24519512195118,
+          "strength": 1.0,
+          "attack_s": 1.4634146341463399,
+          "release_s": 2.9268292682926798
+        }
+      ],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 9.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.12098882716691,
+            "aim": 3.3431791557995263,
+            "speed": 2.481639988420292,
+            "slider_factor": 0.9976134618546052,
+            "max_combo": 501,
+            "objects": 490
+          },
+          "diagnostics": {
+            "objects": 490,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 20,
+            "peak_nps_2s": 10.5,
+            "spacing_p50_px": 175.82377541163197,
+            "spacing_p95_px": 363.40435378116905
+          },
+          "peaks": {
+            "aim": {
+              "max": 285.43670442234975,
+              "p95": 250.66104073382095
+            },
+            "aim_no_sliders": {
+              "max": 284.96150125008376,
+              "p95": 249.3045148871816
+            },
+            "speed": {
+              "max": 155.02551260522932,
+              "p95": 128.02242722942893
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "75c7b736a32ff2071086dce9b1db37ec95f14e7d15527b5299120ed6d9d38beb"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 11.87901117283309,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.924875701763353,
+            "aim": 4.509657015232194,
+            "speed": 2.7638490903585344,
+            "slider_factor": 0.9999283894977362,
+            "max_combo": 484,
+            "objects": 479
+          },
+          "diagnostics": {
+            "objects": 479,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 3,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 279.45840477609545,
+            "spacing_p95_px": 490.2631939039878
+          },
+          "peaks": {
+            "aim": {
+              "max": 616.0379137926461,
+              "p95": 439.9919796285584
+            },
+            "aim_no_sliders": {
+              "max": 616.0378639997635,
+              "p95": 439.9917202175247
+            },
+            "speed": {
+              "max": 194.29612493001704,
+              "p95": 161.47825185886484
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "3834b3dc841a9648a8c51201e8b321ce757322c806ad71f453b9cd89a23b0eb6"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 11.87901117283309,
+          "density": null,
+          "spacing_scale": 1.2897338561575014,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 8.719738651831987,
+            "aim": 5.039874406448773,
+            "speed": 2.7657767256487875,
+            "slider_factor": 0.9999651174406651,
+            "max_combo": 484,
+            "objects": 479
+          },
+          "diagnostics": {
+            "objects": 479,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 3,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 358.50383540486706,
+            "spacing_p95_px": 576.2210519020144
+          },
+          "peaks": {
+            "aim": {
+              "max": 800.4791618420811,
+              "p95": 553.6787857886956
+            },
+            "aim_no_sliders": {
+              "max": 800.4791212686947,
+              "p95": 553.6783626000774
+            },
+            "speed": {
+              "max": 194.43479833812316,
+              "p95": 161.5216184658967
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "8ec4c9eaf751cdf8240d18cac44d457137f17a40ca0258d3d98e2fc5ab083386"
+        }
+      ],
+      "sha256": "8ec4c9eaf751cdf8240d18cac44d457137f17a40ca0258d3d98e2fc5ab083386",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 473,
+        "marked_circles": 473,
+        "moved_circles": 350,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 10.882059699999445
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "manual",
+      "target": 7.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.7488746502767825,
+        "aim": 3.6627760157989457,
+        "speed": 2.7822346478842115,
+        "slider_factor": 0.9987683777908248,
+        "max_combo": 580,
+        "objects": 548
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 548,
+        "circles": 516,
+        "sliders": 32,
+        "spinners": 0,
+        "nps": 5.78,
+        "length_s": 94.8
+      },
+      "diagnostics": {
+        "objects": 548,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 212.9530464679949,
+        "spacing_p95_px": 413.4773029151186
+      },
+      "regions": [
+        {
+          "strength": 1.0,
+          "attack_s": 2.0,
+          "release_s": 4.0,
+          "start_s": 33.22,
+          "end_s": 61.7
+        }
+      ],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 7.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.0340962346508595,
+            "aim": 3.312600034672659,
+            "speed": 2.41162264232048,
+            "slider_factor": 0.9999902407348236,
+            "max_combo": 581,
+            "objects": 548
+          },
+          "diagnostics": {
+            "objects": 548,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 6,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 185.05404615949362,
+            "spacing_p95_px": 354.0729934889986
+          },
+          "peaks": {
+            "aim": {
+              "max": 288.21474971755157,
+              "p95": 242.17200828636294
+            },
+            "aim_no_sliders": {
+              "max": 288.21474971743373,
+              "p95": 242.17199290298757
+            },
+            "speed": {
+              "max": 154.43802900065546,
+              "p95": 124.91413821464155
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "f6f131bcc5c47001266e61ad4abaf6a6fb5a87704e9ad3e480afee2892ce6297"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 7.9659037653491405,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.234094010416523,
+            "aim": 3.322885713598647,
+            "speed": 2.677258529592721,
+            "slider_factor": 0.9998203680651064,
+            "max_combo": 580,
+            "objects": 548
+          },
+          "diagnostics": {
+            "objects": 548,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 7,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 166.76930173146374,
+            "spacing_p95_px": 331.44018734887294
+          },
+          "peaks": {
+            "aim": {
+              "max": 305.13472093253307,
+              "p95": 244.91010665937728
+            },
+            "aim_no_sliders": {
+              "max": 305.1347209324272,
+              "p95": 244.91010665937722
+            },
+            "speed": {
+              "max": 172.9851144538257,
+              "p95": 148.28836015228237
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "a861c91752ca0eb847eccdd197fd317a82570544ddee1da764f4cd69bdf613c3"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 7.9659037653491405,
+          "density": null,
+          "spacing_scale": 1.26080924797921,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.7488746502767825,
+            "aim": 3.6627760157989457,
+            "speed": 2.7822346478842115,
+            "slider_factor": 0.9987683777908248,
+            "max_combo": 580,
+            "objects": 548
+          },
+          "diagnostics": {
+            "objects": 548,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 7,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 212.9530464679949,
+            "spacing_p95_px": 413.4773029151186
+          },
+          "peaks": {
+            "aim": {
+              "max": 350.8656506581615,
+              "p95": 298.5953425494502
+            },
+            "aim_no_sliders": {
+              "max": 350.86565065543675,
+              "p95": 298.54853861535855
+            },
+            "speed": {
+              "max": 190.09858341884072,
+              "p95": 165.33155057255192
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "041774f375386b7407c70c1c9ae05262ee7eaa5f9efe73e8b331f1e244baae13"
+        }
+      ],
+      "sha256": "041774f375386b7407c70c1c9ae05262ee7eaa5f9efe73e8b331f1e244baae13",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 516,
+        "marked_circles": 516,
+        "moved_circles": 398,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 11.402428600000349
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "manual",
+      "target": 8.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 7.73982605640901,
+        "aim": 4.332339195685941,
+        "speed": 2.9023319841252584,
+        "slider_factor": 0.9999965367156617,
+        "max_combo": 503,
+        "objects": 490
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 490,
+        "circles": 477,
+        "sliders": 13,
+        "spinners": 0,
+        "nps": 5.97,
+        "length_s": 82.0
+      },
+      "diagnostics": {
+        "objects": 490,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 20,
+        "peak_nps_2s": 10.5,
+        "spacing_p50_px": 165.10905486980417,
+        "spacing_p95_px": 403.9139759316042
+      },
+      "regions": [
+        {
+          "strength": 1.0,
+          "attack_s": 2.0,
+          "release_s": 4.0,
+          "start_s": 33.22,
+          "end_s": 61.7
+        }
+      ],
+      "selected": 1,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 8.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.5103626894550555,
+            "aim": 3.5030382906922894,
+            "speed": 2.7395142858563255,
+            "slider_factor": 0.9993140429302197,
+            "max_combo": 512,
+            "objects": 491
+          },
+          "diagnostics": {
+            "objects": 491,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 6,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 160.5162473062216,
+            "spacing_p95_px": 341.45954566883313
+          },
+          "peaks": {
+            "aim": {
+              "max": 309.0996023829708,
+              "p95": 276.6997365763015
+            },
+            "aim_no_sliders": {
+              "max": 309.09960201194525,
+              "p95": 276.69973300401875
+            },
+            "speed": {
+              "max": 191.18949861349995,
+              "p95": 160.10410403914253
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "5669c9cf5037172ec14f54927d5fd4bee423934d4981779acdf1c639add59b61"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 9.489637310544945,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.73982605640901,
+            "aim": 4.332339195685941,
+            "speed": 2.9023319841252584,
+            "slider_factor": 0.9999965367156617,
+            "max_combo": 503,
+            "objects": 490
+          },
+          "diagnostics": {
+            "objects": 490,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 20,
+            "peak_nps_2s": 10.5,
+            "spacing_p50_px": 165.10905486980417,
+            "spacing_p95_px": 403.9139759316042
+          },
+          "peaks": {
+            "aim": {
+              "max": 509.68422564545716,
+              "p95": 422.85476024682896
+            },
+            "aim_no_sliders": {
+              "max": 509.6841565423714,
+              "p95": 422.85004163693407
+            },
+            "speed": {
+              "max": 223.6547487834734,
+              "p95": 181.2517899737023
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "11848cd0d4d989f6b51000cadca54644853c03958423aeb8bae0c4e0ed23e295"
+        }
+      ],
+      "sha256": "11848cd0d4d989f6b51000cadca54644853c03958423aeb8bae0c4e0ed23e295",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 477,
+        "marked_circles": 477,
+        "moved_circles": 347,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 9.00232860000142
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "manual",
+      "target": 9.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 8.607004943122375,
+        "aim": 4.922101274947409,
+        "speed": 2.9240112158293265,
+        "slider_factor": 0.9991193561378328,
+        "max_combo": 502,
+        "objects": 477
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 477,
+        "circles": 452,
+        "sliders": 25,
+        "spinners": 0,
+        "nps": 5.82,
+        "length_s": 82.0
+      },
+      "diagnostics": {
+        "objects": 477,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 280.6802985975087,
+        "spacing_p95_px": 577.8432059947565
+      },
+      "regions": [
+        {
+          "strength": 1.0,
+          "attack_s": 2.0,
+          "release_s": 4.0,
+          "start_s": 33.22,
+          "end_s": 61.7
+        }
+      ],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 9.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.4109259304015564,
+            "aim": 4.0800429620567105,
+            "speed": 2.938312586041457,
+            "slider_factor": 0.9999773533851584,
+            "max_combo": 516,
+            "objects": 510
+          },
+          "diagnostics": {
+            "objects": 510,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 20,
+            "peak_nps_2s": 10.5,
+            "spacing_p50_px": 172.32527382830412,
+            "spacing_p95_px": 369.3730449448126
+          },
+          "peaks": {
+            "aim": {
+              "max": 431.10089025846173,
+              "p95": 374.5723543337614
+            },
+            "aim_no_sliders": {
+              "max": 431.1008859782595,
+              "p95": 374.56985308000765
+            },
+            "speed": {
+              "max": 219.3458120309191,
+              "p95": 185.14629649194637
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "708b46e88c045b9380be4d3d09ad089b8abf6e53811eb7900c13f99ee70398d3"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 10.589074069598443,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.703686230022268,
+            "aim": 4.300781383663604,
+            "speed": 2.9172043916673895,
+            "slider_factor": 0.9992527284712233,
+            "max_combo": 502,
+            "objects": 477
+          },
+          "diagnostics": {
+            "objects": 477,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 7,
+            "peak_nps_2s": 9.0,
+            "spacing_p50_px": 209.39162836837693,
+            "spacing_p95_px": 442.05416995752273
+          },
+          "peaks": {
+            "aim": {
+              "max": 545.3372834010679,
+              "p95": 414.8705129484255
+            },
+            "aim_no_sliders": {
+              "max": 545.3372832743931,
+              "p95": 414.7273187172166
+            },
+            "speed": {
+              "max": 242.99688589284406,
+              "p95": 172.59242835104703
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "491e25eead2954b58af1c482149660bcae7df14fc18407fdb0bf8c951a4901f7"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 10.589074069598443,
+          "density": null,
+          "spacing_scale": 1.3648591871521782,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 8.607004943122375,
+            "aim": 4.922101274947409,
+            "speed": 2.9240112158293265,
+            "slider_factor": 0.9991193561378328,
+            "max_combo": 502,
+            "objects": 477
+          },
+          "diagnostics": {
+            "objects": 477,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 7,
+            "peak_nps_2s": 9.0,
+            "spacing_p50_px": 280.6802985975087,
+            "spacing_p95_px": 577.8432059947565
+          },
+          "peaks": {
+            "aim": {
+              "max": 722.2053767551629,
+              "p95": 551.9120128174121
+            },
+            "aim_no_sliders": {
+              "max": 722.2053766029603,
+              "p95": 549.8214899900215
+            },
+            "speed": {
+              "max": 243.0050772583266,
+              "p95": 173.79294934386837
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "bd05ac851c945a34ce2a0f445307bf0d36bc38e090df6d399b1d131ecc7abf35"
+        }
+      ],
+      "sha256": "bd05ac851c945a34ce2a0f445307bf0d36bc38e090df6d399b1d131ecc7abf35",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 452,
+        "marked_circles": 452,
+        "moved_circles": 351,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 12.183931100000336
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "title": "Fruit Salad",
+      "mode": "auto",
+      "target": 7.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.6829327693630125,
+        "aim": 3.6649954176269905,
+        "speed": 2.67939115954603,
+        "slider_factor": 0.9986747641604342,
+        "max_combo": 466,
+        "objects": 332
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 332,
+        "circles": 198,
+        "sliders": 134,
+        "spinners": 0,
+        "nps": 6.1,
+        "length_s": 54.4
+      },
+      "diagnostics": {
+        "objects": 332,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 122.12288892750614,
+        "spacing_p95_px": 272.1075375149804
+      },
+      "regions": [],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 7.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.889912328892104,
+            "aim": 3.1393594530874385,
+            "speed": 2.5294601961737797,
+            "slider_factor": 0.9992957225206581,
+            "max_combo": 466,
+            "objects": 332
+          },
+          "diagnostics": {
+            "objects": 332,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 17,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 88.81441324469807,
+            "spacing_p95_px": 189.7594735508686
+          },
+          "peaks": {
+            "aim": {
+              "max": 263.7292300975283,
+              "p95": 227.82650759641217
+            },
+            "aim_no_sliders": {
+              "max": 263.7291208022276,
+              "p95": 227.68463919980542
+            },
+            "speed": {
+              "max": 178.06700890024652,
+              "p95": 138.80995449089323
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "fb7211a8fe4b2970f5454fd61016883bbfdd253ceabed1998147ab03d1453bc2"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 8.110087671107896,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.28304635796999,
+            "aim": 2.8504845270968717,
+            "speed": 2.208469694150122,
+            "slider_factor": 0.9999995302243645,
+            "max_combo": 282,
+            "objects": 279
+          },
+          "diagnostics": {
+            "objects": 279,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 7.0,
+            "spacing_p50_px": 102.81032125673357,
+            "spacing_p95_px": 260.5125719664875
+          },
+          "peaks": {
+            "aim": {
+              "max": 233.46534319803428,
+              "p95": 193.28997362633547
+            },
+            "aim_no_sliders": {
+              "max": 233.46534319803428,
+              "p95": 193.28997362633547
+            },
+            "speed": {
+              "max": 140.10646949044238,
+              "p95": 101.52290715311338
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "14538e464c83a11d094cade8c57771382be12d7867ed4fc9d4155463ffc8a233"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 0,
+          "star_condition": 7.0,
+          "density": null,
+          "spacing_scale": 1.4124673553031153,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.6829327693630125,
+            "aim": 3.6649954176269905,
+            "speed": 2.67939115954603,
+            "slider_factor": 0.9986747641604342,
+            "max_combo": 466,
+            "objects": 332
+          },
+          "diagnostics": {
+            "objects": 332,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 17,
+            "peak_nps_2s": 8.5,
+            "spacing_p50_px": 122.12288892750614,
+            "spacing_p95_px": 272.1075375149804
+          },
+          "peaks": {
+            "aim": {
+              "max": 373.69186226907203,
+              "p95": 307.59893582736595
+            },
+            "aim_no_sliders": {
+              "max": 373.4767365289206,
+              "p95": 306.64955161916794
+            },
+            "speed": {
+              "max": 190.94408268121774,
+              "p95": 156.9347062405037
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "325a94f1a9a95ecd7f5d50e93554ddea7d43ee33fff42df62e0f52ce01e30604"
+        }
+      ],
+      "sha256": "325a94f1a9a95ecd7f5d50e93554ddea7d43ee33fff42df62e0f52ce01e30604",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 198,
+        "marked_circles": 198,
+        "moved_circles": 158,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 8.011663100000078
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "title": "Fruit Salad",
+      "mode": "auto",
+      "target": 8.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.594879829811918,
+        "aim": 3.8123767422455783,
+        "speed": 2.083751895842978,
+        "slider_factor": 1.0,
+        "max_combo": 305,
+        "objects": 305
+      },
+      "target_met": false,
+      "objects": {
+        "objects": 305,
+        "circles": 305,
+        "sliders": 0,
+        "spinners": 0,
+        "nps": 5.14,
+        "length_s": 59.4
+      },
+      "diagnostics": {
+        "objects": 305,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 184.65338406416106,
+        "spacing_p95_px": 557.1162702489228
+      },
+      "regions": [],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 8.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.480482024811304,
+            "aim": 3.091856008219598,
+            "speed": 1.9875994193703812,
+            "slider_factor": 0.9999998793663416,
+            "max_combo": 290,
+            "objects": 287
+          },
+          "diagnostics": {
+            "objects": 287,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 3,
+            "peak_nps_2s": 6.5,
+            "spacing_p50_px": 204.91643991906216,
+            "spacing_p95_px": 404.9983723579212
+          },
+          "peaks": {
+            "aim": {
+              "max": 238.81740315757486,
+              "p95": 219.46767742927287
+            },
+            "aim_no_sliders": {
+              "max": 238.81740315757486,
+              "p95": 219.46767742927287
+            },
+            "speed": {
+              "max": 97.82872375015795,
+              "p95": 87.45961078423642
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "17f14cf5b3fffc607e228c183afa7c9b3e590103f8898e9bd9893afc05620c34"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 10.519517975188695,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.550025302853874,
+            "aim": 3.1175645664703566,
+            "speed": 2.0501514392773506,
+            "slider_factor": 1.0,
+            "max_combo": 305,
+            "objects": 305
+          },
+          "diagnostics": {
+            "objects": 305,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 3,
+            "peak_nps_2s": 6.0,
+            "spacing_p50_px": 132.3796427478866,
+            "spacing_p95_px": 403.7097479711623
+          },
+          "peaks": {
+            "aim": {
+              "max": 241.93063903073465,
+              "p95": 221.89674903993736
+            },
+            "aim_no_sliders": {
+              "max": 241.93063903073465,
+              "p95": 221.89674903993736
+            },
+            "speed": {
+              "max": 98.50505712555234,
+              "p95": 92.88380535147896
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "41a08f9ff3c096dd9999a379127e0d67dfb11d8ea8bfc2a06c9ed7309e55496a"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 10.519517975188695,
+          "density": null,
+          "spacing_scale": 1.5,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.594879829811918,
+            "aim": 3.8123767422455783,
+            "speed": 2.083751895842978,
+            "slider_factor": 1.0,
+            "max_combo": 305,
+            "objects": 305
+          },
+          "diagnostics": {
+            "objects": 305,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 3,
+            "peak_nps_2s": 6.0,
+            "spacing_p50_px": 184.65338406416106,
+            "spacing_p95_px": 557.1162702489228
+          },
+          "peaks": {
+            "aim": {
+              "max": 444.22598897159844,
+              "p95": 333.05715110773264
+            },
+            "aim_no_sliders": {
+              "max": 444.22598897159844,
+              "p95": 333.05715110773264
+            },
+            "speed": {
+              "max": 98.51465806505439,
+              "p95": 97.71718251105055
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "5483569418caaa4e7e4f83dd47f9b979b907a53d4004160fecd0e0d28d5f3db6"
+        }
+      ],
+      "sha256": "5483569418caaa4e7e4f83dd47f9b979b907a53d4004160fecd0e0d28d5f3db6",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 305,
+        "marked_circles": 305,
+        "moved_circles": 246,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 6.752155900001526
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "title": "Fruit Salad",
+      "mode": "auto",
+      "target": 9.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.257722963581918,
+        "aim": 3.5582042162443024,
+        "speed": 2.188318434691366,
+        "slider_factor": 1.0,
+        "max_combo": 308,
+        "objects": 308
+      },
+      "target_met": false,
+      "objects": {
+        "objects": 308,
+        "circles": 308,
+        "sliders": 0,
+        "spinners": 0,
+        "nps": 5.19,
+        "length_s": 59.4
+      },
+      "diagnostics": {
+        "objects": 308,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 326.3372488699382,
+        "spacing_p95_px": 568.1407207271769
+      },
+      "regions": [],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 9.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.23151423809227,
+            "aim": 2.915555459941596,
+            "speed": 1.9912066606450423,
+            "slider_factor": 0.9999639415876024,
+            "max_combo": 262,
+            "objects": 247
+          },
+          "diagnostics": {
+            "objects": 247,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 3,
+            "peak_nps_2s": 6.0,
+            "spacing_p50_px": 196.09307760147712,
+            "spacing_p95_px": 358.8585325251164
+          },
+          "peaks": {
+            "aim": {
+              "max": 240.4762412994556,
+              "p95": 198.38869684119481
+            },
+            "aim_no_sliders": {
+              "max": 240.4762412858193,
+              "p95": 198.38750294912438
+            },
+            "speed": {
+              "max": 100.53594386195269,
+              "p95": 90.79934079740053
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "20cf3174bfd21173b8c733078cfa0bea7aa0da31717b657fb829bed6c2795cd7"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 12.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.429309589976467,
+            "aim": 3.01750211655646,
+            "speed": 2.086771676917251,
+            "slider_factor": 1.0,
+            "max_combo": 308,
+            "objects": 308
+          },
+          "diagnostics": {
+            "objects": 308,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 6.5,
+            "spacing_p50_px": 214.98139454380697,
+            "spacing_p95_px": 356.44713398889286
+          },
+          "peaks": {
+            "aim": {
+              "max": 246.9425338656436,
+              "p95": 209.8374877397382
+            },
+            "aim_no_sliders": {
+              "max": 246.9425338656436,
+              "p95": 209.8374877397382
+            },
+            "speed": {
+              "max": 118.47213075274065,
+              "p95": 96.2714881941841
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "7b22d7b76f2c9a654e664f50c16cf7a7e74a56ce10e1d5fd57d8fcd88e795222"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 12.0,
+          "density": null,
+          "spacing_scale": 1.5,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.257722963581918,
+            "aim": 3.5582042162443024,
+            "speed": 2.188318434691366,
+            "slider_factor": 1.0,
+            "max_combo": 308,
+            "objects": 308
+          },
+          "diagnostics": {
+            "objects": 308,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 6.5,
+            "spacing_p50_px": 326.3372488699382,
+            "spacing_p95_px": 568.1407207271769
+          },
+          "peaks": {
+            "aim": {
+              "max": 310.5492970397585,
+              "p95": 297.2893097332753
+            },
+            "aim_no_sliders": {
+              "max": 310.5492970397585,
+              "p95": 297.2893097332753
+            },
+            "speed": {
+              "max": 124.40065459274108,
+              "p95": 104.59975531273561
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "d5589af27ff6cd54765ee050e402a551b965ec7c030a05d4db9bef981b457635"
+        }
+      ],
+      "sha256": "d5589af27ff6cd54765ee050e402a551b965ec7c030a05d4db9bef981b457635",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 308,
+        "marked_circles": 308,
+        "moved_circles": 234,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 6.9073618999991595
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "title": "eyes to eyes",
+      "mode": "auto",
+      "target": 7.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.302902551723671,
+        "aim": 3.433029018009331,
+        "speed": 2.5743962970747667,
+        "slider_factor": 0.9995537692573895,
+        "max_combo": 597,
+        "objects": 491
+      },
+      "target_met": false,
+      "objects": {
+        "objects": 491,
+        "circles": 384,
+        "sliders": 106,
+        "spinners": 1,
+        "nps": 4.19,
+        "length_s": 117.1
+      },
+      "diagnostics": {
+        "objects": 491,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 12,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 156.92354826475216,
+        "spacing_p95_px": 359.0408491351029
+      },
+      "regions": [],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 7.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.4124737660790405,
+            "aim": 2.9474719265978293,
+            "speed": 2.2112892189662925,
+            "slider_factor": 0.9971402235451109,
+            "max_combo": 735,
+            "objects": 460
+          },
+          "diagnostics": {
+            "objects": 460,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 6.0,
+            "spacing_p50_px": 126.45347520441332,
+            "spacing_p95_px": 210.86541152481038
+          },
+          "peaks": {
+            "aim": {
+              "max": 227.78197902102374,
+              "p95": 190.29852872572548
+            },
+            "aim_no_sliders": {
+              "max": 227.56861119723266,
+              "p95": 189.36282545322027
+            },
+            "speed": {
+              "max": 120.19769710525298,
+              "p95": 102.38291168309956
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "49ac37c01df8b02de8cd3ed8e5be93fcb152deaedee267f977ca123b64c6eed5"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 8.58752623392096,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.466281194060752,
+            "aim": 2.874142313380866,
+            "speed": 2.4098570385025146,
+            "slider_factor": 0.9995664918242765,
+            "max_combo": 597,
+            "objects": 491
+          },
+          "diagnostics": {
+            "objects": 491,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 12,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 103.22790320451152,
+            "spacing_p95_px": 233.66686177360822
+          },
+          "peaks": {
+            "aim": {
+              "max": 237.52571028377315,
+              "p95": 172.6905031156709
+            },
+            "aim_no_sliders": {
+              "max": 237.50883721950328,
+              "p95": 172.40705530391557
+            },
+            "speed": {
+              "max": 163.98867770929095,
+              "p95": 114.70507698045795
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "d493ac342ec5f5242e6fa376d41d6731f87dbfcd9da4a53e79c093d03d6352bb"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 8.58752623392096,
+          "density": null,
+          "spacing_scale": 1.5,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.302902551723671,
+            "aim": 3.433029018009331,
+            "speed": 2.5743962970747667,
+            "slider_factor": 0.9995537692573895,
+            "max_combo": 597,
+            "objects": 491
+          },
+          "diagnostics": {
+            "objects": 491,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 12,
+            "peak_nps_2s": 8.0,
+            "spacing_p50_px": 156.92354826475216,
+            "spacing_p95_px": 359.0408491351029
+          },
+          "peaks": {
+            "aim": {
+              "max": 308.2624689398354,
+              "p95": 252.2356873477069
+            },
+            "aim_no_sliders": {
+              "max": 308.2549922278586,
+              "p95": 252.17424613128932
+            },
+            "speed": {
+              "max": 191.8919833520962,
+              "p95": 130.584547432496
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "47860fc2bd63c04fc57e56b638c977f8e2637a9b761a9cf190462dc70e7a7725"
+        }
+      ],
+      "sha256": "47860fc2bd63c04fc57e56b638c977f8e2637a9b761a9cf190462dc70e7a7725",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 384,
+        "marked_circles": 384,
+        "moved_circles": 295,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 12.641039199999796
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "title": "eyes to eyes",
+      "mode": "auto",
+      "target": 8.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.043716112660794,
+        "aim": 3.4260597380076794,
+        "speed": 2.1450961586731565,
+        "slider_factor": 0.9817827156444591,
+        "max_combo": 737,
+        "objects": 457
+      },
+      "target_met": false,
+      "objects": {
+        "objects": 457,
+        "circles": 176,
+        "sliders": 280,
+        "spinners": 1,
+        "nps": 3.9,
+        "length_s": 117.1
+      },
+      "diagnostics": {
+        "objects": 457,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 186.01075237738274,
+        "spacing_p95_px": 355.7595118427543
+      },
+      "regions": [],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 8.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.269784899449843,
+            "aim": 2.898038578682661,
+            "speed": 2.0948589053406397,
+            "slider_factor": 0.9952591403384851,
+            "max_combo": 737,
+            "objects": 457
+          },
+          "diagnostics": {
+            "objects": 457,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 6.0,
+            "spacing_p50_px": 126.46343345014795,
+            "spacing_p95_px": 233.87344273675689
+          },
+          "peaks": {
+            "aim": {
+              "max": 251.38997477055636,
+              "p95": 182.39628440609786
+            },
+            "aim_no_sliders": {
+              "max": 250.5518189749494,
+              "p95": 181.67669257968677
+            },
+            "speed": {
+              "max": 109.50666928049968,
+              "p95": 90.46829351588336
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "e609e300ef98887a1edf91c23c01f08604712c54462a987f0509517f20108afd"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 10.730215100550158,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.010731994263941,
+            "aim": 2.6553529569169765,
+            "speed": 2.176689252012328,
+            "slider_factor": 0.9946490786451968,
+            "max_combo": 466,
+            "objects": 419
+          },
+          "diagnostics": {
+            "objects": 419,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 6.5,
+            "spacing_p50_px": 114.3700088525236,
+            "spacing_p95_px": 287.1095704726691
+          },
+          "peaks": {
+            "aim": {
+              "max": 212.1305583101998,
+              "p95": 144.52195014710492
+            },
+            "aim_no_sliders": {
+              "max": 206.35742780658197,
+              "p95": 144.4973564408159
+            },
+            "speed": {
+              "max": 139.6714575925726,
+              "p95": 92.86376515367563
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "3c11849e725c56dfba021220fb44ab62f86231d4841e9d19a7a192c33f21ae8c"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 0,
+          "star_condition": 8.0,
+          "density": null,
+          "spacing_scale": 1.5,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.043716112660794,
+            "aim": 3.4260597380076794,
+            "speed": 2.1450961586731565,
+            "slider_factor": 0.9817827156444591,
+            "max_combo": 737,
+            "objects": 457
+          },
+          "diagnostics": {
+            "objects": 457,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 6.0,
+            "spacing_p50_px": 186.01075237738274,
+            "spacing_p95_px": 355.7595118427543
+          },
+          "peaks": {
+            "aim": {
+              "max": 316.60609773115925,
+              "p95": 249.4820662680203
+            },
+            "aim_no_sliders": {
+              "max": 306.1977121623088,
+              "p95": 240.413633303209
+            },
+            "speed": {
+              "max": 111.90332088923708,
+              "p95": 96.09585455144602
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "39c1a5da43d3e0b3439531891087d8cfe847b53d0218c03083f92ffcffcfd44d"
+        }
+      ],
+      "sha256": "39c1a5da43d3e0b3439531891087d8cfe847b53d0218c03083f92ffcffcfd44d",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 176,
+        "marked_circles": 176,
+        "moved_circles": 134,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 15.583256300000357
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "title": "eyes to eyes",
+      "mode": "auto",
+      "target": 9.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 5.608345414636782,
+        "aim": 3.129152350718331,
+        "speed": 2.126318629516692,
+        "slider_factor": 0.9959294559129332,
+        "max_combo": 449,
+        "objects": 378
+      },
+      "target_met": false,
+      "objects": {
+        "objects": 378,
+        "circles": 306,
+        "sliders": 71,
+        "spinners": 1,
+        "nps": 3.45,
+        "length_s": 109.5
+      },
+      "diagnostics": {
+        "objects": 378,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 123.5556554755791,
+        "spacing_p95_px": 313.1779612002112
+      },
+      "regions": [],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 9.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 4.518578863245539,
+            "aim": 2.436579665831678,
+            "speed": 1.8911036141356068,
+            "slider_factor": 0.9938284922333303,
+            "max_combo": 565,
+            "objects": 392
+          },
+          "diagnostics": {
+            "objects": 392,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 5,
+            "peak_nps_2s": 5.5,
+            "spacing_p50_px": 101.6070863670443,
+            "spacing_p95_px": 224.70260185975818
+          },
+          "peaks": {
+            "aim": {
+              "max": 191.8129704080844,
+              "p95": 117.89321568250566
+            },
+            "aim_no_sliders": {
+              "max": 191.2511629311435,
+              "p95": 114.64704101843422
+            },
+            "speed": {
+              "max": 111.86653048133657,
+              "p95": 67.39740022033106
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "a7f51ccd369b52c104a8596e6bd5d120ba4166f1ac2df78060c6d6abfca97ba8"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 12.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 4.810702519388999,
+            "aim": 2.552497037749188,
+            "speed": 2.0846841783021053,
+            "slider_factor": 0.9963783917601171,
+            "max_combo": 449,
+            "objects": 378
+          },
+          "diagnostics": {
+            "objects": 378,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 8,
+            "peak_nps_2s": 6.5,
+            "spacing_p50_px": 83.00602387778854,
+            "spacing_p95_px": 206.7022283743703
+          },
+          "peaks": {
+            "aim": {
+              "max": 307.98843542496854,
+              "p95": 85.71951827060914
+            },
+            "aim_no_sliders": {
+              "max": 307.9102309872047,
+              "p95": 84.8165175136213
+            },
+            "speed": {
+              "max": 167.30335338783456,
+              "p95": 71.80558668570556
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "9f93e7ef39fbb8f797281423e6be4a2e58ef67748da49731a898f7201b823ef7"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 12.0,
+          "density": null,
+          "spacing_scale": 1.5,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 5.608345414636782,
+            "aim": 3.129152350718331,
+            "speed": 2.126318629516692,
+            "slider_factor": 0.9959294559129332,
+            "max_combo": 449,
+            "objects": 378
+          },
+          "diagnostics": {
+            "objects": 378,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 8,
+            "peak_nps_2s": 6.5,
+            "spacing_p50_px": 123.5556554755791,
+            "spacing_p95_px": 313.1779612002112
+          },
+          "peaks": {
+            "aim": {
+              "max": 461.71095615780814,
+              "p95": 125.64922726284536
+            },
+            "aim_no_sliders": {
+              "max": 461.5826698014778,
+              "p95": 122.5525282448024
+            },
+            "speed": {
+              "max": 167.3306844138209,
+              "p95": 81.39169996341535
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "5d1b622c6ac3d616534b701de17aa9ff58691ea00eca52ed835705d141d2bb91"
+        }
+      ],
+      "sha256": "5d1b622c6ac3d616534b701de17aa9ff58691ea00eca52ed835705d141d2bb91",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 306,
+        "marked_circles": 306,
+        "moved_circles": 238,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 10.91809430000103
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "title": "Mesheer",
+      "mode": "auto",
+      "target": 7.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 6.881905047581451,
+        "aim": 2.9336022151827903,
+        "speed": 3.6813229151366675,
+        "slider_factor": 0.9991694966533532,
+        "max_combo": 1013,
+        "objects": 975
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 975,
+        "circles": 936,
+        "sliders": 38,
+        "spinners": 1,
+        "nps": 7.79,
+        "length_s": 125.2
+      },
+      "diagnostics": {
+        "objects": 975,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 257,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 25.179356624028344,
+        "spacing_p95_px": 162.09191270642825
+      },
+      "regions": [
+        {
+          "start_s": 37.845737837837795,
+          "end_s": 48.65654864864859,
+          "strength": 1.0,
+          "attack_s": 1.0810810810810798,
+          "release_s": 2.1621621621621596
+        },
+        {
+          "start_s": 71.35925135135128,
+          "end_s": 84.33222432432423,
+          "strength": 1.0,
+          "attack_s": 1.0810810810810798,
+          "release_s": 2.1621621621621596
+        }
+      ],
+      "selected": 0,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 7.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 6.881905047581451,
+            "aim": 2.9336022151827903,
+            "speed": 3.6813229151366675,
+            "slider_factor": 0.9991694966533532,
+            "max_combo": 1013,
+            "objects": 975
+          },
+          "diagnostics": {
+            "objects": 975,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 257,
+            "peak_nps_2s": 15.0,
+            "spacing_p50_px": 25.179356624028344,
+            "spacing_p95_px": 162.09191270642825
+          },
+          "peaks": {
+            "aim": {
+              "max": 230.07336943853085,
+              "p95": 183.11377945246505
+            },
+            "aim_no_sliders": {
+              "max": 230.07327664927277,
+              "p95": 183.1135192048077
+            },
+            "speed": {
+              "max": 294.2263974880592,
+              "p95": 290.31452382998054
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "afae8bbee972770ecd20d218242003453a64c36b81d4ce7ac38c31df7c40e8d4"
+        }
+      ],
+      "sha256": "afae8bbee972770ecd20d218242003453a64c36b81d4ce7ac38c31df7c40e8d4",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 936,
+        "marked_circles": 936,
+        "moved_circles": 691,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 11.799138500000481
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "title": "Mesheer",
+      "mode": "auto",
+      "target": 8.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 7.795892769330414,
+        "aim": 3.7274739163036688,
+        "speed": 3.872818637109298,
+        "slider_factor": 0.9998609778403954,
+        "max_combo": 1091,
+        "objects": 1073
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 1073,
+        "circles": 1053,
+        "sliders": 18,
+        "spinners": 2,
+        "nps": 8.57,
+        "length_s": 125.2
+      },
+      "diagnostics": {
+        "objects": 1073,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 257,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 45.27692569068709,
+        "spacing_p95_px": 194.36386490978495
+      },
+      "regions": [
+        {
+          "start_s": 37.845737837837795,
+          "end_s": 48.65654864864859,
+          "strength": 1.0,
+          "attack_s": 1.0810810810810798,
+          "release_s": 2.1621621621621596
+        },
+        {
+          "start_s": 71.35925135135128,
+          "end_s": 84.33222432432423,
+          "strength": 1.0,
+          "attack_s": 1.0810810810810798,
+          "release_s": 2.1621621621621596
+        }
+      ],
+      "selected": 1,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 8.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.449243325033725,
+            "aim": 3.452020273570684,
+            "speed": 3.7945699526629855,
+            "slider_factor": 0.9983472042856001,
+            "max_combo": 1071,
+            "objects": 1052
+          },
+          "diagnostics": {
+            "objects": 1052,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 257,
+            "peak_nps_2s": 15.0,
+            "spacing_p50_px": 36.884955660282486,
+            "spacing_p95_px": 204.96891551383175
+          },
+          "peaks": {
+            "aim": {
+              "max": 327.6003631541662,
+              "p95": 262.06107410388375
+            },
+            "aim_no_sliders": {
+              "max": 327.17662677775945,
+              "p95": 256.84674482316933
+            },
+            "speed": {
+              "max": 325.85742234424396,
+              "p95": 306.892698152685
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "5fffb3c18d299c0845414d01ccf22c6b2672d7bbaae1e5ee5b0c8fc39f189b48"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 8.550756674966275,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 7.795892769330414,
+            "aim": 3.7274739163036688,
+            "speed": 3.872818637109298,
+            "slider_factor": 0.9998609778403954,
+            "max_combo": 1091,
+            "objects": 1073
+          },
+          "diagnostics": {
+            "objects": 1073,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 257,
+            "peak_nps_2s": 15.0,
+            "spacing_p50_px": 45.27692569068709,
+            "spacing_p95_px": 194.36386490978495
+          },
+          "peaks": {
+            "aim": {
+              "max": 397.07646286708615,
+              "p95": 287.39276093033214
+            },
+            "aim_no_sliders": {
+              "max": 397.07431212645633,
+              "p95": 287.3416173986898
+            },
+            "speed": {
+              "max": 406.408920051874,
+              "p95": 307.100184829509
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "68862496f70a7c4c33cb95f9b3407e7c551f976b2157290adf09887da93418bf"
+        }
+      ],
+      "sha256": "68862496f70a7c4c33cb95f9b3407e7c551f976b2157290adf09887da93418bf",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 1053,
+        "marked_circles": 1053,
+        "moved_circles": 760,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 14.659499899998991
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "title": "Mesheer",
+      "mode": "auto",
+      "target": 9.0,
+      "measurement": {
+        "status": "ok",
+        "calculator": {
+          "name": "rosu-pp-py",
+          "version": "4.0.2",
+          "mode": "osu",
+          "mods": "NM",
+          "lazer": false
+        },
+        "stars": 8.814365600767951,
+        "aim": 4.511119131188872,
+        "speed": 4.057947097838506,
+        "slider_factor": 0.9999918728327788,
+        "max_combo": 1028,
+        "objects": 1017
+      },
+      "target_met": true,
+      "objects": {
+        "objects": 1017,
+        "circles": 1008,
+        "sliders": 7,
+        "spinners": 2,
+        "nps": 8.12,
+        "length_s": 125.2
+      },
+      "diagnostics": {
+        "objects": 1017,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 257,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 37.69615364994153,
+        "spacing_p95_px": 181.0270361813221
+      },
+      "regions": [
+        {
+          "start_s": 37.845737837837795,
+          "end_s": 48.65654864864859,
+          "strength": 1.0,
+          "attack_s": 1.0810810810810798,
+          "release_s": 2.1621621621621596
+        },
+        {
+          "start_s": 71.35925135135128,
+          "end_s": 84.33222432432423,
+          "strength": 1.0,
+          "attack_s": 1.0810810810810798,
+          "release_s": 2.1621621621621596
+        }
+      ],
+      "selected": 2,
+      "selection_status": "accepted",
+      "candidates": [
+        {
+          "index": 0,
+          "reference_candidate": null,
+          "star_condition": 9.0,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 8.071887792106027,
+            "aim": 4.012795536135653,
+            "speed": 3.856295728066701,
+            "slider_factor": 0.9998637887943614,
+            "max_combo": 1133,
+            "objects": 1121
+          },
+          "diagnostics": {
+            "objects": 1121,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 355,
+            "peak_nps_2s": 15.0,
+            "spacing_p50_px": 41.23105625617661,
+            "spacing_p95_px": 257.28287732418255
+          },
+          "peaks": {
+            "aim": {
+              "max": 450.9527588546381,
+              "p95": 317.6343621326243
+            },
+            "aim_no_sliders": {
+              "max": 450.9527588546381,
+              "p95": 317.6343621326243
+            },
+            "speed": {
+              "max": 336.50461147238025,
+              "p95": 315.3740177634671
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "3b573fb4f29f75f82f69d81c612e2cc0ab12b8c5c40dfa5b8c573c4a8b4901ea"
+        },
+        {
+          "index": 1,
+          "reference_candidate": 0,
+          "star_condition": 9.928112207893973,
+          "density": null,
+          "spacing_scale": null,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 8.164115112466417,
+            "aim": 4.123498208956074,
+            "speed": 3.826237191550205,
+            "slider_factor": 0.9999924832325353,
+            "max_combo": 1028,
+            "objects": 1017
+          },
+          "diagnostics": {
+            "objects": 1017,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 2,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 257,
+            "peak_nps_2s": 15.0,
+            "spacing_p50_px": 31.304951684997057,
+            "spacing_p95_px": 152.3137042662426
+          },
+          "peaks": {
+            "aim": {
+              "max": 493.5299987710946,
+              "p95": 339.65161146667197
+            },
+            "aim_no_sliders": {
+              "max": 493.5299987710946,
+              "p95": 339.65161146667197
+            },
+            "speed": {
+              "max": 358.4434830383164,
+              "p95": 311.54243219692586
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "dbd57c7c5ae4d9caf0d02a30ef58542b530e58e2ff47bae5043e19a34bdd590e"
+        },
+        {
+          "index": 2,
+          "reference_candidate": 1,
+          "star_condition": 9.928112207893973,
+          "density": null,
+          "spacing_scale": 1.215253218006132,
+          "measured": {
+            "status": "ok",
+            "calculator": {
+              "name": "rosu-pp-py",
+              "version": "4.0.2",
+              "mode": "osu",
+              "mods": "NM",
+              "lazer": false
+            },
+            "stars": 8.814365600767951,
+            "aim": 4.511119131188872,
+            "speed": 4.057947097838506,
+            "slider_factor": 0.9999918728327788,
+            "max_combo": 1028,
+            "objects": 1017
+          },
+          "diagnostics": {
+            "objects": 1017,
+            "simultaneous_or_reversed_starts": 0,
+            "overlapping_objects": 0,
+            "heads_outside_playfield": 0,
+            "anchors_outside_playfield": 0,
+            "invalid_sliders": 0,
+            "shortened_sliders": 0,
+            "longest_quarter_beat_circle_run": 257,
+            "peak_nps_2s": 15.0,
+            "spacing_p50_px": 37.69615364994153,
+            "spacing_p95_px": 181.0270361813221
+          },
+          "peaks": {
+            "aim": {
+              "max": 554.6174977979226,
+              "p95": 411.24671779316975
+            },
+            "aim_no_sliders": {
+              "max": 554.6174977979226,
+              "p95": 411.24671779316975
+            },
+            "speed": {
+              "max": 439.3213676155686,
+              "p95": 337.4028105500071
+            }
+          },
+          "rejection_reasons": [],
+          "raw_sha256": "21a310096f320b8e5ffe9a3cb184688553cb124041ea35731d1384cfa613f97b"
+        }
+      ],
+      "sha256": "21a310096f320b8e5ffe9a3cb184688553cb124041ea35731d1384cfa613f97b",
+      "watermark": {
+        "schema": "autoosu-circle-parity/1",
+        "status": "embedded",
+        "engine_claim": "model",
+        "ticks": 1008,
+        "marked_circles": 1008,
+        "moved_circles": 770,
+        "max_displacement_px": 1.4142135623730951
+      },
+      "elapsed_s": 18.026224600000205
+    }
+  ]
+}

@@ -32,9 +32,10 @@ def variants(song, partition):
     manual=dict(highlight_mode="manual",highlights=[dict(start_s=round(song["duration_s"]*.35,2),
                                                         end_s=round(song["duration_s"]*.65,2))])
     if partition=="heldout":
-        return [("target65",dict(target_stars=6.5)),("auto",dict(highlight_mode="auto"))]
-    return [("baseline",{}),("spacing85",dict(spacing_scale=.85)),("spacing100",dict(spacing_scale=1.)),
-            ("spacing120",dict(spacing_scale=1.2)),("target65",dict(target_stars=6.5)),
+        return [("target65",dict(target_stars=6.5,highlight_mode="legacy")),("auto",dict(highlight_mode="auto"))]
+    return [("baseline",dict(highlight_mode="legacy")),("spacing85",dict(spacing_scale=.85,highlight_mode="legacy")),
+            ("spacing100",dict(spacing_scale=1.,highlight_mode="legacy")),
+            ("spacing120",dict(spacing_scale=1.2,highlight_mode="legacy")),("target65",dict(target_stars=6.5,highlight_mode="legacy")),
             ("manual_density",dict(manual,highlight_spacing=False)),("manual",manual),
             ("auto",dict(highlight_mode="auto"))]
 

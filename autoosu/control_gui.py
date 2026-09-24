@@ -30,7 +30,7 @@ def open_control_window(parent):
         ctk.CTkLabel(body, text=text(key), font=parent.font).grid(row=row, column=0, sticky="w", padx=(0, 14), pady=5)
         fields[key] = ctk.StringVar()
         ctk.CTkEntry(body, textvariable=fields[key], font=parent.font).grid(row=row, column=1, sticky="ew", pady=5)
-    labels = {mode: text("mode."+mode) for mode in ("legacy", "off", "manual", "auto")}
+    labels = {mode: text("mode."+mode) for mode in ("auto", "manual", "off", "legacy")}
     ctk.CTkLabel(body, text=text("mode"), font=parent.font).grid(row=5, column=0, sticky="w", pady=8)
     mode_var = ctk.StringVar()
     ctk.CTkOptionMenu(body, variable=mode_var, values=list(labels.values()), font=parent.font).grid(row=5, column=1, sticky="ew")
