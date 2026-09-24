@@ -1,0 +1,97 @@
+{
+  "audited_at": "2026-09-24",
+  "head": "8f508921534bef39c4f7beb54201a09fb7db8aca",
+  "scope": "Read-only measurements of local historical artifacts. No new generation or detector validation.",
+  "local_corpus": {
+    "path": "data/prep/index.jsonl",
+    "rows": 15012,
+    "star_bins": {
+      "below6": 13399,
+      "from6to7": 1193,
+      "from7to8": 303,
+      "from8to9": 86,
+      "from9": 31
+    },
+    "note": "Local subset, not a fresh audit of the complete training corpus."
+  },
+  "measured_outputs": {
+    "calculator": "rosu-pp-py",
+    "version": "3.1.0",
+    "mods": 0,
+    "lazer": false,
+    "maps": [
+      {
+        "path": "out\\mirror_case_20260923\\maps\\HoneyComeBear - Mirror (AUTO-OSU).osz",
+        "entry": "HoneyComeBear - Mirror (AUTO-OSU) [Hard].osu",
+        "sha256": "5f78b28cf0ff38d52cd3b57bb915b1fcfa7261b2a2a2eaa5ad715ff3c7378741",
+        "stars": 3.838,
+        "aim": 1.961,
+        "speed": 1.677,
+        "objects": 626
+      },
+      {
+        "path": "out\\int\\Midnight Kids _ Last Island _ Annika Wells - Run It (Last Island Remix_Explicit) (AUTO-OSU).osz",
+        "entry": "Midnight Kids _ Last Island _ Annika Wells - Run It (Last Island Remix_Explicit) (AUTO-OSU) [Hard].osu",
+        "sha256": "0104a852b2b6cdc6fb1edac6de1b20ab3f937d68172198ba0d0be1d32108c191",
+        "stars": 4.465,
+        "aim": 2.269,
+        "speed": 1.968,
+        "objects": 414
+      },
+      {
+        "path": "out\\gui_test\\HoneyComeBear - Mirror (AUTO-OSU).osz",
+        "entry": "HoneyComeBear - Mirror (AUTO-OSU) [Normal].osu",
+        "sha256": "847c2c8390eb838ee0e6e3b893e533acf00ef96923e7577550eec4ca9d675d11",
+        "stars": 2.96,
+        "aim": 1.468,
+        "speed": 1.352,
+        "objects": 589
+      },
+      {
+        "path": "out\\gui_test\\HoneyComeBear - Mirror (AUTO-OSU).osz",
+        "entry": "HoneyComeBear - Mirror (AUTO-OSU) [Hard].osu",
+        "sha256": "877906688412efa0f74f8333817963569b41f1e1d0e07233505eb13aa58acaea",
+        "stars": 4.223,
+        "aim": 2.226,
+        "speed": 1.733,
+        "objects": 590
+      },
+      {
+        "path": "out\\songs\\play\\Aiobahn - Re searchlight [Hard] (AUTO-OSU).osz",
+        "entry": "Aiobahn - Re searchlight (AUTO-OSU) [Hard].osu",
+        "sha256": "9ef29cffa8791da506d4a93c28542cd5be767627de65d27d012f641233de3dcc",
+        "stars": 4.358,
+        "aim": 2.126,
+        "speed": 2.031,
+        "objects": 964
+      },
+      {
+        "path": "out\\songs\\play\\FrankJavCee - SimpsonWave1995 [Hard] (AUTO-OSU).osz",
+        "entry": "FrankJavCee - SimpsonWave1995 (AUTO-OSU) [Hard].osu",
+        "sha256": "f27b604fbf3c2407289801743acdc25046c6503473f55f194f375368a8fdf9dc",
+        "stars": 4.295,
+        "aim": 2.263,
+        "speed": 1.766,
+        "objects": 238
+      },
+      {
+        "path": "out\\songs\\play\\HoneyComeBear - Rainy Girl [Hard] (AUTO-OSU).osz",
+        "entry": "HoneyComeBear - レイニーガール (Rainy Girl) (AUTO-OSU) [Hard].osu",
+        "sha256": "b933dda28534c6b2fe4eb051210bc681db2aaf6addfb0011f813ce091e51bb86",
+        "stars": 4.736,
+        "aim": 2.185,
+        "speed": 2.33,
+        "objects": 696
+      },
+      {
+        "path": "out\\songs\\play\\Midnight Kids _ Last Island _ Annika Wells - Run It (Last Island Remix_Explicit) [Hard] (AUTO-OSU).osz",
+        "entry": "Midnight Kids _ Last Island _ Annika Wells - Run It (Last Island Remix_Explicit) (AUTO-OSU) [Hard].osu",
+        "sha256": "0f4aa8e1420c4cce1abd7876ba5a219120c058e54ee03ed2ca748ed1de77cfd8",
+        "stars": 4.152,
+        "aim": 2.157,
+        "speed": 1.76,
+        "objects": 492
+      }
+    ]
+  }
+}

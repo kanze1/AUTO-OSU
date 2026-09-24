@@ -7,7 +7,9 @@
 
 **Drop in a song, get a playable osu!standard beatmap a minute later.**
 
-[中文](README.md) · [Download](https://github.com/kanze1/AUTO-OSU/releases) · [How to use](#how-to-use) · [Quality and limits](#quality-and-limits) · [How it works](#how-it-works) · [FAQ](#faq)
+[中文](README.md) · [Download](https://github.com/kanze1/AUTO-OSU/releases) · [How to use](#how-to-use) · [Quality and limits](#quality-and-limits) · [Development schedule](#development-schedule) · [Contribute](#branch-management) · [Community](#community-and-feedback)
+
+**QQ community group: 1124526648** — search for the group number in QQ to discuss feedback, beatmaps, model experiments, and contributions.
 
 ![AUTO-OSU main window](docs/screenshot_zh.png)
 
@@ -25,13 +27,17 @@
 I am bad at osu! and I love playing it. The worst part: the songs I want to play have no maps, and I can't map.
 So: AUTO-OSU. Drop in the song you like, and a minute later you can play it.
 
-This is v0, and it already makes maps I am happy to play all the way through: the rhythm sits on the drums,
-the jumps and streams are learned from over a hundred thousand ranked maps, and all four difficulties come out in one go.
+The current app is **0.2.0**, with **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
+the jumps and streams are learned from over a hundred thousand ranked / approved / loved maps, and all four difficulties come out in one go.
 It will keep getting better: mapper intent, deliberate highlights, longer sliders and multiple red lines for tempo changes
 are all on the roadmap.
 
 If you are also someone who "just wants to play that one song", take it, open issues, improve it with me.
 If it helps you, a ⭐ **star** means a lot. — kanzei
+
+This project is for local play, practice, and generation experiments. When sharing a map, disclose the use of AUTO-OSU, preserve its generation information, and do not present it as handmade.
+The current osu! [Ranked AI policy](https://osu.ppy.sh/wiki/en/Ranking_criteria#ai-policy) requires hit objects, hitsounds, and timing to be created by direct human input.
+Do not submit maps generated with this tool for Ranked; manual review or AI attribution does not change that requirement.
 
 ## How to use
 
@@ -89,7 +95,7 @@ ffmpeg ships with the program; nothing to install.
 | Seed | Another number gives another layout for the same song; the same seed reproduces the same map. |
 | BPM / offset | Blank = detected. Fill in by hand when detection is off (tempo changes, near-empty intros). Offset in ms. |
 | Creator name | Written into the `.osu` as Creator, default AUTO-OSU. |
-| Star rating | Difficulty hint for the models; blank = per-difficulty default: Easy 2.0 / Normal 3.2 / Hard 4.5 / Insane 5.5. Raise it for a denser Hard. |
+| Star rating | Difficulty hint for the models; blank = per-difficulty default: Easy 2.0 / Normal 3.2 / Hard 4.5 / Insane 5.5. This is not the measured rating of the output; measurement and calibration are on the development schedule. |
 | Placement quality | Diffusion steps of the coordinate model: fast 50 / standard 100 / fine 200. Standard is plenty. |
 | Engine | "AI models" is the normal mode; "rules only" needs no models and maps in seconds — for comparison or when models are missing. |
 | Preview mp3 | Also saves an mp3 with the song turned down and a click on every object, to check the rhythm without opening osu!. |
@@ -145,10 +151,11 @@ Python 3.10 or newer. This is also how to run it on macOS / Linux; the exe is Wi
 
 ## Quality and limits
 
-- **The rhythm sits on the drums.** On the validation set the rhythm model reaches an onset F1 of 0.96 against the human map; two human difficulties of the same song agree at only 0.74.
-- **Placement looks human.** The coordinate model generates coordinates from pure noise; jumps, streams and slider shapes are learned. Every slider is fitted so it stays on screen.
+- **Rhythm model.** The v0 training evaluation recorded a generated-onset F1 of 0.963. Evaluation uses the reference map's timing and true local density, with a default of six sequences of up to 512 ticks each. This does not measure end-to-end quality on arbitrary songs or establish superiority over human mapping.
+- **Coordinates and sliders.** The coordinate model generates positions from pure noise, learning jumps, streams, and slider shapes. Sliders are fitted to the playfield and required length before export. Historical test samples had no paths outside the playfield; playability still needs checking on actual songs.
 - **What is still missing.** One red line per song; slider length is not a model input yet, so long sliders on fast songs are occasionally shortened (a green line keeps the timing right);
-  hitsounds are simple drum-based whistle / clap / finish; no storyboard. Check the map in the editor before submitting it anywhere.
+  hitsounds are simple drum-based whistle / clap / finish; no storyboard. Check timing, readability, and playability in the editor before playing or sharing a map.
+- **Source identification.** Outputs currently carry `autoosu ai-generated kanzei` tags, but the app has no source checker yet. Tags are editable and are currently shared by the rules-only mode, so they cannot establish which model was used. Planned work will distinguish engines and investigate detection of older v0 outputs.
 
 ## How it works
 
@@ -177,6 +184,8 @@ and only as a last resort shortened with a local green line. Fast songs get a lo
 | --- | --- | --- | --- | --- | --- |
 | Rhythm, masked v0 | 139,582 osu!standard beatmaps ([project-riz/osu-beatmaps](https://huggingface.co/datasets/project-riz/osu-beatmaps)) | 2 × RTX 5880 Ada | 60k, batch 128 | 4.5 h | step 40k used: generated-onset F1 0.963, density error 0.10 |
 | Coordinates, DiT-B v0 | 140,018 maps of the same corpus (ORS layout) | 2 × RTX 5880 Ada | 200k, batch 128 | 8.5 h | final loss 0.125; 0 % out of bounds; layouts at 50k / 100k / 200k nearly identical for one seed |
+
+These are historical experiment records. See "Quality and limits" above for the F1 conditions and sampling scope; boundary and layout comparisons refer to tested samples.
 
 An autoregressive rhythm model was trained too; causal attention could not hear the upcoming audio and it liked to hide behind spinners, so the masked version won.
 The full log, failed routes included, is in [docs/rhythm_model_design.md](docs/rhythm_model_design.md) (Chinese);
@@ -212,11 +221,52 @@ and put them into the `models/` folder next to the exe (or `~/.autoosu/models/`)
 
 **A format will not decode?** Make sure the file plays at all; the program tries libsndfile, then the bundled ffmpeg, and reports the exact reason if both fail.
 
-## Roadmap
+## Development schedule
 
-- Coordinate model v1: required slider length as a per-point condition, ending shortened long sliders for good.
-- Rhythm model: mapper-style condition, 1/12 grid for triplets.
-- Several seeds per song to pick from; multiple red lines for tempo changes.
+Work follows priority and dependency order, without time commitments. Completion and release depend on validation, PRs, and Release notes.
+
+| Priority / order | Work | Completion criteria | Status |
+| --- | --- | --- | --- |
+| P0 · Documentation and collaboration | Usage and attribution guidance, bilingual README, branch and contribution rules, community group | Consistent documentation that distinguishes planned and released features | Updated |
+| P0 · Source identification | Generation records, model identities, content fingerprints, and an in-app source checker; a feasibility study for older v0 outputs | Read `.osu` / `.osz`; report tags, record matches, and experimental detection false positives / recall separately | Planned |
+| P1 · Difficulty control | Measured star ratings, a fixed evaluation song set, and density / spacing control for higher difficulties | Compare target and measured ratings; validate 6–7★ before extending to 7–8★, including local difficulty peaks and playability | Planned |
+| P1 · Musical sections | Highlight control and automatic section selection | Validate manual regions first, then automatic selection; coordinate density, spacing, hitsounds, and kiai through buildup, peak, and release | Planned |
+| P2 · Model iteration | High-star data, finer rhythm representation, slider-length and section conditioning, multiple timing sections | Update released models only after controlled comparisons and the fixed evaluation set show improvement | Depends on earlier experiments |
+
+Statistical detection of older maps will enter the app only after independent evaluation at a low false-positive threshold. No detection means "unable to determine", not proof of human authorship.
+See the [detailed task plan and analysis](docs/roadmap-2026-09-24.md) (Chinese) for scope, dependencies, and acceptance criteria.
+
+## Branch management
+
+| Branch | Purpose | Merge process |
+| --- | --- | --- |
+| `master` | Release-ready mainline with validated features | Merge through PRs reviewed by a maintainer; existing Windows / Ubuntu CI must pass |
+| `feat/*`, `fix/*`, `docs/*` | Features, fixes, and documentation, one focused change per branch | Start from the latest `master` and open a PR against `master` |
+| `exp/*` | Model training, new game modes, and detection experiments | Provide baselines, settings, and evaluation before extracting deliverable changes into PRs |
+| `kanzei/*` | Maintainer and automation work | Follow the same PR and validation process |
+
+Keep development changes off direct pushes to `master`; do not force-push or delete the main branch. Maintainers manage version tags and official Releases.
+External contributors should fork the repository, work on a branch, and open a PR. Develop new game modes separately and verify the existing osu!standard flow.
+See [CONTRIBUTING.md](CONTRIBUTING.md#english) for steps and PR requirements.
+
+## Open-source collaboration agreement
+
+Forks, fixes, translations, model experiments, and new game modes are welcome. These are the collaboration terms; [LICENSE](LICENSE) governs use of the code and models:
+
+- When contributing, confirm that you have the right to provide the code, models, or assets and agree to distribute your original contributions under the project's existing licence. Contributors retain their copyright and attribution.
+- Identify the source of third-party code, models, and assets, and preserve their licences and copyright notices. Their original licences continue to apply.
+- Open an issue before a substantial change, or record a group discussion in an issue, to coordinate work. Explain the change, validation, and known limitations in the PR.
+- AI-assisted development is welcome; the submitter is responsible for understanding, reviewing, and validating the result. Model changes should include data sources, configuration, and reproducible evaluation.
+- Clearly identify forks and derivative releases, their relationship to this project, and their changes. Do not present them as official releases. Follow the attribution requirements below for commercial or large-scale use.
+
+The full submission workflow is in the [contribution guide](CONTRIBUTING.md).
+
+## Community and feedback
+
+**QQ community group: 1124526648** — search for this group number in QQ. Discuss generated maps, high-difficulty and highlight requests, usage feedback, and development.
+
+Also record reproducible bugs, feature proposals, and collaboration tasks in [GitHub Issues](https://github.com/kanze1/AUTO-OSU/issues),
+including the app version, generation settings, reproduction steps, and relevant logs so they can be tracked.
 
 ## Licence and attribution
 
