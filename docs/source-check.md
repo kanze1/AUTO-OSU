@@ -1,6 +1,6 @@
 # Source evidence in the application
 
-Implemented in the **0.3.0.dev0 source checkout**. The published 0.2.0 download does not have this feature. Rhythm and coordinate weights remain v0.
+Source checking started in **0.3.0.dev0**; **0.3.0.dev2** adds [new-map content watermarks](generation-watermark.md). The published 0.2.0 download does not have these features. Rhythm and coordinate weights remain v0.
 
 Use **Check source / 检查谱面来源** in the desktop app. Select an `.osu`, `.osz`, or folder, optionally include subfolders, and save a JSON report. Checking runs in a background thread and does not load models, contact a server, or add records.
 
@@ -14,11 +14,12 @@ The result distinguishes:
 | Result | Meaning |
 | --- | --- |
 | Contains an AUTO-OSU declaration | Tags or a matching archive manifest claim this source; anyone can copy that claim |
+| AUTO-OSU content watermark detected | Circle coordinates match the public marker; its engine claim is not authentication and can be copied or removed |
 | Matches a local generation record | Exact file bytes or the defined content fields match a record in the selected local store |
 | Inconclusive | Insufficient evidence; this never means human authorship |
 | Could not read | Invalid archive, unreadable input, or a resource limit prevented reading |
 
-Statistical detection is unavailable. [The v0 screening experiment](detection-v0-screen.md) did not pass its release gate.
+Statistical attribution of older unmarked maps is out of scope by maintainer decision. [The v0 screening experiment](detection-v0-screen.md) is retained as historical evidence. New-map marker checking does not depend on that classifier experiment, tags, the archive manifest or access to local records. A local-record match takes display priority while the JSON and text reports still show the marker result separately.
 
 ## New generation records
 

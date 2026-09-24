@@ -16,7 +16,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("audio", nargs="?", help="audio/video file, or a folder for batch generation")
     p.add_argument("--recursive", action="store_true", help="also scan subfolders for batch generation")
     p.add_argument("--check-cuda", action="store_true", help="check CUDA in this runtime and exit")
-    p.add_argument("--check-source", type=Path, metavar="PATH", help="check source declarations and local records in .osu, .osz or a folder")
+    p.add_argument("--check-source", type=Path, metavar="PATH", help="check new-map watermarks, declarations and local records in .osu, .osz or a folder")
     p.add_argument("--source-report", type=Path, metavar="JSON", help="save --check-source results as JSON")
     p.add_argument("--records-dir", type=Path, help="local generation record directory (default: ~/.autoosu/provenance)")
     p.add_argument("--setup-runtime", action="store_true", help="use uv to install and verify an app-managed GPU runtime")

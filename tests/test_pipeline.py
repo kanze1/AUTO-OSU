@@ -63,6 +63,13 @@ def test_generated_source_record_and_worker_summary(result):
     assert all(r["status"] == "local_record_match" for r in check_source(result.osz)["results"])
     data = summary(result)
     assert data["generation_id"] == manifest["generation_id"] and data["provenance_recorded"]
+    from autoosu.watermark import detect_watermark
+    for diff, row, worker_diff in zip(result.diffs, manifest["maps"], data["diffs"]):
+        assert row["watermark"] == diff.watermark == worker_diff["watermark"]
+        checked = detect_watermark(diff.beatmap.to_osu().encode())
+        assert checked["status"] == ("detected" if diff.watermark["status"] == "embedded" else "insufficient")
+        if checked["status"] == "detected":
+            assert checked["engine_claim"] == "rules"
 
 
 def test_saved_evaluation_matches_exported_maps(result):

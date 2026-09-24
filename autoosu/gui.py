@@ -761,6 +761,8 @@ def create_app():
                                 self.log(tr("result.stars_unavailable"))
                             if s.get("star_condition") is not None:
                                 self.log(tr("result.condition", stars=s["star_condition"]))
+                            if s.get("watermark", {}).get("status") in ("embedded", "insufficient", "unsupported"):
+                                self.log(tr("result.watermark." + s["watermark"]["status"]))
                         if res.get("evaluation_path"):
                             self.log(tr("result.evaluation", path=res["evaluation_path"]))
                         self._flash_done()

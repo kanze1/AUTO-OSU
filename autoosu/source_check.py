@@ -8,6 +8,7 @@ from pathlib import Path
 
 from .provenance import (MANIFEST_NAME, MAX_MANIFEST_BYTES, MAX_MAP_BYTES, fingerprint,
                          local_matches, parse_sections, record_dir, valid_manifest)
+from .watermark import detect_watermark
 
 MAX_ARCHIVE_ENTRIES = 4096
 MAX_TOTAL_MAP_BYTES = 128 * 1024 * 1024
@@ -28,6 +29,7 @@ def _check_map(raw: bytes, name: str, records: Path, manifest=None) -> dict:
             result["status"] = "declaration"
         digests = fingerprint(raw)
         result.update(digests)
+        result["watermark"] = detect_watermark(raw)
         if manifest is not None:
             matches = [m for m in manifest["maps"] if m["content_sha256"] == digests["content_sha256"]]
             if matches:
@@ -38,6 +40,8 @@ def _check_map(raw: bytes, name: str, records: Path, manifest=None) -> dict:
             else:
                 result["manifest"] = "no-matching-content"
                 result["warnings"].append("Archive manifest does not describe this map's checked content")
+        if result["watermark"]["status"] == "detected":
+            result["status"] = "watermark_detected"
         result["local_records"], warnings = local_matches(digests, records)
         result["warnings"].extend(warnings)
         if result["local_records"]:
@@ -115,8 +119,8 @@ def check_source(path: str | Path, *, recursive: bool = False, records_dir: Path
         raise ValueError("Choose an .osu file, an .osz archive, or a folder")
     results = [item for file in files for item in _read_file(file, records)]
     return dict(schema="autoosu.source-report/1", records_scope=str(records),
-                statistical_detection="unavailable: independent evaluation gate not met",
-                interpretation="Declarations can be copied. A local match is limited to this store and the checked fields. No match does not imply human authorship.",
+                statistical_detection="unavailable: attribution of old unmarked maps is out of scope",
+                interpretation="Declarations and public watermarks can be copied or removed. Neither authenticates model execution. A local match is limited to this store and the checked fields. No match does not imply human authorship.",
                 results=results)
 
 
@@ -129,6 +133,12 @@ def format_report(report: dict, lang: str = "en") -> str:
     for item in report["results"]:
         lines.append(item["file"])
         lines.append("  " + message("source.status." + item["status"]))
+        mark = item.get("watermark", {})
+        if mark.get("status") == "detected":
+            lines.append("  " + message("source.watermark", engine=message("source.watermark.engine." + mark["engine_claim"]),
+                                        matched=mark["matched_bits"], bits=mark["bits"]))
+        elif mark:
+            lines.append("  " + message("source.watermark." + mark["status"]))
         if item.get("tags"):
             lines.append("  Tags: " + " ".join(item["tags"]))
         if item.get("declared_engine"):
