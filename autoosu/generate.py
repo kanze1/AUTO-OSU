@@ -16,6 +16,8 @@ from .difficulty import DifficultyPreset, get_preset
 from .controls import (accent_events, candidate_rejections, controlled_sections, density_profile,
                        region_metrics, resolve_highlights, validate_controls)
 from .metrics import compact_measurement, inspect_structure, measure_difficulty
+from .preferences import (pattern_metrics, preference_density, preference_options,
+                          select_preference)
 from .package import extract_cover, prepare_audio, prepare_background, read_metadata, sanitize, write_osz
 from .provenance import atomic_json, build_manifest, engine_info, fingerprint, model_identity, source_tags, store_record
 from .placement import place
@@ -170,12 +172,16 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
     if star_rating is not None and (not np.isfinite(star_rating) or not 0 < star_rating <= 12):
         raise ValueError("Star condition must be finite and between 0 and 12")
     options = validate_controls(controls)
+    preference = options["skill_preference"]
+    use_preference = preference != "balanced"
     if density is not None:
         if options["density"] is not None or options["density_curve"]:
             raise ValueError("Density is specified both as an argument and in generation controls")
         options = validate_controls(dict(options, density=density))
     if options["target_stars"] is not None and not (rhythm_model and coord_model):
         raise ValueError("Target-star candidate selection requires both models")
+    if use_preference and not (rhythm_model and coord_model):
+        raise ValueError("Skill preferences require both models")
     if (options["density"] is not None or options["density_curve"]) and not rhythm_model:
         raise ValueError("Density conditioning requires the rhythm model")
     audio_path, out_dir = Path(audio_path), Path(out_dir)
@@ -247,13 +253,21 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
         base = 0.28 + i * span
         preset = effective_preset(preset, timing)
         star = star_rating if star_rating is not None else (options["target_stars"] or preset.star)
-        count = options["candidates"] if options["target_stars"] is not None else 1
+        count = options["candidates"] if options["target_stars"] is not None or use_preference else 1
         candidates, attempts = [], []
         for attempt in range(count):
             attempt_options = dict(options)
             condition = star
             reference_candidate = None
-            if attempt:
+            if use_preference and attempt:
+                attempt_options = preference_options(options)
+                reference_candidate = attempt - 1
+                reference = candidates[reference_candidate]
+                measured = reference.measurement.get("stars")
+                goal = options["target_stars"] if options["target_stars"] is not None else candidates[0].measurement.get("stars")
+                correction = goal - measured if goal is not None and measured is not None else 0.
+                condition = float(np.clip(reference.star_condition + correction, 1, 12))
+            elif attempt:
                 reference_candidate = 0
                 measured = candidates[0].measurement.get("stars")
                 correction = options["target_stars"] - measured if measured is not None else 0.
@@ -276,10 +290,20 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                 common = dict(star_rating=condition, temperature=temperature, none_bias=density_bias,
                               decode_steps=decode_steps, seed=seed * 1000 + i, device=dev)
                 reference = None
-                if plan["regions"] and options["highlight_density"] and attempt_options["density"] is None and not attempt_options["density_curve"]:
+                default_preference_rhythm = (use_preference and attempt and attempt_options["density"] is None
+                                            and not attempt_options["density_curve"])
+                keep_reference_rhythm = default_preference_rhythm and preference == "jumps"
+                inferred_preference_density = default_preference_rhythm and preference == "streams"
+                if keep_reference_rhythm:
+                    events = [dataclasses.replace(event) for event in candidates[0].events]
+                elif inferred_preference_density:
+                    profile = preference_density(times, candidates[0].events, preference)
+                elif plan["regions"] and options["highlight_density"] and attempt_options["density"] is None and not attempt_options["density_curve"]:
                     reference = generate_rhythm(model, mel, timing, preset, analysis, sections, **common)
-                profile = density_profile(times, attempt_options, plan["regions"], baseline_events=reference)
-                events = generate_rhythm(model, mel, timing, preset, analysis, sections, density=profile, **common)
+                if not inferred_preference_density and not keep_reference_rhythm:
+                    profile = density_profile(times, attempt_options, plan["regions"], baseline_events=reference)
+                if not keep_reference_rhythm:
+                    events = generate_rhythm(model, mel, timing, preset, analysis, sections, density=profile, **common)
             else:
                 events = build_events(analysis, timing, preset, rng, sections)
             accent_events(events, plan["regions"])
@@ -315,11 +339,23 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                                  spacing_scale=attempt_options["spacing_scale"], measured=compact_measurement(measurement),
                                  diagnostics=diagnostics, peaks=measurement.get("peaks"), rejection_reasons=reasons,
                                  raw_sha256=fingerprint(bm.to_osu().encode())["raw_sha256"]))
+            if use_preference:
+                attempts[-1].update(patterns=pattern_metrics(bm, timing.beat_length),
+                                    skill_preference=preference if attempt else "balanced",
+                                    rhythm_star_condition=candidates[0].star_condition if keep_reference_rhythm else condition,
+                                    density_source=("reference_events" if keep_reference_rhythm else
+                                                    "reference_scaled" if inferred_preference_density else "user_or_default"))
             candidates.append(candidate)
-            if options["target_stars"] is not None and not reasons and abs(measurement["stars"]-options["target_stars"]) <= .5:
+            if use_preference:
+                _, preference_report = select_preference(attempts, preference, options["target_stars"])
+                if preference_report["status"] == "observed":
+                    break
+            elif options["target_stars"] is not None and not reasons and abs(measurement["stars"]-options["target_stars"]) <= .5:
                 break
         eligible = [j for j, a in enumerate(attempts) if not a["rejection_reasons"]]
-        if options["target_stars"] is not None and eligible:
+        if use_preference:
+            chosen, preference_report = select_preference(attempts, preference, options["target_stars"])
+        elif options["target_stars"] is not None and eligible:
             chosen = min(eligible, key=lambda j: abs(candidates[j].measurement["stars"]-options["target_stars"]))
         else:
             chosen = 0
@@ -331,6 +367,11 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                                   target_stars=target, target_met=achieved if target is not None else None,
                                   selection_status="accepted" if chosen in eligible else "fallback_unverified",
                                   regions=region_metrics(bm, measurement, plan["regions"], osu_shift_ms))
+        if use_preference:
+            res.control_report["preference"] = preference_report
+            log(f"      skill preference {preference}: {preference_report['status']}; selected candidate {chosen+1}/{len(attempts)}")
+            if preference_report["status"] != "observed":
+                warnings.append(f"{preset.name}: {preference} preference not observed within the measured-star tolerance; check the saved result and its structural status")
         if target is not None:
             log(f"      target {target:g}: {'within tolerance' if achieved else 'not reached'}; selected candidate {chosen+1}/{len(attempts)}")
             if not achieved:

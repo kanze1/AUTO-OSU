@@ -16,7 +16,7 @@ def open_control_window(parent):
         return STRINGS["control."+key][lang]
     window = ctk.CTkToplevel(parent)
     window.title(text("title"))
-    window.geometry("740x640")
+    window.geometry("740x690")
     window.minsize(660, 540)
     window.grid_columnconfigure(0, weight=1)
     window.grid_rowconfigure(0, weight=1)
@@ -26,20 +26,25 @@ def open_control_window(parent):
     ctk.CTkLabel(body, text=text("hint"), wraplength=650, justify="left", font=parent.font).grid(
         row=0, column=0, columnspan=2, sticky="w", pady=(0, 14))
     fields = {}
-    for row, key in enumerate(("target_stars", "density", "spacing_scale", "candidates"), 1):
+    preference_labels = {mode: text("preference."+mode) for mode in ("balanced", "jumps", "streams")}
+    preference_var = ctk.StringVar()
+    ctk.CTkLabel(body, text=text("skill_preference"), font=parent.font).grid(row=1, column=0, sticky="w", padx=(0, 14), pady=8)
+    ctk.CTkOptionMenu(body, variable=preference_var, values=list(preference_labels.values()), font=parent.font).grid(
+        row=1, column=1, sticky="ew")
+    for row, key in enumerate(("target_stars", "density", "spacing_scale", "candidates"), 2):
         ctk.CTkLabel(body, text=text(key), font=parent.font).grid(row=row, column=0, sticky="w", padx=(0, 14), pady=5)
         fields[key] = ctk.StringVar()
         ctk.CTkEntry(body, textvariable=fields[key], font=parent.font).grid(row=row, column=1, sticky="ew", pady=5)
     labels = {mode: text("mode."+mode) for mode in ("auto", "manual", "off", "legacy")}
-    ctk.CTkLabel(body, text=text("mode"), font=parent.font).grid(row=5, column=0, sticky="w", pady=8)
+    ctk.CTkLabel(body, text=text("mode"), font=parent.font).grid(row=6, column=0, sticky="w", pady=8)
     mode_var = ctk.StringVar()
-    ctk.CTkOptionMenu(body, variable=mode_var, values=list(labels.values()), font=parent.font).grid(row=5, column=1, sticky="ew")
+    ctk.CTkOptionMenu(body, variable=mode_var, values=list(labels.values()), font=parent.font).grid(row=6, column=1, sticky="ew")
     sv_var = ctk.BooleanVar()
-    ctk.CTkCheckBox(body, text=text("sv"), variable=sv_var, font=parent.font).grid(row=6, column=0, columnspan=2, sticky="w", pady=8)
+    ctk.CTkCheckBox(body, text=text("sv"), variable=sv_var, font=parent.font).grid(row=7, column=0, columnspan=2, sticky="w", pady=8)
     ctk.CTkLabel(body, text=text("regions"), font=parent.font, justify="left", wraplength=650).grid(
-        row=7, column=0, columnspan=2, sticky="w", pady=(14, 5))
+        row=8, column=0, columnspan=2, sticky="w", pady=(14, 5))
     region_frame = ctk.CTkFrame(body, fg_color="transparent")
-    region_frame.grid(row=8, column=0, columnspan=2, sticky="ew")
+    region_frame.grid(row=9, column=0, columnspan=2, sticky="ew")
     region_frame.grid_columnconfigure((0, 1, 2), weight=1)
     for col, key in enumerate(("start", "end", "strength")):
         ctk.CTkLabel(region_frame, text=text(key), font=parent.font).grid(row=0, column=col, sticky="w")
@@ -61,6 +66,7 @@ def open_control_window(parent):
         for key, var in fields.items():
             var.set("" if options[key] is None else str(options[key]))
         mode_var.set(labels[options["highlight_mode"]])
+        preference_var.set(preference_labels[options["skill_preference"]])
         sv_var.set(options["highlight_sv"])
         for row, _ in rows:
             for _, widget in row:
@@ -74,6 +80,7 @@ def open_control_window(parent):
             value = var.get().strip()
             options[key] = int(value or 3) if key == "candidates" else float(value) if value else None
         options["highlight_mode"] = next(k for k, v in labels.items() if v == mode_var.get())
+        options["skill_preference"] = next(k for k, v in preference_labels.items() if v == preference_var.get())
         options["highlight_sv"] = bool(sv_var.get())
         options["highlights"] = []
         if options["highlight_mode"] == "manual":
@@ -102,9 +109,9 @@ def open_control_window(parent):
             if not path.lower().endswith(".json"):
                 raise ValueError("Choose a .json file")
             atomic_json(Path(path), dict(schema="autoosu.control-plan/1", controls=options))
-    ctk.CTkButton(body, text=text("add"), command=add_region, font=parent.font).grid(row=9, column=0, sticky="w", pady=8)
+    ctk.CTkButton(body, text=text("add"), command=add_region, font=parent.font).grid(row=10, column=0, sticky="w", pady=8)
     ctk.CTkLabel(body, text=text("curve_hint"), font=parent.font, wraplength=650, justify="left").grid(
-        row=10, column=0, columnspan=2, sticky="w", pady=8)
+        row=11, column=0, columnspan=2, sticky="w", pady=8)
     buttons = ctk.CTkFrame(window, fg_color="transparent")
     buttons.grid(row=1, column=0, sticky="ew", padx=16, pady=(0, 16))
     for label, action in (("load", load), ("save", save), ("reset", lambda:populate(validate_controls())), ("apply", apply)):

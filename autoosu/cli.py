@@ -49,7 +49,9 @@ def build_parser() -> argparse.ArgumentParser:
     c = p.add_argument_group("experimental difficulty and highlight controls")
     c.add_argument("--control-plan", type=Path, help="JSON generation control plan")
     c.add_argument("--target-star", type=float, help="measured star target; up to three candidates, not a guarantee")
-    c.add_argument("--candidates", type=int, choices=[1, 2, 3], help="maximum target-star candidates")
+    c.add_argument("--candidates", type=int, choices=[1, 2, 3], help="maximum candidates; skill preferences need at least two")
+    c.add_argument("--skill-preference", choices=["balanced", "jumps", "streams"],
+                   help="experimental pattern preference at a similar measured difficulty")
     c.add_argument("--spacing-scale", type=float, help="optional incoming-head distance scale, 0.5..1.5; adds a coordinate pass")
     c.add_argument("--highlight-mode", choices=["legacy", "off", "manual", "auto"])
     c.add_argument("--highlight", action="append", default=[], metavar="START:END[:STRENGTH]",
@@ -68,7 +70,7 @@ def generation_controls(args):
     values = load_control_file(args.control_plan) if args.control_plan else {}
     for key, value in (("target_stars", args.target_star), ("candidates", args.candidates),
                        ("spacing_scale", args.spacing_scale), ("highlight_mode", args.highlight_mode),
-                       ("highlight_sv", args.highlight_sv)):
+                       ("highlight_sv", args.highlight_sv), ("skill_preference", args.skill_preference)):
         if value is not None:
             values[key] = value
     if args.highlight:

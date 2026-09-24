@@ -579,9 +579,17 @@ def create_app():
                     parts.append(tr("control."+key)+f": {controls[key]:g}")
             if controls["density_curve"]:
                 parts.append(tr("control.curve_active"))
+            if controls["skill_preference"] != "balanced":
+                parts.append(tr("control.preference."+controls["skill_preference"]))
             if controls["highlight_mode"] != "legacy":
                 parts.append(tr("control.mode."+controls["highlight_mode"]))
             self.widgets["control.status"].configure(text=" · ".join(parts) or tr("control.default"))
+
+        def log_preference(self, summary):
+            preference = summary.get("controls", {}).get("preference")
+            if preference:
+                self.log(tr("control.result.preference", name=tr("control.preference."+preference["requested"]),
+                            result=tr("control.result.preference_"+preference["status"])))
 
         def start(self) -> None:
             if self.busy or self.cuda_checking:
@@ -758,6 +766,11 @@ def create_app():
                                                                remaining=remaining, secs=result.elapsed_s))
                         self.widgets["run.open_osz"].configure(state="normal" if self.last_osz else "disabled")
                         self.log(tr("batch.report", path=result.report))
+                        for job in result.items:
+                            for summary in job.diffs:
+                                if summary.get("controls", {}).get("preference"):
+                                    self.log(f"{Path(job.source).name} [{summary['name']}]")
+                                    self.log_preference(summary)
                         self.active_batch = False
                     elif kind == "log":
                         self.log(item[1])
@@ -795,6 +808,7 @@ def create_app():
                             if s.get("watermark", {}).get("status") in ("embedded", "insufficient", "unsupported"):
                                 self.log(tr("result.watermark." + s["watermark"]["status"]))
                             control = s.get("controls", {})
+                            self.log_preference(s)
                             if control.get("target_stars") is not None:
                                 self.log(tr("control.result.target", target=control["target_stars"],
                                             result=tr("control.result.met" if control["target_met"] else "control.result.missed"),
