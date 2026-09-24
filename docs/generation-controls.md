@@ -1,6 +1,6 @@
 # 难度与 highlight 控制：验收版
 
-源码版本 **0.3.0.dev3**，权重仍为 v0。新功能位于高级选项中的「难度与 highlight 控制（实验）」。默认留空时沿用原有生成方式；本轮增加控制接口和有限候选搜索，不声称模型已经稳定达到指定星级或理解音乐高潮。
+当前候选版 **0.3.0rc1**，权重仍为 v0。高级选项中的「难度与 highlight 控制（实验）」默认自动建议 highlight，保留手动、关闭和原有 kiai 模式。已保存的选择继续生效。本页冻结实验来自 0.3.0.dev3；[后续人工反馈与高难度样例](release-0.3.0rc1.md)单独记录。
 
 ## 可操作的功能
 
@@ -98,7 +98,7 @@ python scripts/evaluate_controls.py curves --out out/new-reference --partition h
 
 ## English
 
-The 0.3.0.dev3 development app adds optional measured-star candidate selection, smoothed local density curves, two-pass pixel-distance conditioning, manual audio-time highlights and conservative automatic proposals. Defaults preserve the original generator. Target selection is bounded to three candidates and explicitly reports failure; neither measured stars nor parser validity establish playability.
+The 0.3.0.dev3 development app adds optional measured-star candidate selection, smoothed local density curves, two-pass pixel-distance conditioning, manual audio-time highlights and conservative automatic proposals. The original 0.3.0.dev3 defaults preserved the old generator. In 0.3.0rc1, new configurations default to automatic highlights; explicit saved modes and the original kiai option are preserved. Target selection is bounded to three candidates and explicitly reports failure; neither measured stars nor parser validity establish playability.
 
 Manual regions coordinate density, spacing, combos, hitsounds and kiai, with optional slider-velocity changes. Automatic locations combine bar-level loudness and percussive/harmonic onset contrasts, abstaining on insufficient contrast. Plans are shared across the GUI, CLI, isolated worker and folder batches. Original audio seconds are converted to map time only on export.
 

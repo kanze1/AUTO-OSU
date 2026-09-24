@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 
 DEFAULTS = dict(target_stars=None, candidates=3, density=None, density_curve=[], spacing_scale=None,
-                highlight_mode="legacy", highlights=[], highlight_sv=False,
+                highlight_mode="auto", highlights=[], highlight_sv=False,
                 highlight_density=True, highlight_spacing=True)
 
 

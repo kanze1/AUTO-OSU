@@ -27,7 +27,7 @@
 I am bad at osu! and I love playing it. The worst part: the songs I want to play have no maps, and I can't map.
 So: AUTO-OSU. Drop in the song you like, and a minute later you can play it.
 
-The published app is **0.2.0**; the source development version is **0.3.0.dev3**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
+The published app is **0.2.0**; the source release candidate is **0.3.0rc1**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
 the jumps and streams are learned from over a hundred thousand ranked / approved / loved maps, and all four difficulties come out in one go.
 It will keep getting better: mapper intent, deliberate highlights, longer sliders and multiple red lines for tempo changes
 are all on the roadmap.
@@ -100,11 +100,11 @@ ffmpeg ships with the program; nothing to install.
 | Engine | "AI models" is the normal mode; "rules only" needs no models and maps in seconds — for comparison or when models are missing. |
 | Preview mp3 | Also saves an mp3 with the song turned down and a click on every object, to check the rhythm without opening osu!. |
 
-### Difficulty and highlight controls (source experiment)
+### Difficulty and highlight controls
 
-Open **Difficulty & highlight controls** in the advanced options. Set a measured star target, density, spacing scale, or highlight regions in original audio seconds. Target selection tries at most three candidates, excludes structural errors and isolated strain spikes, and chooses by measured difficulty. A missed target is reported explicitly. Blank controls with the original kiai mode preserve the existing generator.
+Open **Difficulty & highlight controls** in the advanced options. Set a measured star target, density, spacing scale, or highlight regions in original audio seconds. Target selection tries at most three candidates, excludes structural errors and isolated strain spikes, and chooses by measured difficulty. A missed target is reported explicitly. New configurations default to automatic highlights; manual, off and original kiai modes remain available. Explicitly saved modes are preserved. Leave other controls blank and choose original kiai to reproduce the original generator.
 
-Manual highlights coordinate density, spacing, combos, hitsounds and kiai; slider velocity is separately optional. Automatic mode combines loudness, percussive and harmonic onset features to propose bar-aligned regions, abstaining when contrast is too low. These controls remain experimental and need listening / playtesting; an automatic proposal is not a validated musical highlight.
+Manual highlights coordinate density, spacing, combos, hitsounds and kiai; slider velocity is separately optional. Automatic mode combines loudness, percussive and harmonic onset features to propose bar-aligned regions, abstaining when contrast is too low. The maintainer reviewed the first three A/B/C/D comparison sets, found them generally natural and preferred the first song's manual version. Automatic location and high-star targets remain experimental.
 
 ```powershell
 python -m autoosu "song.mp3" -d Insane --target-star 6.5 --candidates 3
@@ -113,7 +113,7 @@ python -m autoosu "song.mp3" -d Insane --highlight-mode auto
 python -m autoosu "song.mp3" -d Insane --control-plan "plan.json"
 ```
 
-Plans can be imported/exported and are shared by CLI, GUI, isolated workers and folder batches. A song shorter than its manual region fails explicitly while the batch continues. Spacing control and candidate generation cost additional inference time. See the [implementation and acceptance notes](docs/generation-controls.md).
+Plans can be imported/exported and are shared by CLI, GUI, isolated workers and folder batches. A song shorter than its manual region fails explicitly while the batch continues. Spacing control and candidate generation cost additional inference time. See the [implementation and acceptance notes](docs/generation-controls.md) and [0.3.0rc1 candidate / high-difficulty comparisons](docs/release-0.3.0rc1.md).
 
 ### Command line
 
@@ -264,8 +264,8 @@ Work follows priority and dependency order, without time commitments. Completion
 | --- | --- | --- | --- |
 | P0 · Documentation and collaboration | Usage and attribution guidance, bilingual README, branch and contribution rules, community group | Consistent documentation that distinguishes planned and released features | Updated |
 | P0 · New-map provenance | Default content watermark, generation records, model identities and content fingerprints; no retrospective attribution | Read `.osu` / `.osz`; test removed tags, edits, false positives and rating impact | Watermark and checker implemented in source; actual client resaving and playtesting remain |
-| P1 · Difficulty control | Measured stars, local density curves, two-pass spacing control and up to three candidates | Compare target and measured ratings; validate 6–7★ before 7–8★, including local strain and playability | Implemented as a source experiment; human acceptance pending |
-| P1 · Musical sections | Manual highlights and automatic proposals coordinate density, spacing, hitsounds and kiai | Validate manual regions, then compare automatic proposals with human annotations; abstain on low contrast | Implemented as a source experiment; musicality acceptance pending |
+| P1 · Difficulty control | Measured stars, local density curves, two-pass spacing control and up to three candidates | Compare target and measured ratings; validate 6–7★ before 7–8★, including local strain and playability | Implemented; initial maintainer review recorded, high-difficulty audition continues |
+| P1 · Musical sections | Manual highlights and automatic proposals coordinate density, spacing, hitsounds and kiai | Validate manual regions, then compare automatic proposals with human annotations; abstain on low contrast | Automatic by default with selectable modes; positive initial review, human location labels pending |
 | P2 · Model iteration | High-star data, finer rhythm representation, slider-length and section conditioning, multiple timing sections | Update released models only after controlled comparisons and the fixed evaluation set show improvement | Depends on earlier experiments |
 
 Detection targets future maps that receive the marker. Statistical attribution of older maps is no longer planned. No detection means "unable to determine", not proof of human authorship.

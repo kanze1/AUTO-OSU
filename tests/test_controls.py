@@ -123,6 +123,21 @@ def test_cli_and_json_plan_use_same_settings(tmp_path):
     assert generation_controls(args)['highlights'][0]['strength']==.7
 
 
+def test_default_auto_preserves_explicit_saved_modes_and_cli_overrides(tmp_path):
+    from autoosu.cli import build_parser,generation_controls
+    parser=build_parser()
+    assert generation_controls(parser.parse_args(['song.mp3']))['highlight_mode']=='auto'
+    for mode in ('legacy','off'):
+        path=tmp_path/f'{mode}.json'
+        path.write_text(json.dumps(dict(highlight_mode=mode)))
+        saved=load_control_file(path)
+        assert validate_controls(saved)['highlight_mode']==mode
+        args=parser.parse_args(['song.mp3','--control-plan',str(path),'--target-star','7'])
+        assert generation_controls(args)['highlight_mode']==mode
+        args=parser.parse_args(['song.mp3','--control-plan',str(path),'--highlight-mode','auto'])
+        assert generation_controls(args)['highlight_mode']=='auto'
+
+
 def test_rule_pipeline_exports_manual_kiai_in_audio_time_without_sv_boost(tmp_path):
     from autoosu.generate import generate
     from autoosu.source_check import check_source

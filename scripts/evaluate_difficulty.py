@@ -93,7 +93,8 @@ def run(args):
 
     corpus = json.loads((args.out / "corpus.json").read_text(encoding="utf-8"))
     songs = [s for s in corpus["songs"] if s["partition"] == args.partition]
-    settings = dict(seed=240924, decode_steps=12, coord_steps=100, temperature=.9, cfg_scale=1., device=args.device)
+    settings = dict(seed=240924, decode_steps=12, coord_steps=100, temperature=.9, cfg_scale=1., device=args.device,
+                    controls=dict(highlight_mode="legacy"))
     recipe = dict(corpus_sha256=digest(args.out / "corpus.json"), calculator_version=CALCULATOR_VERSION,
                   models={k: digest(args.models / f"{k}_v0.pt") for k in ("rhythm", "coord")},
                   code={p.relative_to(ROOT).as_posix(): digest(p) for p in sorted((ROOT / "autoosu").rglob("*.py"))},
