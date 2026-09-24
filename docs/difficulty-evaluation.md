@@ -33,7 +33,7 @@ The optional `curves` stage requires `slider` (this run used 0.8.2). It independ
 
 ## First development screen
 
-Evidence: [frozen 32-song corpus](difficulty-corpus.json), [96-output report with source/model identities and per-map results](difficulty-screen.json), and [independent curve checks](difficulty-curves.json). All 24 reserved songs remain unused. This screen does not verify training-set exclusion or generalize success rates to all music.
+Evidence: [frozen 32-song corpus](difficulty-corpus.json), [96-output report with source/model identities and per-map results](difficulty-screen.json), and [independent curve checks](difficulty-curves.json). At the time of this initial screen all 24 reserved songs were unused; they have since been evaluated once with the frozen [0.3.0.dev3 controls](generation-controls.md). This screen does not verify training-set exclusion or generalize success rates to all music.
 
 | Model condition | Reference timing: median measured stars | Automatic timing: median measured stars | Within ±0.5 stars, reference / automatic |
 | --- | --- | --- | --- |

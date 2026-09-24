@@ -191,6 +191,8 @@ def build_workspace(app, ctk, dnd_files):
     w["adv.engine.menu"].grid(row=3, column=3, sticky="w", padx=(0, 12), pady=5)
     w["adv.preview"] = ctk.CTkCheckBox(adv, variable=a.preview_var, font=a.font)
     w["adv.preview"].grid(row=4, column=0, columnspan=4, sticky="w", padx=12, pady=(5, 12))
+    w["control.open"] = ctk.CTkButton(adv, font=a.font, command=a.edit_generation_controls)
+    w["control.open"].grid(row=5, column=0, columnspan=4, sticky="ew", padx=12, pady=(0, 12))
     if a.advanced_open:
         adv.grid(row=2, column=0, columnspan=2, sticky="ew", pady=(0, 10))
 
@@ -202,8 +204,11 @@ def build_workspace(app, ctk, dnd_files):
     a.progress.set(0)
     w["status"] = ctk.CTkLabel(run, font=a.font, anchor="w", justify="left", wraplength=940)
     w["status"].grid(row=1, column=0, sticky="w", padx=26, pady=(7, 2))
+    w["control.status"] = ctk.CTkLabel(run, font=a.font, anchor="w", justify="left", wraplength=940,
+                                      text_color=PALETTE["muted"])
+    w["control.status"].grid(row=2, column=0, sticky="w", padx=26, pady=(0, 3))
     buttons = ctk.CTkFrame(run, fg_color="transparent")
-    buttons.grid(row=2, column=0, sticky="ew", padx=26, pady=(3, 9))
+    buttons.grid(row=3, column=0, sticky="ew", padx=26, pady=(3, 9))
     w["run.generate"] = ctk.CTkButton(buttons, height=38, width=185, font=a.font_bold, command=a.start)
     w["run.generate"].pack(side="left")
     secondary = dict(height=38, width=140, font=a.font, fg_color="transparent", border_width=1,
@@ -217,9 +222,9 @@ def build_workspace(app, ctk, dnd_files):
     w["run.check_source"] = ctk.CTkButton(buttons, command=a.check_source, **secondary)
     w["run.check_source"].pack(side="left", padx=(8, 0))
     a.log_box = ctk.CTkTextbox(run, font=ctk.CTkFont(family="Consolas", size=11), height=62, corner_radius=4)
-    a.log_box.grid(row=3, column=0, sticky="ew", padx=26, pady=(0, 7))
+    a.log_box.grid(row=4, column=0, sticky="ew", padx=26, pady=(0, 7))
     a.log_box.configure(state="disabled")
     w["about"] = ctk.CTkLabel(run, font=ctk.CTkFont(family=_ui_font(), size=10), text_color=PALETTE["muted"])
-    w["about"].grid(row=4, column=0, sticky="e", padx=26, pady=(0, 6))
+    w["about"].grid(row=5, column=0, sticky="e", padx=26, pady=(0, 6))
     a.song_var.trace_add("write", a.schedule_scan)
     a.out_var.trace_add("write", a.schedule_scan)

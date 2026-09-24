@@ -144,6 +144,7 @@ def create_app():
                 except Exception:
                     self.dnd_ok = False
             self.settings = load_settings()
+            self.generation_controls = self.settings.get("generation_controls", {})
             set_language(self.settings.get("language", "zh" if _system_is_chinese() else "en"))
             mode = self.settings.get("appearance") or "dark"
             self.mode = mode if mode in ("light", "dark") else "dark"
@@ -229,7 +230,7 @@ def create_app():
                         "adv.creator", "adv.star", "adv.quality", "adv.device", "adv.engine", "adv.preview",
                         "models.download", "run.open_osz", "run.open_folder", "run.check_source", "about", "input.recursive",
                         "input.queue", "batch.output_hint", "device.refresh", "batch.cancel",
-                        "runtime.install", "runtime.hint", "runtime.cancel"):
+                        "runtime.install", "runtime.hint", "runtime.cancel", "control.open"):
                 w[key].configure(text=tr(key))
             for name in PRESETS:
                 w[f"diff.{name}"].configure(text=tr(f"diff.{name}"))
@@ -246,6 +247,7 @@ def create_app():
             self.update_input_mode()
             self.render_queue()
             self.refresh_cuda_text()
+            self.refresh_control_summary()
 
         # ------------------------------------------------------------------ animations
         def _fade_in(self) -> None:
@@ -524,7 +526,7 @@ def create_app():
             self.busy = busy
             state = "disabled" if busy else "normal"
             for key in ("run.generate", "models.download", "song.entry", "song.browse", "input.mode", "input.recursive",
-                        "out.entry", "out.browse", "out.open_osu", "adv.device.menu", "adv.quality.menu", "adv.engine.menu", "adv.preview", "runtime.install"):
+                        "out.entry", "out.browse", "out.open_osu", "adv.device.menu", "adv.quality.menu", "adv.engine.menu", "adv.preview", "runtime.install", "control.open"):
                 self.widgets[key].configure(state=state)
             for name in PRESETS:
                 self.widgets[f"diff.{name}"].configure(state=state)
@@ -552,7 +554,34 @@ def create_app():
                 "quality": quality, "device": self.device_var.get(), "engine": engine,
                 "preview": self.preview_var.get(), "advanced_open": self.advanced_open, "geometry": self.geometry(),
                 "source_mode": self.source_mode.get(), "recursive": self.recursive_var.get(),
+                "generation_controls": self.generation_controls,
             }
+
+        def edit_generation_controls(self):
+            if self.busy:
+                return
+            from .control_gui import open_control_window
+            if getattr(self, "control_window", None) and self.control_window.winfo_exists():
+                self.control_window.lift()
+            else:
+                self.control_window = open_control_window(self)
+
+        def refresh_control_summary(self):
+            from .controls import validate_controls
+            try:
+                controls = validate_controls(self.generation_controls)
+            except ValueError:
+                self.widgets["control.status"].configure(text=tr("control.invalid"))
+                return
+            parts = []
+            for key in ("target_stars", "density", "spacing_scale"):
+                if controls[key] is not None:
+                    parts.append(tr("control."+key)+f": {controls[key]:g}")
+            if controls["density_curve"]:
+                parts.append(tr("control.curve_active"))
+            if controls["highlight_mode"] != "legacy":
+                parts.append(tr("control.mode."+controls["highlight_mode"]))
+            self.widgets["control.status"].configure(text=" · ".join(parts) or tr("control.default"))
 
         def start(self) -> None:
             if self.busy or self.cuda_checking:
@@ -577,6 +606,8 @@ def create_app():
                 return float(v) if v else None
 
             try:
+                from .controls import validate_controls
+                controls = validate_controls(s["generation_controls"])
                 seed = int(s["seed"] or 0)
                 bpm, offset, star = num(s["bpm"]), num(s["offset"]), num(s["star"])
             except ValueError as e:
@@ -601,7 +632,7 @@ def create_app():
             self.set_busy(True)
             kwargs = dict(
                 seed=seed, bpm=bpm, offset_ms=offset, creator=s["creator"] or "AUTO-OSU", star_rating=star,
-                coord_steps=QUALITY_STEPS[s["quality"]], device=s["device"],
+                coord_steps=QUALITY_STEPS[s["quality"]], device=s["device"], controls=controls,
                 rhythm_model=str(found["rhythm"]) if s["engine"] == "ml" else None,
                 coord_model=str(found["coord"]) if s["engine"] == "ml" else None,
             )
@@ -763,6 +794,15 @@ def create_app():
                                 self.log(tr("result.condition", stars=s["star_condition"]))
                             if s.get("watermark", {}).get("status") in ("embedded", "insufficient", "unsupported"):
                                 self.log(tr("result.watermark." + s["watermark"]["status"]))
+                            control = s.get("controls", {})
+                            if control.get("target_stars") is not None:
+                                self.log(tr("control.result.target", target=control["target_stars"],
+                                            result=tr("control.result.met" if control["target_met"] else "control.result.missed"),
+                                            count=len(control["candidates"])))
+                            plan = control.get("highlight_plan", {})
+                            if plan.get("mode") in ("manual", "auto"):
+                                regions = plan.get("regions", [])
+                                self.log(tr("control.result.regions", regions=", ".join(f"{r['start_s']:.1f}–{r['end_s']:.1f}s" for r in regions) or tr("control.result.none")))
                         if res.get("evaluation_path"):
                             self.log(tr("result.evaluation", path=res["evaluation_path"]))
                         self._flash_done()
