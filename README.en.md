@@ -27,7 +27,7 @@
 I am bad at osu! and I love playing it. The worst part: the songs I want to play have no maps, and I can't map.
 So: AUTO-OSU. Drop in the song you like, and a minute later you can play it.
 
-The current app is **0.2.0**, with **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
+The published app is **0.2.0**; the source development version is **0.3.0.dev0**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
 the jumps and streams are learned from over a hundred thousand ranked / approved / loved maps, and all four difficulties come out in one go.
 It will keep getting better: mapper intent, deliberate highlights, longer sliders and multiple red lines for tempo changes
 are all on the roadmap.
@@ -124,6 +124,9 @@ python -m autoosu "D:\Music" --recursive -d Hard Insane -o "D:\Beatmaps"
 | `--device auto\|cuda\|cpu` | compute device |
 | `--setup-runtime` | install and verify an app-managed GPU runtime with uv |
 | `--check-cuda` | check the effective inference runtime, including the managed environment |
+| `--check-source PATH` | check declarations and local records in an `.osu`, `.osz`, or folder (source development version) |
+| `--source-report report.json` | save the source-check report as JSON |
+| `--records-dir DIR` | select the local record store for both generation and checking |
 | `--recursive` | include subfolders when the input is a directory |
 | `--rules` | rule-based mode |
 | `--rhythm-model` / `--coord-model` | explicit model files; otherwise looked up in `models/` |
@@ -133,6 +136,19 @@ python -m autoosu "D:\Music" --recursive -d Hard Insane -o "D:\Beatmaps"
 | `--preview` | also write the preview mp3 |
 | `--debug-plot` | save an analysis image: loudness and kiai sections, onsets and beat grid, chosen notes per difficulty |
 | `--dump-events` | print every object with time, type and beat |
+
+### Check beatmap source (source development version)
+
+The source development version has a **Check source** button at the bottom of the app. Select a beatmap, pack or folder and optionally save a JSON report. From the CLI:
+
+```powershell
+python -m autoosu --check-source "map.osz" --source-report "source-report.json"
+python -m autoosu --check-source "D:\Beatmaps" --recursive
+```
+
+New packs include model identities, settings and content fingerprints, with a separate local generation record. Results distinguish declarations, local-record matches and inconclusive evidence. Declarations can be copied; no record match does not mean human authorship. Statistical detection is not available: the [first v0 screen](docs/detection-v0-screen.md) failed under small edits and confused some rules-only output with model output.
+
+Records default to `~/.autoosu/provenance`; use `--records-dir` or `AUTOOSU_RECORDS` for another store. See [scope and validation](docs/source-check.md). The published 0.2.0 download does not include this feature; the development app requires a matching managed GPU runtime version.
 
 ### Python install
 
@@ -155,7 +171,7 @@ Python 3.10 or newer. This is also how to run it on macOS / Linux; the exe is Wi
 - **Coordinates and sliders.** The coordinate model generates positions from pure noise, learning jumps, streams, and slider shapes. Sliders are fitted to the playfield and required length before export. Historical test samples had no paths outside the playfield; playability still needs checking on actual songs.
 - **What is still missing.** One red line per song; slider length is not a model input yet, so long sliders on fast songs are occasionally shortened (a green line keeps the timing right);
   hitsounds are simple drum-based whistle / clap / finish; no storyboard. Check timing, readability, and playability in the editor before playing or sharing a map.
-- **Source identification.** Outputs currently carry `autoosu ai-generated kanzei` tags, but the app has no source checker yet. Tags are editable and are currently shared by the rules-only mode, so they cannot establish which model was used. Planned work will distinguish engines and investigate detection of older v0 outputs.
+- **Source identification.** The source development version distinguishes both-model, hybrid and rules output and checks declarations and local records. The older 0.2.0 `ai-generated` tag also occurs on rules-only output, so it cannot establish model use. Statistical detection of unlabelled old output has not passed the integration gate.
 
 ## How it works
 
@@ -228,7 +244,7 @@ Work follows priority and dependency order, without time commitments. Completion
 | Priority / order | Work | Completion criteria | Status |
 | --- | --- | --- | --- |
 | P0 · Documentation and collaboration | Usage and attribution guidance, bilingual README, branch and contribution rules, community group | Consistent documentation that distinguishes planned and released features | Updated |
-| P0 · Source identification | Generation records, model identities, content fingerprints, and an in-app source checker; a feasibility study for older v0 outputs | Read `.osu` / `.osz`; report tags, record matches, and experimental detection false positives / recall separately | Planned |
+| P0 · Source identification | Generation records, model identities, content fingerprints, and an in-app source checker; a feasibility study for older v0 outputs | Read `.osu` / `.osz`; report tags, record matches, and experimental detection false positives / recall separately | Source checker implemented in source; statistical screen failed the integration gate |
 | P1 · Difficulty control | Measured star ratings, a fixed evaluation song set, and density / spacing control for higher difficulties | Compare target and measured ratings; validate 6–7★ before extending to 7–8★, including local difficulty peaks and playability | Planned |
 | P1 · Musical sections | Highlight control and automatic section selection | Validate manual regions first, then automatic selection; coordinate density, spacing, hitsounds, and kiai through buildup, peak, and release | Planned |
 | P2 · Model iteration | High-star data, finer rhythm representation, slider-length and section conditioning, multiple timing sections | Update released models only after controlled comparisons and the fixed evaluation set show improvement | Depends on earlier experiments |

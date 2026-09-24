@@ -16,6 +16,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("audio", nargs="?", help="audio/video file, or a folder for batch generation")
     p.add_argument("--recursive", action="store_true", help="also scan subfolders for batch generation")
     p.add_argument("--check-cuda", action="store_true", help="check CUDA in this runtime and exit")
+    p.add_argument("--check-source", type=Path, metavar="PATH", help="check source declarations and local records in .osu, .osz or a folder")
+    p.add_argument("--source-report", type=Path, metavar="JSON", help="save --check-source results as JSON")
+    p.add_argument("--records-dir", type=Path, help="local generation record directory (default: ~/.autoosu/provenance)")
     p.add_argument("--setup-runtime", action="store_true", help="use uv to install and verify an app-managed GPU runtime")
     p.add_argument("-d", "--difficulty", nargs="+", default=["Hard", "Insane"],
                    metavar="NAME", help=f"difficulties to generate: {', '.join(PRESETS)}")
@@ -81,6 +84,24 @@ def main(argv=None) -> int:
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8", errors="replace")
     args = build_parser().parse_args(argv)
+    if args.check_source is not None:
+        from .source_check import check_source, format_report
+        from .provenance import atomic_json
+        try:
+            if args.source_report and args.source_report.suffix.lower() != ".json":
+                raise ValueError("--source-report must be a .json file")
+            report = check_source(args.check_source, recursive=args.recursive, records_dir=args.records_dir)
+            print(format_report(report))
+            if args.source_report:
+                atomic_json(args.source_report, report)
+                print(f"Report: {args.source_report}")
+            return 2 if any(r["status"] == "error" for r in report["results"]) else 0
+        except (ValueError, OSError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+    if args.source_report:
+        print("error: --source-report requires --check-source", file=sys.stderr)
+        return 2
     if args.setup_runtime:
         from .runtime import install_runtime
         from .devices import describe_cuda
@@ -145,6 +166,7 @@ def main(argv=None) -> int:
                 rhythm_model=rhythm, temperature=args.temperature, density=args.density,
                 density_bias=args.density_bias, star_rating=args.star, decode_steps=args.decode_steps,
                 coord_model=coord, coord_steps=args.coord_steps, cfg_scale=args.cfg_scale, device=args.device,
+                records_dir=args.records_dir,
                 on_result=_dump_events if args.dump_events else None,
             )
         except (ValueError, OSError, RuntimeError) as exc:
@@ -161,7 +183,8 @@ def main(argv=None) -> int:
                    title=args.title, artist=args.artist, creator=args.creator, osu_shift_ms=args.osu_shift,
                    rhythm_model=rhythm, temperature=args.temperature, density=args.density,
                    density_bias=args.density_bias, star_rating=args.star, decode_steps=args.decode_steps,
-                   coord_model=coord, coord_steps=args.coord_steps, cfg_scale=args.cfg_scale, device=args.device)
+                   coord_model=coord, coord_steps=args.coord_steps, cfg_scale=args.cfg_scale, device=args.device,
+                   records_dir=args.records_dir)
 
     if args.dump_events:
         _dump_events(res)

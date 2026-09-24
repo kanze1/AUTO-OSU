@@ -121,7 +121,7 @@ class Beatmap:
     version: str
     creator: str = "AUTO-OSU"
     source: str = ""
-    tags: str = "autoosu ai-generated kanzei"
+    tags: str = "autoosu kanzei"
     hp: float = 5
     cs: float = 4
     od: float = 6

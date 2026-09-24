@@ -13,7 +13,8 @@ from .audio import AudioAnalysis, analyze, load_audio
 from .audio_io import VIDEO_EXTS
 from .beatmap import Beatmap, Break, HitObject, Slider, Spinner, TimingPoint
 from .difficulty import DifficultyPreset, get_preset
-from .package import extract_cover, prepare_audio, prepare_background, read_metadata, write_osz
+from .package import extract_cover, prepare_audio, prepare_background, read_metadata, sanitize, write_osz
+from .provenance import build_manifest, engine_info, fingerprint, model_identity, source_tags, store_record
 from .placement import place
 from .rhythm import RhythmEvent, Sections, analyse_sections, build_events
 from .timing import Timing, estimate_timing
@@ -54,6 +55,9 @@ class GenerateResult:
     elapsed_s: float = 0.0
     osu_shift_ms: int = OSU_TIMING_SHIFT_MS
     device: str = "cpu"
+    provenance: Optional[dict] = None
+    provenance_recorded: bool = False
+    warnings: List[str] = field(default_factory=list)
 
 
 def approach_ms(ar: float) -> float:
@@ -140,7 +144,7 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
              density_bias: float = 0.0, star_rating: Optional[float] = None, decode_steps: int = 12,
              coord_model: Optional[str] = None, coord_steps: int = 100, cfg_scale: float = 1.0,
              device: Optional[str] = None, progress: Optional[ProgressFn] = None,
-             model_cache: Optional[Dict] = None) -> GenerateResult:
+             model_cache: Optional[Dict] = None, records_dir: Optional[Path] = None) -> GenerateResult:
     """Analyse a song and write one .osz with the requested difficulties.
 
     rhythm_model / coord_model: paths to the trained models; without them the rule-based layers run.
@@ -153,6 +157,7 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
         raise ValueError("Choose at least one difficulty")
     dev = pick_device(device) if (rhythm_model or coord_model) else "cpu"
     cache = model_cache if model_cache is not None else {}
+    engine = engine_info(model_identity("rhythm", rhythm_model, cache), model_identity("coord", coord_model, cache))
     report = progress or (lambda f, m: None)
 
     report(0.0, "load")
@@ -201,9 +206,12 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
         report(0.25, "load coordinate model")
         cm = cached_model(cache, "coord", coord_model, dev, load_coord_model)
         log(f"      coordinate model {Path(coord_model).name} on {dev}")
+    if engine != engine_info(model_identity("rhythm", rhythm_model, cache), model_identity("coord", coord_model, cache)):
+        raise RuntimeError("Model file changed while loading; retry generation")
 
     log("[4/4] generating difficulties")
     diffs: List[DiffResult] = []
+    map_records = []
     span = 0.68 / max(1, len(presets))
     for i, preset in enumerate(presets):
         base = 0.28 + i * span
@@ -234,17 +242,36 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
             objects = place(events, preset, timing, rng, sv_sections)
         bm = build_beatmap(preset, timing, objects, kiai, audio_file.name, title, artist, creator, osu_shift_ms,
                            sv_overrides=overrides)
+        bm.tags = source_tags(engine)
         if background:
             bm.background = background.name
         res = DiffResult(preset, events, bm)
         diffs.append(res)
+        map_records.append(dict(filename=sanitize(bm.osu_filename()), preset=dataclasses.asdict(preset),
+                                seed=seed * 1000 + i, star_condition=star,
+                                **fingerprint(bm.to_osu().encode("utf-8"))))
         s = res.summary()
         log(f"      {preset.name:<7} {s['objects']:4d} objects "
             f"({s['circles']} circles, {s['sliders']} sliders, {s['spinners']} spinners) "
             f"{s['nps']:.2f} obj/s" + (f", {len(overrides)} slider(s) shortened" if overrides else ""))
 
     report(0.97, "package")
-    osz = write_osz([d.beatmap for d in diffs], audio_file, out_dir, extra_files=[background] if background else ())
+    manifest = build_manifest(map_records, engine,
+                              dict(seed=seed, bpm=timing.bpm, offset_ms=timing.offset_ms,
+                                   bpm_override=bpm, offset_override_ms=offset_ms, osu_shift_ms=osu_shift_ms,
+                                   temperature=temperature, density=density, density_bias=density_bias,
+                                   decode_steps=decode_steps, coord_steps=coord_steps, cfg_scale=cfg_scale, device=dev),
+                              audio_path, audio_file)
+    osz = write_osz([d.beatmap for d in diffs], audio_file, out_dir, extra_files=[background] if background else (),
+                    manifest=manifest)
+    recorded, warnings = False, []
+    try:
+        store_record(manifest, records_dir)
+        recorded = True
+    except OSError as exc:
+        warnings.append(f"Beatmap saved, but the local generation record could not be saved: {exc}")
+        log(warnings[-1])
     report(1.0, "done")
     return GenerateResult(osz=osz, audio_file=audio_file, timing=timing, analysis=analysis, diffs=diffs,
-                          elapsed_s=_time.perf_counter() - t0, osu_shift_ms=osu_shift_ms, device=dev)
+                          elapsed_s=_time.perf_counter() - t0, osu_shift_ms=osu_shift_ms, device=dev,
+                          provenance=manifest, provenance_recorded=recorded, warnings=warnings)
