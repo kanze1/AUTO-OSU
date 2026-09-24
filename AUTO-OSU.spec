@@ -4,9 +4,10 @@
 # bundled here; the release zip adds a models/ folder next to the exe (see scripts/build_exe.ps1),
 # and the app can also download them on first run.
 import os
+import sys
 from pathlib import Path
 from scripts.prepare_runtime_bundle import write_bundle
-from PyInstaller.utils.hooks import collect_all, collect_data_files, collect_submodules
+from PyInstaller.utils.hooks import collect_all, collect_data_files, collect_submodules, copy_metadata
 
 block_cipher = None
 datas, binaries, hiddenimports = [], [], []
@@ -16,6 +17,8 @@ for pkg in ("customtkinter", "tkinterdnd2", "librosa", "imageio_ffmpeg", "soundf
     binaries += b
     hiddenimports += h
 hiddenimports += collect_submodules("autoosu")
+if sys.version_info >= (3, 11):
+    datas += copy_metadata("rosu-pp-py")
 datas += [("autoosu/assets", "autoosu/assets")]
 runtime_bundle = write_bundle(Path(os.getcwd()), Path(os.getcwd()) / "build/runtime-source.zip")
 datas += [(str(runtime_bundle), "runtime")]

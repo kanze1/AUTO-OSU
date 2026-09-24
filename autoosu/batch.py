@@ -61,6 +61,8 @@ class BatchItem:
     device: str = ""
     generation_id: Optional[str] = None
     provenance_recorded: bool = False
+    evaluation_path: Optional[str] = None
+    diffs: list[dict] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
 
 
@@ -135,6 +137,8 @@ def generate_batch(source: Path, difficulties: list[str], out_dir: Path, *, recu
                 item.osz, item.device, item.status = str(res.osz), res.device, "done"
                 item.generation_id = (getattr(res, "provenance", None) or {}).get("generation_id")
                 item.provenance_recorded = getattr(res, "provenance_recorded", False)
+                item.evaluation_path = str(res.evaluation_path) if getattr(res, "evaluation_path", None) else None
+                item.diffs = [dict(name=d.preset.name, **d.summary()) for d in getattr(res, "diffs", [])]
                 item.warnings.extend(getattr(res, "warnings", []))
                 # An optional preview failure must not hide a successfully written beatmap.
                 try:

@@ -1,0 +1,133 @@
+{
+  "parser": "slider",
+  "version": "0.8.2",
+  "samples_per_curve": 1001,
+  "stacking": false,
+  "tolerance_px": 0.01,
+  "maps": 15,
+  "sliders": 19,
+  "paths_outside": 0,
+  "rows": [
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "condition": 6.5,
+      "timing_mode": "reference",
+      "sha256": "9be76578adffd19ca6909a757e2a63090e06c021ba1c8d7d96a0ff248b798d8a",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "condition": 6.0,
+      "timing_mode": "reference",
+      "sha256": "4988dc91c360720a3129194ca80a1bcec026f9bf8acc6d21c1ae6dc70a026e74",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "condition": 5.5,
+      "timing_mode": "automatic",
+      "sha256": "427c698cf57628b16073e452f41aa3cb6dbef775eb0d46ff87b71a92bfa53e48",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "condition": 7.0,
+      "timing_mode": "automatic",
+      "sha256": "1410f110ab7384b44ca501a50a325950a10eac40f541bb9ab978eb276864bf7b",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "condition": 5.5,
+      "timing_mode": "reference",
+      "sha256": "0b434c8a39b1fa8e76a9afce453e1ffa6b465ad2face688ae84bade02fc22204",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "condition": 6.0,
+      "timing_mode": "reference",
+      "sha256": "f34078db803a95f7fe991101890c6d3f8681f1a2cfb3514355b4cfbac5d2be0a",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "condition": 6.5,
+      "timing_mode": "reference",
+      "sha256": "02ed158650da319c3140d75f36f38d127aeea6080d0b0754c7465d439a581cc1",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "condition": 6.5,
+      "timing_mode": "automatic",
+      "sha256": "ce6a74c469da2b5d6194200540184d025ad34dee33940ab1a43d73cc0a57146c",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "condition": 8.0,
+      "timing_mode": "automatic",
+      "sha256": "5c4affed089a4963a2c2e31a6b933992d6fb528e64d84316fcce35d5907e5610",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "condition": 5.5,
+      "timing_mode": "reference",
+      "sha256": "75053d0b60cff7b0816b5c079a0f4b684b79b310deafe876d9602a91f37f91b4",
+      "sliders": 2,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "condition": 6.5,
+      "timing_mode": "reference",
+      "sha256": "ec67466e736cf2b36d016b267fb434a2076778a135017a37eee83a6e19d781a7",
+      "sliders": 2,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "condition": 7.5,
+      "timing_mode": "reference",
+      "sha256": "354bc003ab7f7466fbb5c7d4e5a2d5e8116b2dbe0587c50380ec0ec89ee6c48e",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "condition": 5.5,
+      "timing_mode": "automatic",
+      "sha256": "a6de13e29e59359186633e8a5cdb87820bbab575d9a39b2dac9652f1dbd28f5d",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "condition": 6.0,
+      "timing_mode": "automatic",
+      "sha256": "6cc8e39c888b68bb7b43e70835cc68d7498941aa0332ecf00116fc21cd518244",
+      "sliders": 1,
+      "sampled_paths_outside": []
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "condition": 6.5,
+      "timing_mode": "automatic",
+      "sha256": "4281adf8182a365a28a7810a77749d92dee3f7a995e90e57e236310497137ed8",
+      "sliders": 3,
+      "sampled_paths_outside": []
+    }
+  ],
+  "limits": "Only sliders flagged for out-of-field anchors. Sampled center paths, not exact extrema or client playtesting."
+}

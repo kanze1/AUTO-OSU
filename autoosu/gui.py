@@ -755,6 +755,14 @@ def create_app():
                         self.log(tr("result.summary", bpm=res["bpm"], n=len(res["diffs"])))
                         for s in res["diffs"]:
                             self.log(tr("result.diff", name=s["name"], objects=s["objects"], sliders=s["sliders"], nps=s["nps"]))
+                            if s.get("measured_stars") is not None:
+                                self.log(tr("result.stars", stars=s["measured_stars"]))
+                            else:
+                                self.log(tr("result.stars_unavailable"))
+                            if s.get("star_condition") is not None:
+                                self.log(tr("result.condition", stars=s["star_condition"]))
+                        if res.get("evaluation_path"):
+                            self.log(tr("result.evaluation", path=res["evaluation_path"]))
                         self._flash_done()
                         if self._open_after and not self._closing:
                             open_path(self.last_osz)

@@ -1,0 +1,4263 @@
+{
+  "schema": "autoosu.difficulty-screen/1",
+  "partition": "development",
+  "recipe": {
+    "corpus_sha256": "4475e3b7fa0c93f7706a890e3a203cc8c3f38a41deb5d6eb581b0c71217decee",
+    "calculator_version": "4.0.2",
+    "models": {
+      "rhythm": "e01267c647e103a36801109e3c34f508dd2d04d228b07b4a299cddbd55dd52f6",
+      "coord": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040"
+    },
+    "code": {
+      "autoosu/__init__.py": "89f9655dc350975121d9a3ee8c82a8dde8dfddcf74e1a901a7c5fc3cf6f02142",
+      "autoosu/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "autoosu/audio.py": "6cc45383a03bab8914666b6855b5b8104c9172e776239a82868c1bfa13de7703",
+      "autoosu/audio_io.py": "9ff54ce6c293caf55eea9a6525c07d200080aed6091fb598e0f81d76fd24bce3",
+      "autoosu/batch.py": "80ee92c954f7395e12e6bf6d47b7f334b7492740d84f58812124e88360c46769",
+      "autoosu/beatmap.py": "d28f5c4333ec79891140120f95e1aca8dca1b1bdef961c53632644bc28a85776",
+      "autoosu/cli.py": "053faeec26f5d00fcb407e2f217008d870fa356a352484ddb676e4deef92b074",
+      "autoosu/debug.py": "e74f58a5d5b9bdec77d02630efb797cbf8425f9cabf63ee2dbb94271f09ca398",
+      "autoosu/devices.py": "f1923fbafde4a15531aaa81454cbacc6ae93c785d03ad5b8cb9f3d572a30b71d",
+      "autoosu/difficulty.py": "6fc17c369dd8f379abeb786048206fa5fff1c8d96784b0dcee1cd876b714d9ea",
+      "autoosu/generate.py": "ef635f40330f9db5c1e41944ce572bb3d4071f72bfc51da57916c3b9410aa2eb",
+      "autoosu/gui.py": "1967d7aca2fca402deb52591e91fedfc0ccace650885dad70553d79307d074eb",
+      "autoosu/gui_layout.py": "059340efc9aa47ae9c3aa5fc34f9a5d004eeb6cb1714dc0a9d58f1822809978b",
+      "autoosu/i18n.py": "c54a0f20df5a545096beb14919cbd4cf6105cd71fede87d560f17be4d5fce18a",
+      "autoosu/metrics.py": "3610d7c135e2336176249a070af039ee311eab0b96d978aab533fd3ea1423a50",
+      "autoosu/ml/__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946",
+      "autoosu/ml/coord/__init__.py": "0f3dce649301bb382dc67674ff1c6f516a29fd54495154a18e7fdef4dc7ee535",
+      "autoosu/ml/coord/diffusion/__init__.py": "9f69f5f6a6f1dea2d927eb72fa1df6ae2d481180e62fc8c54c051aa93a31e8dc",
+      "autoosu/ml/coord/diffusion/diffusion_utils.py": "8260e221f0f7e4b3bb36678cc7f862f8f5cd7d6271f39b912974d74303d0a110",
+      "autoosu/ml/coord/diffusion/gaussian_diffusion.py": "fe9e2d0be91ab70be5a4505dd8127e72fa2a5fe7054c15dbfd8c3e623c611d2e",
+      "autoosu/ml/coord/diffusion/respace.py": "c553799a2ba693ec6314d766906b2f19340cab240a091de3b5eeb3642c3579d7",
+      "autoosu/ml/coord/models.py": "07c95631eff8ed6884381ee4e594461e0665148957fa7dde49923865f2ec089a",
+      "autoosu/ml/coord/positional_embedding.py": "37ac180579b41e3adb37394c27941574507ad1f1ea0eae7016aa702ae2d87da6",
+      "autoosu/ml/coord_infer.py": "7a9f284bd2563339cc23bdbda9d5d19e6a2c1fe545412aae1e59abfbf96deaca",
+      "autoosu/ml/dataset.py": "1420714e5a5fe19d1047547d50a6c57b26acb68eb260951b70f04b7b8b53b232",
+      "autoosu/ml/model.py": "b1927fb8c88555ed388839fa22dbc947898d2279feb2ef01f3195ec26eb4962a",
+      "autoosu/ml/osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+      "autoosu/ml/prepare_data.py": "c055ccb9092bca6afd6dec1a1f0fade5bd557923262dfdf9eb71dc6ca800e7bf",
+      "autoosu/ml/sample.py": "17ec5624c1290f4d085ae0e7d0b1749608e7e1feaa7aa4c7cd28203370cc2176",
+      "autoosu/ml/train.py": "6cc183cf53eeef5579959187266736129769e597e296679628939600437617be",
+      "autoosu/models.py": "cdbc84c2c611935ceb804f1117bc82384e12a12a12b8382c4404f2db58823bbb",
+      "autoosu/package.py": "1aa96c74c64dee082c660714df9f009244859c4f2ec5a45f71819d19de1fcf19",
+      "autoosu/placement.py": "1b2bf038368e4cbc7ad76136c473bf811fd3cb14827e0934120bfc6fa381399a",
+      "autoosu/preview.py": "87f668eff023f7158f3eba7b8a1a5d74017655e33b5e5052cdec49b7cd09500d",
+      "autoosu/provenance.py": "8bff71f4a3989c38c67bdda89b73a44e3f7a2e877228146ffb8e18e31d1539d7",
+      "autoosu/rhythm.py": "dfe87b90800721cacfc67bac3848d5c0393e5047a0a679040ac923d9ba0e5379",
+      "autoosu/runtime.py": "dd1c60538342679b059359891991ab18ebba5e6cb1e9e439f99c41d044694b3d",
+      "autoosu/sliderpath.py": "a8541ce5067c33631c4b655124792b8b7f03d64e123cbc8e1a916c2e09b2da32",
+      "autoosu/source_check.py": "671104a34eca6cdf35ec356ab14620cb01ed234351e6ab726e026f263fa3024a",
+      "autoosu/source_gui.py": "0ee227f17f67794f64f9586734a2ea6bbc6770cf739b42f65a840c4231bc3a5f",
+      "autoosu/timing.py": "60b1e420d8ba19d3967fc5d39dd526347c6baf78b32eae03f8a38a35e1f01da3",
+      "autoosu/worker.py": "d1264bc024b23621a6584a4e1a15a8dda8e70ca1f5e12ae3a7a78cac320da53c"
+    },
+    "base_commit": "ddb1728a95ccae25544e8a22ac49bc20d918bcd8",
+    "settings": {
+      "seed": 240924,
+      "decode_steps": 12,
+      "coord_steps": 100,
+      "temperature": 0.9,
+      "cfg_scale": 1.0,
+      "device": "cuda"
+    },
+    "conditions": [
+      5.5,
+      6.0,
+      6.5,
+      7.0,
+      7.5,
+      8.0
+    ],
+    "timing_modes": [
+      "reference",
+      "automatic"
+    ]
+  },
+  "maps": 96,
+  "independent_parse_matches": 96,
+  "structural_error_maps": 0,
+  "anchor_flagged_maps": 15,
+  "elapsed_s": 729.5327991000522,
+  "aggregates": [
+    {
+      "timing_mode": "reference",
+      "condition": 5.5,
+      "n": 8,
+      "median_stars": 4.743524384623498,
+      "min_stars": 4.060398436015546,
+      "max_stars": 5.1847738927711955,
+      "within_half_star": 3,
+      "median_nps": 3.965,
+      "median_aim": 2.614446525561221,
+      "median_speed": 1.9257594739602062
+    },
+    {
+      "timing_mode": "reference",
+      "condition": 6.0,
+      "n": 8,
+      "median_stars": 5.207588425172503,
+      "min_stars": 4.441384856075876,
+      "max_stars": 5.560143469907122,
+      "within_half_star": 1,
+      "median_nps": 4.245,
+      "median_aim": 2.820614803732031,
+      "median_speed": 2.172767598659215
+    },
+    {
+      "timing_mode": "reference",
+      "condition": 6.5,
+      "n": 8,
+      "median_stars": 5.533713337833408,
+      "min_stars": 4.563108593849541,
+      "max_stars": 6.724892622114013,
+      "within_half_star": 1,
+      "median_nps": 4.42,
+      "median_aim": 2.9670627534940186,
+      "median_speed": 2.255790575934053
+    },
+    {
+      "timing_mode": "reference",
+      "condition": 7.0,
+      "n": 8,
+      "median_stars": 5.743937742320526,
+      "min_stars": 5.4771841810886714,
+      "max_stars": 6.817366876319864,
+      "within_half_star": 1,
+      "median_nps": 5.05,
+      "median_aim": 3.0944143811477325,
+      "median_speed": 2.3515393674051532
+    },
+    {
+      "timing_mode": "reference",
+      "condition": 7.5,
+      "n": 8,
+      "median_stars": 5.925869165525906,
+      "min_stars": 5.265207162706137,
+      "max_stars": 7.030472440037101,
+      "within_half_star": 1,
+      "median_nps": 4.965,
+      "median_aim": 3.1098936435999187,
+      "median_speed": 2.294425908743733
+    },
+    {
+      "timing_mode": "reference",
+      "condition": 8.0,
+      "n": 8,
+      "median_stars": 6.173343437695469,
+      "min_stars": 5.383111329980666,
+      "max_stars": 7.512185085400856,
+      "within_half_star": 1,
+      "median_nps": 5.145,
+      "median_aim": 3.4340924276117586,
+      "median_speed": 2.34239235566062
+    },
+    {
+      "timing_mode": "automatic",
+      "condition": 5.5,
+      "n": 8,
+      "median_stars": 4.728540931340952,
+      "min_stars": 4.108009785184169,
+      "max_stars": 5.230547578666978,
+      "within_half_star": 1,
+      "median_nps": 3.83,
+      "median_aim": 2.577636276584779,
+      "median_speed": 1.9174010827368715
+    },
+    {
+      "timing_mode": "automatic",
+      "condition": 6.0,
+      "n": 8,
+      "median_stars": 5.0831939407211255,
+      "min_stars": 4.308692429816461,
+      "max_stars": 5.734036295948446,
+      "within_half_star": 1,
+      "median_nps": 4.075,
+      "median_aim": 2.727086366084033,
+      "median_speed": 2.0344267015674746
+    },
+    {
+      "timing_mode": "automatic",
+      "condition": 6.5,
+      "n": 8,
+      "median_stars": 5.450055953871274,
+      "min_stars": 4.075663377613919,
+      "max_stars": 6.005036889004818,
+      "within_half_star": 1,
+      "median_nps": 4.404999999999999,
+      "median_aim": 2.9342858447740454,
+      "median_speed": 2.2028716504110943
+    },
+    {
+      "timing_mode": "automatic",
+      "condition": 7.0,
+      "n": 8,
+      "median_stars": 5.82046026627648,
+      "min_stars": 5.02894562553612,
+      "max_stars": 6.823187913823537,
+      "within_half_star": 1,
+      "median_nps": 4.575,
+      "median_aim": 3.159703526803783,
+      "median_speed": 2.0277419936230063
+    },
+    {
+      "timing_mode": "automatic",
+      "condition": 7.5,
+      "n": 8,
+      "median_stars": 5.758081683364972,
+      "min_stars": 5.195659764776652,
+      "max_stars": 7.100029125369973,
+      "within_half_star": 1,
+      "median_nps": 4.8,
+      "median_aim": 3.2074264974460247,
+      "median_speed": 2.1928427759321014
+    },
+    {
+      "timing_mode": "automatic",
+      "condition": 8.0,
+      "n": 8,
+      "median_stars": 6.0646789599676305,
+      "min_stars": 4.947560064202096,
+      "max_stars": 7.83084874388251,
+      "within_half_star": 1,
+      "median_nps": 5.005,
+      "median_aim": 3.434716022058428,
+      "median_speed": 2.1390688610627544
+    }
+  ],
+  "rows": [
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 164.00000000000017,
+      "offset_ms": 707.0,
+      "diagnostics": {
+        "objects": 400,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 166.33845887971256,
+        "spacing_p95_px": 290.4512790921976
+      },
+      "sha256": "88ba2b890d2b752920e492ce9e5cafca4643f8931fed7d14b424882bdccc2dab",
+      "elapsed_s": 11.609698400003253,
+      "stars": 5.072568954812989,
+      "aim": 2.841463019239979,
+      "speed": 1.893889360991723,
+      "peaks": {
+        "aim": {
+          "max": 199.02775276303026,
+          "p95": 181.07137384279207
+        },
+        "aim_no_sliders": {
+          "max": 199.02558744854352,
+          "p95": 180.35552863963073
+        },
+        "speed": {
+          "max": 89.83618137185483,
+          "p95": 76.08664648399971
+        }
+      },
+      "nps": 4.25
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 164.00000000000017,
+      "offset_ms": 707.0,
+      "diagnostics": {
+        "objects": 416,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 150.41607894978975,
+        "spacing_p95_px": 280.0725956310856
+      },
+      "sha256": "df272bf918bede170c1c5fb2204462cb0b83d1a847cb306c8c4936ec9902855f",
+      "elapsed_s": 6.41290699999081,
+      "stars": 5.074709802970482,
+      "aim": 2.845748935445962,
+      "speed": 1.8866162769434243,
+      "peaks": {
+        "aim": {
+          "max": 208.61672593573917,
+          "p95": 181.09113164399312
+        },
+        "aim_no_sliders": {
+          "max": 208.61671733040941,
+          "p95": 180.45620609563414
+        },
+        "speed": {
+          "max": 91.32155439497099,
+          "p95": 76.0101922075315
+        }
+      },
+      "nps": 4.42
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 164.00000000000017,
+      "offset_ms": 707.0,
+      "diagnostics": {
+        "objects": 468,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 162.73291000900832,
+        "spacing_p95_px": 363.6602807172262
+      },
+      "sha256": "9be76578adffd19ca6909a757e2a63090e06c021ba1c8d7d96a0ff248b798d8a",
+      "elapsed_s": 5.8777798999944935,
+      "stars": 5.640466979408997,
+      "aim": 3.2220285807967137,
+      "speed": 1.9230644923294715,
+      "peaks": {
+        "aim": {
+          "max": 250.58968423039119,
+          "p95": 230.55796323532022
+        },
+        "aim_no_sliders": {
+          "max": 250.5896071434451,
+          "p95": 230.5565774999339
+        },
+        "speed": {
+          "max": 94.60473798618932,
+          "p95": 75.8849814186471
+        }
+      },
+      "nps": 4.94
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 164.00000000000017,
+      "offset_ms": 707.0,
+      "diagnostics": {
+        "objects": 508,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 178.05897899291685,
+        "spacing_p95_px": 354.97794623075947
+      },
+      "sha256": "fdb387d3cb1b911c360e88889ee51991d9acca7c369a5a89cf1f54ceea24db8d",
+      "elapsed_s": 5.925498700002208,
+      "stars": 5.751542870121466,
+      "aim": 3.2764728448472265,
+      "speed": 1.990888257655345,
+      "peaks": {
+        "aim": {
+          "max": 270.12679483235127,
+          "p95": 233.7191573948237
+        },
+        "aim_no_sliders": {
+          "max": 270.03969165086204,
+          "p95": 233.71904503078898
+        },
+        "speed": {
+          "max": 112.857106260119,
+          "p95": 81.93503701732175
+        }
+      },
+      "nps": 5.36
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 164.00000000000017,
+      "offset_ms": 707.0,
+      "diagnostics": {
+        "objects": 515,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 233.53798977025616,
+        "spacing_p95_px": 420.9839041726652
+      },
+      "sha256": "77d3ab37fb5a9f284fafb130aed7aa5696455dab19559da8e26829f786eaa0cf",
+      "elapsed_s": 5.625522700007423,
+      "stars": 6.130938154974188,
+      "aim": 3.5358388272065793,
+      "speed": 1.9693135107818154,
+      "peaks": {
+        "aim": {
+          "max": 303.4407801350486,
+          "p95": 281.0034091932233
+        },
+        "aim_no_sliders": {
+          "max": 303.4407801350486,
+          "p95": 280.98342579404937
+        },
+        "speed": {
+          "max": 104.47340457416068,
+          "p95": 80.10521066834485
+        }
+      },
+      "nps": 5.44
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 164.00000000000017,
+      "offset_ms": 707.0,
+      "diagnostics": {
+        "objects": 447,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 266.57477133938255,
+        "spacing_p95_px": 434.8780619212015
+      },
+      "sha256": "3d9c4f6d3a37998ed21c3b45228879fb8268aa807d386c695236ac91c364f8f0",
+      "elapsed_s": 5.657977700000629,
+      "stars": 6.085328502842963,
+      "aim": 3.514422965660479,
+      "speed": 1.9349102120080748,
+      "peaks": {
+        "aim": {
+          "max": 310.9207923341352,
+          "p95": 279.78442383666527
+        },
+        "aim_no_sliders": {
+          "max": 310.9200512747623,
+          "p95": 279.7835839147855
+        },
+        "speed": {
+          "max": 98.3944360501685,
+          "p95": 79.16620027306583
+        }
+      },
+      "nps": 5.22
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 164.0,
+      "offset_ms": 344.2,
+      "diagnostics": {
+        "objects": 377,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 99.04544411531506,
+        "spacing_p95_px": 207.47740495034446
+      },
+      "sha256": "45e0bd3074069667ac07491aece7e63204805af2ab6c6d6f656a5fe54e85f861",
+      "elapsed_s": 6.17422169999918,
+      "stars": 4.743106291731329,
+      "aim": 2.633133618527371,
+      "speed": 1.829284750802021,
+      "peaks": {
+        "aim": {
+          "max": 208.71394924637056,
+          "p95": 145.56220599232336
+        },
+        "aim_no_sliders": {
+          "max": 208.18014087252044,
+          "p95": 143.11048875757194
+        },
+        "speed": {
+          "max": 73.32128620422459,
+          "p95": 72.19721110521202
+        }
+      },
+      "nps": 4.01
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 164.0,
+      "offset_ms": 344.2,
+      "diagnostics": {
+        "objects": 437,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 152.59423318068085,
+        "spacing_p95_px": 267.7929268692312
+      },
+      "sha256": "bbd99ddc83afb3ee1e30d508748fbb3295acdc0b3ae1343bdd0003a746a10ec1",
+      "elapsed_s": 6.102853699994739,
+      "stars": 4.922183910661289,
+      "aim": 2.742369292384332,
+      "speed": 1.874991616354001,
+      "peaks": {
+        "aim": {
+          "max": 198.38411240706586,
+          "p95": 166.88316621553602
+        },
+        "aim_no_sliders": {
+          "max": 198.36020154622952,
+          "p95": 166.88057669138772
+        },
+        "speed": {
+          "max": 88.79710181545936,
+          "p95": 75.48672008215625
+        }
+      },
+      "nps": 4.64
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 164.0,
+      "offset_ms": 344.2,
+      "diagnostics": {
+        "objects": 450,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 223.70739817896055,
+        "spacing_p95_px": 359.6748061539547
+      },
+      "sha256": "be2b95682a9ebfb82b722f511442cea5c6808872d57d11957fc26360e10c5b08",
+      "elapsed_s": 6.059186600003159,
+      "stars": 5.569406434954082,
+      "aim": 3.178202712876619,
+      "speed": 1.909449525295159,
+      "peaks": {
+        "aim": {
+          "max": 249.90879047251204,
+          "p95": 226.33708190227043
+        },
+        "aim_no_sliders": {
+          "max": 249.8913506122548,
+          "p95": 225.9261509287626
+        },
+        "speed": {
+          "max": 101.85640677713471,
+          "p95": 75.94830370382917
+        }
+      },
+      "nps": 5.08
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 164.0,
+      "offset_ms": 344.2,
+      "diagnostics": {
+        "objects": 470,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 238.20999139414786,
+        "spacing_p95_px": 363.20350088549037
+      },
+      "sha256": "e0362be4398baab371613e751b1e223f487e9e86a11ba96281664b9f29a63205",
+      "elapsed_s": 6.0083056000003126,
+      "stars": 5.748063953753468,
+      "aim": 3.275893212893688,
+      "speed": 1.9851393248675957,
+      "peaks": {
+        "aim": {
+          "max": 288.7196299765874,
+          "p95": 238.75448222344983
+        },
+        "aim_no_sliders": {
+          "max": 288.71962487360844,
+          "p95": 238.75385271460217
+        },
+        "speed": {
+          "max": 113.47050030795113,
+          "p95": 78.8508394859296
+        }
+      },
+      "nps": 5.31
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 164.0,
+      "offset_ms": 344.2,
+      "diagnostics": {
+        "objects": 510,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 241.6278129686233,
+        "spacing_p95_px": 357.0621771648766
+      },
+      "sha256": "b8e0ca3258b8906b3efd439f5576d226ef90ddb4a1c05c97fd4956e972cdfc82",
+      "elapsed_s": 5.969587799991132,
+      "stars": 5.636372748803551,
+      "aim": 3.2307984841026123,
+      "speed": 1.8832145649796934,
+      "peaks": {
+        "aim": {
+          "max": 262.8429724003712,
+          "p95": 231.95067093387414
+        },
+        "aim_no_sliders": {
+          "max": 262.8429724003712,
+          "p95": 231.939171743045
+        },
+        "speed": {
+          "max": 90.67989783767557,
+          "p95": 74.76906238214465
+        }
+      },
+      "nps": 5.38
+    },
+    {
+      "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 164.0,
+      "offset_ms": 344.2,
+      "diagnostics": {
+        "objects": 468,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 20,
+        "peak_nps_2s": 10.5,
+        "spacing_p50_px": 255.51907952244974,
+        "spacing_p95_px": 408.34414932028284
+      },
+      "sha256": "b49cc9c7e8f9f7548234f7694c6cdde71b9b8a1a2e8c5cbb80a8d584e56bdf47",
+      "elapsed_s": 5.889999100007117,
+      "stars": 6.0833666154801564,
+      "aim": 3.414440652730886,
+      "speed": 2.2552432657565458,
+      "peaks": {
+        "aim": {
+          "max": 292.08556278042585,
+          "p95": 261.7486974697047
+        },
+        "aim_no_sliders": {
+          "max": 292.08556278042585,
+          "p95": 261.58782322237323
+        },
+        "speed": {
+          "max": 178.86281616042118,
+          "p95": 88.31543390732661
+        }
+      },
+      "nps": 5.51
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 150.0,
+      "offset_ms": 1200.0,
+      "diagnostics": {
+        "objects": 469,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 12,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 104.3450093132096,
+        "spacing_p95_px": 216.89552285246398
+      },
+      "sha256": "48151abc87d9e4cca88cc9ff137a9c7daade72d151e6d51180ca8f48f71a8cd6",
+      "elapsed_s": 9.042254800006049,
+      "stars": 5.131703199742883,
+      "aim": 2.7289516888191785,
+      "speed": 2.213944670110261,
+      "peaks": {
+        "aim": {
+          "max": 229.77871128569157,
+          "p95": 150.74933729233766
+        },
+        "aim_no_sliders": {
+          "max": 229.4064188738499,
+          "p95": 150.71307581094126
+        },
+        "speed": {
+          "max": 124.45226731284443,
+          "p95": 100.06141580365038
+        }
+      },
+      "nps": 4.1
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 150.0,
+      "offset_ms": 1200.0,
+      "diagnostics": {
+        "objects": 486,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 13,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 116.01724009818541,
+        "spacing_p95_px": 246.14922263425143
+      },
+      "sha256": "4988dc91c360720a3129194ca80a1bcec026f9bf8acc6d21c1ae6dc70a026e74",
+      "elapsed_s": 8.844786200003,
+      "stars": 5.4661296344256485,
+      "aim": 2.935433244836135,
+      "speed": 2.309837746630741,
+      "peaks": {
+        "aim": {
+          "max": 255.0180729258156,
+          "p95": 167.3105169627727
+        },
+        "aim_no_sliders": {
+          "max": 254.5952960952971,
+          "p95": 167.3083300884086
+        },
+        "speed": {
+          "max": 143.38567849793696,
+          "p95": 104.63253554563444
+        }
+      },
+      "nps": 4.25
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 150.0,
+      "offset_ms": 1200.0,
+      "diagnostics": {
+        "objects": 504,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 14,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 115.69356075426151,
+        "spacing_p95_px": 239.1731927672462
+      },
+      "sha256": "38b7b5ddbf20cb83e0c747d6130e2879519aad86911321dc080eddaae2e6b265",
+      "elapsed_s": 8.595624399997178,
+      "stars": 5.172839928219307,
+      "aim": 2.7374616722389193,
+      "speed": 2.253192814991495,
+      "peaks": {
+        "aim": {
+          "max": 205.63035458348895,
+          "p95": 162.57143223699754
+        },
+        "aim_no_sliders": {
+          "max": 205.5760135347129,
+          "p95": 162.56662434981203
+        },
+        "speed": {
+          "max": 127.08838006720269,
+          "p95": 99.74973755553246
+        }
+      },
+      "nps": 4.41
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 150.0,
+      "offset_ms": 1200.0,
+      "diagnostics": {
+        "objects": 530,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 103.69667304209909,
+        "spacing_p95_px": 242.1576165220754
+      },
+      "sha256": "20020b8fe0a43260413aa063d3e32ef47057031161d9dbf11f16acd30fe1758c",
+      "elapsed_s": 8.477011599999969,
+      "stars": 5.860485490361681,
+      "aim": 3.1165304938546643,
+      "speed": 2.52857371281674,
+      "peaks": {
+        "aim": {
+          "max": 293.2246163568697,
+          "p95": 198.59219760562476
+        },
+        "aim_no_sliders": {
+          "max": 293.1885679213937,
+          "p95": 195.20320010705737
+        },
+        "speed": {
+          "max": 182.24747188935925,
+          "p95": 124.58704432447308
+        }
+      },
+      "nps": 4.63
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 150.0,
+      "offset_ms": 1200.0,
+      "diagnostics": {
+        "objects": 537,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 109.72235838648899,
+        "spacing_p95_px": 258.14143096289393
+      },
+      "sha256": "42f4dcedd41ab44042e129b7001fb1e7efabbcc14d51e7498e249f390723fb28",
+      "elapsed_s": 8.318485299998429,
+      "stars": 5.852334564856451,
+      "aim": 3.1178510408751117,
+      "speed": 2.5157608109546765,
+      "peaks": {
+        "aim": {
+          "max": 278.5705989194621,
+          "p95": 206.4694519710347
+        },
+        "aim_no_sliders": {
+          "max": 278.5143744687377,
+          "p95": 204.13860249469772
+        },
+        "speed": {
+          "max": 169.71935041731146,
+          "p95": 131.09687318134547
+        }
+      },
+      "nps": 4.69
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 150.0,
+      "offset_ms": 1200.0,
+      "diagnostics": {
+        "objects": 534,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 117.88553770501282,
+        "spacing_p95_px": 331.4835831307811
+      },
+      "sha256": "0f493c80f47ade7bfe6fe48d4e56cb7185a2d3bc262544893cf5c81042a57169",
+      "elapsed_s": 8.322216300002765,
+      "stars": 6.261358372547975,
+      "aim": 3.3996769821596162,
+      "speed": 2.5781769366254523,
+      "peaks": {
+        "aim": {
+          "max": 310.5855689628118,
+          "p95": 241.6612911904545
+        },
+        "aim_no_sliders": {
+          "max": 310.49824862710346,
+          "p95": 239.93688927323302
+        },
+        "speed": {
+          "max": 176.74430581696072,
+          "p95": 133.69607650500586
+        }
+      },
+      "nps": 4.67
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 150.0,
+      "offset_ms": 1212.4,
+      "diagnostics": {
+        "objects": 509,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 21,
+        "peak_nps_2s": 10.0,
+        "spacing_p50_px": 86.7489618940619,
+        "spacing_p95_px": 196.88977217586387
+      },
+      "sha256": "427c698cf57628b16073e452f41aa3cb6dbef775eb0d46ff87b71a92bfa53e48",
+      "elapsed_s": 7.641060199995991,
+      "stars": 5.230547578666978,
+      "aim": 2.6968772555228453,
+      "speed": 2.381752876939355,
+      "peaks": {
+        "aim": {
+          "max": 205.07117291501737,
+          "p95": 157.12893578716555
+        },
+        "aim_no_sliders": {
+          "max": 205.07117279576477,
+          "p95": 157.11642225429406
+        },
+        "speed": {
+          "max": 148.08054602791572,
+          "p95": 116.96429947728778
+        }
+      },
+      "nps": 4.45
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 150.0,
+      "offset_ms": 1212.4,
+      "diagnostics": {
+        "objects": 519,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 21,
+        "peak_nps_2s": 10.0,
+        "spacing_p50_px": 87.17509032467314,
+        "spacing_p95_px": 228.69319835635045
+      },
+      "sha256": "a972bc44ce0d866b4c7dfb71a52b45b98ba1520d3e4ccfe26916f5444cafe2b1",
+      "elapsed_s": 8.833275500001037,
+      "stars": 5.244203970780961,
+      "aim": 2.711803439783735,
+      "speed": 2.3773221779754086,
+      "peaks": {
+        "aim": {
+          "max": 190.76875011140885,
+          "p95": 160.84132599254187
+        },
+        "aim_no_sliders": {
+          "max": 190.7687465595853,
+          "p95": 158.04771336246966
+        },
+        "speed": {
+          "max": 139.74466116729732,
+          "p95": 116.06225364067478
+        }
+      },
+      "nps": 4.54
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 150.0,
+      "offset_ms": 1212.4,
+      "diagnostics": {
+        "objects": 524,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 21,
+        "peak_nps_2s": 10.0,
+        "spacing_p50_px": 97.98469268207153,
+        "spacing_p95_px": 217.85211587880042
+      },
+      "sha256": "f9420d7a04efc85d5ba5b5183ef24078866fb5a70174ee92e2b3e7bd59ef1214",
+      "elapsed_s": 8.771123600003193,
+      "stars": 5.594701127164502,
+      "aim": 2.952255285308479,
+      "speed": 2.4502945599343704,
+      "peaks": {
+        "aim": {
+          "max": 241.2439171663994,
+          "p95": 183.00262895577467
+        },
+        "aim_no_sliders": {
+          "max": 241.186459135416,
+          "p95": 182.9972819286463
+        },
+        "speed": {
+          "max": 153.62656032883308,
+          "p95": 121.75058670448809
+        }
+      },
+      "nps": 4.58
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 150.0,
+      "offset_ms": 1212.4,
+      "diagnostics": {
+        "objects": 530,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 120.20815280171308,
+        "spacing_p95_px": 248.95696416213497
+      },
+      "sha256": "60aea1397377ba819f1fb617b58bb6a17a06e520ae318e663280678c67d57823",
+      "elapsed_s": 8.665416799995,
+      "stars": 5.964138460974619,
+      "aim": 3.1458913123141556,
+      "speed": 2.6142145270394317,
+      "peaks": {
+        "aim": {
+          "max": 316.12787714671356,
+          "p95": 208.71315212813371
+        },
+        "aim_no_sliders": {
+          "max": 316.1248405296742,
+          "p95": 203.6865975274354
+        },
+        "speed": {
+          "max": 186.47322553273347,
+          "p95": 131.58384593847595
+        }
+      },
+      "nps": 4.63
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 150.0,
+      "offset_ms": 1212.4,
+      "diagnostics": {
+        "objects": 564,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 21,
+        "peak_nps_2s": 10.0,
+        "spacing_p50_px": 121.69634341261039,
+        "spacing_p95_px": 295.8553035941482
+      },
+      "sha256": "7f59ef5ee696266b7b588cd75fd36673722dd82b5be4b73618eead360f4c99a2",
+      "elapsed_s": 8.713012499996694,
+      "stars": 6.777250520480127,
+      "aim": 3.6768427233806205,
+      "speed": 2.7964801588843144,
+      "peaks": {
+        "aim": {
+          "max": 411.89317997878896,
+          "p95": 273.52992910919613
+        },
+        "aim_no_sliders": {
+          "max": 411.89159413316446,
+          "p95": 273.52992846392203
+        },
+        "speed": {
+          "max": 208.0195691581345,
+          "p95": 153.12206046930257
+        }
+      },
+      "nps": 4.93
+    },
+    {
+      "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 150.0,
+      "offset_ms": 1212.4,
+      "diagnostics": {
+        "objects": 610,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 16,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 129.52991932368366,
+        "spacing_p95_px": 275.0016311389881
+      },
+      "sha256": "237c3fac4d3a9394d22502783f27d43dbb47f7fbfe2db90a42970af7f2880893",
+      "elapsed_s": 8.792657900004997,
+      "stars": 6.62811818166859,
+      "aim": 3.5990949518124786,
+      "speed": 2.7288526743604673,
+      "peaks": {
+        "aim": {
+          "max": 395.3827736094528,
+          "p95": 264.8287790956077
+        },
+        "aim_no_sliders": {
+          "max": 394.7274496300671,
+          "p95": 264.82877905626646
+        },
+        "speed": {
+          "max": 190.1069652491649,
+          "p95": 155.74581186186532
+        }
+      },
+      "nps": 5.33
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 139.99999999999986,
+      "offset_ms": 525.0,
+      "diagnostics": {
+        "objects": 202,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 163.19620093617377,
+        "spacing_p95_px": 256.14253844295365
+      },
+      "sha256": "aa60278c4302e05cf37e889f95f648a6fee803bffd1c3039cba202129e8b4bc8",
+      "elapsed_s": 4.100238700004411,
+      "stars": 4.060398436015546,
+      "aim": 2.271018690566432,
+      "speed": 1.523295479514819,
+      "peaks": {
+        "aim": {
+          "max": 147.27619632012244,
+          "p95": 121.03086055504546
+        },
+        "aim_no_sliders": {
+          "max": 147.19922952607172,
+          "p95": 120.59944855629492
+        },
+        "speed": {
+          "max": 56.86079039808972,
+          "p95": 51.19740402769246
+        }
+      },
+      "nps": 3.71
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 139.99999999999986,
+      "offset_ms": 525.0,
+      "diagnostics": {
+        "objects": 238,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 124.10076550932311,
+        "spacing_p95_px": 213.42438937867416
+      },
+      "sha256": "c83c4293e2c69f4e9f200bea1ff08b0045fcd94634957a16e51909ce44e85203",
+      "elapsed_s": 4.719349000006332,
+      "stars": 4.441384856075876,
+      "aim": 2.535005504208564,
+      "speed": 1.5179718313954644,
+      "peaks": {
+        "aim": {
+          "max": 160.94656432299237,
+          "p95": 146.92613044061343
+        },
+        "aim_no_sliders": {
+          "max": 160.86123737009044,
+          "p95": 146.2894102820218
+        },
+        "speed": {
+          "max": 69.75575038412177,
+          "p95": 49.24722178073311
+        }
+      },
+      "nps": 4.37
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 139.99999999999986,
+      "offset_ms": 525.0,
+      "diagnostics": {
+        "objects": 241,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 129.3612815920549,
+        "spacing_p95_px": 200.27132788132323
+      },
+      "sha256": "83d01d900983ecfb3de371ae9cf8adbee46890345a33b1e9b66e8767496449d9",
+      "elapsed_s": 4.588083199996618,
+      "stars": 4.563108593849541,
+      "aim": 2.5628614323438708,
+      "speed": 1.6848597265984788,
+      "peaks": {
+        "aim": {
+          "max": 171.39560900466233,
+          "p95": 151.8545410090983
+        },
+        "aim_no_sliders": {
+          "max": 171.39398732722015,
+          "p95": 151.84203093235317
+        },
+        "speed": {
+          "max": 94.74971516003187,
+          "p95": 65.69685605692794
+        }
+      },
+      "nps": 4.43
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 139.99999999999986,
+      "offset_ms": 525.0,
+      "diagnostics": {
+        "objects": 332,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 96.317184344228,
+        "spacing_p95_px": 205.0790695513317
+      },
+      "sha256": "690acc11158e0f9573a4931876288029b3bb245566e618f9289db167700920b9",
+      "elapsed_s": 4.504461199991056,
+      "stars": 6.002056645640208,
+      "aim": 3.204916139111763,
+      "speed": 2.567999848111378,
+      "peaks": {
+        "aim": {
+          "max": 312.28501933033453,
+          "p95": 239.7012378696477
+        },
+        "aim_no_sliders": {
+          "max": 312.11598570795286,
+          "p95": 238.70237599260713
+        },
+        "speed": {
+          "max": 193.8783320964107,
+          "p95": 141.6066956340855
+        }
+      },
+      "nps": 6.1
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 139.99999999999986,
+      "offset_ms": 525.0,
+      "diagnostics": {
+        "objects": 287,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 201.46818315131625,
+        "spacing_p95_px": 411.31103708959097
+      },
+      "sha256": "c83369a14e9e54e9b6f283b324050b0ee793f418fc14614f7452c4bcbeef5597",
+      "elapsed_s": 3.9996667000086745,
+      "stars": 5.347861308974616,
+      "aim": 3.0217993950202424,
+      "speed": 1.9256415491926304,
+      "peaks": {
+        "aim": {
+          "max": 230.29335829691618,
+          "p95": 209.80913952428762
+        },
+        "aim_no_sliders": {
+          "max": 230.29335829691618,
+          "p95": 209.80913952428762
+        },
+        "speed": {
+          "max": 89.17461753759999,
+          "p95": 81.86764258593075
+        }
+      },
+      "nps": 5.23
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 139.99999999999986,
+      "offset_ms": 525.0,
+      "diagnostics": {
+        "objects": 287,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 204.59739665968596,
+        "spacing_p95_px": 405.01165800315584
+      },
+      "sha256": "f0e6a89f8c182e3280f18078607648400b94d5c2790357ad48591185eb07093f",
+      "elapsed_s": 4.0006587999960175,
+      "stars": 5.481160591532257,
+      "aim": 3.0924702061594105,
+      "speed": 1.9871924692873346,
+      "peaks": {
+        "aim": {
+          "max": 238.17098531995538,
+          "p95": 219.91607762146955
+        },
+        "aim_no_sliders": {
+          "max": 238.17098531995538,
+          "p95": 219.91607762146955
+        },
+        "speed": {
+          "max": 97.58385484132428,
+          "p95": 87.49849026398778
+        }
+      },
+      "nps": 5.23
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 140.0,
+      "offset_ms": 546.3,
+      "diagnostics": {
+        "objects": 196,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 4.5,
+        "spacing_p50_px": 154.9322432549145,
+        "spacing_p95_px": 254.19591047507964
+      },
+      "sha256": "b78ec7fc45d19f9080024024246377a4dae266e47ffc9de4fc1dae18bf3e68d3",
+      "elapsed_s": 4.54255589999957,
+      "stars": 4.108009785184169,
+      "aim": 2.304610948130849,
+      "speed": 1.5230068677409592,
+      "peaks": {
+        "aim": {
+          "max": 165.38277730235615,
+          "p95": 122.54340832427289
+        },
+        "aim_no_sliders": {
+          "max": 165.32298090954126,
+          "p95": 122.41105723833809
+        },
+        "speed": {
+          "max": 52.98586071104687,
+          "p95": 51.30558849672096
+        }
+      },
+      "nps": 3.57
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 140.0,
+      "offset_ms": 546.3,
+      "diagnostics": {
+        "objects": 196,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 4.5,
+        "spacing_p50_px": 156.28499608087785,
+        "spacing_p95_px": 256.77895422850236
+      },
+      "sha256": "705dfaf0aa33921b39ff534f6941d221e14de2cf77b0d7bc01a10ac6bc5428f3",
+      "elapsed_s": 4.281000899994979,
+      "stars": 4.308692429816461,
+      "aim": 2.4419605957915618,
+      "speed": 1.5274981756951236,
+      "peaks": {
+        "aim": {
+          "max": 182.46685631165462,
+          "p95": 136.7542759783649
+        },
+        "aim_no_sliders": {
+          "max": 181.99993358540922,
+          "p95": 135.7774500722904
+        },
+        "speed": {
+          "max": 52.54457668853883,
+          "p95": 51.319288085118046
+        }
+      },
+      "nps": 3.57
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 140.0,
+      "offset_ms": 546.3,
+      "diagnostics": {
+        "objects": 203,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 4.5,
+        "spacing_p50_px": 154.4910170037145,
+        "spacing_p95_px": 231.33554187455076
+      },
+      "sha256": "853eb7ff6db3b0ed2cc21bdfc8a0b98ec6f6a983b677348451f4357e4a91d64c",
+      "elapsed_s": 4.408172199997352,
+      "stars": 4.075663377613919,
+      "aim": 2.317360881582668,
+      "speed": 1.4209512374797655,
+      "peaks": {
+        "aim": {
+          "max": 136.00129026385963,
+          "p95": 126.80157787819569
+        },
+        "aim_no_sliders": {
+          "max": 135.85853392832325,
+          "p95": 126.4525188249806
+        },
+        "speed": {
+          "max": 46.00457433575213,
+          "p95": 43.89767330382813
+        }
+      },
+      "nps": 3.73
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 140.0,
+      "offset_ms": 546.3,
+      "diagnostics": {
+        "objects": 263,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 340.6742035626967,
+        "spacing_p95_px": 471.7409451699655
+      },
+      "sha256": "1410f110ab7384b44ca501a50a325950a10eac40f541bb9ab978eb276864bf7b",
+      "elapsed_s": 4.1522794000047725,
+      "stars": 5.4430323821855655,
+      "aim": 3.1735157412934107,
+      "speed": 1.5917005511335984,
+      "peaks": {
+        "aim": {
+          "max": 245.44987480647757,
+          "p95": 227.82672769120424
+        },
+        "aim_no_sliders": {
+          "max": 240.42917089967386,
+          "p95": 227.82662676264312
+        },
+        "speed": {
+          "max": 54.34957664784647,
+          "p95": 54.345741437187826
+        }
+      },
+      "nps": 4.43
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 140.0,
+      "offset_ms": 546.3,
+      "diagnostics": {
+        "objects": 254,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 247.63077353188558,
+        "spacing_p95_px": 417.0840610170153
+      },
+      "sha256": "53c38ef18bdc16d7ec7683aeba4719a2cbfa222c4708002bfa0d925e01f53907",
+      "elapsed_s": 4.215061299997615,
+      "stars": 5.195659764776652,
+      "aim": 3.013574447296519,
+      "speed": 1.5931295754572246,
+      "peaks": {
+        "aim": {
+          "max": 233.19251193505158,
+          "p95": 209.25251677552686
+        },
+        "aim_no_sliders": {
+          "max": 233.19250893056667,
+          "p95": 209.21923635007016
+        },
+        "speed": {
+          "max": 54.883889390879155,
+          "p95": 54.541428528580525
+        }
+      },
+      "nps": 4.28
+    },
+    {
+      "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 140.0,
+      "offset_ms": 546.3,
+      "diagnostics": {
+        "objects": 253,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 330.4301812846287,
+        "spacing_p95_px": 476.3815822037083
+      },
+      "sha256": "f935a8ec0b7d943e86abff7c12022eeb8d9ca9019300d8dcfa20458173c3b5c7",
+      "elapsed_s": 4.1454423000104725,
+      "stars": 5.419837106858713,
+      "aim": 3.1583453415571148,
+      "speed": 1.593102478248834,
+      "peaks": {
+        "aim": {
+          "max": 235.8160252445947,
+          "p95": 228.05633904222762
+        },
+        "aim_no_sliders": {
+          "max": 235.81602392454914,
+          "p95": 228.04587338437653
+        },
+        "speed": {
+          "max": 54.88388856873341,
+          "p95": 54.54142736261803
+        }
+      },
+      "nps": 4.29
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 130.99999999999986,
+      "offset_ms": 632.0,
+      "diagnostics": {
+        "objects": 472,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 93.3541489778667,
+        "spacing_p95_px": 207.68408065644138
+      },
+      "sha256": "f8ce2bc2ddc9b79435253cbfa4470a5e2036b961f346c6b4d4e31e77d047a365",
+      "elapsed_s": 9.125684600003297,
+      "stars": 4.817945111480231,
+      "aim": 2.628923117289627,
+      "speed": 1.9576295869286895,
+      "peaks": {
+        "aim": {
+          "max": 188.09977682913416,
+          "p95": 149.28225464317646
+        },
+        "aim_no_sliders": {
+          "max": 186.00239362075087,
+          "p95": 147.65409051443947
+        },
+        "speed": {
+          "max": 105.2944040002168,
+          "p95": 78.84274138085922
+        }
+      },
+      "nps": 4.03
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 130.99999999999986,
+      "offset_ms": 632.0,
+      "diagnostics": {
+        "objects": 485,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 109.7679370308106,
+        "spacing_p95_px": 209.71645768782736
+      },
+      "sha256": "f56a70e3680949b3a79f95e3a8ab5286f788d70b0c5506fd15a5b7dea81f49c9",
+      "elapsed_s": 8.582230500003789,
+      "stars": 5.145226532328752,
+      "aim": 2.7954806720181,
+      "speed": 2.1144946561500757,
+      "peaks": {
+        "aim": {
+          "max": 215.932075825227,
+          "p95": 167.39868152105154
+        },
+        "aim_no_sliders": {
+          "max": 213.178721730274,
+          "p95": 166.16649722144774
+        },
+        "speed": {
+          "max": 126.96152724891965,
+          "p95": 92.1379613311574
+        }
+      },
+      "nps": 4.14
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 130.99999999999986,
+      "offset_ms": 632.0,
+      "diagnostics": {
+        "objects": 490,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 122.46223737646626,
+        "spacing_p95_px": 219.81237028556626
+      },
+      "sha256": "7d0f36ba23259127e4b8fbce1eb9b375a02a05827646c75fb04609b1f3e9999e",
+      "elapsed_s": 8.53326680000464,
+      "stars": 5.7161971689801945,
+      "aim": 3.1501687469378354,
+      "speed": 2.258388336876611,
+      "peaks": {
+        "aim": {
+          "max": 273.51223670164165,
+          "p95": 210.61403677124073
+        },
+        "aim_no_sliders": {
+          "max": 272.22062301197593,
+          "p95": 210.10071446975786
+        },
+        "speed": {
+          "max": 123.31446117327245,
+          "p95": 108.40242132032658
+        }
+      },
+      "nps": 4.18
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 130.99999999999986,
+      "offset_ms": 632.0,
+      "diagnostics": {
+        "objects": 460,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 110.79701776792686,
+        "spacing_p95_px": 196.27422193673695
+      },
+      "sha256": "12e32cf143c33f5902c7ad6e544d8c44ba59be37cdc8f7c2c81a3de7eaa7249c",
+      "elapsed_s": 8.804012099993997,
+      "stars": 5.551925240194071,
+      "aim": 3.040348345033139,
+      "speed": 2.2342846283525946,
+      "peaks": {
+        "aim": {
+          "max": 282.0897955917743,
+          "p95": 195.26210466850443
+        },
+        "aim_no_sliders": {
+          "max": 281.00268233319446,
+          "p95": 193.5579290487694
+        },
+        "speed": {
+          "max": 120.95697963764027,
+          "p95": 106.72584109527997
+        }
+      },
+      "nps": 3.93
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 130.99999999999986,
+      "offset_ms": 632.0,
+      "diagnostics": {
+        "objects": 449,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 123.94353553130554,
+        "spacing_p95_px": 229.60290439393125
+      },
+      "sha256": "5ac6dd089d35d474060a3c9ea0238e96ca4e0c5d3d76a49dac09fed054108146",
+      "elapsed_s": 8.698647500001243,
+      "stars": 5.265207162706137,
+      "aim": 2.901090259628913,
+      "speed": 2.080978626951418,
+      "peaks": {
+        "aim": {
+          "max": 235.05763190471856,
+          "p95": 176.9704490271218
+        },
+        "aim_no_sliders": {
+          "max": 233.84634101953435,
+          "p95": 175.01693162945327
+        },
+        "speed": {
+          "max": 115.19674398165782,
+          "p95": 88.20375735348262
+        }
+      },
+      "nps": 3.83
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 130.99999999999986,
+      "offset_ms": 632.0,
+      "diagnostics": {
+        "objects": 457,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 124.14507642270796,
+        "spacing_p95_px": 252.3770783083327
+      },
+      "sha256": "51ab2bc5f3afd9d3a50f76623ff26654ddd5710bfd87c7db11aa1c525d9145ff",
+      "elapsed_s": 8.77068019998842,
+      "stars": 5.383111329980666,
+      "aim": 2.975563786835361,
+      "speed": 2.1066077746957874,
+      "peaks": {
+        "aim": {
+          "max": 249.2924316233826,
+          "p95": 185.17191005295388
+        },
+        "aim_no_sliders": {
+          "max": 243.09214351941864,
+          "p95": 182.17042124610842
+        },
+        "speed": {
+          "max": 110.40156252918315,
+          "p95": 91.21316983775544
+        }
+      },
+      "nps": 3.9
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 5.5,
+      "bpm": 131.0,
+      "offset_ms": 1329.7,
+      "diagnostics": {
+        "objects": 462,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 6,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 103.2932704147122,
+        "spacing_p95_px": 192.21146604750257
+      },
+      "sha256": "6d9872c0612fb670e8381db475a16a055250853357dc466ad9ab3485691e1d17",
+      "elapsed_s": 10.45760860000155,
+      "stars": 4.713975570950574,
+      "aim": 2.504520086532907,
+      "speed": 2.037318666502571,
+      "peaks": {
+        "aim": {
+          "max": 204.46915342746178,
+          "p95": 130.74358886782045
+        },
+        "aim_no_sliders": {
+          "max": 204.45037834800866,
+          "p95": 130.66622910024927
+        },
+        "speed": {
+          "max": 133.88179596800893,
+          "p95": 75.74423503290956
+        }
+      },
+      "nps": 3.94
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.0,
+      "bpm": 131.0,
+      "offset_ms": 1329.7,
+      "diagnostics": {
+        "objects": 473,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 6,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 109.38464243210744,
+        "spacing_p95_px": 190.36101380041583
+      },
+      "sha256": "6fde5fc71c26a09e5b6a110e4060a1776ecd64a0d1149a99c05865ef49f99d37",
+      "elapsed_s": 9.67796559999988,
+      "stars": 5.286688360120773,
+      "aim": 2.8959607550743254,
+      "speed": 2.125556132404661,
+      "peaks": {
+        "aim": {
+          "max": 234.0414780491426,
+          "p95": 181.21362089684646
+        },
+        "aim_no_sliders": {
+          "max": 231.0658821797012,
+          "p95": 181.20330662355312
+        },
+        "speed": {
+          "max": 119.63053748188747,
+          "p95": 89.18852209347077
+        }
+      },
+      "nps": 4.04
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 6.5,
+      "bpm": 131.0,
+      "offset_ms": 1329.7,
+      "diagnostics": {
+        "objects": 490,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 6,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 123.56529888141375,
+        "spacing_p95_px": 230.77433666394106
+      },
+      "sha256": "388aefd64f4f5a4ee37593a1a043b3a9040deee43676febda0109446b8f134cc",
+      "elapsed_s": 9.188484899990726,
+      "stars": 5.330705472788466,
+      "aim": 2.9163164042396112,
+      "speed": 2.1510171118856465,
+      "peaks": {
+        "aim": {
+          "max": 242.87012141614437,
+          "p95": 181.12699674080332
+        },
+        "aim_no_sliders": {
+          "max": 242.8648154410153,
+          "p95": 180.88586648201198
+        },
+        "speed": {
+          "max": 126.95688825216929,
+          "p95": 94.60802801417361
+        }
+      },
+      "nps": 4.18
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.0,
+      "bpm": 131.0,
+      "offset_ms": 1329.7,
+      "diagnostics": {
+        "objects": 484,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 6,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 125.6303979751444,
+        "spacing_p95_px": 222.70367174753406
+      },
+      "sha256": "e56107aa348db594c80dc4012e743803d3e575919adfc89043e1e2536c83561e",
+      "elapsed_s": 9.25421909999568,
+      "stars": 5.02894562553612,
+      "aim": 2.7793699834860623,
+      "speed": 1.9685940592779045,
+      "peaks": {
+        "aim": {
+          "max": 221.8411573209704,
+          "p95": 156.78868068820913
+        },
+        "aim_no_sliders": {
+          "max": 221.8377509838669,
+          "p95": 156.17178248153914
+        },
+        "speed": {
+          "max": 101.564828096188,
+          "p95": 80.00157815101412
+        }
+      },
+      "nps": 4.13
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 7.5,
+      "bpm": 131.0,
+      "offset_ms": 1329.7,
+      "diagnostics": {
+        "objects": 476,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 6,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 125.92251637560008,
+        "spacing_p95_px": 232.29456783559422
+      },
+      "sha256": "9ee13cc647d85db6aca2493eaedc315d9957102851a232f1de9381c949a0d021",
+      "elapsed_s": 9.143288300008862,
+      "stars": 5.368959299799622,
+      "aim": 2.9665304390956746,
+      "speed": 2.103776063408399,
+      "peaks": {
+        "aim": {
+          "max": 263.29214887589404,
+          "p95": 179.2340104150072
+        },
+        "aim_no_sliders": {
+          "max": 263.29129359800197,
+          "p95": 178.56138498332092
+        },
+        "speed": {
+          "max": 137.29340145964167,
+          "p95": 85.0640424848538
+        }
+      },
+      "nps": 4.06
+    },
+    {
+      "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "moderate",
+      "condition": 8.0,
+      "bpm": 131.0,
+      "offset_ms": 1329.7,
+      "diagnostics": {
+        "objects": 471,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 6,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 127.11002383935447,
+        "spacing_p95_px": 226.17078082117152
+      },
+      "sha256": "936843cd49a490783d9b23d330b58d8ed717ac3b1e4f2cdd0c952d6ffcb77512",
+      "elapsed_s": 9.460954200010747,
+      "stars": 4.947560064202096,
+      "aim": 2.663178354996964,
+      "speed": 2.0794202369550687,
+      "peaks": {
+        "aim": {
+          "max": 193.74173749305038,
+          "p95": 153.5575722876899
+        },
+        "aim_no_sliders": {
+          "max": 191.9075707774632,
+          "p95": 153.12611961002114
+        },
+        "speed": {
+          "max": 129.0849191995123,
+          "p95": 87.98453578364708
+        }
+      },
+      "nps": 4.02
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 222.00000000000026,
+      "offset_ms": -18.1,
+      "diagnostics": {
+        "objects": 365,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 126.78308730045063,
+        "spacing_p95_px": 243.0723099547223
+      },
+      "sha256": "6fd77b850c87a19e751e97f4e57d725997e08afedc3fe46294573649a0eafbf2",
+      "elapsed_s": 7.952611999993678,
+      "stars": 5.1847738927711955,
+      "aim": 2.8502498083266903,
+      "speed": 2.063210149367238,
+      "peaks": {
+        "aim": {
+          "max": 221.25771022600895,
+          "p95": 175.34492126886698
+        },
+        "aim_no_sliders": {
+          "max": 219.14594535320725,
+          "p95": 168.32415964524156
+        },
+        "speed": {
+          "max": 110.68522446762542,
+          "p95": 88.60140909898787
+        }
+      },
+      "nps": 3.01
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 222.00000000000026,
+      "offset_ms": -18.1,
+      "diagnostics": {
+        "objects": 454,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 103.42630045623487,
+        "spacing_p95_px": 187.06861921084067
+      },
+      "sha256": "d71fdd4a71b90d1b8465d2f76eda1f395157506712bdac3b6163e236e99e9d32",
+      "elapsed_s": 8.285525900006178,
+      "stars": 5.357238075694845,
+      "aim": 2.895142642212631,
+      "speed": 2.231040541168354,
+      "peaks": {
+        "aim": {
+          "max": 246.57551999205492,
+          "p95": 180.31032036889556
+        },
+        "aim_no_sliders": {
+          "max": 246.57551999205492,
+          "p95": 180.07140850028867
+        },
+        "speed": {
+          "max": 127.54836641061856,
+          "p95": 101.21337130139523
+        }
+      },
+      "nps": 3.65
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 222.00000000000026,
+      "offset_ms": -18.1,
+      "diagnostics": {
+        "objects": 645,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 33,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 72.18032973047436,
+        "spacing_p95_px": 203.66251854291156
+      },
+      "sha256": "a3f31b92c16a1680e978fe072468dafc46a2500d9bcf05f959289e9ce69596e4",
+      "elapsed_s": 8.229994499997701,
+      "stars": 6.724892622114013,
+      "aim": 3.1815233414825483,
+      "speed": 3.3710346904923587,
+      "peaks": {
+        "aim": {
+          "max": 271.66788172588133,
+          "p95": 217.97272173718903
+        },
+        "aim_no_sliders": {
+          "max": 271.4579480441061,
+          "p95": 216.7911796034707
+        },
+        "speed": {
+          "max": 274.9484472502022,
+          "p95": 239.54011223230881
+        }
+      },
+      "nps": 5.24
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 222.00000000000026,
+      "offset_ms": -18.1,
+      "diagnostics": {
+        "objects": 956,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 277,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 18.384776310850235,
+        "spacing_p95_px": 148.42717640096467
+      },
+      "sha256": "b355c84030158ce59fa9aa9a5e5fd6966d4a03709e8316baf55ed469704cbda1",
+      "elapsed_s": 8.771653100004187,
+      "stars": 6.817366876319864,
+      "aim": 2.8857425642500663,
+      "speed": 3.6586102530044697,
+      "peaks": {
+        "aim": {
+          "max": 245.17872070954212,
+          "p95": 175.0303244252083
+        },
+        "aim_no_sliders": {
+          "max": 245.17872070954212,
+          "p95": 175.0303244252083
+        },
+        "speed": {
+          "max": 288.03695529058143,
+          "p95": 286.87782858219276
+        }
+      },
+      "nps": 7.64
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 222.00000000000026,
+      "offset_ms": -18.1,
+      "diagnostics": {
+        "objects": 989,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 353,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 27.073972741361768,
+        "spacing_p95_px": 147.54972632572026
+      },
+      "sha256": "4d5e640bf2f01431ac213d8ac9694e4be359b7d04be3657378ff1f774d8ea826",
+      "elapsed_s": 8.909976499999175,
+      "stars": 7.030472440037101,
+      "aim": 3.1019362463247253,
+      "speed": 3.6951644406347106,
+      "peaks": {
+        "aim": {
+          "max": 321.7626415489673,
+          "p95": 196.7096404104417
+        },
+        "aim_no_sliders": {
+          "max": 321.7626415489673,
+          "p95": 196.7096404104417
+        },
+        "speed": {
+          "max": 316.4556488509023,
+          "p95": 290.8700686886531
+        }
+      },
+      "nps": 7.9
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 222.00000000000026,
+      "offset_ms": -18.1,
+      "diagnostics": {
+        "objects": 1050,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 257,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 31.804079044910253,
+        "spacing_p95_px": 215.84645823156166
+      },
+      "sha256": "cedc126e20ec89b0de1d949927e5cbc62c0bbb23648c7b253d2f778857e386d5",
+      "elapsed_s": 8.963526900013676,
+      "stars": 7.512185085400856,
+      "aim": 3.632336614981849,
+      "speed": 3.6938860254364,
+      "peaks": {
+        "aim": {
+          "max": 337.59016175478064,
+          "p95": 282.1775096703034
+        },
+        "aim_no_sliders": {
+          "max": 337.59016175478064,
+          "p95": 282.177508848793
+        },
+        "speed": {
+          "max": 296.8598515044121,
+          "p95": 292.6407142846257
+        }
+      },
+      "nps": 8.39
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 222.0,
+      "offset_ms": -14.8,
+      "diagnostics": {
+        "objects": 359,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 113.1591799192624,
+        "spacing_p95_px": 193.40296400417716
+      },
+      "sha256": "70664771106149266e158c0750fe507c2fdaadd94def388e62762d120d390d0d",
+      "elapsed_s": 8.842220499995165,
+      "stars": 4.898064165461768,
+      "aim": 2.6719788085511493,
+      "speed": 1.991572305306659,
+      "peaks": {
+        "aim": {
+          "max": 216.80206403145826,
+          "p95": 149.91232317144548
+        },
+        "aim_no_sliders": {
+          "max": 209.7060964529615,
+          "p95": 143.70359224594932
+        },
+        "speed": {
+          "max": 108.36941873027828,
+          "p95": 78.97228596414536
+        }
+      },
+      "nps": 2.87
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 222.0,
+      "offset_ms": -14.8,
+      "diagnostics": {
+        "objects": 490,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 2,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 133.4632920024907,
+        "spacing_p95_px": 221.16518797823264
+      },
+      "sha256": "e93e4a94a891fdb56db71d71d85287d55d7bad4806b0f19423efb075644869c7",
+      "elapsed_s": 8.680291500000749,
+      "stars": 5.734036295948446,
+      "aim": 3.136462876827197,
+      "speed": 2.3151213958680272,
+      "peaks": {
+        "aim": {
+          "max": 245.57338740523278,
+          "p95": 216.4521532628405
+        },
+        "aim_no_sliders": {
+          "max": 245.01001960866543,
+          "p95": 214.07557685255662
+        },
+        "speed": {
+          "max": 128.9617247797021,
+          "p95": 112.4277943116244
+        }
+      },
+      "nps": 3.91
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 222.0,
+      "offset_ms": -14.8,
+      "diagnostics": {
+        "objects": 559,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 140.13208055259867,
+        "spacing_p95_px": 227.1441268433323
+      },
+      "sha256": "99c6b1e61f8a6cd51914240a5ae97c1c3cc43f63cc3acc6d63120a0dfb305abb",
+      "elapsed_s": 8.311089599999832,
+      "stars": 6.005036889004818,
+      "aim": 3.266140067791118,
+      "speed": 2.4616370999053774,
+      "peaks": {
+        "aim": {
+          "max": 275.93952034191295,
+          "p95": 234.8831767371398
+        },
+        "aim_no_sliders": {
+          "max": 272.66327934528965,
+          "p95": 233.91437901935083
+        },
+        "speed": {
+          "max": 138.59904899550574,
+          "p95": 128.89407227628095
+        }
+      },
+      "nps": 4.5
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 222.0,
+      "offset_ms": -14.8,
+      "diagnostics": {
+        "objects": 931,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 229,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 24.596747752497688,
+        "spacing_p95_px": 138.12240874930646
+      },
+      "sha256": "ec9d40dd8fdf77e9b83e37affa7fd57c76633518a3f6d3587b23b27aa082660a",
+      "elapsed_s": 9.130793100004666,
+      "stars": 6.823187913823537,
+      "aim": 2.889359870567357,
+      "speed": 3.6610728227312705,
+      "peaks": {
+        "aim": {
+          "max": 217.45861225398812,
+          "p95": 181.5174356358367
+        },
+        "aim_no_sliders": {
+          "max": 217.45861225398812,
+          "p95": 181.48213274874044
+        },
+        "speed": {
+          "max": 289.76525272935635,
+          "p95": 286.9240799256882
+        }
+      },
+      "nps": 7.44
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 222.0,
+      "offset_ms": -14.8,
+      "diagnostics": {
+        "objects": 919,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 353,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 28.792360097775937,
+        "spacing_p95_px": 188.84277803620893
+      },
+      "sha256": "4985d6cab68e45a5d78c3566d03a38562596c3b40a786a93d28b161cb44c83e5",
+      "elapsed_s": 8.187453100006678,
+      "stars": 7.100029125369973,
+      "aim": 3.2072724082328605,
+      "speed": 3.6799083401682684,
+      "peaks": {
+        "aim": {
+          "max": 268.72804796247897,
+          "p95": 220.7849477805285
+        },
+        "aim_no_sliders": {
+          "max": 268.7277721465793,
+          "p95": 220.78434271823366
+        },
+        "speed": {
+          "max": 294.27838625442723,
+          "p95": 289.0826887283059
+        }
+      },
+      "nps": 7.34
+    },
+    {
+      "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 222.0,
+      "offset_ms": -14.8,
+      "diagnostics": {
+        "objects": 1002,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 353,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 31.400636936215164,
+        "spacing_p95_px": 263.1269330727063
+      },
+      "sha256": "338a7b6929fc6b80d9919a664147472b3167926d12429f502aa9d2fb375a2a06",
+      "elapsed_s": 9.0845233,
+      "stars": 7.83084874388251,
+      "aim": 3.915425960181844,
+      "speed": 3.7161356646495367,
+      "peaks": {
+        "aim": {
+          "max": 401.9195821827434,
+          "p95": 332.1766330202575
+        },
+        "aim_no_sliders": {
+          "max": 401.9178048417456,
+          "p95": 332.17657912109377
+        },
+        "speed": {
+          "max": 308.24157444893007,
+          "p95": 295.04097374042857
+        }
+      },
+      "nps": 8.0
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 180.0000000000002,
+      "offset_ms": 406.0,
+      "diagnostics": {
+        "objects": 371,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 104.92378186092989,
+        "spacing_p95_px": 200.14619255497922
+      },
+      "sha256": "03db13a32af5f95f2fdbc77a12db0c281478a6b741f615be7d5ba5aea34b3ab6",
+      "elapsed_s": 9.484353299994837,
+      "stars": 4.669103657766765,
+      "aim": 2.599969933832815,
+      "speed": 1.781634118785393,
+      "peaks": {
+        "aim": {
+          "max": 183.17631928585257,
+          "p95": 147.4644896255641
+        },
+        "aim_no_sliders": {
+          "max": 182.91024362927624,
+          "p95": 147.464428107308
+        },
+        "speed": {
+          "max": 83.46183438742372,
+          "p95": 61.82022921532377
+        }
+      },
+      "nps": 3.44
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 180.0000000000002,
+      "offset_ms": 406.0,
+      "diagnostics": {
+        "objects": 442,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 99.31011953256126,
+        "spacing_p95_px": 238.5884198212589
+      },
+      "sha256": "e22ecc15519dee891918c1a557d12658ea9a05a86c554c815e085fac6057e84f",
+      "elapsed_s": 9.56125030000112,
+      "stars": 5.560143469907122,
+      "aim": 3.04609980935231,
+      "speed": 2.235014391811569,
+      "peaks": {
+        "aim": {
+          "max": 311.7536754232027,
+          "p95": 187.28499370255471
+        },
+        "aim_no_sliders": {
+          "max": 311.72291966623675,
+          "p95": 186.5308305271737
+        },
+        "speed": {
+          "max": 170.94297755310214,
+          "p95": 95.44522696353114
+        }
+      },
+      "nps": 3.95
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 180.0000000000002,
+      "offset_ms": 406.0,
+      "diagnostics": {
+        "objects": 484,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 16,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 98.62042161288895,
+        "spacing_p95_px": 248.64430562211578
+      },
+      "sha256": "2441091c43bb22d89639d8ad30daf8977ddb330805fb3e377008bd8735f66737",
+      "elapsed_s": 9.499518500000704,
+      "stars": 5.780574734525475,
+      "aim": 3.0727854179860485,
+      "speed": 2.4961085965537397,
+      "peaks": {
+        "aim": {
+          "max": 258.3421364171405,
+          "p95": 199.77431529070597
+        },
+        "aim_no_sliders": {
+          "max": 258.34213209133225,
+          "p95": 199.74559763041253
+        },
+        "speed": {
+          "max": 163.88038118336044,
+          "p95": 119.2851512979197
+        }
+      },
+      "nps": 4.32
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 180.0000000000002,
+      "offset_ms": 406.0,
+      "diagnostics": {
+        "objects": 431,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 116.93160394008115,
+        "spacing_p95_px": 233.60751476976014
+      },
+      "sha256": "3dce955adefc11142eb50405c3291e2b2ff488e18a8edb2333e23711f621bbb9",
+      "elapsed_s": 9.57317500001227,
+      "stars": 5.4771841810886714,
+      "aim": 3.113392893979664,
+      "speed": 1.9168384063529826,
+      "peaks": {
+        "aim": {
+          "max": 261.23317777380504,
+          "p95": 203.8526469196193
+        },
+        "aim_no_sliders": {
+          "max": 260.7640352985758,
+          "p95": 203.8526469191544
+        },
+        "speed": {
+          "max": 102.12932456355904,
+          "p95": 79.08769840959683
+        }
+      },
+      "nps": 4.0
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 180.0000000000002,
+      "offset_ms": 406.0,
+      "diagnostics": {
+        "objects": 468,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 137.82694589187844,
+        "spacing_p95_px": 307.67004808156474
+      },
+      "sha256": "ca4b4cbe639db6671c5e6d7f5dd438fc1eca30ca9f87df4fd26626fe012b33e9",
+      "elapsed_s": 7.991322400004719,
+      "stars": 6.182304785341911,
+      "aim": 3.4117063093835482,
+      "speed": 2.432716448261564,
+      "peaks": {
+        "aim": {
+          "max": 342.0052115648751,
+          "p95": 253.1769339677232
+        },
+        "aim_no_sliders": {
+          "max": 341.2536010425528,
+          "p95": 253.17527267507714
+        },
+        "speed": {
+          "max": 181.57585305834806,
+          "p95": 115.16984716251922
+        }
+      },
+      "nps": 4.35
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 180.0000000000002,
+      "offset_ms": 406.0,
+      "diagnostics": {
+        "objects": 546,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 9.5,
+        "spacing_p50_px": 162.61914055319164,
+        "spacing_p95_px": 301.97049782161656
+      },
+      "sha256": "9fac35869c611fa7da8b0c46c6d9d1e5df9894f8fbd8b2bf0263b0dfb02bc1a6",
+      "elapsed_s": 8.061631799995666,
+      "stars": 6.399348176900193,
+      "aim": 3.468507873063901,
+      "speed": 2.646629438037215,
+      "peaks": {
+        "aim": {
+          "max": 369.0725138916363,
+          "p95": 250.49620786151587
+        },
+        "aim_no_sliders": {
+          "max": 369.0725130212945,
+          "p95": 250.49620778318513
+        },
+        "speed": {
+          "max": 212.91666178832827,
+          "p95": 126.7242644267633
+        }
+      },
+      "nps": 5.07
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 180.0,
+      "offset_ms": 412.1,
+      "diagnostics": {
+        "objects": 400,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 99.8970749854928,
+        "spacing_p95_px": 268.7118991239789
+      },
+      "sha256": "fde5a6f52167bbd5b2e55f2aed0c4f1fd042c62151024568bbcb14ffae7ec81b",
+      "elapsed_s": 10.179460999992443,
+      "stars": 4.992888110575188,
+      "aim": 2.7925597482592295,
+      "speed": 1.8750158415224882,
+      "peaks": {
+        "aim": {
+          "max": 206.9147664000232,
+          "p95": 169.60708897626128
+        },
+        "aim_no_sliders": {
+          "max": 205.35693885823346,
+          "p95": 168.76454103304124
+        },
+        "speed": {
+          "max": 84.75446029312874,
+          "p95": 73.40279217018599
+        }
+      },
+      "nps": 3.72
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 180.0,
+      "offset_ms": 412.1,
+      "diagnostics": {
+        "objects": 443,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 126.25371281669304,
+        "spacing_p95_px": 242.6435704998413
+      },
+      "sha256": "4eaaffc0b14b6e4bb0a3cc4a070b7e1c46df34cb797f7f9b471afc67504ccce4",
+      "elapsed_s": 10.366146600004868,
+      "stars": 5.2776658820486535,
+      "aim": 2.941051712721774,
+      "speed": 2.0093863546159176,
+      "peaks": {
+        "aim": {
+          "max": 228.3916137662555,
+          "p95": 190.18927913363802
+        },
+        "aim_no_sliders": {
+          "max": 228.3916137662555,
+          "p95": 189.99117889210456
+        },
+        "speed": {
+          "max": 102.69964041599599,
+          "p95": 83.77528957598817
+        }
+      },
+      "nps": 4.11
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 180.0,
+      "offset_ms": 412.1,
+      "diagnostics": {
+        "objects": 509,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 17,
+        "peak_nps_2s": 10.0,
+        "spacing_p50_px": 153.93829932800998,
+        "spacing_p95_px": 251.90047045807327
+      },
+      "sha256": "3e31e0a2350eb9743bfb08efd63e18c2530e9b26a3a7d19b7d264bd16b044b66",
+      "elapsed_s": 9.589793600011035,
+      "stars": 5.635217715198234,
+      "aim": 3.043028898993056,
+      "speed": 2.3512567492260072,
+      "peaks": {
+        "aim": {
+          "max": 242.6489854782733,
+          "p95": 205.04218425632618
+        },
+        "aim_no_sliders": {
+          "max": 242.64887141220527,
+          "p95": 204.32705327295528
+        },
+        "speed": {
+          "max": 171.35892175482863,
+          "p95": 100.3076126207855
+        }
+      },
+      "nps": 4.54
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 180.0,
+      "offset_ms": 412.1,
+      "diagnostics": {
+        "objects": 493,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 2,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 158.02847844613325,
+        "spacing_p95_px": 326.7426675206859
+      },
+      "sha256": "fbfb75f9d486daf4c8e9737d0970169b3652cecb118b633db92a9e0356f389f9",
+      "elapsed_s": 9.609259900011239,
+      "stars": 5.962885280076836,
+      "aim": 3.4095695279396683,
+      "speed": 2.0224722903046723,
+      "peaks": {
+        "aim": {
+          "max": 331.73082952724434,
+          "p95": 245.59490097622432
+        },
+        "aim_no_sliders": {
+          "max": 331.712711377922,
+          "p95": 245.59450795010224
+        },
+        "speed": {
+          "max": 114.52841632673322,
+          "p95": 87.35125851902856
+        }
+      },
+      "nps": 4.4
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 180.0,
+      "offset_ms": 412.1,
+      "diagnostics": {
+        "objects": 545,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 172.96531444194238,
+        "spacing_p95_px": 270.78035379251577
+      },
+      "sha256": "7c361da1fa97adcbf302d27f86a9c684fe5dcb160a25d4bc93b0471282818803",
+      "elapsed_s": 8.208261399995536,
+      "stars": 5.879790617926394,
+      "aim": 3.2075805866591893,
+      "speed": 2.391420393553549,
+      "peaks": {
+        "aim": {
+          "max": 297.920194544259,
+          "p95": 220.06716149827324
+        },
+        "aim_no_sliders": {
+          "max": 297.92019454424394,
+          "p95": 220.0671559785499
+        },
+        "speed": {
+          "max": 181.99665330056615,
+          "p95": 107.7221245789185
+        }
+      },
+      "nps": 5.06
+    },
+    {
+      "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 180.0,
+      "offset_ms": 412.1,
+      "diagnostics": {
+        "objects": 529,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 2,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 161.69724796668618,
+        "spacing_p95_px": 310.8237391076759
+      },
+      "sha256": "122308af38cb49f6b4ed732ca4829491511a9bb061585f42f4f90ba1edf222e9",
+      "elapsed_s": 8.366964000000735,
+      "stars": 6.045991304455105,
+      "aim": 3.45499139138597,
+      "speed": 2.05799334093671,
+      "peaks": {
+        "aim": {
+          "max": 330.26821719709454,
+          "p95": 253.06176130036627
+        },
+        "aim_no_sliders": {
+          "max": 330.1603236049419,
+          "p95": 253.06176129611507
+        },
+        "speed": {
+          "max": 105.36663220793886,
+          "p95": 89.4348009424698
+        }
+      },
+      "nps": 4.91
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 181.99999999999983,
+      "offset_ms": 424.0,
+      "diagnostics": {
+        "objects": 356,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 111.35977729862789,
+        "spacing_p95_px": 222.61515080587893
+      },
+      "sha256": "0b434c8a39b1fa8e76a9afce453e1ffa6b465ad2face688ae84bade02fc22204",
+      "elapsed_s": 7.032565699992119,
+      "stars": 4.503369651034665,
+      "aim": 2.4305236104767447,
+      "speed": 1.8808138374558097,
+      "peaks": {
+        "aim": {
+          "max": 163.74126807687534,
+          "p95": 132.73176347500598
+        },
+        "aim_no_sliders": {
+          "max": 163.57999691164989,
+          "p95": 126.93692520356373
+        },
+        "speed": {
+          "max": 86.53620610433362,
+          "p95": 74.36327631911763
+        }
+      },
+      "nps": 4.1
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 181.99999999999983,
+      "offset_ms": 424.0,
+      "diagnostics": {
+        "objects": 368,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 139.16896205691842,
+        "spacing_p95_px": 231.29201366832277
+      },
+      "sha256": "f34078db803a95f7fe991101890c6d3f8681f1a2cfb3514355b4cfbac5d2be0a",
+      "elapsed_s": 7.527494900001329,
+      "stars": 4.863078805663089,
+      "aim": 2.638359627103201,
+      "speed": 2.005694060825353,
+      "peaks": {
+        "aim": {
+          "max": 205.38380852691367,
+          "p95": 149.58970691728203
+        },
+        "aim_no_sliders": {
+          "max": 204.33465276384754,
+          "p95": 147.3173050197125
+        },
+        "speed": {
+          "max": 102.31356177443537,
+          "p95": 87.85413499960275
+        }
+      },
+      "nps": 4.24
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 181.99999999999983,
+      "offset_ms": 424.0,
+      "diagnostics": {
+        "objects": 376,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 2,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 139.8070098385628,
+        "spacing_p95_px": 230.45029529630142
+      },
+      "sha256": "02ed158650da319c3140d75f36f38d127aeea6080d0b0754c7465d439a581cc1",
+      "elapsed_s": 7.922243599998183,
+      "stars": 4.903558126242609,
+      "aim": 2.653381619772561,
+      "speed": 2.035510290081025,
+      "peaks": {
+        "aim": {
+          "max": 203.81390691172305,
+          "p95": 158.34603416416365
+        },
+        "aim_no_sliders": {
+          "max": 201.58049480259376,
+          "p95": 153.8038745600031
+        },
+        "speed": {
+          "max": 123.80953033968315,
+          "p95": 85.39962253548606
+        }
+      },
+      "nps": 4.33
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 181.99999999999983,
+      "offset_ms": 424.0,
+      "diagnostics": {
+        "objects": 422,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 7.0,
+        "spacing_p50_px": 176.22996340009834,
+        "spacing_p95_px": 277.96582523756405
+      },
+      "sha256": "9f67886b02889d1d0c698f024dde70d5615c582802ebfa5f35d06edf7d34917d",
+      "elapsed_s": 6.919272900006035,
+      "stars": 5.548447024780336,
+      "aim": 3.075435868315801,
+      "speed": 2.1521317575788763,
+      "peaks": {
+        "aim": {
+          "max": 236.55496441777788,
+          "p95": 209.3649686874946
+        },
+        "aim_no_sliders": {
+          "max": 236.52171040099842,
+          "p95": 209.3629772643969
+        },
+        "speed": {
+          "max": 119.39047127063937,
+          "p95": 95.68410198948472
+        }
+      },
+      "nps": 4.77
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 181.99999999999983,
+      "offset_ms": 424.0,
+      "diagnostics": {
+        "objects": 416,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 188.939143641544,
+        "spacing_p95_px": 297.89278748940217
+      },
+      "sha256": "32db762af0d2006f4722b26e2cc2e1b137a52e614d7b005eaf7444b90b535769",
+      "elapsed_s": 6.198967200005427,
+      "stars": 5.4788880877629005,
+      "aim": 3.0231530779597007,
+      "speed": 2.1561353692259018,
+      "peaks": {
+        "aim": {
+          "max": 246.77476455743795,
+          "p95": 202.8797017295024
+        },
+        "aim_no_sliders": {
+          "max": 246.7350236196879,
+          "p95": 202.74096419543667
+        },
+        "speed": {
+          "max": 146.79047402435552,
+          "p95": 94.13418270965816
+        }
+      },
+      "nps": 4.7
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 181.99999999999983,
+      "offset_ms": 424.0,
+      "diagnostics": {
+        "objects": 441,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 185.39926690166556,
+        "spacing_p95_px": 284.5777044931702
+      },
+      "sha256": "39bbaab1c665c1fb8e9472ac1fa9b489c62f255b6c8581fee2899a3f70f15270",
+      "elapsed_s": 5.728542600001674,
+      "stars": 5.578874548023318,
+      "aim": 3.130254899242915,
+      "speed": 2.0702054363526687,
+      "peaks": {
+        "aim": {
+          "max": 283.3434631967663,
+          "p95": 216.84046208551803
+        },
+        "aim_no_sliders": {
+          "max": 283.2438037366033,
+          "p95": 215.07432123244138
+        },
+        "speed": {
+          "max": 117.61886702746911,
+          "p95": 90.48130423761873
+        }
+      },
+      "nps": 4.98
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 182.0,
+      "offset_ms": 1084.7,
+      "diagnostics": {
+        "objects": 355,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 125.13778598066844,
+        "spacing_p95_px": 206.15055931756675
+      },
+      "sha256": "f32f2c1d707ffa86255abcc05b1be1eecd77860c7202393a9ed14025ca5292e2",
+      "elapsed_s": 6.029939200001536,
+      "stars": 4.552516515389956,
+      "aim": 2.4632271315481575,
+      "speed": 1.8899442704847271,
+      "peaks": {
+        "aim": {
+          "max": 174.13703699074466,
+          "p95": 135.69526054287374
+        },
+        "aim_no_sliders": {
+          "max": 174.00440449278756,
+          "p95": 132.45174178129352
+        },
+        "speed": {
+          "max": 91.05663456682394,
+          "p95": 74.48855673601282
+        }
+      },
+      "nps": 4.09
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 182.0,
+      "offset_ms": 1084.7,
+      "diagnostics": {
+        "objects": 372,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 121.67168939404104,
+        "spacing_p95_px": 224.62260027803342
+      },
+      "sha256": "356c8da8d3ddb93ae8a03e079ee93d61527c32ba6b2139236915060098add65d",
+      "elapsed_s": 6.077791500007152,
+      "stars": 4.879368629343008,
+      "aim": 2.6741010584328895,
+      "speed": 1.9588262333264357,
+      "peaks": {
+        "aim": {
+          "max": 197.75956059774109,
+          "p95": 157.29190476047776
+        },
+        "aim_no_sliders": {
+          "max": 191.75225331066798,
+          "p95": 155.72119973527248
+        },
+        "speed": {
+          "max": 100.40113237944908,
+          "p95": 80.9910895024619
+        }
+      },
+      "nps": 4.28
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 182.0,
+      "offset_ms": 1084.7,
+      "diagnostics": {
+        "objects": 374,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 149.25146565444507,
+        "spacing_p95_px": 243.91060755206374
+      },
+      "sha256": "ce6a74c469da2b5d6194200540184d025ad34dee33940ab1a43d73cc0a57146c",
+      "elapsed_s": 6.0450708999997005,
+      "stars": 4.961055872059203,
+      "aim": 2.7192573586084414,
+      "speed": 1.990886038949837,
+      "peaks": {
+        "aim": {
+          "max": 211.76372026119262,
+          "p95": 164.6781756547874
+        },
+        "aim_no_sliders": {
+          "max": 210.61475787204256,
+          "p95": 163.89605507339374
+        },
+        "speed": {
+          "max": 101.4967375743084,
+          "p95": 82.75904349417996
+        }
+      },
+      "nps": 4.31
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 182.0,
+      "offset_ms": 1084.7,
+      "diagnostics": {
+        "objects": 394,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 152.11837495845134,
+        "spacing_p95_px": 250.5211808125292
+      },
+      "sha256": "aa75672bc08544218e29b6df2fd3b263ae2e529c255ac37bab1e118c3169601d",
+      "elapsed_s": 5.9658827999955975,
+      "stars": 5.169594798685353,
+      "aim": 2.8529868052260885,
+      "speed": 2.0330116969413403,
+      "peaks": {
+        "aim": {
+          "max": 223.54027630959612,
+          "p95": 180.71172037082374
+        },
+        "aim_no_sliders": {
+          "max": 223.19489094697403,
+          "p95": 180.69952406934297
+        },
+        "speed": {
+          "max": 107.32766926652617,
+          "p95": 87.23262231576918
+        }
+      },
+      "nps": 4.54
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 182.0,
+      "offset_ms": 1084.7,
+      "diagnostics": {
+        "objects": 411,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 172.08275058757494,
+        "spacing_p95_px": 274.9866562095545
+      },
+      "sha256": "6772f0bd5cc578a2d7ebd61be2d107d047e57807b62fd9c5874e96e2a3f3a355",
+      "elapsed_s": 6.0014824999962,
+      "stars": 5.511799298459561,
+      "aim": 3.0691387928959784,
+      "speed": 2.1046646892420946,
+      "peaks": {
+        "aim": {
+          "max": 231.49142670246925,
+          "p95": 215.4513704700854
+        },
+        "aim_no_sliders": {
+          "max": 231.23784177497606,
+          "p95": 215.41766349588832
+        },
+        "speed": {
+          "max": 109.21658630898409,
+          "p95": 93.59767075807234
+        }
+      },
+      "nps": 4.64
+    },
+    {
+      "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 182.0,
+      "offset_ms": 1084.7,
+      "diagnostics": {
+        "objects": 423,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.5,
+        "spacing_p50_px": 183.17341509656154,
+        "spacing_p95_px": 276.7132037493442
+      },
+      "sha256": "5c4affed089a4963a2c2e31a6b933992d6fb528e64d84316fcce35d5907e5610",
+      "elapsed_s": 5.907667500010575,
+      "stars": 5.634205831109216,
+      "aim": 3.165377508549439,
+      "speed": 2.0799722503094342,
+      "peaks": {
+        "aim": {
+          "max": 272.677843964172,
+          "p95": 224.41401481400726
+        },
+        "aim_no_sliders": {
+          "max": 272.6778182578513,
+          "p95": 224.41378528868375
+        },
+        "speed": {
+          "max": 97.71825861839896,
+          "p95": 92.33088773723911
+        }
+      },
+      "nps": 4.78
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 187.00000000000003,
+      "offset_ms": 55.8,
+      "diagnostics": {
+        "objects": 403,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 2,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 95.1471707075027,
+        "spacing_p95_px": 212.3577035757051
+      },
+      "sha256": "75053d0b60cff7b0816b5c079a0f4b684b79b310deafe876d9602a91f37f91b4",
+      "elapsed_s": 7.961384899987024,
+      "stars": 4.661954650611147,
+      "aim": 2.369272344736834,
+      "speed": 2.1670609957781437,
+      "peaks": {
+        "aim": {
+          "max": 153.43897101224826,
+          "p95": 118.6273771277984
+        },
+        "aim_no_sliders": {
+          "max": 147.01399624475062,
+          "p95": 112.13888041477098
+        },
+        "speed": {
+          "max": 132.48583914422613,
+          "p95": 89.38398231802498
+        }
+      },
+      "nps": 3.9
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 187.00000000000003,
+      "offset_ms": 55.8,
+      "diagnostics": {
+        "objects": 441,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 124.14295011078178,
+        "spacing_p95_px": 223.68620154750062
+      },
+      "sha256": "43e1cf09586cc362378b29d3c05ccaa51ee8898221c21c65b1c1489d233f7a20",
+      "elapsed_s": 7.604835100006312,
+      "stars": 5.269950318016255,
+      "aim": 2.7272126821253826,
+      "speed": 2.3861348510365414,
+      "peaks": {
+        "aim": {
+          "max": 210.78420303320883,
+          "p95": 159.65421356772174
+        },
+        "aim_no_sliders": {
+          "max": 209.31886019661192,
+          "p95": 155.36776515267536
+        },
+        "speed": {
+          "max": 169.8861597333503,
+          "p95": 108.6000995535297
+        }
+      },
+      "nps": 4.27
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 187.00000000000003,
+      "offset_ms": 55.8,
+      "diagnostics": {
+        "objects": 461,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 2,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 147.79364498480598,
+        "spacing_p95_px": 263.61144083841634
+      },
+      "sha256": "ec67466e736cf2b36d016b267fb434a2076778a135017a37eee83a6e19d781a7",
+      "elapsed_s": 7.6733926000015344,
+      "stars": 5.426959696257819,
+      "aim": 2.861340089001988,
+      "speed": 2.380495472421905,
+      "peaks": {
+        "aim": {
+          "max": 248.79549915944688,
+          "p95": 174.46449121108807
+        },
+        "aim_no_sliders": {
+          "max": 247.8852128618443,
+          "p95": 168.424233365521
+        },
+        "speed": {
+          "max": 162.94539408238631,
+          "p95": 112.94882077104043
+        }
+      },
+      "nps": 4.46
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 187.00000000000003,
+      "offset_ms": 55.8,
+      "diagnostics": {
+        "objects": 551,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 146.49060567360056,
+        "spacing_p95_px": 257.7365480349892
+      },
+      "sha256": "c8d42646542d61fb0ee56d0f62063488d3750ae1f4f171c4666202404bb93318",
+      "elapsed_s": 7.7014528999861795,
+      "stars": 5.736332614519586,
+      "aim": 3.05427169792631,
+      "speed": 2.4687941064577115,
+      "peaks": {
+        "aim": {
+          "max": 238.52394874010872,
+          "p95": 206.204095628675
+        },
+        "aim_no_sliders": {
+          "max": 238.47543703601133,
+          "p95": 204.30072338537698
+        },
+        "speed": {
+          "max": 159.04988074284122,
+          "p95": 123.23404215170423
+        }
+      },
+      "nps": 5.33
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 187.00000000000003,
+      "offset_ms": 55.8,
+      "diagnostics": {
+        "objects": 569,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 9,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 165.55810170267787,
+        "spacing_p95_px": 283.2553056923792
+      },
+      "sha256": "354bc003ab7f7466fbb5c7d4e5a2d5e8116b2dbe0587c50380ec0ec89ee6c48e",
+      "elapsed_s": 7.598756499995943,
+      "stars": 5.999403766195362,
+      "aim": 3.2154171988980975,
+      "speed": 2.5465550112501525,
+      "peaks": {
+        "aim": {
+          "max": 283.4268362268645,
+          "p95": 227.87769285159985
+        },
+        "aim_no_sliders": {
+          "max": 282.37981747027266,
+          "p95": 227.52889789229442
+        },
+        "speed": {
+          "max": 178.73643311690358,
+          "p95": 127.81804678486327
+        }
+      },
+      "nps": 5.51
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "reference",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 187.00000000000003,
+      "offset_ms": 55.8,
+      "diagnostics": {
+        "objects": 553,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 9,
+        "peak_nps_2s": 9.0,
+        "spacing_p50_px": 203.94729666799975,
+        "spacing_p95_px": 343.66145140348056
+      },
+      "sha256": "fb34d533aabab0e788c5b7d897f7cbf241348f867043e10adfbb839b96e707de",
+      "elapsed_s": 7.323784799998975,
+      "stars": 6.454424515535117,
+      "aim": 3.530097780426418,
+      "speed": 2.6073380678047555,
+      "peaks": {
+        "aim": {
+          "max": 316.3573815734169,
+          "p95": 271.31155477959805
+        },
+        "aim_no_sliders": {
+          "max": 316.11526643125734,
+          "p95": 270.3889897008915
+        },
+        "speed": {
+          "max": 172.81714328010472,
+          "p95": 136.8695254474483
+        }
+      },
+      "nps": 5.35
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 5.5,
+      "bpm": 187.0,
+      "offset_ms": 706.5,
+      "diagnostics": {
+        "objects": 350,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 7,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 129.80754985747168,
+        "spacing_p95_px": 219.79371642424576
+      },
+      "sha256": "a6de13e29e59359186633e8a5cdb87820bbab575d9a39b2dac9652f1dbd28f5d",
+      "elapsed_s": 8.33914840000216,
+      "stars": 4.668183402250814,
+      "aim": 2.522138934642187,
+      "speed": 1.9448578949890158,
+      "peaks": {
+        "aim": {
+          "max": 185.6071797175428,
+          "p95": 135.6761473305034
+        },
+        "aim_no_sliders": {
+          "max": 182.4166517219379,
+          "p95": 125.06719278483372
+        },
+        "speed": {
+          "max": 115.84145239985965,
+          "p95": 74.22129302164942
+        }
+      },
+      "nps": 3.4
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.0,
+      "bpm": 187.0,
+      "offset_ms": 706.5,
+      "diagnostics": {
+        "objects": 366,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 1,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 141.4496376806954,
+        "spacing_p95_px": 243.402958075698
+      },
+      "sha256": "6cc8e39c888b68bb7b43e70835cc68d7498941aa0332ecf00116fc21cd518244",
+      "elapsed_s": 8.331521700005396,
+      "stars": 4.853187958311079,
+      "aim": 2.60116339972736,
+      "speed": 2.0594670485190316,
+      "peaks": {
+        "aim": {
+          "max": 164.64201681213154,
+          "p95": 149.95376242543657
+        },
+        "aim_no_sliders": {
+          "max": 160.87877425930813,
+          "p95": 144.47428426077545
+        },
+        "speed": {
+          "max": 139.5823719079121,
+          "p95": 81.48332261981581
+        }
+      },
+      "nps": 3.56
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 6.5,
+      "bpm": 187.0,
+      "offset_ms": 706.5,
+      "diagnostics": {
+        "objects": 395,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 5,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 8,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 123.28207610577745,
+        "spacing_p95_px": 243.2007886189732
+      },
+      "sha256": "4281adf8182a365a28a7810a77749d92dee3f7a995e90e57e236310497137ed8",
+      "elapsed_s": 8.13911289999669,
+      "stars": 5.285943241349986,
+      "aim": 2.826456171457406,
+      "speed": 2.254726188936542,
+      "peaks": {
+        "aim": {
+          "max": 236.78137823409241,
+          "p95": 169.91260371357015
+        },
+        "aim_no_sliders": {
+          "max": 235.24119631910781,
+          "p95": 160.6535471698025
+        },
+        "speed": {
+          "max": 161.31962374221627,
+          "p95": 91.9455978336492
+        }
+      },
+      "nps": 3.84
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.0,
+      "bpm": 187.0,
+      "offset_ms": 706.5,
+      "diagnostics": {
+        "objects": 476,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 9,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 149.34523762075577,
+        "spacing_p95_px": 269.12643379774755
+      },
+      "sha256": "e86a82b055aacff842d3cf961078e9f5e177694a459379e61f15b598f7866627",
+      "elapsed_s": 8.369658600000548,
+      "stars": 5.892856578799491,
+      "aim": 3.2589320070950034,
+      "speed": 2.303017411093523,
+      "peaks": {
+        "aim": {
+          "max": 277.50104331084094,
+          "p95": 236.2734905665912
+        },
+        "aim_no_sliders": {
+          "max": 276.886236628506,
+          "p95": 230.72710574695967
+        },
+        "speed": {
+          "max": 154.535491292238,
+          "p95": 100.84285900798683
+        }
+      },
+      "nps": 4.61
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 7.5,
+      "bpm": 187.0,
+      "offset_ms": 706.5,
+      "diagnostics": {
+        "objects": 480,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 9,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 165.73774464496614,
+        "spacing_p95_px": 265.5475054040334
+      },
+      "sha256": "df6b0cc2f8321af3fc6f46afc8f20903b703e7d223e72b7f5980a3a211c680a9",
+      "elapsed_s": 8.036037800004124,
+      "stars": 5.961278027965135,
+      "aim": 3.317702498746842,
+      "speed": 2.2810208626221087,
+      "peaks": {
+        "aim": {
+          "max": 287.1632711502005,
+          "p95": 235.78577863914296
+        },
+        "aim_no_sliders": {
+          "max": 287.163264422935,
+          "p95": 235.7289261513761
+        },
+        "speed": {
+          "max": 155.98562312296468,
+          "p95": 101.18327176104965
+        }
+      },
+      "nps": 4.67
+    },
+    {
+      "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+      "partition": "development",
+      "timing_mode": "automatic",
+      "tempo_group": "fast",
+      "condition": 8.0,
+      "bpm": 187.0,
+      "offset_ms": 706.5,
+      "diagnostics": {
+        "objects": 527,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 228.11910410165387,
+        "spacing_p95_px": 351.2520458311759
+      },
+      "sha256": "24620584e7e1dfb83eec40f9ec6957cd4d881eeca00e5a0f9a8440f99db1bc0a",
+      "elapsed_s": 9.57151779999549,
+      "stars": 6.278079312981943,
+      "aim": 3.568918685023598,
+      "speed": 2.1981654718160746,
+      "peaks": {
+        "aim": {
+          "max": 353.1522226041931,
+          "p95": 276.369293402539
+        },
+        "aim_no_sliders": {
+          "max": 353.1470421736568,
+          "p95": 276.36858271868
+        },
+        "speed": {
+          "max": 143.90328583142434,
+          "p95": 97.07228841256418
+        }
+      },
+      "nps": 5.1
+    }
+  ],
+  "limits": "Exact audio hashes only. Alternate recordings and v0 training overlap unverified. Human annotations pending. No client import/playtest; structural diagnostics do not prove playability."
+}
