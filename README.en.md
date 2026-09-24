@@ -27,7 +27,7 @@
 I am bad at osu! and I love playing it. The worst part: the songs I want to play have no maps, and I can't map.
 So: AUTO-OSU. Drop in the song you like, and a minute later you can play it.
 
-The published app is **0.2.0**; the source release candidate is **0.3.0rc1**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
+The published app is **0.2.0**; the source release candidate is **0.3.0rc2**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
 the jumps and streams are learned from over a hundred thousand ranked / approved / loved maps, and all four difficulties come out in one go.
 It will keep getting better: mapper intent, deliberate highlights, longer sliders and multiple red lines for tempo changes
 are all on the roadmap.
@@ -114,6 +114,17 @@ python -m autoosu "song.mp3" -d Insane --control-plan "plan.json"
 ```
 
 Plans can be imported/exported and are shared by CLI, GUI, isolated workers and folder batches. A song shorter than its manual region fails explicitly while the batch continues. Spacing control and candidate generation cost additional inference time. See the [implementation and acceptance notes](docs/generation-controls.md) and [0.3.0rc1 candidate / high-difficulty comparisons](docs/release-0.3.0rc1.md).
+
+### Pattern preference (experimental)
+
+In the same control window, choose **Balanced (default) / Jump preference / Tapping or burst preference**. These controls still use v0 weights: jumps normally retain the reference rhythm while adjusting spacing, and tapping uses the reference map's local density to encourage consecutive taps. Explicit density, curves and spacing take priority. Automatic highlights remain the default with other modes available.
+
+Preference mode tries up to three candidates and checks the response at similar measured stars. A missed preference is reported explicitly; some songs will not respond. Tapping includes bursts and does not guarantee long streams. Both models are required and generation takes longer. A label-conditioned model has not been trained yet; see the schedule below and the [preference evaluation](docs/skill-preferences.md).
+
+```powershell
+python -m autoosu "song.mp3" -d Insane --skill-preference jumps
+python -m autoosu "song.mp3" -d Insane --skill-preference streams --target-star 6.5
+```
 
 ### Command line
 
@@ -266,10 +277,14 @@ Work follows priority and dependency order, without time commitments. Completion
 | P0 · New-map provenance | Default content watermark, generation records, model identities and content fingerprints; no retrospective attribution | Read `.osu` / `.osz`; test removed tags, edits, false positives and rating impact | Watermark and checker implemented in source; actual client resaving and playtesting remain |
 | P1 · Difficulty control | Measured stars, local density curves, two-pass spacing control and up to three candidates | Compare target and measured ratings; validate 6–7★ before 7–8★, including local strain and playability | Implemented; initial maintainer review recorded, high-difficulty audition continues |
 | P1 · Musical sections | Manual highlights and automatic proposals coordinate density, spacing, hitsounds and kiai | Validate manual regions, then compare automatic proposals with human annotations; abstain on low contrast | Automatic by default with selectable modes; positive initial review, human location labels pending |
-| P2 · Model iteration | High-star data, finer rhythm representation, slider-length and section conditioning, multiple timing sections | Update released models only after controlled comparisons and the fixed evaluation set show improvement | Depends on earlier experiments |
+| P1 · Pattern preference S1 | Balanced / jumps / tapping using existing conditions and candidate selection | Compare the same song at similar measured stars; report misses | Implemented in source, experimental; see [measured results](docs/skill-preferences.md) |
+| P2 · Label data M1.1 | Definitions, sources, human review and song-grouped splits | Distinguish missing and negative labels, report star coverage, freeze an independent test set | Planned, not started |
+| P2 · Conditional training M1.2 | Small label-training pilot; rhythm / coordinate / joint ablations | Improve on current controls without degrading unlabelled mode before scaling training | Depends on M1.1; not trained |
+| P2 · Independent evaluation M1.3 | Same-star skill response, high difficulty, highlights and blind review | Freeze models before testing new songs; separate reference / automatic timing and gameplay | Depends on M1.2 |
+| P2 · Weight release M1.4 | Label UI, model compatibility, download checks and candidate build | Replace default weights only after acceptance, retaining a v0 fallback | Depends on M1.3; not released |
 
 Detection targets future maps that receive the marker. Statistical attribution of older maps is no longer planned. No detection means "unable to determine", not proof of human authorship.
-See the [detailed task plan and analysis](docs/roadmap-2026-09-24.md) (Chinese) for scope, dependencies, and acceptance criteria.
+See the [task queue](docs/TASKS.md) for current state and the [label-conditioned model plan](docs/model-training-plan.md) (Chinese) for training scope and gates. Finer rhythms, slider length, section conditions and multiple timing sections remain separate experiments.
 
 ## Branch management
 

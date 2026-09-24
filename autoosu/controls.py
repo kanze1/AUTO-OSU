@@ -13,7 +13,7 @@ import numpy as np
 
 DEFAULTS = dict(target_stars=None, candidates=3, density=None, density_curve=[], spacing_scale=None,
                 highlight_mode="auto", highlights=[], highlight_sv=False,
-                highlight_density=True, highlight_spacing=True)
+                highlight_density=True, highlight_spacing=True, skill_preference="balanced")
 
 
 def load_control_file(path):
@@ -46,6 +46,10 @@ def validate_controls(value=None, duration_s=None):
             out[key] = _number(out[key], key, low, high)
     if type(out["candidates"]) is not int or not 1 <= out["candidates"] <= 3:
         raise ValueError("candidates must be an integer in 1..3")
+    if out["skill_preference"] not in ("balanced", "jumps", "streams"):
+        raise ValueError("skill_preference must be balanced, jumps or streams")
+    if out["skill_preference"] != "balanced" and out["candidates"] < 2:
+        raise ValueError("Skill preferences need at least two candidates, including the balanced reference")
     if out["highlight_mode"] not in ("legacy", "off", "manual", "auto") or any(type(out[k]) is not bool for k in ("highlight_sv", "highlight_density", "highlight_spacing")):
         raise ValueError("Invalid highlight mode or SV setting")
     curve = out["density_curve"]
