@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import re
+import json
+import tempfile
 import zipfile
 from pathlib import Path
 from typing import List, Optional, Sequence, Tuple
@@ -116,14 +118,32 @@ def prepare_audio(src: Path, workdir: Path) -> Path:
     return prepare_for_osu(src, workdir)
 
 
-def write_osz(beatmaps: List[Beatmap], audio: Path, out_dir: Path, extra_files: Sequence[Path] = ()) -> Path:
+def write_osz(beatmaps: List[Beatmap], audio: Path, out_dir: Path, extra_files: Sequence[Path] = (),
+              manifest: Optional[dict] = None) -> Path:
+    from .provenance import MANIFEST_NAME
+
     out_dir.mkdir(parents=True, exist_ok=True)
     first = beatmaps[0]
     osz = out_dir / sanitize(f"{first.artist} - {first.title} ({first.creator}).osz")
-    with zipfile.ZipFile(osz, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(audio, audio.name)
-        for extra in extra_files:
-            zf.write(extra, Path(extra).name)
-        for bm in beatmaps:
-            zf.writestr(sanitize(bm.osu_filename()), bm.to_osu().encode("utf-8"))
+    names = [audio.name, *(Path(p).name for p in extra_files), *(sanitize(b.osu_filename()) for b in beatmaps)]
+    if manifest is not None:
+        names.append(MANIFEST_NAME)
+    if len({n.casefold() for n in names}) != len(names):
+        raise ValueError("Duplicate filenames in the output archive; choose distinct difficulties and assets")
+    temp = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=out_dir, suffix=".osz.tmp", delete=False) as f:
+            temp = Path(f.name)
+        with zipfile.ZipFile(temp, "w", zipfile.ZIP_DEFLATED) as zf:
+            zf.write(audio, audio.name)
+            for extra in extra_files:
+                zf.write(extra, Path(extra).name)
+            for bm in beatmaps:
+                zf.writestr(sanitize(bm.osu_filename()), bm.to_osu().encode("utf-8"))
+            if manifest is not None:
+                zf.writestr(MANIFEST_NAME, json.dumps(manifest, ensure_ascii=False, indent=2, allow_nan=False).encode("utf-8"))
+        temp.replace(osz)
+    finally:
+        if temp is not None:
+            temp.unlink(missing_ok=True)
     return osz

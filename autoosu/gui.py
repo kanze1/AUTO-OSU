@@ -227,7 +227,7 @@ def create_app():
             for key in ("song.section", "song.browse", "diff.section", "diff.hint", "out.section",
                         "out.browse", "out.open_osu", "adv.seed", "adv.bpm", "adv.offset",
                         "adv.creator", "adv.star", "adv.quality", "adv.device", "adv.engine", "adv.preview",
-                        "models.download", "run.open_osz", "run.open_folder", "about", "input.recursive",
+                        "models.download", "run.open_osz", "run.open_folder", "run.check_source", "about", "input.recursive",
                         "input.queue", "batch.output_hint", "device.refresh", "batch.cancel",
                         "runtime.install", "runtime.hint", "runtime.cancel"):
                 w[key].configure(text=tr(key))
@@ -778,6 +778,15 @@ def create_app():
             from tkinter import messagebox
 
             messagebox.showerror("AUTO-OSU", text)
+
+        def check_source(self) -> None:
+            from .source_gui import open_source_window
+
+            existing = getattr(self, "source_window", None)
+            if existing is not None and existing.winfo_exists():
+                existing.lift()
+            else:
+                self.source_window = open_source_window(self)
 
         def on_close(self) -> None:
             try:

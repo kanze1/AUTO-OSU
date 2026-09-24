@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autoosu"
-version = "0.2.0"
+version = "0.3.0.dev0"
 description = "Turn any song into a playable osu!standard beatmap (.osz) with trained rhythm and placement models"
 readme = "README.md"
 license = {text = "MIT with attribution condition"}

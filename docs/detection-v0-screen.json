@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "recipe": {
+    "code_commit": "8f508921534bef39c4f7beb54201a09fb7db8aca",
+    "settings": {
+      "seed": 240924,
+      "decode_steps": 12,
+      "coord_steps": 100,
+      "temperature": 0.9,
+      "cfg_scale": 1.0,
+      "star_rating": 5.5,
+      "device": "cuda"
+    },
+    "models": {
+      "rhythm": "e01267c647e103a36801109e3c34f508dd2d04d228b07b4a299cddbd55dd52f6",
+      "coord": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040"
+    }
+  },
+  "independent_human_ground_truth": false,
+  "actual_editor_roundtrip": false,
+  "feature_count": 21,
+  "abstentions": [],
+  "models": {
+    "logistic": {
+      "threshold": 0.989641790729201,
+      "calibration_negatives": 347,
+      "training_rows": 1164,
+      "tests": {
+        "both_models": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 3,
+          "rate": 0.3,
+          "not_flagged": 7,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\both_models\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\both_models\\map.osu",
+            "generated\\014f7eabfafb671357bcc4d420dea28c316fd2f0c743aaa47341ab7d7ae85275\\both_models\\map.osu"
+          ]
+        },
+        "both_models_edit": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 10,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.2588655508930523,
+          "flagged_examples": []
+        },
+        "both_models_partial": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 5,
+          "rate": 0.5,
+          "not_flagged": 5,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\both_models\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\both_models\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\both_models\\map.osu",
+            "generated\\014f7eabfafb671357bcc4d420dea28c316fd2f0c743aaa47341ab7d7ae85275\\both_models\\map.osu",
+            "generated\\049af38834ce3e4bf622ecfb196bbbce6db362165a792c0a9caf8b31e4501453\\both_models\\map.osu"
+          ]
+        },
+        "coord_only": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 10,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.2588655508930523,
+          "flagged_examples": []
+        },
+        "historical_reference": {
+          "n": 380,
+          "audio_groups": 380,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 380,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.007852512648601762,
+          "flagged_examples": []
+        },
+        "other_generator": {
+          "n": 3,
+          "audio_groups": 1,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 3,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.95,
+          "flagged_examples": []
+        },
+        "rhythm_only": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 6,
+          "rate": 0.6,
+          "not_flagged": 4,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\rhythm_only\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\rhythm_only\\map.osu",
+            "generated\\0c9cf1a461f53ad8766153cef4642b50d2eba96cec8af425dd3335fd6e30e76b\\rhythm_only\\map.osu",
+            "generated\\036a7a04472ff8365b4b2a33757c540e9a9b874223b215f7d6f79dbb2e76f4b4\\rhythm_only\\map.osu",
+            "generated\\014f7eabfafb671357bcc4d420dea28c316fd2f0c743aaa47341ab7d7ae85275\\rhythm_only\\map.osu",
+            "generated\\049af38834ce3e4bf622ecfb196bbbce6db362165a792c0a9caf8b31e4501453\\rhythm_only\\map.osu"
+          ]
+        },
+        "rules": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 3,
+          "rate": 0.3,
+          "not_flagged": 7,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\rules\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\rules\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\rules\\map.osu"
+          ]
+        }
+      }
+    },
+    "forest": {
+      "threshold": 0.5454571444157901,
+      "calibration_negatives": 347,
+      "training_rows": 1164,
+      "tests": {
+        "both_models": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 10,
+          "rate": 1.0,
+          "not_flagged": 0,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\both_models\\map.osu",
+            "generated\\186d3d85a5ec0690971ce854f58cc190c49064217c61f69ef19499010ba98eec\\both_models\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\both_models\\map.osu",
+            "generated\\166f8d2bf377253fe79e57466dfc830309aff59621f7e5582d64b5f261a60cb8\\both_models\\map.osu",
+            "generated\\11ba9185476ee1c60a6a83d561a633a5ceb32ca549de044e95b88a366b142272\\both_models\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\both_models\\map.osu",
+            "generated\\0c9cf1a461f53ad8766153cef4642b50d2eba96cec8af425dd3335fd6e30e76b\\both_models\\map.osu",
+            "generated\\036a7a04472ff8365b4b2a33757c540e9a9b874223b215f7d6f79dbb2e76f4b4\\both_models\\map.osu",
+            "generated\\014f7eabfafb671357bcc4d420dea28c316fd2f0c743aaa47341ab7d7ae85275\\both_models\\map.osu",
+            "generated\\049af38834ce3e4bf622ecfb196bbbce6db362165a792c0a9caf8b31e4501453\\both_models\\map.osu"
+          ]
+        },
+        "both_models_edit": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 10,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.2588655508930523,
+          "flagged_examples": []
+        },
+        "both_models_partial": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 9,
+          "rate": 0.9,
+          "not_flagged": 1,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\both_models\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\both_models\\map.osu",
+            "generated\\166f8d2bf377253fe79e57466dfc830309aff59621f7e5582d64b5f261a60cb8\\both_models\\map.osu",
+            "generated\\11ba9185476ee1c60a6a83d561a633a5ceb32ca549de044e95b88a366b142272\\both_models\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\both_models\\map.osu",
+            "generated\\0c9cf1a461f53ad8766153cef4642b50d2eba96cec8af425dd3335fd6e30e76b\\both_models\\map.osu",
+            "generated\\036a7a04472ff8365b4b2a33757c540e9a9b874223b215f7d6f79dbb2e76f4b4\\both_models\\map.osu",
+            "generated\\014f7eabfafb671357bcc4d420dea28c316fd2f0c743aaa47341ab7d7ae85275\\both_models\\map.osu",
+            "generated\\049af38834ce3e4bf622ecfb196bbbce6db362165a792c0a9caf8b31e4501453\\both_models\\map.osu"
+          ]
+        },
+        "coord_only": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 8,
+          "rate": 0.8,
+          "not_flagged": 2,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\coord_only\\map.osu",
+            "generated\\186d3d85a5ec0690971ce854f58cc190c49064217c61f69ef19499010ba98eec\\coord_only\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\coord_only\\map.osu",
+            "generated\\11ba9185476ee1c60a6a83d561a633a5ceb32ca549de044e95b88a366b142272\\coord_only\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\coord_only\\map.osu",
+            "generated\\0c9cf1a461f53ad8766153cef4642b50d2eba96cec8af425dd3335fd6e30e76b\\coord_only\\map.osu",
+            "generated\\036a7a04472ff8365b4b2a33757c540e9a9b874223b215f7d6f79dbb2e76f4b4\\coord_only\\map.osu",
+            "generated\\049af38834ce3e4bf622ecfb196bbbce6db362165a792c0a9caf8b31e4501453\\coord_only\\map.osu"
+          ]
+        },
+        "historical_reference": {
+          "n": 380,
+          "audio_groups": 380,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 380,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.007852512648601762,
+          "flagged_examples": []
+        },
+        "other_generator": {
+          "n": 3,
+          "audio_groups": 1,
+          "flagged": 0,
+          "rate": 0.0,
+          "not_flagged": 3,
+          "zero_event_one_sided_95_upper_by_audio_group": 0.95,
+          "flagged_examples": []
+        },
+        "rhythm_only": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 9,
+          "rate": 0.9,
+          "not_flagged": 1,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\rhythm_only\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\rhythm_only\\map.osu",
+            "generated\\166f8d2bf377253fe79e57466dfc830309aff59621f7e5582d64b5f261a60cb8\\rhythm_only\\map.osu",
+            "generated\\11ba9185476ee1c60a6a83d561a633a5ceb32ca549de044e95b88a366b142272\\rhythm_only\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\rhythm_only\\map.osu",
+            "generated\\0c9cf1a461f53ad8766153cef4642b50d2eba96cec8af425dd3335fd6e30e76b\\rhythm_only\\map.osu",
+            "generated\\036a7a04472ff8365b4b2a33757c540e9a9b874223b215f7d6f79dbb2e76f4b4\\rhythm_only\\map.osu",
+            "generated\\014f7eabfafb671357bcc4d420dea28c316fd2f0c743aaa47341ab7d7ae85275\\rhythm_only\\map.osu",
+            "generated\\049af38834ce3e4bf622ecfb196bbbce6db362165a792c0a9caf8b31e4501453\\rhythm_only\\map.osu"
+          ]
+        },
+        "rules": {
+          "n": 10,
+          "audio_groups": 10,
+          "flagged": 7,
+          "rate": 0.7,
+          "not_flagged": 3,
+          "zero_event_one_sided_95_upper_by_audio_group": null,
+          "flagged_examples": [
+            "generated\\0f4df3d20ec326bc5fabeb70da5dbfc514caf1b54d599ea7bdeeee2ce7c44975\\rules\\map.osu",
+            "generated\\186d3d85a5ec0690971ce854f58cc190c49064217c61f69ef19499010ba98eec\\rules\\map.osu",
+            "generated\\1426f350ad69b6c520be5fb057805b6fae891c5887e74c4e001009308349079b\\rules\\map.osu",
+            "generated\\11ba9185476ee1c60a6a83d561a633a5ceb32ca549de044e95b88a366b142272\\rules\\map.osu",
+            "generated\\0810fd89dbe7d9426a7662fb826aa6ffa1012d80d80184313623a3e17c14baa6\\rules\\map.osu",
+            "generated\\0c9cf1a461f53ad8766153cef4642b50d2eba96cec8af425dd3335fd6e30e76b\\rules\\map.osu",
+            "generated\\036a7a04472ff8365b4b2a33757c540e9a9b874223b215f7d6f79dbb2e76f4b4\\rules\\map.osu"
+          ]
+        }
+      }
+    }
+  },
+  "decision": "Do not ship: exploratory corpus lacks verified human provenance and independent low-FPR/other-generator coverage. Unflagged means inconclusive.",
+  "limitations": [
+    "One preset, seed and automatic timing path; only current v0 code snapshot.",
+    "Reference songs may have been in generator training; this is not a model-generalization study.",
+    "Synthetic coordinate/time edits and cropping do not reproduce editor resaving or mixed authorship.",
+    "Audio-hash grouping does not deduplicate different recordings of the same song; mapper overlap remains.",
+    "Other-generator sample has too few independent songs for attribution claims."
+  ]
+}

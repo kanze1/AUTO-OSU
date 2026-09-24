@@ -14,6 +14,8 @@ def emit(event, **data):
 
 def summary(result):
     return dict(osz=str(result.osz), elapsed_s=result.elapsed_s, device=result.device, bpm=result.timing.bpm,
+                generation_id=(result.provenance or {}).get("generation_id"),
+                provenance_recorded=result.provenance_recorded, warnings=result.warnings,
                 diffs=[dict(name=d.preset.name, **d.summary()) for d in result.diffs])
 
 

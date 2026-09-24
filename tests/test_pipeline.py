@@ -1,4 +1,5 @@
 import zipfile
+import json
 from pathlib import Path
 
 import numpy as np
@@ -46,6 +47,22 @@ def test_osz_contents(result):
         assert section in text
     assert "AudioFilename: audio.mp3" in text
     assert "Title:Synth Song" in text and "Artist:Test Artist" in text
+
+
+def test_generated_source_record_and_worker_summary(result):
+    from autoosu.provenance import MANIFEST_NAME
+    from autoosu.source_check import check_source
+    from autoosu.worker import summary
+
+    assert result.provenance_recorded
+    with zipfile.ZipFile(result.osz) as archive:
+        manifest = json.loads(archive.read(MANIFEST_NAME))
+        assert manifest["engine"]["kind"] == "rules"
+        assert "ai-generated" not in result.diffs[0].beatmap.tags
+        assert len(manifest["maps"]) == len(PRESETS)
+    assert all(r["status"] == "local_record_match" for r in check_source(result.osz)["results"])
+    data = summary(result)
+    assert data["generation_id"] == manifest["generation_id"] and data["provenance_recorded"]
 
 
 def sv_at(beatmap, t):
@@ -102,3 +119,16 @@ def test_deterministic(tmp_path):
     a = generate(wav, ["Hard"], tmp_path / "a", seed=7, log=lambda *_: None)
     b = generate(wav, ["Hard"], tmp_path / "b", seed=7, log=lambda *_: None)
     assert a.diffs[0].beatmap.to_osu() == b.diffs[0].beatmap.to_osu()
+
+
+def test_record_write_failure_keeps_the_saved_pack(tmp_path, monkeypatch):
+    import importlib
+    pipeline = importlib.import_module("autoosu.generate")
+
+    def fail(*args):
+        raise OSError("read-only record store")
+    monkeypatch.setattr(pipeline, "store_record", fail)
+    wav = make_song(tmp_path / "record-failure.wav", bpm=140, bars=8)
+    result = generate(wav, ["Hard"], tmp_path / "out", log=lambda *_: None)
+    assert result.osz.is_file() and not result.provenance_recorded
+    assert "read-only record store" in result.warnings[0]

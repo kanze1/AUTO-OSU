@@ -59,6 +59,8 @@ class BatchItem:
     error: Optional[str] = None
     elapsed_s: float = 0.0
     device: str = ""
+    generation_id: Optional[str] = None
+    provenance_recorded: bool = False
     warnings: list[str] = field(default_factory=list)
 
 
@@ -131,6 +133,9 @@ def generate_batch(source: Path, difficulties: list[str], out_dir: Path, *, recu
                 res = generate(song, difficulties, destination, model_cache=models, log=log,
                                progress=lambda f, m, idx=i: update((idx + f) / len(files), m), **kwargs)
                 item.osz, item.device, item.status = str(res.osz), res.device, "done"
+                item.generation_id = (getattr(res, "provenance", None) or {}).get("generation_id")
+                item.provenance_recorded = getattr(res, "provenance_recorded", False)
+                item.warnings.extend(getattr(res, "warnings", []))
                 # An optional preview failure must not hide a successfully written beatmap.
                 try:
                     if preview:

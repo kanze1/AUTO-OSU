@@ -214,6 +214,8 @@ def build_workspace(app, ctk, dnd_files):
     w["run.open_osz"].pack(side="left", padx=8)
     w["run.open_folder"] = ctk.CTkButton(buttons, command=a.open_output, **secondary)
     w["run.open_folder"].pack(side="left")
+    w["run.check_source"] = ctk.CTkButton(buttons, command=a.check_source, **secondary)
+    w["run.check_source"].pack(side="left", padx=(8, 0))
     a.log_box = ctk.CTkTextbox(run, font=ctk.CTkFont(family="Consolas", size=11), height=62, corner_radius=4)
     a.log_box.grid(row=3, column=0, sticky="ew", padx=26, pady=(0, 7))
     a.log_box.configure(state="disabled")
