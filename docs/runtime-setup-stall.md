@@ -2,6 +2,8 @@
 
 Validated on 2026-10-04 against the `0.3.0rc2` source, starting from `1a1c24f`. This is source validation, not a newly published Windows executable.
 
+Subsequent frozen Windows application and release validation is recorded separately for [0.3.0rc3](release-0.3.0rc3.md).
+
 ## Diagnosis and change
 
 `Built ...runtime-source.zip` is uv reporting that the app's wheel has been built. Other packages can still be downloading concurrently. The piped GUI log has package start/completion events but no terminal download bar; a large PyTorch download can therefore leave `Built` as the last line for a long time. This was reproduced with both a controlled slow download and a real GPU runtime installation.

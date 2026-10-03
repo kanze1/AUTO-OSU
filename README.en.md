@@ -27,7 +27,7 @@
 I am bad at osu! and I love playing it. The worst part: the songs I want to play have no maps, and I can't map.
 So: AUTO-OSU. Drop in the song you like, and a minute later you can play it.
 
-The published app is **0.2.0**; the source release candidate is **0.3.0rc2**, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
+The public stable app is **0.2.0**; the latest preview is [**0.3.0rc3**](https://github.com/kanze1/AUTO-OSU/releases/tag/v0.3.0rc3), fixing quiet GPU setup waits and unresponsive cancellation, still using **v0** rhythm and coordinate models. It already makes maps I am happy to play all the way through: the rhythm sits on the drums,
 the jumps and streams are learned from over a hundred thousand ranked / approved / loved maps, and all four difficulties come out in one go.
 It will keep getting better: mapper intent, deliberate highlights, longer sliders and multiple red lines for tempo changes
 are all on the roadmap.
@@ -57,7 +57,7 @@ Click **Set up GPU acceleration** under Device. The app prepares uv, a separate 
 
 - No existing Python, uv, or CUDA Toolkit installation is needed. An NVIDIA GPU and its driver are required.
 - The first download is several GB. Progress and installer logs appear in the window, and setup can be cancelled.
-- `Built runtime-source.zip` only means the source package was built; GPU dependencies may still be downloading or unpacking. The current source build shows dependency download events and reports waiting every 15 seconds without new logs. A setup step exceeding one hour stops with advice to check network access and disk space; you can cancel and retry.
+- `Built runtime-source.zip` only means the source package was built; GPU dependencies may still be downloading or unpacking. Version 0.3.0rc3 shows dependency download events and reports waiting every 15 seconds without new logs. A setup step exceeding one hour stops with advice to check network access and disk space; you can cancel and retry.
 - The runtime lives in `%LOCALAPPDATA%\AUTO-OSU\runtime` and leaves your system Python alone. A failed repair keeps the previous working runtime active.
 - `auto` prefers an available GPU; `cpu` always uses CPU; an explicit `cuda` selection reports a clear error when unavailable.
 
