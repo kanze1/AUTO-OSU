@@ -12,6 +12,8 @@ The executable bundles matching inference source in `runtime/runtime-source.zip`
 
 The installer requires network access and an installed NVIDIA driver. It does not install GPU drivers. First-time dependencies occupy several GB. If uv encounters its Windows minor-version junction issue, setup uses the downloaded patch-version interpreter directly.
 
+uv reports package download start/completion events in the piped GUI log, but terminal progress bars are disabled. `Built ...runtime-source.zip` means only the app's wheel has finished building; concurrent dependency downloads can still be pending. The current source installer adds a localized elapsed/waiting notice every 15 seconds without new logs. Python environment creation and dependency installation each have a one-hour wall-clock limit, including time spent downloading; this is not a claim that a quiet download has stalled. Cancellation and the deadline remain active after output EOF. See the [runtime setup regression evidence](runtime-setup-stall.md).
+
 References: [uv's PyTorch integration](https://docs.astral.sh/uv/guides/integration/pytorch/), [uv installation](https://docs.astral.sh/uv/getting-started/installation/), [Windows Python junction issue](https://github.com/astral-sh/uv/issues/19622).
 
 ## Folder behavior

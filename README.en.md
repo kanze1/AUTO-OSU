@@ -57,6 +57,7 @@ Click **Set up GPU acceleration** under Device. The app prepares uv, a separate 
 
 - No existing Python, uv, or CUDA Toolkit installation is needed. An NVIDIA GPU and its driver are required.
 - The first download is several GB. Progress and installer logs appear in the window, and setup can be cancelled.
+- `Built runtime-source.zip` only means the source package was built; GPU dependencies may still be downloading or unpacking. The current source build shows dependency download events and reports waiting every 15 seconds without new logs. A setup step exceeding one hour stops with advice to check network access and disk space; you can cancel and retry.
 - The runtime lives in `%LOCALAPPDATA%\AUTO-OSU\runtime` and leaves your system Python alone. A failed repair keeps the previous working runtime active.
 - `auto` prefers an available GPU; `cpu` always uses CPU; an explicit `cuda` selection reports a clear error when unavailable.
 
