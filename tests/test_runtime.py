@@ -1,11 +1,13 @@
 import json
 from pathlib import Path
+import sys
 from threading import Event
 
 import pytest
 
 from autoosu import __version__, runtime
 from autoosu.devices import CudaStatus
+from autoosu.i18n import tr
 
 
 @pytest.fixture
@@ -91,3 +93,92 @@ def test_child_environment_does_not_leak_python_paths(monkeypatch):
     env = runtime.child_environment()
     assert 'PYTHONPATH' not in env and 'PYTHONHOME' not in env and '_PYI_ARCHIVE_FILE' not in env
     assert env['AUTOOSU_MANAGED_WORKER'] == '1'
+
+
+def test_quiet_installer_reports_waiting_and_drains_output():
+    logs = []
+    runtime.run_logged([sys.executable, '-I', '-u', '-c',
+                        "import time; print('Built runtime-source.zip'); time.sleep(.7); print('Installed')"],
+                       logs.append, timeout=10, heartbeat_interval=.1)
+    assert 'Built runtime-source.zip' in logs
+    assert logs[-1] == 'Installed'
+    assert logs[logs.index('Built runtime-source.zip') + 1:-1]
+
+
+def test_precancelled_installer_does_not_start(monkeypatch):
+    def unexpected_start(*args, **kwargs):
+        pytest.fail('A cancelled installation must not start a subprocess')
+    monkeypatch.setattr(runtime, 'popen', unexpected_start)
+    cancel = Event()
+    cancel.set()
+    with pytest.raises(runtime.SetupCancelled):
+        runtime.run_logged(['unused'], lambda _: None, cancel)
+
+
+@pytest.mark.parametrize('close_output', [False, True])
+@pytest.mark.parametrize('stop', ['cancel', 'timeout'])
+def test_quiet_installer_can_stop_even_after_output_closes(tmp_path, monkeypatch, close_output, stop):
+    processes = []
+    real_popen = runtime.popen
+    def tracked_popen(*args, **kwargs):
+        proc = real_popen(*args, **kwargs)
+        processes.append(proc)
+        real_wait = proc.wait
+        def bounded_wait(timeout=None):
+            assert timeout is not None or proc.poll() is not None, 'Uncancellable wait after output EOF'
+            return real_wait(timeout=timeout)
+        monkeypatch.setattr(proc, 'wait', bounded_wait)
+        return proc
+    monkeypatch.setattr(runtime, 'popen', tracked_popen)
+    ready = tmp_path/'ready'
+    script = "import os, pathlib, sys, time; print('Built runtime-source.zip', flush=True); "
+    if close_output:
+        script += "os.close(1); os.close(2); "
+    script += "pathlib.Path(sys.argv[1]).touch(); time.sleep(20)"
+    cancel = Event()
+    logs = []
+    def log(message):
+        logs.append(message)
+        if stop == 'cancel' and ready.exists() and message != 'Built runtime-source.zip':
+            cancel.set()
+    error = runtime.SetupCancelled if stop == 'cancel' else RuntimeError
+    timeout = 10 if stop == 'cancel' else 3
+    with pytest.raises(error) as exc:
+        runtime.run_logged([sys.executable, '-I', '-u', '-c', script, ready], log, cancel,
+                           timeout=timeout, heartbeat_interval=.1)
+    assert ready.exists()
+    assert 'Built runtime-source.zip' in logs
+    assert all(proc.poll() is not None for proc in processes)
+    if stop == 'timeout':
+        assert tr('runtime.timeout', seconds=timeout) in str(exc.value)
+        assert 'Built runtime-source.zip' in str(exc.value)
+
+
+def test_installer_failure_keeps_original_diagnostic():
+    with pytest.raises(RuntimeError, match='download connection failed'):
+        runtime.run_logged([sys.executable, '-I', '-c',
+                            "import sys; print('download connection failed'); sys.exit(2)"],
+                           lambda _: None, timeout=10)
+
+
+def test_install_explains_source_build_message(owned, monkeypatch):
+    fake_installer(monkeypatch)
+    monkeypatch.setattr(runtime, 'probe_python', lambda _: CudaStatus(True, 'ready'))
+    logs = []
+    runtime.install_runtime(log=logs.append)
+    assert tr('runtime.dependencies_hint') in logs
+
+
+@pytest.mark.parametrize('error', [runtime.SetupCancelled('cancelled'), RuntimeError('timeout')])
+def test_interrupted_install_preserves_active_runtime(owned, monkeypatch, error):
+    owned.mkdir(parents=True)
+    manifest = owned/'active.json'
+    original = '{"previous":"working runtime"}'
+    manifest.write_text(original)
+    fake_installer(monkeypatch)
+    def interrupted(*args):
+        raise error
+    monkeypatch.setattr(runtime, 'run_logged', interrupted)
+    with pytest.raises(type(error)):
+        runtime.install_runtime(log=lambda _: None)
+    assert manifest.read_text() == original

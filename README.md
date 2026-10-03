@@ -55,6 +55,7 @@ Windows 10 / 11，64 位。
 
 - 无需预装 Python、uv 或 CUDA Toolkit；需要 NVIDIA 显卡及驱动。
 - 首次联网下载约数 GB；安装进度和详细日志直接显示在窗口中，可以取消。
+- `Built runtime-source.zip` 只表示源码包构建完成，GPU 依赖可能仍在下载或解压。当前源码版显示依赖下载事件，无新日志时每 15 秒提示等待状态；单个安装步骤超过 1 小时会停止并提示检查网络和磁盘空间，可取消后重试。
 - 环境保存在 `%LOCALAPPDATA%\AUTO-OSU\runtime`，不修改系统 Python。重新配置失败时保留原来可用的环境。
 - `auto` 优先使用可用的 GPU；`cpu` 始终使用 CPU；显式选择 `cuda` 时，不可用会报出原因。
 

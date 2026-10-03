@@ -8,6 +8,7 @@ import os
 import platform
 import queue
 import shutil
+import signal
 import subprocess
 import sys
 import threading
@@ -21,6 +22,7 @@ from pathlib import Path
 
 from . import __version__
 from .devices import CudaStatus, _nvidia_name, describe_cuda, detect_cuda
+from .i18n import tr
 
 _PROCESS_LOCK = threading.Lock()
 
@@ -80,29 +82,41 @@ def _check_cancel(cancel):
         raise SetupCancelled("Setup cancelled; the previous runtime is unchanged")
 
 
-def run_logged(args, log, cancel=None):
-    """Drain output without blocking cancellation while an installer is quiet."""
-    proc = popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace")
+def run_logged(args, log, cancel=None, *, timeout=3600, heartbeat_interval=15):
+    """Keep quiet installers observable, cancellable and bounded, including after EOF."""
+    _check_cancel(cancel)
+    proc = popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace",
+                 start_new_session=sys.platform != "win32")
     messages = queue.Queue()
     def read():
         try:
-            for line in proc.stdout:
-                messages.put(line.rstrip())
+            with proc.stdout:
+                for line in proc.stdout:
+                    messages.put(line.rstrip())
         finally:
             messages.put(None)
     reader = threading.Thread(target=read, daemon=True)
     reader.start()
     tail = []
+    started = last_output = last_notice = time.monotonic()
+    output_closed = False
     try:
-        while True:
+        while not output_closed or proc.poll() is None:
             _check_cancel(cancel)
+            now = time.monotonic()
+            if now - started >= timeout:
+                raise RuntimeError(tr('runtime.timeout', seconds=round(timeout)) + "\n" + "\n".join(tail))
+            if now - max(last_output, last_notice) >= heartbeat_interval:
+                log(tr('runtime.waiting', elapsed=int(now - started), quiet=int(now - last_output)))
+                last_notice = now
             try:
                 line = messages.get(timeout=.15)
             except queue.Empty:
                 continue
             if line is None:
-                break
-            if line:
+                output_closed = True
+            elif line:
+                last_output = time.monotonic()
                 tail.append(line)
                 tail = tail[-20:]
                 log(line)
@@ -111,15 +125,23 @@ def run_logged(args, log, cancel=None):
         if code:
             raise RuntimeError("\n".join(tail) or f"Installer exited with {code}")
     finally:
-        if proc.poll() is None:
-            if sys.platform == "win32":
-                subprocess.run(["taskkill", "/PID", str(proc.pid), "/T", "/F"], capture_output=True,
-                               creationflags=subprocess.CREATE_NO_WINDOW)
-            else:
-                proc.terminate()
+        if proc.poll() is None or not output_closed:
+            if sys.platform == "win32" and proc.poll() is None:
+                try:
+                    subprocess.run(["taskkill", "/PID", str(proc.pid), "/T", "/F"], capture_output=True,
+                                   creationflags=subprocess.CREATE_NO_WINDOW, timeout=10)
+                except (OSError, subprocess.TimeoutExpired):
+                    pass
+            elif sys.platform != "win32":
+                # The build backend may hold the output pipe open after uv exits.
+                try:
+                    os.killpg(proc.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+            if proc.poll() is None:
+                proc.kill()
             proc.wait(timeout=15)
         reader.join(timeout=2)
-        proc.stdout.close()
 
 
 def _download(url, cancel=None) -> bytes:
@@ -317,6 +339,7 @@ def install_runtime(*, progress=None, log=print, cancel=None) -> RuntimeStatus:
         python = python_in(environment)
         source, editable = _source_for_install()
         progress(.28, 'runtime.dependencies')
+        log(tr('runtime.dependencies_hint'))
         args = [uv, 'pip', 'install', '--python', python, '--torch-backend', 'auto', '--index-url', 'https://pypi.org/simple']
         if editable:
             args.append('--editable')

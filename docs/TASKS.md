@@ -5,6 +5,7 @@ Tasks follow priority and dependencies, without time estimates. This file record
 | ID | Priority | Task | Dependencies | State | Acceptance evidence |
 | --- | --- | --- | --- | --- | --- |
 | GOV | P0 | Collaboration rules, templates, CI and branch protection | — | Merged | [Workflow and applied protection](governance.md); all 3 CI checks passed; [PR #1](https://github.com/kanze1/AUTO-OSU/pull/1) merged as `3f67706` |
+| R1 | P0 | Runtime setup waiting feedback, deadline and cancellation | GOV | Validated | [Regression and actual installation evidence](runtime-setup-stall.md): 172 tests, slow-download reproduction, fresh GPU environment with real CUDA check, bilingual source GUI; rebuilt executable and reporter-machine verification remain unverified |
 | D1 | P0 | Feasibility of detecting unlabelled v0 outputs | GOV | Validated | [40-song / 160-output screen](detection-v0-screen.md); stop app integration of these baselines: fragile under edits and confuse rules with models |
 | D2 | P0 | Generation provenance and source checker | GOV | Merged | [PR #2](https://github.com/kanze1/AUTO-OSU/pull/2), `ddb1728`, all 3 checks passed; [CLI/GUI and actual worker validation](source-check.md); client round-trip still unverified |
 | W1 | P0 | Default content watermark for newly generated maps | D2 | Merged | [PR #4](https://github.com/kanze1/AUTO-OSU/pull/4), `2d2e0bd`, all 3 checks passed; [frozen evaluation](generation-watermark.md): 0/1504 eligible unmarked controls detected; actual client round-trip and playtesting pending |
