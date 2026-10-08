@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "status": "inventory_complete",
+  "training_started": false,
+  "training_ready": false,
+  "source_dataset": "project-riz/osu-beatmaps (existing local snapshot)",
+  "index_sha256": "f630e855fe494d16033fbbc5a141c9cd548d6e649ee8be9eeac875b5b3fe1d6e",
+  "script_sha256": "ff4ed7083618c198e03c251d6dd8d864797098cfd90bf9ba84c8d3c94897b519",
+  "shards": [
+    {
+      "name": "data-000000.tar",
+      "bytes": 1077473280,
+      "metadata_sha256": "b10aa3f1c496414d9b7d3035828948db3831e3a51fbd95299d3b2e2eba17ccb0",
+      "metadata_records": 647,
+      "matched_maps": 1917
+    },
+    {
+      "name": "data-000001.tar",
+      "bytes": 1078016000,
+      "metadata_sha256": "7696245a01211dca6ae572876be2521928ed0b28c5b1080d786560dce3313e38",
+      "metadata_records": 593,
+      "matched_maps": 1755
+    },
+    {
+      "name": "data-000002.tar",
+      "bytes": 1076602880,
+      "metadata_sha256": "cf0eb746be176ab7851ee1ba669de62591539d29bcfd311e0c46d85b9c05e2f8",
+      "metadata_records": 641,
+      "matched_maps": 1920
+    },
+    {
+      "name": "data-000003.tar",
+      "bytes": 1076992000,
+      "metadata_sha256": "1f1b8b28f776f4f3af3d4e343603e55e87cf608c04f6c4062252e5563bc7180f",
+      "metadata_records": 628,
+      "matched_maps": 1732
+    },
+    {
+      "name": "data-000004.tar",
+      "bytes": 1076643840,
+      "metadata_sha256": "14313249b70b31ec23efcaa6465a8da3e279e9da33f456b1487d28597440f61d",
+      "metadata_records": 623,
+      "matched_maps": 1830
+    },
+    {
+      "name": "data-000005.tar",
+      "bytes": 1077442560,
+      "metadata_sha256": "cb5867589d8cdf4680ad3db066ca92309bf4bcd83cd9e93cc1c59978b2a897d4",
+      "metadata_records": 627,
+      "matched_maps": 1995
+    },
+    {
+      "name": "data-000006.tar",
+      "bytes": 1076940800,
+      "metadata_sha256": "9f6a0111dc998133fe98a73898ea513b7008adcaab2c6271ad4d8c793a465b52",
+      "metadata_records": 638,
+      "matched_maps": 1902
+    },
+    {
+      "name": "data-000007.tar",
+      "bytes": 1077770240,
+      "metadata_sha256": "2aec91aa7f88ebca801af4875bd84817d936b4311f46ebb3ab7ebc1c32f25bdc",
+      "metadata_records": 637,
+      "matched_maps": 1961
+    },
+    {
+      "name": "data-000008.tar",
+      "bytes": 1076193280,
+      "metadata_sha256": "f3a4edb10f01c9486011c282014bfd96247789e1ab0820268bb6351f43a760e7",
+      "metadata_records": 635,
+      "matched_maps": 1973
+    },
+    {
+      "name": "data-000009.tar",
+      "bytes": 1077012480,
+      "metadata_sha256": "c7469932f28fde484273e581cf0697395865a05cf3b4fe59faf19a3cca39f1db",
+      "metadata_records": 633,
+      "matched_maps": 1959
+    },
+    {
+      "name": "data-000010.tar",
+      "bytes": 1076469760,
+      "metadata_sha256": "5eec92ca87bf7c31f955356186013dc1f9227cbfebc34cd56c0d4792fa497e26",
+      "metadata_records": 627,
+      "matched_maps": 2011
+    },
+    {
+      "name": "data-000011.tar",
+      "bytes": 1076193280,
+      "metadata_sha256": "56ce018286a6ef26c325b002920d21f494def1cc2be7ebe4a213de377cde87cf",
+      "metadata_records": 643,
+      "matched_maps": 1825
+    },
+    {
+      "name": "data-000012.tar",
+      "bytes": 1077852160,
+      "metadata_sha256": "893fcee982f4452287427b180d2880df1d25c4f19a57a71785ff1d882b0ec63e",
+      "metadata_records": 635,
+      "matched_maps": 1861
+    },
+    {
+      "name": "data-000013.tar",
+      "bytes": 1077063680,
+      "metadata_sha256": "791ad21405515da0a6b3749f4bda3a4835e4934e411e9540781209a44b9c6f37",
+      "metadata_records": 652,
+      "matched_maps": 1964
+    },
+    {
+      "name": "data-000014.tar",
+      "bytes": 1076797440,
+      "metadata_sha256": "5129cc14682efb276bc327f0b04eb4abc4bcadc4bc0ca40aa0edb7f052ea3c5a",
+      "metadata_records": 648,
+      "matched_maps": 1999
+    },
+    {
+      "name": "data-000015.tar",
+      "bytes": 1077606400,
+      "metadata_sha256": "b030cc26dd5b563cc3cb4eb61c57c0817bac01fdde610569c341825074093ba5",
+      "metadata_records": 613,
+      "matched_maps": 1883
+    },
+    {
+      "name": "data-000016.tar",
+      "bytes": 1078394880,
+      "metadata_sha256": "2e39e97e6001515f5bb882604e94157a97465d589d15b3957c6bc116262848b2",
+      "metadata_records": 634,
+      "matched_maps": 1826
+    },
+    {
+      "name": "data-000017.tar",
+      "bytes": 1076203520,
+      "metadata_sha256": "bbb7490e94ef87413582b82565453f94d6c2df52a47b727f68dd5da9e31ab5c5",
+      "metadata_records": 621,
+      "matched_maps": 1850
+    },
+    {
+      "name": "data-000018.tar",
+      "bytes": 1078476800,
+      "metadata_sha256": "99726d6f0fe4ab1ca7148bc6a840b082ce1dc264fa5b2b80bc894f1702e44f79",
+      "metadata_records": 635,
+      "matched_maps": 2040
+    },
+    {
+      "name": "data-000019.tar",
+      "bytes": 1075988480,
+      "metadata_sha256": "fae9cd39f81f144920e712b105652fe9a000dc7bf888c3e6796da23cfa7b8b83",
+      "metadata_records": 600,
+      "matched_maps": 1787
+    },
+    {
+      "name": "data-000020.tar",
+      "bytes": 1076981760,
+      "metadata_sha256": "522ca6c748d2163840d4d24d97a61a1cda9c999d17854778485e663a1b209709",
+      "metadata_records": 584,
+      "matched_maps": 1693
+    },
+    {
+      "name": "data-000021.tar",
+      "bytes": 1077186560,
+      "metadata_sha256": "185e777bcbcd0df01e355c4970964257e9b9d5fd273864442b5379a2389a94ab",
+      "metadata_records": 607,
+      "matched_maps": 1762
+    },
+    {
+      "name": "data-000022.tar",
+      "bytes": 1076213760,
+      "metadata_sha256": "182cedb7d2322c471aff2a24da782740725ff0b355f4cb8209d88dac0df1c622",
+      "metadata_records": 626,
+      "matched_maps": 1876
+    },
+    {
+      "name": "data-000023.tar",
+      "bytes": 1076490240,
+      "metadata_sha256": "17a887578434811922a094cc507e0126e1218114171b284ffba71ed15714ecce",
+      "metadata_records": 637,
+      "matched_maps": 2029
+    },
+    {
+      "name": "data-000024.tar",
+      "bytes": 1076910080,
+      "metadata_sha256": "de6534dc8d0c1c84197d3a54595e0bf94866d9a863fcdc9c6c484b960f9a6b3d",
+      "metadata_records": 657,
+      "matched_maps": 1944
+    },
+    {
+      "name": "data-000025.tar",
+      "bytes": 1076766720,
+      "metadata_sha256": "885024dd328d5a6188f917e8d3e7ce2226c7544777e734fd39e34d09b5231d1f",
+      "metadata_records": 624,
+      "matched_maps": 1997
+    },
+    {
+      "name": "data-000026.tar",
+      "bytes": 1077944320,
+      "metadata_sha256": "e078d2bf19b72732ac11f0486d152b393ed5bd0068fd543a2a93df079eccca5e",
+      "metadata_records": 645,
+      "matched_maps": 1932
+    },
+    {
+      "name": "data-000027.tar",
+      "bytes": 1076357120,
+      "metadata_sha256": "6a65581301578890398af09648282f3537b599ab8cb02fdca45fdb94f69e19f4",
+      "metadata_records": 614,
+      "matched_maps": 1978
+    },
+    {
+      "name": "data-000028.tar",
+      "bytes": 1076602880,
+      "metadata_sha256": "472b4a9554f34ff58dd1a3bf0b6a65d525621ad23d9a27582a1a395cea213a2f",
+      "metadata_records": 632,
+      "matched_maps": 1797
+    },
+    {
+      "name": "data-000029.tar",
+      "bytes": 1076838400,
+      "metadata_sha256": "b203624007b22186566d3add6005f5bfc964a46ab3eae7ba5f5424d1a78970e2",
+      "metadata_records": 656,
+      "matched_maps": 1963
+    },
+    {
+      "name": "data-000030.tar",
+      "bytes": 1078036480,
+      "metadata_sha256": "d13b4e928553799d200c76de52e4deb7b6e7c35b62e9bc21fb83dd4cbf8f848a",
+      "metadata_records": 628,
+      "matched_maps": 1632
+    },
+    {
+      "name": "data-000031.tar",
+      "bytes": 1076981760,
+      "metadata_sha256": "b7db938ebfdaf156f8ea3ccb007db4be3d78aba97042172deb800488b7b2fc52",
+      "metadata_records": 631,
+      "matched_maps": 1912
+    },
+    {
+      "name": "data-000032.tar",
+      "bytes": 1077043200,
+      "metadata_sha256": "12fd25302baef13993076f75fe456e2bd6048d17370fb14f519ec39b7d7a351b",
+      "metadata_records": 612,
+      "matched_maps": 1613
+    },
+    {
+      "name": "data-000033.tar",
+      "bytes": 1078026240,
+      "metadata_sha256": "098c5b604b3ad0302efc6cd7b952cc271c414c6e2d484c59367041f287cc0576",
+      "metadata_records": 625,
+      "matched_maps": 1867
+    },
+    {
+      "name": "data-000034.tar",
+      "bytes": 1077780480,
+      "metadata_sha256": "41ba3c455058754460617245eff27541b38dc658e05aa82d750bf44fe3b97d6c",
+      "metadata_records": 653,
+      "matched_maps": 1941
+    },
+    {
+      "name": "data-000035.tar",
+      "bytes": 1076828160,
+      "metadata_sha256": "3c536b95debf9955f15052bfc137c36453b01980f31ee6c26c5dbb8d5ebb3636",
+      "metadata_records": 637,
+      "matched_maps": 1945
+    },
+    {
+      "name": "data-000036.tar",
+      "bytes": 1076029440,
+      "metadata_sha256": "6c7d889cb9544369c1bc8200065a55bc034c447ddf3dbd1ef101aa77e841176e",
+      "metadata_records": 633,
+      "matched_maps": 2014
+    },
+    {
+      "name": "data-000037.tar",
+      "bytes": 1078118400,
+      "metadata_sha256": "243ba017ff749104adb15dfed94c25f0302c5c788df00f23ff07672e95195944",
+      "metadata_records": 649,
+      "matched_maps": 1977
+    },
+    {
+      "name": "data-000038.tar",
+      "bytes": 1077278720,
+      "metadata_sha256": "60c6ffb4e9a046c5398217542dabeec9023e919029d018338ec9fd8bc29b8979",
+      "metadata_records": 623,
+      "matched_maps": 1838
+    },
+    {
+      "name": "data-000039.tar",
+      "bytes": 1077555200,
+      "metadata_sha256": "9b70bf84c68f396ad0cc7bccb504567e2aae3326d60f88d850b883b105148c52",
+      "metadata_records": 655,
+      "matched_maps": 2012
+    },
+    {
+      "name": "data-000040.tar",
+      "bytes": 1077637120,
+      "metadata_sha256": "376107ef82caa90958fb4d2114f58f2035818846fa7ce521cefe4e6677029b51",
+      "metadata_records": 659,
+      "matched_maps": 2192
+    },
+    {
+      "name": "data-000041.tar",
+      "bytes": 1076705280,
+      "metadata_sha256": "2dbc6da73f08de313bb0fe2e3f3ca483e5bab62eab23c7e9c5c6e2040d1301ed",
+      "metadata_records": 640,
+      "matched_maps": 1755
+    },
+    {
+      "name": "data-000042.tar",
+      "bytes": 1077821440,
+      "metadata_sha256": "f9553cec9e4ddf79205fe5e24381e38e4945d4ef6f995a24adffef99f39cde63",
+      "metadata_records": 622,
+      "matched_maps": 1947
+    },
+    {
+      "name": "data-000043.tar",
+      "bytes": 1076633600,
+      "metadata_sha256": "8d68ae1e8b460511c5612a3f7ffeec20f975de38dd4b1b9124672f59be7b418e",
+      "metadata_records": 637,
+      "matched_maps": 1887
+    },
+    {
+      "name": "data-000044.tar",
+      "bytes": 1078497280,
+      "metadata_sha256": "c7bd53aa8047034cb0f0bdbe9a495a9b0aa49d26a6620ecb3740a43a5e72e228",
+      "metadata_records": 635,
+      "matched_maps": 1899
+    },
+    {
+      "name": "data-000045.tar",
+      "bytes": 1076418560,
+      "metadata_sha256": "2c5ccdee574b089b593874f15ddcaddaefa82800d45ccf0a8c86c8a762417785",
+      "metadata_records": 631,
+      "matched_maps": 1788
+    },
+    {
+      "name": "data-000046.tar",
+      "bytes": 1077278720,
+      "metadata_sha256": "44314e25690189701186d49df22a7f4d3aaff96d99cfdaa96f1ea66482c63858",
+      "metadata_records": 646,
+      "matched_maps": 1939
+    },
+    {
+      "name": "data-000047.tar",
+      "bytes": 1077248000,
+      "metadata_sha256": "a6e5354665b1179e12cb03b76cd6be29044a2316974ecf0ed8e1f4fbb48f332d",
+      "metadata_records": 633,
+      "matched_maps": 1904
+    },
+    {
+      "name": "data-000048.tar",
+      "bytes": 1077452800,
+      "metadata_sha256": "6ed2903d0baef394d788eb3397f5d8752c95041d96480a6475eb82bf0b477c86",
+      "metadata_records": 630,
+      "matched_maps": 1884
+    },
+    {
+      "name": "data-000049.tar",
+      "bytes": 1076295680,
+      "metadata_sha256": "c49df3d5f5d44cd5c5078b8fd41593c10041b2c52b1c13189b62d325e51bbe92",
+      "metadata_records": 633,
+      "matched_maps": 1958
+    },
+    {
+      "name": "data-000050.tar",
+      "bytes": 1076715520,
+      "metadata_sha256": "d74a79e61fa7b7a9710b7637b17b6b57adfffe24321a2dcab2bd145c193dfb32",
+      "metadata_records": 617,
+      "matched_maps": 1834
+    },
+    {
+      "name": "data-000051.tar",
+      "bytes": 1077401600,
+      "metadata_sha256": "19bffdab56ce6b90afb813a8df71e23a5e24b597dbe4f53fdbcd7e9f8bbb4e06",
+      "metadata_records": 628,
+      "matched_maps": 1862
+    },
+    {
+      "name": "data-000052.tar",
+      "bytes": 1077381120,
+      "metadata_sha256": "067663dbab51128afb359493f3a1d5294a982f2789e3f024b6e2cf577d9d8cca",
+      "metadata_records": 617,
+      "matched_maps": 1749
+    },
+    {
+      "name": "data-000053.tar",
+      "bytes": 1081774080,
+      "metadata_sha256": "3409ab6f4434e646caffa5934caabca5829579dd64b6722c781e304787b2a390",
+      "metadata_records": 637,
+      "matched_maps": 1871
+    },
+    {
+      "name": "data-000054.tar",
+      "bytes": 1076664320,
+      "metadata_sha256": "216378abb18b2b7b326838113bf30cad3f27ab79a2b4c5f2b521e23b9d4a66c5",
+      "metadata_records": 640,
+      "matched_maps": 1898
+    },
+    {
+      "name": "data-000055.tar",
+      "bytes": 1077176320,
+      "metadata_sha256": "c045e3e5b58266ed403003e8ef95d081de06c917cf836aa42f3304dc782dbafe",
+      "metadata_records": 637,
+      "matched_maps": 2019
+    },
+    {
+      "name": "data-000056.tar",
+      "bytes": 1077637120,
+      "metadata_sha256": "07befdc2fc40554f3b95af5cc1af3fdaca2578debc4f3df5db9b3b124d5288e9",
+      "metadata_records": 623,
+      "matched_maps": 1889
+    },
+    {
+      "name": "data-000057.tar",
+      "bytes": 1077841920,
+      "metadata_sha256": "db9591f9256e3baa05f8c606333e07e2cb470b0f955746905aeabf1c1d0c2bd0",
+      "metadata_records": 632,
+      "matched_maps": 1971
+    },
+    {
+      "name": "data-000058.tar",
+      "bytes": 1077084160,
+      "metadata_sha256": "7b26ea06cc19c3288efb8ee52387476c1556099d6d1604f42cab03467a1000ff",
+      "metadata_records": 642,
+      "matched_maps": 1948
+    },
+    {
+      "name": "data-000059.tar",
+      "bytes": 1078159360,
+      "metadata_sha256": "e4e2732429334a6780ac32139a42ebf344fe8ef4634151eaaaccacbe60338d1f",
+      "metadata_records": 651,
+      "matched_maps": 2153
+    },
+    {
+      "name": "data-000060.tar",
+      "bytes": 1076275200,
+      "metadata_sha256": "1d8a86ebbf243f020e1e911c22c2e5b313750b6ee7ed108cb51062eeb338d91e",
+      "metadata_records": 640,
+      "matched_maps": 2040
+    },
+    {
+      "name": "data-000061.tar",
+      "bytes": 1079050240,
+      "metadata_sha256": "330926aa2684fd0e89a5a7ecdb615d0a4e013c63cc4e315822407d99390a2c20",
+      "metadata_records": 633,
+      "matched_maps": 1922
+    },
+    {
+      "name": "data-000062.tar",
+      "bytes": 1080903680,
+      "metadata_sha256": "a5af6630289caa0b3971b79db85220a14362d2ae85062b895e85be768ee0ddc6",
+      "metadata_records": 626,
+      "matched_maps": 1723
+    },
+    {
+      "name": "data-000063.tar",
+      "bytes": 1077248000,
+      "metadata_sha256": "10de4cd403c390f2bca3614b1928cefd08b51b8270a124da9acd026593892fd0",
+      "metadata_records": 625,
+      "matched_maps": 1871
+    },
+    {
+      "name": "data-000064.tar",
+      "bytes": 1076520960,
+      "metadata_sha256": "58e107f4a031f6f492d731ab5a70ed6614050e49ea0fcdf58cab43cc0326c91b",
+      "metadata_records": 636,
+      "matched_maps": 1928
+    },
+    {
+      "name": "data-000065.tar",
+      "bytes": 1076715520,
+      "metadata_sha256": "958e7a23aec7613114f51c8fddaf91753bbf01ea03646ec4ee9175a4ea470a10",
+      "metadata_records": 635,
+      "matched_maps": 1925
+    },
+    {
+      "name": "data-000066.tar",
+      "bytes": 1076520960,
+      "metadata_sha256": "d142042094b34683d848a2aa1d495110e3895182b92d0805d6cf9c3cd04dd239",
+      "metadata_records": 650,
+      "matched_maps": 2046
+    },
+    {
+      "name": "data-000067.tar",
+      "bytes": 1076326400,
+      "metadata_sha256": "945051b8f1898070c78a2a60621a47a9658e2b02daf2f3715a049338ef053719",
+      "metadata_records": 653,
+      "matched_maps": 1884
+    },
+    {
+      "name": "data-000068.tar",
+      "bytes": 1077452800,
+      "metadata_sha256": "f73c5c2fad37ec40d57cbd4daaba01968c45a5846d5aa2f50bddf5854a6b81da",
+      "metadata_records": 625,
+      "matched_maps": 1897
+    },
+    {
+      "name": "data-000069.tar",
+      "bytes": 1077524480,
+      "metadata_sha256": "1b65bdc73b97b73d368b6d4d96ba5e728f781e38833bf19bfca96dae946dd707",
+      "metadata_records": 623,
+      "matched_maps": 1903
+    },
+    {
+      "name": "data-000070.tar",
+      "bytes": 1089208320,
+      "metadata_sha256": "d3c355f1da497333e20109763014a22adde12fa284868a892935c71875296097",
+      "metadata_records": 615,
+      "matched_maps": 1928
+    },
+    {
+      "name": "data-000071.tar",
+      "bytes": 1076203520,
+      "metadata_sha256": "bc49be407d6e71124649a66d84cedc68617d79d4944781837ef5e87559a13330",
+      "metadata_records": 644,
+      "matched_maps": 1946
+    },
+    {
+      "name": "data-000072.tar",
+      "bytes": 1076715520,
+      "metadata_sha256": "572abd564f542fe15bebd3d3d5a7fee19726fef47482caf17e3ea3c093841921",
+      "metadata_records": 647,
+      "matched_maps": 1955
+    },
+    {
+      "name": "data-000073.tar",
+      "bytes": 376473600,
+      "metadata_sha256": "5c4c6c910b02968856da2f68b5375996c0e4ef987100719d95543b54ec5f8d50",
+      "metadata_records": 206,
+      "matched_maps": 555
+    }
+  ],
+  "prepared_maps": 139582,
+  "matched_maps": 139582,
+  "missing_source_records": 0,
+  "prepared_tracks": 32578,
+  "prepared_sets": 36204,
+  "star_floor_counts": {
+    "0": 8,
+    "1": 13693,
+    "2": 31591,
+    "3": 29869,
+    "4": 26856,
+    "5": 23422,
+    "6": 10518,
+    "7": 2759,
+    "8": 687,
+    "9": 179
+  },
+  "source_metadata_field_counts": {
+    "audio_hash": 46386,
+    "audio_length": 46386,
+    "beatmaps": 46386
+  },
+  "matched_map_field_counts": {
+    "beatmapset_id": 139582,
+    "beatmap_id": 139582,
+    "approved": 139582,
+    "total_length": 139582,
+    "hit_length": 139582,
+    "version": 139582,
+    "diff_size": 139582,
+    "diff_overall": 139582,
+    "diff_approach": 139582,
+    "diff_drain": 139582,
+    "mode": 139582,
+    "count_normal": 139582,
+    "count_slider": 139582,
+    "count_spinner": 139582,
+    "submit_date": 139582,
+    "approved_date": 139582,
+    "last_update": 139582,
+    "artist": 139582,
+    "artist_unicode": 139582,
+    "title": 139582,
+    "title_unicode": 139582,
+    "creator": 139582,
+    "creator_id": 139582,
+    "bpm": 139582,
+    "source": 139582,
+    "tags": 139582,
+    "genre_id": 139582,
+    "language_id": 139582,
+    "favourite_count": 139582,
+    "rating": 139582,
+    "storyboard": 139582,
+    "video": 139582,
+    "download_unavailable": 139582,
+    "audio_unavailable": 139582,
+    "playcount": 139582,
+    "passcount": 139582,
+    "packs": 139582,
+    "max_combo": 139582,
+    "diff_aim": 139582,
+    "diff_speed": 139582,
+    "difficultyrating": 139582,
+    "content": 139582
+  },
+  "free_text_tag_presence": {
+    "nonempty": 135858,
+    "missing_or_empty": 3724
+  },
+  "literal_skill_term_counts": {
+    "jumps": 146,
+    "bursts": 35,
+    "tech": 457,
+    "stream": 654,
+    "stamina": 87,
+    "streams": 243,
+    "burst": 104,
+    "jump": 332,
+    "reading": 23
+  },
+  "maps_with_literal_skill_terms": 1815,
+  "reviewed_skill_label_maps": 0,
+  "review_queue_maps": 95,
+  "legacy_eligible_maps": 138912,
+  "legacy_track_split": {
+    "groups": 32561,
+    "mixed_groups": 182,
+    "maps_in_mixed_groups": 1846,
+    "validation_maps_in_mixed_groups": 721
+  },
+  "legacy_source_audio_hash_split": {
+    "groups": 32561,
+    "mixed_groups": 182,
+    "maps_in_mixed_groups": 1846,
+    "validation_maps_in_mixed_groups": 721
+  },
+  "evidence_limits": [
+    "Audio hashes are source declarations; audio bytes and near duplicates were not verified.",
+    "Metadata digests cover JSON member names and bytes, not complete tar archives.",
+    "Free-text tags and literal skill terms are not reviewed per-difficulty skill labels.",
+    "No independent test split was frozen; prior evaluation songs still need exclusion.",
+    "Snapshot usage conditions and per-asset provenance need review before training.",
+    "Human label agreement and conditioned model inputs remain unimplemented."
+  ]
+}

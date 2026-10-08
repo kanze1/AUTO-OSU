@@ -14,8 +14,9 @@ from ..difficulty import DifficultyPreset
 from ..rhythm import RhythmEvent, Sections, _combos_and_hitsounds, effective_grid, tick_features
 from ..timing import Timing
 from .dataset import BOS, FRAME_MS, GRID, cond_vector, extra_features, gather_patches, local_loudness
-from .model import TickTransformer, sample_ar, sample_masked
+from .model import TickTransformer, sample_ar, sample_masked, sample_attributes
 from .prepare_data import HOP, MEL_HI, MEL_LO, N_FFT, N_MELS, SR
+from .skills import conditioned_vector
 
 
 def song_mel_uint8(audio_path: str | Path) -> np.ndarray:
@@ -36,7 +37,7 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
                     analysis: AudioAnalysis, sections: Sections, *, star_rating: Optional[float] = None,
                     year: int = 2023, density: Optional[float] = None, temperature: float = 0.9,
                     none_bias: float = 0.0, decode_steps: int = 12, context: int = 1024, seed: int = 0,
-                    device: str = "cuda") -> List[RhythmEvent]:
+                    device: str = "cuda", skills: Optional[dict] = None) -> List[RhythmEvent]:
     """density: objects/measure, scalar or one value per tick; None = unknown."""
     bl = timing.beat_length
     step = bl / GRID
@@ -51,9 +52,9 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
     audio = torch.from_numpy(gather_patches(mel, frames).astype(np.float32) / 255.0).to(device)
     extra_t = torch.from_numpy(extra).to(device)
     met = torch.from_numpy(metrical).to(device)
-    cond = torch.from_numpy(cond_vector(dict(
+    cond = torch.from_numpy(conditioned_vector(cond_vector(dict(
         sr=star_rating if star_rating is not None else preset.star,
-        cs=preset.cs, ar=preset.ar, od=preset.od, hp=preset.hp, year=year))).to(device)
+        cs=preset.cs, ar=preset.ar, od=preset.od, hp=preset.hp, year=year)), model.cfg.skill_names, skills)).to(device)
 
     gen = torch.Generator(device=device).manual_seed(seed)
     model.eval()
@@ -65,6 +66,8 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
                                none_bias=none_bias, generator=gen)
 
     # tick labels -> events; drum / melody features for hitsounds and placement come from the analyser
+    attributes = sample_attributes(model, audio, met, extra_t, cond, labels, generator=gen,
+                                   temperature=temperature) if model.attribute_heads else {}
     grid = effective_grid(analysis, timing, preset)
     feats = {round(t.beat, 6): t for t in tick_features(analysis, timing, grid)}
     events: List[RhythmEvent] = []
@@ -72,6 +75,7 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
     while i < n_ticks:
         c = labels[i]
         if c in (1, 2, 5):
+            onset_index = i
             b = float(beats[i])
             tk = feats.get(round(b, 6))
             ev = RhythmEvent(time=timing.ms_at(b), beat=b, intensity=sections.at(b),
@@ -98,9 +102,21 @@ def generate_rhythm(model: TickTransformer, mel: np.ndarray, timing: Timing, pre
                 else:
                     i += 1
                     continue
+            if attributes and ev.kind != "spinner":
+                values = {name: model.cfg.attribute_vocab[name][indices[onset_index]]
+                          for name, indices in attributes.items() if indices[onset_index] != -100}
+                ev.new_combo = bool(values["new_combo"])
+                ev.hitsound = int(values["hitsound"]) << 1
+                if ev.kind == "slider":
+                    ev.repeats = int(values["repeats"])
+                    ev.slider_topology = values["topology"]
+                    ev.tail_hitsound = int(values["tail_hitsound"]) << 1
+            if ev.kind == "spinner":
+                ev.new_combo = True
             events.append(ev)
         i += 1
-    _combos_and_hitsounds(events, preset)
+    if not attributes:
+        _combos_and_hitsounds(events, preset)
     return events
 
 

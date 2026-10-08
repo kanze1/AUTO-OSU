@@ -120,7 +120,7 @@ Plans can be imported/exported and are shared by CLI, GUI, isolated workers and 
 
 In the same control window, choose **Balanced (default) / Jump preference / Tapping or burst preference**. These controls still use v0 weights: jumps normally retain the reference rhythm while adjusting spacing, and tapping uses the reference map's local density to encourage consecutive taps. Explicit density, curves and spacing take priority. Automatic highlights remain the default with other modes available.
 
-Preference mode tries up to three candidates and checks the response at similar measured stars. A missed preference is reported explicitly; some songs will not respond. Tapping includes bursts and does not guarantee long streams. Both models are required and generation takes longer. A label-conditioned model has not been trained yet; see the schedule below and the [preference evaluation](docs/skill-preferences.md).
+Preference mode tries up to three candidates and checks the response at similar measured stars. A missed preference is reported explicitly; some songs will not respond. Tapping includes bursts and does not guarantee long streams. Both models are required and generation takes longer. The [community positive-label fine-tuning pilot](docs/m1-skill-pilot.md) failed its long-stream preservation and skill-response gates; that release direction has been discontinued. The existing UI preferences remain v0 density / spacing heuristics, not learned skill labels.
 
 ```powershell
 python -m autoosu "song.mp3" -d Insane --skill-preference jumps
@@ -279,13 +279,10 @@ Work follows priority and dependency order, without time commitments. Completion
 | P1 · Difficulty control | Measured stars, local density curves, two-pass spacing control and up to three candidates | Compare target and measured ratings; validate 6–7★ before 7–8★, including local strain and playability | Implemented; initial maintainer review recorded, high-difficulty audition continues |
 | P1 · Musical sections | Manual highlights and automatic proposals coordinate density, spacing, hitsounds and kiai | Validate manual regions, then compare automatic proposals with human annotations; abstain on low contrast | Automatic by default with selectable modes; positive initial review, human location labels pending |
 | P1 · Pattern preference S1 | Balanced / jumps / tapping using existing conditions and candidate selection | Compare the same song at similar measured stars; report misses | Implemented in source, experimental; see [measured results](docs/skill-preferences.md) |
-| P2 · Label data M1.1 | Definitions, sources, human review and song-grouped splits | Distinguish missing and negative labels, report star coverage, freeze an independent test set | Planned, not started |
-| P2 · Conditional training M1.2 | Small label-training pilot; rhythm / coordinate / joint ablations | Improve on current controls without degrading unlabelled mode before scaling training | Depends on M1.1; not trained |
-| P2 · Independent evaluation M1.3 | Same-star skill response, high difficulty, highlights and blind review | Freeze models before testing new songs; separate reference / automatic timing and gameplay | Depends on M1.2 |
-| P2 · Weight release M1.4 | Label UI, model compatibility, download checks and candidate build | Replace default weights only after acceptance, retaining a v0 fallback | Depends on M1.3; not released |
+| P2 · Architecture and source attributes M2 | Audio context, event representation, hitsounds, combos and slider structure | Separate source-attribute supervision from skill tags; generate with unknown reference density; separate soft preferences from format validity | [Four-case selection complete; four-GPU retraining running](docs/model-training-plan.md); final acceptance and new-weight release remain unfinished |
 
 Detection targets future maps that receive the marker. Statistical attribution of older maps is no longer planned. No detection means "unable to determine", not proof of human authorship.
-See the [task queue](docs/TASKS.md) for current state and the [label-conditioned model plan](docs/model-training-plan.md) (Chinese) for training scope and gates. Finer rhythms, slider length, section conditions and multiple timing sections remain separate experiments.
+See the [task queue](docs/TASKS.md) for current state and the [retraining and learnable-attribute plan](docs/model-training-plan.md) (Chinese) for training scope and gates. Finer rhythms, slider length, section conditions and multiple timing sections remain separate experiments.
 
 ## Branch management
 

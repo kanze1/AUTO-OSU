@@ -162,13 +162,18 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
              coord_model: Optional[str] = None, coord_steps: int = 100, cfg_scale: float = 1.0,
              device: Optional[str] = None, progress: Optional[ProgressFn] = None,
              model_cache: Optional[Dict] = None, records_dir: Optional[Path] = None,
-             controls: Optional[dict] = None) -> GenerateResult:
+             controls: Optional[dict] = None, model_skills: Optional[dict] = None) -> GenerateResult:
     """Analyse a song and write one .osz with the requested difficulties.
 
     rhythm_model / coord_model: paths to the trained models; without them the rule-based layers run.
     progress(fraction, message) is called as work advances (for GUIs); log(text) gets the human summary.
     """
     t0 = _time.perf_counter()
+    model_skills = model_skills or {}
+    if set(model_skills) - {"rhythm", "coord"}:
+        raise ValueError("Model skill conditions must be keyed by rhythm or coord")
+    if model_skills.get("rhythm") and not rhythm_model or model_skills.get("coord") and not coord_model:
+        raise ValueError("Skill labels require the corresponding trained model")
     if star_rating is not None and (not np.isfinite(star_rating) or not 0 < star_rating <= 12):
         raise ValueError("Star condition must be finite and between 0 and 12")
     options = validate_controls(controls)
@@ -289,6 +294,8 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                 times = rhythm_grid(mel, timing)[1]
                 common = dict(star_rating=condition, temperature=temperature, none_bias=density_bias,
                               decode_steps=decode_steps, seed=seed * 1000 + i, device=dev)
+                if model_skills.get("rhythm"):
+                    common["skills"] = model_skills["rhythm"]
                 reference = None
                 default_preference_rhythm = (use_preference and attempt and attempt_options["density"] is None
                                             and not attempt_options["density_curve"])
@@ -319,7 +326,8 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                 placed = place_with_model(events, preset, timing, cm, sv_sections, star=condition, seed=seed * 1000 + i,
                                           steps=coord_steps, cfg_scale=cfg_scale, progress=coord_progress,
                                           spacing_scale=attempt_options["spacing_scale"],
-                                          highlight_regions=plan["regions"] if options["highlight_spacing"] else ())
+                                          highlight_regions=plan["regions"] if options["highlight_spacing"] else (),
+                                          **({"skills": model_skills["coord"]} if model_skills.get("coord") else {}))
                 objects, overrides = placed.objects, placed.sv_overrides
             else:
                 placement_preset = dataclasses.replace(preset, spacing=preset.spacing * (attempt_options["spacing_scale"] or 1.))
@@ -402,7 +410,8 @@ def generate(audio_path: str | Path, difficulties: List[str], out_dir: str | Pat
                               dict(seed=seed, bpm=timing.bpm, offset_ms=timing.offset_ms,
                                    bpm_override=bpm, offset_override_ms=offset_ms, osu_shift_ms=osu_shift_ms,
                                    temperature=temperature, density=density, density_bias=density_bias,
-                                   decode_steps=decode_steps, coord_steps=coord_steps, cfg_scale=cfg_scale, device=dev, controls=options),
+                                   decode_steps=decode_steps, coord_steps=coord_steps, cfg_scale=cfg_scale, device=dev, controls=options,
+                                   **({"model_skills": model_skills} if model_skills else {})),
                               audio_path, audio_file)
     evaluation = dict(schema="autoosu.evaluation/1", generation_id=manifest["generation_id"], maps=evaluations)
     osz = write_osz([d.beatmap for d in diffs], audio_file, out_dir, extra_files=[background] if background else (),

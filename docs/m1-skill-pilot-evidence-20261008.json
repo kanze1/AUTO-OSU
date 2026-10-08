@@ -1,0 +1,1221 @@
+{
+  "schema": "autoosu.skill-pilot-evidence/1",
+  "date": "2026-10-08",
+  "training_started_utc": "2026-10-08T07:14:11.332875+00:00",
+  "training_completed_utc": "2026-10-08T07:26:43.830169+00:00",
+  "training": {
+    "rhythm": {
+      "completion": {
+        "status": "complete",
+        "step": 3000,
+        "elapsed_s": 361.2
+      },
+      "validation": [
+        {
+          "step": 0,
+          "val_labelled_loss": 0.4430672898888588,
+          "val_unknown_loss": 0.4430672898888588,
+          "val_maps": 512
+        },
+        {
+          "step": 500,
+          "val_labelled_loss": 0.40311930142343044,
+          "val_unknown_loss": 0.40338089875876904,
+          "val_maps": 512
+        },
+        {
+          "step": 1000,
+          "val_labelled_loss": 0.40107504464685917,
+          "val_unknown_loss": 0.4016541875898838,
+          "val_maps": 512
+        },
+        {
+          "step": 1500,
+          "val_labelled_loss": 0.3993395213037729,
+          "val_unknown_loss": 0.40001886896789074,
+          "val_maps": 512
+        },
+        {
+          "step": 2000,
+          "val_labelled_loss": 0.3982476070523262,
+          "val_unknown_loss": 0.39898720011115074,
+          "val_maps": 512
+        },
+        {
+          "step": 2500,
+          "val_labelled_loss": 0.3958846926689148,
+          "val_unknown_loss": 0.39672962576150894,
+          "val_maps": 512
+        },
+        {
+          "step": 3000,
+          "val_labelled_loss": 0.3954073116183281,
+          "val_unknown_loss": 0.3962570410221815,
+          "val_maps": 512
+        }
+      ],
+      "export": {
+        "source_sha256": "cec882a7f4f9ae1b717d10cf3fe60092c2efcbcf6491797fa480608b3ac66603",
+        "output_sha256": "5c202abc883ffdd2400bb88eef471f8410fce655f1da1f1521e63876bfe204fd",
+        "step": 3000,
+        "metrics": {
+          "val_labelled_loss": 0.3954073116183281,
+          "val_unknown_loss": 0.3962570410221815,
+          "val_maps": 512
+        },
+        "mutation": "Convert torch_version metadata to primitive str; all tensors equal"
+      },
+      "recipe": {
+        "args": {
+          "kind": "rhythm",
+          "data": "/home/p2522808/autoosu/data/m1_pilot_20261008_v3",
+          "prep": "/home/p2522808/autoosu/data/prep",
+          "base": "/home/p2522808/autoosu/experiments/m1_20261008/models/rhythm_v0.pt",
+          "out": "/home/p2522808/autoosu/runs/m1_training_20261008/training-rhythm",
+          "steps": 3000,
+          "batch": 32,
+          "seq": 512,
+          "lr": 3e-05,
+          "warmup": 100,
+          "workers": 4,
+          "eval_every": 500,
+          "eval_batches": 16,
+          "seed": 1008
+        },
+        "world_size": 2,
+        "base_sha256": "e01267c647e103a36801109e3c34f508dd2d04d228b07b4a299cddbd55dd52f6",
+        "split_sha256": {
+          "train": "8b980b8248f3e470c10d5eefb1159373b541d394e4de9b3cbcec032eeb0e08cf",
+          "validation": "1f07715084a71106cde74a97998c94ddfc5590f4c1fcb9ef765d7e5cd3d027fa",
+          "test": "cd027a1545f506580c60d985f94d55ef84202d74427f7f098b03218de23bfcd7"
+        },
+        "source_sha256": {
+          "autoosu/ml/coord_infer.py": "abd831b8b0f5436d66d944776b65fd8c012a205b8d2c617167587a3648136fac",
+          "autoosu/ml/dataset.py": "76913588d6904c70f8734338aab84dc7096ca9da0ed584daee7bfaa5be522dea",
+          "autoosu/ml/model.py": "85481baabe06d45f2a303b6dfe69f3899f693a0d08d0381d348b7d74aaa6c767",
+          "autoosu/ml/osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+          "autoosu/ml/prepare_data.py": "c055ccb9092bca6afd6dec1a1f0fade5bd557923262dfdf9eb71dc6ca800e7bf",
+          "autoosu/ml/sample.py": "2e544acc3bf39bf95f55f403c83bbf006c17a4f2008e763f2bcc102835e14793",
+          "autoosu/ml/skills.py": "c7c3b283e7468a9320d7c908574aa87d8b29d4e9c0b87e4734f87adaaec1f6c2",
+          "autoosu/ml/train.py": "6cc183cf53eeef5579959187266736129769e597e296679628939600437617be",
+          "autoosu/ml/train_skills.py": "54c5508c2d2e1bf032413ee59b991227b92e3ec7d33f8921fec4cb4660d2a355",
+          "autoosu/ml/__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946"
+        },
+        "skill_names": [
+          "jumps",
+          "bursts",
+          "streams",
+          "slider_tech"
+        ],
+        "torch_version": "2.14.0+cu130",
+        "model_config": {
+          "d_model": 512,
+          "n_layers": 8,
+          "n_heads": 8,
+          "dropout": 0.1,
+          "max_len": 2048,
+          "mode": "masked",
+          "audio_ctx_layers": 0,
+          "skill_names": [
+            "jumps",
+            "bursts",
+            "streams",
+            "slider_tech"
+          ]
+        }
+      },
+      "test": {
+        "kind": "rhythm",
+        "split": "test",
+        "test_sha256": "cd027a1545f506580c60d985f94d55ef84202d74427f7f098b03218de23bfcd7",
+        "evaluation_seed": 1008,
+        "maps": 1384,
+        "checkpoints": {
+          "initial": {
+            "sha256": "7872959eb21bb2c36e0c9bdd95e71fe07f69bcd03b17c7788d204150b95c7f50",
+            "test_labelled_loss": 0.43034182910974317,
+            "test_unknown_loss": 0.43034182910974317,
+            "test_maps": 1384
+          },
+          "best": {
+            "sha256": "3becf9b9226f8875645bd8da509ad1f88ff2cecfeebcfc26c660b20f714a8ae1",
+            "test_labelled_loss": 0.38821538094151226,
+            "test_unknown_loss": 0.389641186060933,
+            "test_maps": 1384
+          }
+        },
+        "scope": "Held out from fine-tuning, not necessarily v0 pretraining; no checkpoint selection"
+      }
+    },
+    "coord": {
+      "completion": {
+        "status": "complete",
+        "step": 5000,
+        "elapsed_s": 725.9
+      },
+      "validation": [
+        {
+          "step": 0,
+          "val_labelled_loss": 0.15010969201102853,
+          "val_unknown_loss": 0.15010969201102853,
+          "val_maps": 512
+        },
+        {
+          "step": 500,
+          "val_labelled_loss": 0.15021107159554958,
+          "val_unknown_loss": 0.15025444887578487,
+          "val_maps": 512
+        },
+        {
+          "step": 1000,
+          "val_labelled_loss": 0.15029986295849085,
+          "val_unknown_loss": 0.15035103121772408,
+          "val_maps": 512
+        },
+        {
+          "step": 1500,
+          "val_labelled_loss": 0.1503261523321271,
+          "val_unknown_loss": 0.15036226343363523,
+          "val_maps": 512
+        },
+        {
+          "step": 2000,
+          "val_labelled_loss": 0.15022861817851663,
+          "val_unknown_loss": 0.15029404824599624,
+          "val_maps": 512
+        },
+        {
+          "step": 2500,
+          "val_labelled_loss": 0.15020787995308638,
+          "val_unknown_loss": 0.15028369519859552,
+          "val_maps": 512
+        },
+        {
+          "step": 3000,
+          "val_labelled_loss": 0.1500929524190724,
+          "val_unknown_loss": 0.15015205927193165,
+          "val_maps": 512
+        },
+        {
+          "step": 3500,
+          "val_labelled_loss": 0.15004888828843832,
+          "val_unknown_loss": 0.15013317111879587,
+          "val_maps": 512
+        },
+        {
+          "step": 4000,
+          "val_labelled_loss": 0.15001720050349832,
+          "val_unknown_loss": 0.15008624503389,
+          "val_maps": 512
+        },
+        {
+          "step": 4500,
+          "val_labelled_loss": 0.14993220008909702,
+          "val_unknown_loss": 0.14999180100858212,
+          "val_maps": 512
+        },
+        {
+          "step": 5000,
+          "val_labelled_loss": 0.14996716380119324,
+          "val_unknown_loss": 0.15004943404346704,
+          "val_maps": 512
+        }
+      ],
+      "export": {
+        "source_sha256": "37e873d4b8d867f381a51a10a30427b016654ba86c4c762ed2446158e4840b8c",
+        "output_sha256": "d89d6efe493e85a30a77f60119993bec15863be5baa079da7e7fea890d7db7ca",
+        "step": 4500,
+        "metrics": {
+          "val_labelled_loss": 0.14993220008909702,
+          "val_unknown_loss": 0.14999180100858212,
+          "val_maps": 512
+        },
+        "mutation": "Convert torch_version metadata to primitive str; all tensors equal"
+      },
+      "recipe": {
+        "args": {
+          "kind": "coord",
+          "data": "/home/p2522808/autoosu/data/m1_pilot_20261008_v3",
+          "prep": "/home/p2522808/autoosu/data/prep",
+          "base": "/home/p2522808/autoosu/experiments/m1_20261008/models/coord_v0.pt",
+          "out": "/home/p2522808/autoosu/runs/m1_training_20261008/training-coord",
+          "steps": 5000,
+          "batch": 32,
+          "seq": 128,
+          "lr": 2e-05,
+          "warmup": 100,
+          "workers": 4,
+          "eval_every": 500,
+          "eval_batches": 16,
+          "seed": 1008
+        },
+        "world_size": 2,
+        "base_sha256": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040",
+        "split_sha256": {
+          "train": "8b980b8248f3e470c10d5eefb1159373b541d394e4de9b3cbcec032eeb0e08cf",
+          "validation": "1f07715084a71106cde74a97998c94ddfc5590f4c1fcb9ef765d7e5cd3d027fa",
+          "test": "cd027a1545f506580c60d985f94d55ef84202d74427f7f098b03218de23bfcd7"
+        },
+        "source_sha256": {
+          "autoosu/ml/coord_infer.py": "abd831b8b0f5436d66d944776b65fd8c012a205b8d2c617167587a3648136fac",
+          "autoosu/ml/dataset.py": "76913588d6904c70f8734338aab84dc7096ca9da0ed584daee7bfaa5be522dea",
+          "autoosu/ml/model.py": "85481baabe06d45f2a303b6dfe69f3899f693a0d08d0381d348b7d74aaa6c767",
+          "autoosu/ml/osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+          "autoosu/ml/prepare_data.py": "c055ccb9092bca6afd6dec1a1f0fade5bd557923262dfdf9eb71dc6ca800e7bf",
+          "autoosu/ml/sample.py": "2e544acc3bf39bf95f55f403c83bbf006c17a4f2008e763f2bcc102835e14793",
+          "autoosu/ml/skills.py": "c7c3b283e7468a9320d7c908574aa87d8b29d4e9c0b87e4734f87adaaec1f6c2",
+          "autoosu/ml/train.py": "6cc183cf53eeef5579959187266736129769e597e296679628939600437617be",
+          "autoosu/ml/train_skills.py": "54c5508c2d2e1bf032413ee59b991227b92e3ec7d33f8921fec4cb4660d2a355",
+          "autoosu/ml/__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946"
+        },
+        "skill_names": [
+          "jumps",
+          "bursts",
+          "streams",
+          "slider_tech"
+        ],
+        "torch_version": "2.14.0+cu130",
+        "model_config": {
+          "format": "autoosu-coord-skills-v1",
+          "arch": "DiT-B",
+          "context_size": 272,
+          "num_diff_classes": 26,
+          "max_difficulty": 12.0,
+          "num_cs_classes": 22,
+          "skill_names": [
+            "jumps",
+            "bursts",
+            "streams",
+            "slider_tech"
+          ]
+        }
+      },
+      "test": {
+        "kind": "coord",
+        "split": "test",
+        "test_sha256": "cd027a1545f506580c60d985f94d55ef84202d74427f7f098b03218de23bfcd7",
+        "evaluation_seed": 1008,
+        "maps": 1384,
+        "checkpoints": {
+          "initial": {
+            "sha256": "8c7cc70f8af3f606be0e83a8b1d2245e5b710eaaaafeaa755c3b5420e74114c0",
+            "test_labelled_loss": 0.15399981897345857,
+            "test_unknown_loss": 0.15399981897345857,
+            "test_maps": 1384
+          },
+          "best": {
+            "sha256": "0ce26061107310bcc6a08c049444998bd83e0c451d66cc09c6b31acd07c59c01",
+            "test_labelled_loss": 0.153721721315315,
+            "test_unknown_loss": 0.15373740125598245,
+            "test_maps": 1384
+          }
+        },
+        "scope": "Held out from fine-tuning, not necessarily v0 pretraining; no checkpoint selection"
+      }
+    }
+  },
+  "audition_recipe": {
+    "settings": {
+      "seed": 240924,
+      "decode_steps": 12,
+      "coord_steps": 100,
+      "temperature": 0.9,
+      "cfg_scale": 1.0,
+      "device": "cuda",
+      "star_rating": 6.5
+    },
+    "groups": [
+      "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45"
+    ],
+    "modes": {
+      "v0": "旧版对照",
+      "unknown": "新版无标签",
+      "jumps": "跳跃",
+      "bursts": "短串",
+      "streams": "连打",
+      "slider_tech": "滑条技巧"
+    },
+    "timing": "reference",
+    "controls": {
+      "highlight_mode": "off"
+    },
+    "models": {
+      "rhythm": "5c202abc883ffdd2400bb88eef471f8410fce655f1da1f1521e63876bfe204fd",
+      "coord": "d89d6efe493e85a30a77f60119993bec15863be5baa079da7e7fea890d7db7ca",
+      "rhythm_v0": "e01267c647e103a36801109e3c34f508dd2d04d228b07b4a299cddbd55dd52f6",
+      "coord_v0": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040"
+    },
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "slider": "0.8.4",
+      "rosu-pp-py": "4.0.2"
+    },
+    "source_sha256": {
+      "autoosu\\audio.py": "6cc45383a03bab8914666b6855b5b8104c9172e776239a82868c1bfa13de7703",
+      "autoosu\\audio_io.py": "9ff54ce6c293caf55eea9a6525c07d200080aed6091fb598e0f81d76fd24bce3",
+      "autoosu\\batch.py": "80ee92c954f7395e12e6bf6d47b7f334b7492740d84f58812124e88360c46769",
+      "autoosu\\beatmap.py": "d28f5c4333ec79891140120f95e1aca8dca1b1bdef961c53632644bc28a85776",
+      "autoosu\\cli.py": "d16541eca13ccac641f8a70fd89fe9f17aed403829e3052da92241661fb91c2f",
+      "autoosu\\controls.py": "2c39eef599235728ee5eea5c6ebdd7f5f228fa83d7194934d5a20a3ff5acc70f",
+      "autoosu\\control_gui.py": "fad9d370ab840302dcd47f58ec6948155845c627a19c930ba8f8cc7c278b7197",
+      "autoosu\\debug.py": "e74f58a5d5b9bdec77d02630efb797cbf8425f9cabf63ee2dbb94271f09ca398",
+      "autoosu\\devices.py": "f1923fbafde4a15531aaa81454cbacc6ae93c785d03ad5b8cb9f3d572a30b71d",
+      "autoosu\\difficulty.py": "6fc17c369dd8f379abeb786048206fa5fff1c8d96784b0dcee1cd876b714d9ea",
+      "autoosu\\generate.py": "21c1e6178392f9f083dba276d4124f8ffdc198ec622c9b1d68a8651537da20be",
+      "autoosu\\gui.py": "536c75f035fef902add73baabd5d5fb710ef95e3420e31a8c9540cb34eab83fd",
+      "autoosu\\gui_layout.py": "27b980d8fc02f6e6d19edd12941f7bbc9936846a8a4986d29851f82178641d1a",
+      "autoosu\\i18n.py": "916357734fc9599ba32322dc2a4669138365b6c6d64aadbab824867bebb4190a",
+      "autoosu\\metrics.py": "3610d7c135e2336176249a070af039ee311eab0b96d978aab533fd3ea1423a50",
+      "autoosu\\models.py": "cdbc84c2c611935ceb804f1117bc82384e12a12a12b8382c4404f2db58823bbb",
+      "autoosu\\package.py": "1aa96c74c64dee082c660714df9f009244859c4f2ec5a45f71819d19de1fcf19",
+      "autoosu\\placement.py": "1b2bf038368e4cbc7ad76136c473bf811fd3cb14827e0934120bfc6fa381399a",
+      "autoosu\\preferences.py": "bc5aa297c45130d106e64cbc1931fe40ca3c9be2e3692ab40716f4c19ac672ae",
+      "autoosu\\preview.py": "87f668eff023f7158f3eba7b8a1a5d74017655e33b5e5052cdec49b7cd09500d",
+      "autoosu\\provenance.py": "8bff71f4a3989c38c67bdda89b73a44e3f7a2e877228146ffb8e18e31d1539d7",
+      "autoosu\\rhythm.py": "dfe87b90800721cacfc67bac3848d5c0393e5047a0a679040ac923d9ba0e5379",
+      "autoosu\\runtime.py": "12e0d6992a1e8553c5c62192a887f11530e7430e2fb152699b9498d20e849f2b",
+      "autoosu\\sliderpath.py": "a8541ce5067c33631c4b655124792b8b7f03d64e123cbc8e1a916c2e09b2da32",
+      "autoosu\\source_check.py": "81b64208db0ca2fd0ddd90a16c4e5957c7e3a6958f7b5d2818db01ebcd860e7c",
+      "autoosu\\source_gui.py": "0ee227f17f67794f64f9586734a2ea6bbc6770cf739b42f65a840c4231bc3a5f",
+      "autoosu\\timing.py": "60b1e420d8ba19d3967fc5d39dd526347c6baf78b32eae03f8a38a35e1f01da3",
+      "autoosu\\watermark.py": "dc2b2be578c42a6c9e028c84f110229d5cf9b034ccb9141be66d07270f618ce4",
+      "autoosu\\worker.py": "d1264bc024b23621a6584a4e1a15a8dda8e70ca1f5e12ae3a7a78cac320da53c",
+      "autoosu\\__init__.py": "81d4659299ab71569c8b00156f464f7a03ed86eeb77e06b3f5c6ad1926618b47",
+      "autoosu\\__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "autoosu\\ml\\coord_infer.py": "abd831b8b0f5436d66d944776b65fd8c012a205b8d2c617167587a3648136fac",
+      "autoosu\\ml\\dataset.py": "76913588d6904c70f8734338aab84dc7096ca9da0ed584daee7bfaa5be522dea",
+      "autoosu\\ml\\model.py": "85481baabe06d45f2a303b6dfe69f3899f693a0d08d0381d348b7d74aaa6c767",
+      "autoosu\\ml\\osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+      "autoosu\\ml\\prepare_data.py": "c055ccb9092bca6afd6dec1a1f0fade5bd557923262dfdf9eb71dc6ca800e7bf",
+      "autoosu\\ml\\sample.py": "2e544acc3bf39bf95f55f403c83bbf006c17a4f2008e763f2bcc102835e14793",
+      "autoosu\\ml\\skills.py": "c7c3b283e7468a9320d7c908574aa87d8b29d4e9c0b87e4734f87adaaec1f6c2",
+      "autoosu\\ml\\train.py": "6cc183cf53eeef5579959187266736129769e597e296679628939600437617be",
+      "autoosu\\ml\\train_skills.py": "f858e118b9d23ea3ca817504fc821a096dda4355bf589d097962c99c7a34390d",
+      "autoosu\\ml\\__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946",
+      "autoosu\\ml\\coord\\models.py": "07c95631eff8ed6884381ee4e594461e0665148957fa7dde49923865f2ec089a",
+      "autoosu\\ml\\coord\\positional_embedding.py": "37ac180579b41e3adb37394c27941574507ad1f1ea0eae7016aa702ae2d87da6",
+      "autoosu\\ml\\coord\\__init__.py": "0f3dce649301bb382dc67674ff1c6f516a29fd54495154a18e7fdef4dc7ee535",
+      "autoosu\\ml\\coord\\diffusion\\diffusion_utils.py": "8260e221f0f7e4b3bb36678cc7f862f8f5cd7d6271f39b912974d74303d0a110",
+      "autoosu\\ml\\coord\\diffusion\\gaussian_diffusion.py": "fe9e2d0be91ab70be5a4505dd8127e72fa2a5fe7054c15dbfd8c3e623c611d2e",
+      "autoosu\\ml\\coord\\diffusion\\respace.py": "c553799a2ba693ec6314d766906b2f19340cab240a091de3b5eeb3642c3579d7",
+      "autoosu\\ml\\coord\\diffusion\\__init__.py": "9f69f5f6a6f1dea2d927eb72fa1df6ae2d481180e62fc8c54c051aa93a31e8dc"
+    },
+    "audition_script_sha256": "9fb8f720937c122c06a13084c70b002fa87f827d0fcc8e6f1e13d2c42e264a26",
+    "corpus_sha256": "4475e3b7fa0c93f7706a890e3a203cc8c3f38a41deb5d6eb581b0c71217decee",
+    "evidence_scope": "development audition; not independent of v0 pretraining"
+  },
+  "checks": {
+    "maps": 28,
+    "independently_parsed": 28,
+    "structural_issues": {
+      "simultaneous_or_reversed_starts": 0,
+      "overlapping_objects": 0,
+      "heads_outside_playfield": 0,
+      "invalid_sliders": 0
+    },
+    "sliders_sampled": 3507,
+    "curve_samples_per_slider": 1001,
+    "sampled_curves_outside": 0,
+    "watermark_detected": 26,
+    "local_raw_matches": 28,
+    "manifest_raw_matches": 28
+  },
+  "auditions": [
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "v0",
+      "stars": 5.639612807947204,
+      "patterns": {
+        "objects": 468,
+        "jump_pairs": 360,
+        "jump_fraction": 0.7708779443254818,
+        "jump_spacing_p50_px": 211.20606051910536,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "4c0c1584775165859a1f209e105e9bbbd95bc955fd642e9483457ed07f9f7de8",
+      "circles": 441,
+      "sliders": 27,
+      "spinners": 0,
+      "spacing_p50_px": 211.11608181282637
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "unknown",
+      "stars": 5.49671513738029,
+      "patterns": {
+        "objects": 414,
+        "jump_pairs": 302,
+        "jump_fraction": 0.7312348668280871,
+        "jump_spacing_p50_px": 216.15735009478627,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "1ea6fc0833065b2c86b739e753b92fed3efec627aa92054a99c37986cb4c95ff",
+      "circles": 381,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 222.5758297749331
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "jumps",
+      "stars": 5.654039893704006,
+      "patterns": {
+        "objects": 414,
+        "jump_pairs": 324,
+        "jump_fraction": 0.784503631961259,
+        "jump_spacing_p50_px": 242.1652328473268,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "d23016a6bbdf54a33448f3b3f718d5bbb38fbc256852d3d99dab377efda82695",
+      "circles": 381,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 235.1361307838504
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "bursts",
+      "stars": 5.380056078041227,
+      "patterns": {
+        "objects": 413,
+        "jump_pairs": 308,
+        "jump_fraction": 0.7475728155339806,
+        "jump_spacing_p50_px": 218.02633327559886,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "6b80459c1024fad692da18157430fe04eb07080a5c5cc4dbda0b2f5e7cb7e60a",
+      "circles": 380,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 214.62057908318408
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "streams",
+      "stars": 5.452154377328966,
+      "patterns": {
+        "objects": 419,
+        "jump_pairs": 312,
+        "jump_fraction": 0.7464114832535885,
+        "jump_spacing_p50_px": 212.55822731665788,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "f2f21cdcb8ce80dbe3c25ba6fe6b8a48b258bd96a4b58cf0344dfa03ac6fc213",
+      "circles": 386,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 209.91902422642454
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "slider_tech",
+      "stars": 5.486628100895751,
+      "patterns": {
+        "objects": 414,
+        "jump_pairs": 304,
+        "jump_fraction": 0.7360774818401937,
+        "jump_spacing_p50_px": 218.21548982599745,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "a0939a82367d42da030b6210e83ff3e27ead8ddf0a0546b5e9f694d557d0f183",
+      "circles": 381,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 215.64786110694445
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "jumps_rhythm_only",
+      "stars": 5.462789037045912,
+      "patterns": {
+        "objects": 414,
+        "jump_pairs": 302,
+        "jump_fraction": 0.7312348668280871,
+        "jump_spacing_p50_px": 216.0208323287363,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "7ad87f9ffa580225c378c5d2d145272eea79eab1c4d4b6ce0d026edfb900936e",
+      "circles": 381,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 213.71476317746513
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "jumps_coord_only",
+      "stars": 5.706223833980338,
+      "patterns": {
+        "objects": 414,
+        "jump_pairs": 326,
+        "jump_fraction": 0.7893462469733656,
+        "jump_spacing_p50_px": 242.24367896810023,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "9c05609ec3e5b2e4c71141f4e2deed7748ade0da7ba6768095d2795c5aef97e3",
+      "circles": 381,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 244.63237725207185
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "streams_rhythm_only",
+      "stars": 5.671814795491546,
+      "patterns": {
+        "objects": 419,
+        "jump_pairs": 329,
+        "jump_fraction": 0.7870813397129187,
+        "jump_spacing_p50_px": 229.5125268912353,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "76afd3ae4039d1a8c9f867dc5108d34d4112c50e89dd1a12d4118045c243756c",
+      "circles": 386,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 227.59495758585265
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "mode": "streams_coord_only",
+      "stars": 5.345187382075688,
+      "patterns": {
+        "objects": 414,
+        "jump_pairs": 280,
+        "jump_fraction": 0.6779661016949152,
+        "jump_spacing_p50_px": 194.74342094150447,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "edff34ae18aa089bfd997274c159bb1cc987122b5a8c154aac6095b38aad6785",
+      "circles": 381,
+      "sliders": 33,
+      "spinners": 0,
+      "spacing_p50_px": 200.08997975910736
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "mode": "v0",
+      "stars": 4.416302008220585,
+      "patterns": {
+        "objects": 241,
+        "jump_pairs": 5,
+        "jump_fraction": 0.020833333333333332,
+        "jump_spacing_p50_px": 156.95487572503936,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "b7aca08782e031fae1b4d15806f117cdec161a75a1844e2e419db1b419edee3a",
+      "circles": 37,
+      "sliders": 204,
+      "spinners": 0,
+      "spacing_p50_px": 103.8387608854116
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "mode": "unknown",
+      "stars": 4.66410838971349,
+      "patterns": {
+        "objects": 197,
+        "jump_pairs": 73,
+        "jump_fraction": 0.37244897959183676,
+        "jump_spacing_p50_px": 213.04459544302904,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "e6c656147531778183b21d3a940a4b8dab9971d57bc90c4be6354a7131b73091",
+      "circles": 137,
+      "sliders": 60,
+      "spinners": 0,
+      "spacing_p50_px": 242.27036140979035
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "mode": "jumps",
+      "stars": 4.379083762561063,
+      "patterns": {
+        "objects": 200,
+        "jump_pairs": 71,
+        "jump_fraction": 0.35678391959798994,
+        "jump_spacing_p50_px": 170.66048165876012,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "9c8fea6b75134967925bf55749e7b42e7592db47a2eaf7b9893cf8aa7699cc1d",
+      "circles": 150,
+      "sliders": 50,
+      "spinners": 0,
+      "spacing_p50_px": 175.64737401965337
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "mode": "bursts",
+      "stars": 5.04993763751466,
+      "patterns": {
+        "objects": 238,
+        "jump_pairs": 162,
+        "jump_fraction": 0.6835443037974683,
+        "jump_spacing_p50_px": 266.9569253643741,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "deea0b31b9222a247f96477b1bdc78a8ef789f829308370b659551dbd8514078",
+      "circles": 223,
+      "sliders": 15,
+      "spinners": 0,
+      "spacing_p50_px": 262.5147614897113
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "mode": "streams",
+      "stars": 5.073380984105329,
+      "patterns": {
+        "objects": 238,
+        "jump_pairs": 162,
+        "jump_fraction": 0.6835443037974683,
+        "jump_spacing_p50_px": 274.84723029348504,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "3543d442ec4d8e9f88b6169b51e7d6e40e9f9159ffa78d21a9858f0908efa541",
+      "circles": 223,
+      "sliders": 15,
+      "spinners": 0,
+      "spacing_p50_px": 269.8332818612263
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "mode": "slider_tech",
+      "stars": 4.333006064466439,
+      "patterns": {
+        "objects": 230,
+        "jump_pairs": 0,
+        "jump_fraction": 0.0,
+        "jump_spacing_p50_px": 0.0,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "56e00086ebb17263ba5522811ff410dbeee676547766bf05b9e709367c909447",
+      "circles": 11,
+      "sliders": 219,
+      "spinners": 0,
+      "spacing_p50_px": 118.92854997854805
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "mode": "v0",
+      "stars": 5.709676047883182,
+      "patterns": {
+        "objects": 490,
+        "jump_pairs": 7,
+        "jump_fraction": 0.014314928425357873,
+        "jump_spacing_p50_px": 201.8836298465034,
+        "tapping_runs": 2,
+        "tapping_objects": 10,
+        "tapping_fraction": 0.02040816326530612,
+        "longest_run": 5
+      },
+      "runs": {
+        "short_run_objects": 100,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "sha256": "f097b87c686fd22099b79ec8783f9ee3ebff65458175eb6275e9b2f5b157cf25",
+      "circles": 211,
+      "sliders": 278,
+      "spinners": 1,
+      "spacing_p50_px": 115.37545916357948
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "mode": "unknown",
+      "stars": 5.169927800070659,
+      "patterns": {
+        "objects": 497,
+        "jump_pairs": 12,
+        "jump_fraction": 0.024193548387096774,
+        "jump_spacing_p50_px": 207.60289981446425,
+        "tapping_runs": 2,
+        "tapping_objects": 10,
+        "tapping_fraction": 0.02012072434607646,
+        "longest_run": 5
+      },
+      "runs": {
+        "short_run_objects": 31,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "sha256": "43d86cfffdc7ee8cd7dac439d0383c61b1f6ff81cce157bf88692e8d4d0466ad",
+      "circles": 199,
+      "sliders": 297,
+      "spinners": 1,
+      "spacing_p50_px": 118.00423721205946
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "mode": "jumps",
+      "stars": 5.440596767317057,
+      "patterns": {
+        "objects": 503,
+        "jump_pairs": 10,
+        "jump_fraction": 0.0199203187250996,
+        "jump_spacing_p50_px": 208.5976989326584,
+        "tapping_runs": 3,
+        "tapping_objects": 15,
+        "tapping_fraction": 0.02982107355864811,
+        "longest_run": 5
+      },
+      "runs": {
+        "short_run_objects": 45,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "sha256": "1d44948041d81590a33862a06dc0e0c66944c122f4e62e7ae3243e8fe89b3de4",
+      "circles": 203,
+      "sliders": 299,
+      "spinners": 1,
+      "spacing_p50_px": 123.96773773849388
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "mode": "bursts",
+      "stars": 5.4097003948095335,
+      "patterns": {
+        "objects": 501,
+        "jump_pairs": 10,
+        "jump_fraction": 0.02,
+        "jump_spacing_p50_px": 198.80206672845839,
+        "tapping_runs": 2,
+        "tapping_objects": 10,
+        "tapping_fraction": 0.01996007984031936,
+        "longest_run": 5
+      },
+      "runs": {
+        "short_run_objects": 34,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "sha256": "384ff465ef17710a3939b93519d504e40d2b0de67bacee70acc8e58e83af8658",
+      "circles": 191,
+      "sliders": 309,
+      "spinners": 1,
+      "spacing_p50_px": 123.0
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "mode": "streams",
+      "stars": 5.0463673627301295,
+      "patterns": {
+        "objects": 497,
+        "jump_pairs": 11,
+        "jump_fraction": 0.02217741935483871,
+        "jump_spacing_p50_px": 186.76188047886004,
+        "tapping_runs": 2,
+        "tapping_objects": 10,
+        "tapping_fraction": 0.02012072434607646,
+        "longest_run": 5
+      },
+      "runs": {
+        "short_run_objects": 22,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "sha256": "fba215379b98ad5ab05abd24e4af164b068a55318be18b4d081759e2c9dce96b",
+      "circles": 187,
+      "sliders": 309,
+      "spinners": 1,
+      "spacing_p50_px": 111.8257573191436
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "mode": "slider_tech",
+      "stars": 5.24975638656716,
+      "patterns": {
+        "objects": 499,
+        "jump_pairs": 12,
+        "jump_fraction": 0.024096385542168676,
+        "jump_spacing_p50_px": 197.9090700296477,
+        "tapping_runs": 2,
+        "tapping_objects": 10,
+        "tapping_fraction": 0.02004008016032064,
+        "longest_run": 5
+      },
+      "runs": {
+        "short_run_objects": 44,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "sha256": "e3cc86c052dbf82e4a231b0112a7ffb30d3cb60543a16c49a14513893151dd21",
+      "circles": 198,
+      "sliders": 300,
+      "spinners": 1,
+      "spacing_p50_px": 111.39569111954016
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "mode": "v0",
+      "stars": 6.72080576595536,
+      "patterns": {
+        "objects": 645,
+        "jump_pairs": 59,
+        "jump_fraction": 0.09161490683229814,
+        "jump_spacing_p50_px": 98.66609058813421,
+        "tapping_runs": 21,
+        "tapping_objects": 246,
+        "tapping_fraction": 0.3813953488372093,
+        "longest_run": 33
+      },
+      "runs": {
+        "short_run_objects": 20,
+        "long_run_objects": 241,
+        "sustained_run_objects": 83,
+        "longest_run": 33
+      },
+      "sha256": "421cff94b6cfaab7b7bbdf4e8d7dc5885478307dbf0117affff3e02d2e90765b",
+      "circles": 516,
+      "sliders": 128,
+      "spinners": 1,
+      "spacing_p50_px": 70.09279563550022
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "mode": "unknown",
+      "stars": 5.868492990016052,
+      "patterns": {
+        "objects": 459,
+        "jump_pairs": 85,
+        "jump_fraction": 0.185589519650655,
+        "jump_spacing_p50_px": 127.1927670899568,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 3
+      },
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "sha256": "86ef81c236dfa3e73686edb01622ac8d3e1ad692c463265896b671bc74830d00",
+      "circles": 321,
+      "sliders": 136,
+      "spinners": 2,
+      "spacing_p50_px": 129.4488315899375
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "mode": "jumps",
+      "stars": 5.812763601588751,
+      "patterns": {
+        "objects": 412,
+        "jump_pairs": 82,
+        "jump_fraction": 0.19951338199513383,
+        "jump_spacing_p50_px": 136.09188072769072,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "90cce5479225ed9b0d0dcda995ba02f7c7a10ecaa334b941a502ae1f623b8f7d",
+      "circles": 252,
+      "sliders": 159,
+      "spinners": 1,
+      "spacing_p50_px": 141.66156853571826
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "mode": "bursts",
+      "stars": 5.644131226374959,
+      "patterns": {
+        "objects": 386,
+        "jump_pairs": 57,
+        "jump_fraction": 0.14805194805194805,
+        "jump_spacing_p50_px": 119.59514777264732,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "1c37cae7655a76d85cc3314405e3353c97e1ff8cf6bd9fb1f5160c2efedb7b8a",
+      "circles": 250,
+      "sliders": 134,
+      "spinners": 2,
+      "spacing_p50_px": 131.6434401177019
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "mode": "streams",
+      "stars": 5.661624791713628,
+      "patterns": {
+        "objects": 404,
+        "jump_pairs": 93,
+        "jump_fraction": 0.23076923076923078,
+        "jump_spacing_p50_px": 134.1044369139217,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "8f5ddcb470b97941f56629825b8b9fab17b3c678f413fb7d1f7eec5ac9fb9400",
+      "circles": 276,
+      "sliders": 126,
+      "spinners": 2,
+      "spacing_p50_px": 137.9383766139457
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "mode": "slider_tech",
+      "stars": 5.834287533185078,
+      "patterns": {
+        "objects": 439,
+        "jump_pairs": 114,
+        "jump_fraction": 0.2602739726027397,
+        "jump_spacing_p50_px": 146.81961721786362,
+        "tapping_runs": 0,
+        "tapping_objects": 0,
+        "tapping_fraction": 0.0,
+        "longest_run": 1
+      },
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "sha256": "f8786e8400c02ff3b59d6f0ffe4af81a4265b6f1164d04bd166b3372f9c32a6f",
+      "circles": 292,
+      "sliders": 145,
+      "spinners": 2,
+      "spacing_p50_px": 143.0314650697531
+    }
+  ],
+  "limits": [
+    "No independent local label agreement audit or client playtest.",
+    "Pilot held-out split is not held out from v0 pretraining.",
+    "Development audition songs are not independent acceptance data.",
+    "One seed and unmatched measured stars cannot establish a general skill-control improvement.",
+    "Source labels and matching local records do not authenticate model execution."
+  ],
+  "test_export_verification": {
+    "rhythm": {
+      "initial": {
+        "source_sha256": "cded0d5b292df6f6302590337a5f9bf8c1f4411c49fb8f3848648dd97b071897",
+        "export_sha256": "7872959eb21bb2c36e0c9bdd95e71fe07f69bcd03b17c7788d204150b95c7f50",
+        "step": 0,
+        "all_tensors_equal": true
+      },
+      "best": {
+        "source_sha256": "cec882a7f4f9ae1b717d10cf3fe60092c2efcbcf6491797fa480608b3ac66603",
+        "export_sha256": "3becf9b9226f8875645bd8da509ad1f88ff2cecfeebcfc26c660b20f714a8ae1",
+        "step": 3000,
+        "all_tensors_equal": true
+      }
+    },
+    "coord": {
+      "initial": {
+        "source_sha256": "0f2aa2157fbadfd7afd0ca24b9a659e452d40d5aaaf10fb8ea2e7aa18d07fff6",
+        "export_sha256": "8c7cc70f8af3f606be0e83a8b1d2245e5b710eaaaafeaa755c3b5420e74114c0",
+        "step": 0,
+        "all_tensors_equal": true
+      },
+      "best": {
+        "source_sha256": "37e873d4b8d867f381a51a10a30427b016654ba86c4c762ed2446158e4840b8c",
+        "export_sha256": "0ce26061107310bcc6a08c049444998bd83e0c451d66cc09c6b31acd07c59c01",
+        "step": 4500,
+        "all_tensors_equal": true
+      }
+    }
+  }
+}

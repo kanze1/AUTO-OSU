@@ -24,6 +24,7 @@ except ImportError:          # tick construction / statistics work without torch
 
 from .osu_parse import OBJ_CIRCLE, OBJ_SLIDER, OBJ_SPINNER
 from .prepare_data import HOP, SR
+from .skills import conditioned_vector
 
 GRID = 4                          # ticks per beat
 N_CLASSES = 6
@@ -177,9 +178,15 @@ def extra_features(loud: np.ndarray, beat_ms: np.ndarray, density: Optional[np.n
 
 class TickDataset(Dataset):
     def __init__(self, rows: List[dict], prep_dir: str | Path, seq_len: int = 512, train: bool = True,
-                 density_dropout: float = 0.2):
+                 density_dropout: float = 0.2, skill_names=(), skill_dropout: float = 0.2,
+                 evaluation_crop: str = "start", density_mode: str = "reference", attributes_dir=None):
         self.rows, self.prep, self.seq_len, self.train = rows, Path(prep_dir), seq_len, train
         self.density_dropout = density_dropout
+        self.skill_names, self.skill_dropout = tuple(skill_names), skill_dropout
+        if evaluation_crop not in ("start", "center") or density_mode not in ("reference", "unknown"):
+            raise ValueError("Invalid crop or density condition mode")
+        self.evaluation_crop, self.density_mode = evaluation_crop, density_mode
+        self.attributes_dir = Path(attributes_dir) if attributes_dir else None
         self._mel_cache: Dict[str, np.ndarray] = {}
 
     def __len__(self) -> int:
@@ -208,18 +215,26 @@ class TickDataset(Dataset):
             lo, hi = max(0, first - L // 2), max(0, min(M - 1, last) - L // 4)
             start = int(np.random.randint(lo, max(lo + 1, hi + 1)))
         else:
-            start = 0
+            if self.evaluation_crop == "center":
+                first = int(np.searchsorted(ticks.times, z["objects"][0, 0]))
+                last = int(np.searchsorted(ticks.times, z["objects"][-1, 0]))
+                start = max(0, min(M - L, (first + last - L) // 2))
+            else:
+                start = 0
         density_all = local_density(ticks.labels, ticks.metrical)
         sl = slice(start, start + L)
         times, met, labels, beat_ms = ticks.times[sl], ticks.metrical[sl], ticks.labels[sl], ticks.beat_ms[sl]
         density = density_all[sl]
-        if self.train and np.random.random() < self.density_dropout:
+        if self.density_mode == "unknown" or (self.train and np.random.random() < self.density_dropout):
             density = None
         n = len(times)
         frames = np.round(times / FRAME_MS).astype(np.int64)
         audio = gather_patches(mel, frames)
         extra = extra_features(local_loudness(np.asarray(mel), frames), beat_ms, density)
         prev_label = BOS if start == 0 else int(ticks.labels[start - 1])
+        skills = row.get("skill_labels", {}) if self.skill_names else {}
+        if self.train and self.skill_names and np.random.random() < self.skill_dropout:
+            skills = {}
 
         def pad(a: np.ndarray, value=0):
             if n >= L:
@@ -227,14 +242,21 @@ class TickDataset(Dataset):
             padw = [(0, L - n)] + [(0, 0)] * (a.ndim - 1)
             return np.pad(a, padw, constant_values=value)
 
-        return {
+        result = {
             "audio": torch.from_numpy(pad(audio).astype(np.float32) / 255.0),
             "metrical": torch.from_numpy(pad(met)).long(),
             "extra": torch.from_numpy(pad(extra)).float(),
             "labels": torch.from_numpy(pad(labels, -100)).long(),      # -100 = padding, ignored
-            "cond": torch.from_numpy(cond_vector(row)),
+            "cond": torch.from_numpy(conditioned_vector(cond_vector(row), self.skill_names, skills)),
             "prev_label": torch.tensor(prev_label, dtype=torch.long),
         }
+        if self.attributes_dir is not None:
+            from .attributes import tick_attributes
+            attributes = np.load(self.attributes_dir / "maps" / f"{row['beatmap_id']}.npz")["attributes"]
+            if len(attributes) != len(z["objects"]):
+                raise ValueError("Attribute/object alignment changed")
+            result["attributes"] = torch.from_numpy(pad(tick_attributes(ticks, z["objects"], attributes)[sl], -100)).long()
+        return result
 
 
 def load_index(prep_dir: str | Path, val_frac: float = 0.03, min_objects: int = 50) -> Tuple[List[dict], List[dict]]:
@@ -247,3 +269,17 @@ def load_index(prep_dir: str | Path, val_frac: float = 0.03, min_objects: int = 
         h = (r["beatmapset_id"] * 2654435761) % 1000 / 1000.0
         (val if h < val_frac else train).append(r)
     return train, val
+
+
+def read_splits(root):
+    """Read explicit frozen manifests and reject song leakage before training."""
+    splits = {name: [json.loads(line) for line in (Path(root) / f"{name}.jsonl").read_text(encoding="utf-8").splitlines()]
+              for name in ("train", "validation", "test")}
+    groups = {name: {r["song_group"] for r in rows} for name, rows in splits.items()}
+    for name, other in (("train", "validation"), ("train", "test"), ("validation", "test")):
+        if groups[name] & groups[other]:
+            raise ValueError(f"Song group overlap: {name}/{other}")
+    for name, rows in splits.items():
+        if not rows or any(r["split"] != name for r in rows):
+            raise ValueError(f"Empty or incorrectly assigned {name} split")
+    return splits

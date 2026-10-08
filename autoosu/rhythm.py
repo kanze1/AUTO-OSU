@@ -36,6 +36,8 @@ class RhythmEvent:
     repeats: int = 1
     new_combo: bool = False
     hitsound: int = 0
+    slider_topology: Optional[str] = None  # learned coordinate-token structure; None for legacy models
+    tail_hitsound: Optional[int] = None
 
     @property
     def last_beat(self) -> float:

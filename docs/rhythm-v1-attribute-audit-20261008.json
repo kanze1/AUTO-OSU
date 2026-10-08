@@ -1,0 +1,2538 @@
+{
+  "scope": "128 unique validation song groups, source attribute inventory only; not a quality evaluation",
+  "validation_sha256": "e00e855d30da25d4a4e8348639284ef7a958e60ae5abec58a356409a4f0d0939",
+  "maps": 128,
+  "totals": {
+    "timing_points": 10748,
+    "kiai_points": 2234,
+    "inherited_points": 10011,
+    "objects": 57130,
+    "new_combo": 14112,
+    "additional_hitsound": 21711,
+    "sliders": 23674,
+    "repeat_sliders": 2997,
+    "curve_L": 6983,
+    "more_than_2_inner_anchors": 1849,
+    "explicit_edge_sounds": 22016,
+    "accented_edges": 29853,
+    "curve_P": 11272,
+    "curve_B": 5418,
+    "curve_C": 1
+  },
+  "per_map": [
+    {
+      "beatmap_id": 1152833,
+      "song_group": "942484ff078b8c8ea4c36bd13186de5ad8c84fe9a9fc3e1cc385b2510ed5fbf2",
+      "counts": {
+        "timing_points": 15,
+        "kiai_points": 2,
+        "inherited_points": 14,
+        "objects": 262,
+        "new_combo": 57,
+        "additional_hitsound": 84,
+        "sliders": 147,
+        "repeat_sliders": 42,
+        "curve_L": 47,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 147,
+        "accented_edges": 226,
+        "curve_P": 81,
+        "curve_B": 19
+      }
+    },
+    {
+      "beatmap_id": 3745820,
+      "song_group": "157f287f6f4beb5a5d3673fb01bd5b2d322ac039a209cf3709bfc98668a75229",
+      "counts": {
+        "timing_points": 87,
+        "kiai_points": 31,
+        "inherited_points": 38,
+        "objects": 214,
+        "new_combo": 63,
+        "additional_hitsound": 111,
+        "sliders": 56,
+        "repeat_sliders": 0,
+        "curve_B": 33,
+        "more_than_2_inner_anchors": 22,
+        "explicit_edge_sounds": 56,
+        "accented_edges": 62,
+        "curve_L": 23
+      }
+    },
+    {
+      "beatmap_id": 3419297,
+      "song_group": "9d16936ae812a1e6985f243f2e4ac76d799ea031b7de578e1967647bd1047d62",
+      "counts": {
+        "timing_points": 138,
+        "kiai_points": 0,
+        "inherited_points": 133,
+        "objects": 255,
+        "new_combo": 102,
+        "additional_hitsound": 116,
+        "sliders": 115,
+        "repeat_sliders": 9,
+        "curve_L": 50,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 113,
+        "accented_edges": 160,
+        "curve_P": 53,
+        "curve_B": 12
+      }
+    },
+    {
+      "beatmap_id": 2283817,
+      "song_group": "b2397fd58c5f7f7c5fe173b601ee66d8d6ceba264d2e7580599766ac2c299d3b",
+      "counts": {
+        "timing_points": 31,
+        "kiai_points": 4,
+        "inherited_points": 16,
+        "objects": 269,
+        "new_combo": 78,
+        "additional_hitsound": 59,
+        "sliders": 163,
+        "repeat_sliders": 34,
+        "curve_L": 107,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 163,
+        "accented_edges": 235,
+        "curve_B": 15,
+        "curve_P": 41
+      }
+    },
+    {
+      "beatmap_id": 2518345,
+      "song_group": "985db3f25ef7874be1d30de0ecd767f0bf7ccac71659cba0de09dff1e57d0b59",
+      "counts": {
+        "timing_points": 25,
+        "kiai_points": 0,
+        "inherited_points": 21,
+        "objects": 187,
+        "new_combo": 33,
+        "additional_hitsound": 28,
+        "sliders": 121,
+        "repeat_sliders": 3,
+        "curve_L": 71,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 119,
+        "accented_edges": 191,
+        "curve_P": 41,
+        "curve_B": 9
+      }
+    },
+    {
+      "beatmap_id": 3688183,
+      "song_group": "1d3fecf285512138db83551fdfc7410e1afd0feae45faccdd693843845b130e9",
+      "counts": {
+        "timing_points": 11,
+        "kiai_points": 0,
+        "inherited_points": 9,
+        "objects": 203,
+        "new_combo": 34,
+        "additional_hitsound": 91,
+        "sliders": 102,
+        "repeat_sliders": 9,
+        "curve_P": 98,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 102,
+        "accented_edges": 168,
+        "curve_B": 4
+      }
+    },
+    {
+      "beatmap_id": 791383,
+      "song_group": "79df8ac0fe842f4e2ac637a3e74eb3a551a84aa4dc63b43a02db504cdad9184b",
+      "counts": {
+        "timing_points": 37,
+        "kiai_points": 8,
+        "inherited_points": 36,
+        "objects": 241,
+        "new_combo": 75,
+        "additional_hitsound": 50,
+        "sliders": 155,
+        "repeat_sliders": 25,
+        "curve_P": 51,
+        "more_than_2_inner_anchors": 36,
+        "explicit_edge_sounds": 154,
+        "accented_edges": 190,
+        "curve_L": 47,
+        "curve_B": 57
+      }
+    },
+    {
+      "beatmap_id": 1477215,
+      "song_group": "88adc50580cec6a79d70c91f47b7ec6fa9381f256bb93ef1f81e733b66c92dff",
+      "counts": {
+        "timing_points": 4,
+        "kiai_points": 1,
+        "inherited_points": 3,
+        "objects": 76,
+        "new_combo": 15,
+        "additional_hitsound": 11,
+        "sliders": 35,
+        "repeat_sliders": 7,
+        "curve_P": 20,
+        "more_than_2_inner_anchors": 1,
+        "explicit_edge_sounds": 29,
+        "accented_edges": 25,
+        "curve_L": 9,
+        "curve_B": 6
+      }
+    },
+    {
+      "beatmap_id": 3611126,
+      "song_group": "5fbed195516f4eb28dd5078dc352420f5ba4e433c315d9c839639d6a6a077f79",
+      "counts": {
+        "timing_points": 79,
+        "kiai_points": 10,
+        "inherited_points": 78,
+        "objects": 466,
+        "new_combo": 164,
+        "additional_hitsound": 163,
+        "sliders": 275,
+        "repeat_sliders": 60,
+        "curve_P": 237,
+        "more_than_2_inner_anchors": 31,
+        "explicit_edge_sounds": 274,
+        "accented_edges": 406,
+        "curve_B": 37,
+        "curve_L": 1
+      }
+    },
+    {
+      "beatmap_id": 3796119,
+      "song_group": "365aa5f6cb17201b42360c770becc8e17ae42984d713e0aff3d20d83d8d222bf",
+      "counts": {
+        "timing_points": 59,
+        "kiai_points": 15,
+        "inherited_points": 58,
+        "objects": 330,
+        "new_combo": 79,
+        "additional_hitsound": 154,
+        "sliders": 164,
+        "repeat_sliders": 53,
+        "curve_P": 111,
+        "more_than_2_inner_anchors": 6,
+        "explicit_edge_sounds": 164,
+        "accented_edges": 358,
+        "curve_L": 35,
+        "curve_B": 18
+      }
+    },
+    {
+      "beatmap_id": 4864378,
+      "song_group": "3cd5fbf85a01d7b9de154f5d669b1db683829ff7358b9c5cb48a9c82cc19da8a",
+      "counts": {
+        "timing_points": 327,
+        "kiai_points": 138,
+        "inherited_points": 326,
+        "objects": 266,
+        "new_combo": 97,
+        "additional_hitsound": 87,
+        "sliders": 159,
+        "repeat_sliders": 36,
+        "curve_B": 12,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 157,
+        "accented_edges": 249,
+        "curve_P": 102,
+        "curve_L": 45
+      }
+    },
+    {
+      "beatmap_id": 4498583,
+      "song_group": "8580dff4456c564f41542246537fb54881ad209898e3c6374587e75455da03af",
+      "counts": {
+        "timing_points": 77,
+        "kiai_points": 21,
+        "inherited_points": 70,
+        "objects": 293,
+        "new_combo": 101,
+        "additional_hitsound": 145,
+        "sliders": 117,
+        "repeat_sliders": 8,
+        "curve_L": 36,
+        "more_than_2_inner_anchors": 9,
+        "explicit_edge_sounds": 117,
+        "accented_edges": 162,
+        "curve_B": 21,
+        "curve_P": 60
+      }
+    },
+    {
+      "beatmap_id": 696698,
+      "song_group": "7267ab0473949cdcf8c5ab2c431850740c219853d9b322957b183bd8bbc9a304",
+      "counts": {
+        "timing_points": 34,
+        "kiai_points": 5,
+        "inherited_points": 33,
+        "objects": 322,
+        "new_combo": 86,
+        "additional_hitsound": 137,
+        "sliders": 152,
+        "repeat_sliders": 26,
+        "curve_P": 53,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 152,
+        "accented_edges": 260,
+        "curve_B": 4,
+        "curve_L": 95
+      }
+    },
+    {
+      "beatmap_id": 1243650,
+      "song_group": "a842be28ae4eb3b29ea5d38956b28ab950e722d1b04bdc69b989f917c6701036",
+      "counts": {
+        "timing_points": 52,
+        "kiai_points": 16,
+        "inherited_points": 51,
+        "objects": 380,
+        "new_combo": 129,
+        "additional_hitsound": 59,
+        "sliders": 215,
+        "repeat_sliders": 1,
+        "curve_P": 132,
+        "more_than_2_inner_anchors": 7,
+        "explicit_edge_sounds": 173,
+        "accented_edges": 114,
+        "curve_B": 22,
+        "curve_L": 61
+      }
+    },
+    {
+      "beatmap_id": 2263088,
+      "song_group": "73bef14486d0af989432bc0ec13586d27ce78977b735386d91c909ba12b39141",
+      "counts": {
+        "timing_points": 12,
+        "kiai_points": 1,
+        "inherited_points": 11,
+        "objects": 217,
+        "new_combo": 39,
+        "additional_hitsound": 78,
+        "sliders": 117,
+        "repeat_sliders": 22,
+        "curve_P": 37,
+        "more_than_2_inner_anchors": 7,
+        "explicit_edge_sounds": 116,
+        "accented_edges": 191,
+        "curve_B": 27,
+        "curve_L": 53
+      }
+    },
+    {
+      "beatmap_id": 3932396,
+      "song_group": "e7a2c2e389d235df70b1caf854ae293eb4c58f91eadcebc88d07dd6c5d7ec75c",
+      "counts": {
+        "timing_points": 242,
+        "kiai_points": 87,
+        "inherited_points": 241,
+        "objects": 349,
+        "new_combo": 86,
+        "additional_hitsound": 200,
+        "sliders": 109,
+        "repeat_sliders": 5,
+        "curve_B": 27,
+        "more_than_2_inner_anchors": 27,
+        "explicit_edge_sounds": 108,
+        "accented_edges": 134,
+        "curve_P": 67,
+        "curve_L": 15
+      }
+    },
+    {
+      "beatmap_id": 5172944,
+      "song_group": "31fddc6877d6a19c3f93520def579622f8b38e43f14471bc01fc5dffc4fba899",
+      "counts": {
+        "timing_points": 173,
+        "kiai_points": 26,
+        "inherited_points": 171,
+        "objects": 490,
+        "new_combo": 205,
+        "additional_hitsound": 77,
+        "sliders": 264,
+        "repeat_sliders": 21,
+        "curve_P": 56,
+        "more_than_2_inner_anchors": 107,
+        "explicit_edge_sounds": 147,
+        "curve_L": 82,
+        "accented_edges": 101,
+        "curve_B": 126
+      }
+    },
+    {
+      "beatmap_id": 1924042,
+      "song_group": "67581917338955ce43fbb071ea139219cb378185bed0ab28f436b3efff8c9471",
+      "counts": {
+        "timing_points": 27,
+        "kiai_points": 8,
+        "inherited_points": 26,
+        "objects": 548,
+        "new_combo": 115,
+        "additional_hitsound": 171,
+        "sliders": 167,
+        "repeat_sliders": 21,
+        "curve_L": 20,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 167,
+        "accented_edges": 108,
+        "curve_P": 131,
+        "curve_B": 16
+      }
+    },
+    {
+      "beatmap_id": 4614338,
+      "song_group": "9d91e368d796188f39cf3eff2c9d91d9ec8fb9bf8cb9885c3f98cdb37bddf8eb",
+      "counts": {
+        "timing_points": 153,
+        "kiai_points": 64,
+        "inherited_points": 152,
+        "objects": 308,
+        "new_combo": 105,
+        "additional_hitsound": 86,
+        "sliders": 138,
+        "repeat_sliders": 16,
+        "curve_L": 102,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 77,
+        "accented_edges": 97,
+        "curve_P": 34,
+        "curve_B": 2
+      }
+    },
+    {
+      "beatmap_id": 292396,
+      "song_group": "2b17fadfa850aed01468d03ccf6a463a338fe21fda4431ed75f426fdd036f77d",
+      "counts": {
+        "timing_points": 70,
+        "kiai_points": 46,
+        "inherited_points": 69,
+        "objects": 414,
+        "new_combo": 80,
+        "additional_hitsound": 188,
+        "sliders": 141,
+        "repeat_sliders": 7,
+        "curve_L": 74,
+        "more_than_2_inner_anchors": 11,
+        "explicit_edge_sounds": 128,
+        "curve_P": 55,
+        "accented_edges": 185,
+        "curve_B": 12
+      }
+    },
+    {
+      "beatmap_id": 1796218,
+      "song_group": "40d2fe1648252a7def8652ca790c9ae7c0c684583e154bab16e7f0265b22a8e3",
+      "counts": {
+        "timing_points": 53,
+        "kiai_points": 13,
+        "inherited_points": 52,
+        "objects": 95,
+        "new_combo": 29,
+        "additional_hitsound": 25,
+        "sliders": 72,
+        "repeat_sliders": 16,
+        "curve_P": 63,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 72,
+        "accented_edges": 155,
+        "curve_B": 8,
+        "curve_L": 1
+      }
+    },
+    {
+      "beatmap_id": 2850897,
+      "song_group": "6a56e65f1b5ef79be4ac370993e4e54a0d23f523ca0c70946afe09a1d908c09c",
+      "counts": {
+        "timing_points": 128,
+        "kiai_points": 2,
+        "inherited_points": 61,
+        "objects": 597,
+        "new_combo": 179,
+        "additional_hitsound": 153,
+        "sliders": 435,
+        "repeat_sliders": 110,
+        "curve_L": 162,
+        "more_than_2_inner_anchors": 40,
+        "explicit_edge_sounds": 435,
+        "accented_edges": 851,
+        "curve_P": 214,
+        "curve_B": 59
+      }
+    },
+    {
+      "beatmap_id": 2824710,
+      "song_group": "82e6806f181880e5253954fee4bf0bc719d734d1a169b5d6e191567c472e153f",
+      "counts": {
+        "timing_points": 11,
+        "kiai_points": 0,
+        "inherited_points": 10,
+        "objects": 474,
+        "new_combo": 89,
+        "additional_hitsound": 220,
+        "sliders": 248,
+        "repeat_sliders": 23,
+        "curve_P": 189,
+        "more_than_2_inner_anchors": 17,
+        "explicit_edge_sounds": 248,
+        "accented_edges": 385,
+        "curve_B": 58,
+        "curve_L": 1
+      }
+    },
+    {
+      "beatmap_id": 3962854,
+      "song_group": "887ce05b49133093d19b6efb4bba52b66a7d54ea816e0e0641318c66eb4c5d72",
+      "counts": {
+        "timing_points": 193,
+        "kiai_points": 48,
+        "inherited_points": 115,
+        "objects": 435,
+        "new_combo": 107,
+        "additional_hitsound": 259,
+        "sliders": 173,
+        "repeat_sliders": 22,
+        "curve_P": 105,
+        "more_than_2_inner_anchors": 11,
+        "explicit_edge_sounds": 172,
+        "accented_edges": 333,
+        "curve_L": 39,
+        "curve_B": 29
+      }
+    },
+    {
+      "beatmap_id": 1368134,
+      "song_group": "fb401a1a9889cf7b6fa43e8024aa511629c5a56be90de77099baeccbae668ae0",
+      "counts": {
+        "timing_points": 7,
+        "kiai_points": 0,
+        "inherited_points": 4,
+        "objects": 209,
+        "new_combo": 71,
+        "additional_hitsound": 42,
+        "sliders": 85,
+        "repeat_sliders": 19,
+        "curve_P": 37,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 66,
+        "accented_edges": 71,
+        "curve_L": 43,
+        "curve_B": 5
+      }
+    },
+    {
+      "beatmap_id": 1576395,
+      "song_group": "ecead65cd5b1778ab98fbbd21aa18605448add342e683aeadc0304e03816558c",
+      "counts": {
+        "timing_points": 52,
+        "kiai_points": 3,
+        "inherited_points": 47,
+        "objects": 309,
+        "new_combo": 76,
+        "additional_hitsound": 147,
+        "sliders": 126,
+        "repeat_sliders": 1,
+        "curve_P": 98,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 125,
+        "accented_edges": 157,
+        "curve_L": 6,
+        "curve_B": 22
+      }
+    },
+    {
+      "beatmap_id": 5174337,
+      "song_group": "568cafb2b35c66ea8f6b76cbac202c29e2d336c2b9b47caa421efa7a2cadb73e",
+      "counts": {
+        "timing_points": 81,
+        "kiai_points": 32,
+        "inherited_points": 34,
+        "objects": 406,
+        "new_combo": 171,
+        "additional_hitsound": 242,
+        "sliders": 145,
+        "repeat_sliders": 4,
+        "curve_P": 62,
+        "more_than_2_inner_anchors": 13,
+        "explicit_edge_sounds": 144,
+        "accented_edges": 230,
+        "curve_L": 37,
+        "curve_B": 46
+      }
+    },
+    {
+      "beatmap_id": 2081396,
+      "song_group": "242b5669a8c1f80763da1c0aaa7de91a1e2b7e5602c5797c96bfb7089b651bcf",
+      "counts": {
+        "timing_points": 22,
+        "kiai_points": 2,
+        "inherited_points": 17,
+        "objects": 160,
+        "new_combo": 29,
+        "additional_hitsound": 52,
+        "sliders": 88,
+        "repeat_sliders": 18,
+        "curve_L": 44,
+        "more_than_2_inner_anchors": 6,
+        "explicit_edge_sounds": 88,
+        "accented_edges": 98,
+        "curve_P": 18,
+        "curve_B": 26
+      }
+    },
+    {
+      "beatmap_id": 4632425,
+      "song_group": "a238352ccbad99a0d7a30d59450586d7b955866414543b9eaaf7f841057c0270",
+      "counts": {
+        "timing_points": 60,
+        "kiai_points": 0,
+        "inherited_points": 59,
+        "objects": 278,
+        "new_combo": 66,
+        "additional_hitsound": 107,
+        "sliders": 128,
+        "repeat_sliders": 31,
+        "curve_P": 84,
+        "more_than_2_inner_anchors": 1,
+        "explicit_edge_sounds": 128,
+        "accented_edges": 224,
+        "curve_L": 32,
+        "curve_B": 12
+      }
+    },
+    {
+      "beatmap_id": 87230,
+      "song_group": "fd2a36ecf3ff5c4849f2a1b65e7e1f76b88783aa6dfa8819d049ce7a36985cdf",
+      "counts": {
+        "timing_points": 15,
+        "kiai_points": 6,
+        "inherited_points": 14,
+        "objects": 404,
+        "new_combo": 104,
+        "additional_hitsound": 179,
+        "sliders": 91,
+        "repeat_sliders": 26,
+        "curve_B": 91,
+        "more_than_2_inner_anchors": 67,
+        "explicit_edge_sounds": 80,
+        "accented_edges": 105
+      }
+    },
+    {
+      "beatmap_id": 2735331,
+      "song_group": "c9cac144fc1d378840d24a912d3c3b75dc938578ab699df83cda265b1d86f69c",
+      "counts": {
+        "timing_points": 47,
+        "kiai_points": 0,
+        "inherited_points": 46,
+        "objects": 234,
+        "new_combo": 62,
+        "additional_hitsound": 86,
+        "sliders": 132,
+        "repeat_sliders": 7,
+        "curve_P": 43,
+        "more_than_2_inner_anchors": 16,
+        "explicit_edge_sounds": 132,
+        "accented_edges": 167,
+        "curve_L": 62,
+        "curve_B": 27
+      }
+    },
+    {
+      "beatmap_id": 976890,
+      "song_group": "0e1f2d1b26ebf1121ca7da6f832fd0015bc45a477a3b4d3fa910732f4e666f62",
+      "counts": {
+        "timing_points": 9,
+        "kiai_points": 2,
+        "inherited_points": 7,
+        "objects": 103,
+        "new_combo": 27,
+        "additional_hitsound": 15,
+        "sliders": 62,
+        "repeat_sliders": 13,
+        "curve_B": 9,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 61,
+        "accented_edges": 91,
+        "curve_P": 20,
+        "curve_L": 33
+      }
+    },
+    {
+      "beatmap_id": 2357304,
+      "song_group": "f9a63c83245078fcc857126aa650648dc723aa194d991bb85929b719ce6b3fb0",
+      "counts": {
+        "timing_points": 13,
+        "kiai_points": 0,
+        "inherited_points": 11,
+        "objects": 411,
+        "new_combo": 91,
+        "additional_hitsound": 161,
+        "sliders": 202,
+        "repeat_sliders": 10,
+        "curve_P": 112,
+        "more_than_2_inner_anchors": 74,
+        "explicit_edge_sounds": 201,
+        "accented_edges": 202,
+        "curve_L": 8,
+        "curve_B": 82
+      }
+    },
+    {
+      "beatmap_id": 3932290,
+      "song_group": "dddbed614157d52bf35d4832729e001b0db0841cdf3771c75ff1e8e1e1ff0042",
+      "counts": {
+        "timing_points": 92,
+        "kiai_points": 29,
+        "inherited_points": 91,
+        "objects": 701,
+        "new_combo": 187,
+        "additional_hitsound": 351,
+        "sliders": 295,
+        "repeat_sliders": 29,
+        "curve_B": 63,
+        "more_than_2_inner_anchors": 31,
+        "explicit_edge_sounds": 295,
+        "accented_edges": 476,
+        "curve_L": 144,
+        "curve_P": 88
+      }
+    },
+    {
+      "beatmap_id": 4782956,
+      "song_group": "32b355d2787e645d3fee7fa1bd2171759569eaeb51b2823cb715e23af70449e1",
+      "counts": {
+        "timing_points": 96,
+        "kiai_points": 18,
+        "inherited_points": 95,
+        "objects": 1439,
+        "new_combo": 178,
+        "additional_hitsound": 681,
+        "sliders": 280,
+        "repeat_sliders": 29,
+        "curve_P": 127,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 277,
+        "accented_edges": 305,
+        "curve_B": 66,
+        "curve_L": 87
+      }
+    },
+    {
+      "beatmap_id": 1151286,
+      "song_group": "ee5b05b131071536314df6ef2bc41f7f19ac3463fd48d6b07554ea3dd5889d08",
+      "counts": {
+        "timing_points": 11,
+        "kiai_points": 2,
+        "inherited_points": 10,
+        "objects": 50,
+        "new_combo": 15,
+        "additional_hitsound": 18,
+        "sliders": 30,
+        "repeat_sliders": 8,
+        "curve_B": 19,
+        "more_than_2_inner_anchors": 11,
+        "explicit_edge_sounds": 22,
+        "accented_edges": 25,
+        "curve_P": 10,
+        "curve_L": 1
+      }
+    },
+    {
+      "beatmap_id": 2298954,
+      "song_group": "a66cfe1bd35525d1003153fa2a5a03d543692a0c31f429d7afd8b69ea314a628",
+      "counts": {
+        "timing_points": 269,
+        "kiai_points": 115,
+        "inherited_points": 268,
+        "objects": 969,
+        "new_combo": 245,
+        "additional_hitsound": 656,
+        "sliders": 305,
+        "repeat_sliders": 4,
+        "curve_B": 31,
+        "more_than_2_inner_anchors": 15,
+        "explicit_edge_sounds": 305,
+        "accented_edges": 404,
+        "curve_P": 242,
+        "curve_L": 32
+      }
+    },
+    {
+      "beatmap_id": 4571598,
+      "song_group": "2ce234a9ea7b24dbc4dae57a3bf735d73caa6993283e6ce558676138b7d3c461",
+      "counts": {
+        "timing_points": 53,
+        "kiai_points": 4,
+        "inherited_points": 52,
+        "objects": 643,
+        "new_combo": 139,
+        "additional_hitsound": 305,
+        "sliders": 325,
+        "repeat_sliders": 30,
+        "curve_P": 257,
+        "more_than_2_inner_anchors": 11,
+        "explicit_edge_sounds": 325,
+        "accented_edges": 611,
+        "curve_L": 48,
+        "curve_B": 20
+      }
+    },
+    {
+      "beatmap_id": 2249594,
+      "song_group": "6d327b46586e74fb1ba0db3617b7cf30002561d40910c20af60b34c32ef4c064",
+      "counts": {
+        "timing_points": 21,
+        "kiai_points": 2,
+        "inherited_points": 19,
+        "objects": 281,
+        "new_combo": 66,
+        "additional_hitsound": 117,
+        "sliders": 125,
+        "repeat_sliders": 18,
+        "curve_L": 52,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 125,
+        "accented_edges": 223,
+        "curve_P": 53,
+        "curve_B": 20
+      }
+    },
+    {
+      "beatmap_id": 1518608,
+      "song_group": "7de92a4ea378e6fcae4d891e626116cbd75e6cb98f67055a14566565e7e3aea0",
+      "counts": {
+        "timing_points": 34,
+        "kiai_points": 25,
+        "inherited_points": 33,
+        "objects": 345,
+        "new_combo": 67,
+        "additional_hitsound": 153,
+        "sliders": 135,
+        "repeat_sliders": 2,
+        "curve_L": 71,
+        "more_than_2_inner_anchors": 5,
+        "explicit_edge_sounds": 135,
+        "accented_edges": 163,
+        "curve_P": 42,
+        "curve_B": 22
+      }
+    },
+    {
+      "beatmap_id": 1271343,
+      "song_group": "222a92192c491c4b4f18d987dcd6a5723ed1a998f3439aee0d1f3ed626012b70",
+      "counts": {
+        "timing_points": 107,
+        "kiai_points": 46,
+        "inherited_points": 105,
+        "objects": 832,
+        "new_combo": 226,
+        "additional_hitsound": 229,
+        "sliders": 340,
+        "repeat_sliders": 29,
+        "curve_P": 108,
+        "more_than_2_inner_anchors": 41,
+        "explicit_edge_sounds": 330,
+        "accented_edges": 297,
+        "curve_L": 126,
+        "curve_B": 106
+      }
+    },
+    {
+      "beatmap_id": 2369095,
+      "song_group": "86ec042f313aecf6296f0b84ae7532662b2401e05321be1122c6e6a7a851e413",
+      "counts": {
+        "timing_points": 99,
+        "kiai_points": 16,
+        "inherited_points": 95,
+        "objects": 792,
+        "new_combo": 154,
+        "additional_hitsound": 349,
+        "sliders": 230,
+        "repeat_sliders": 31,
+        "curve_P": 105,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 230,
+        "accented_edges": 290,
+        "curve_L": 113,
+        "curve_B": 12
+      }
+    },
+    {
+      "beatmap_id": 4691520,
+      "song_group": "26abe242ff4670a10c31ecf7c2102f982015cb85dcb933759be2e78ae862e711",
+      "counts": {
+        "timing_points": 195,
+        "kiai_points": 1,
+        "inherited_points": 194,
+        "objects": 1109,
+        "new_combo": 343,
+        "additional_hitsound": 583,
+        "sliders": 409,
+        "repeat_sliders": 8,
+        "curve_P": 308,
+        "more_than_2_inner_anchors": 39,
+        "explicit_edge_sounds": 400,
+        "accented_edges": 454,
+        "curve_B": 62,
+        "curve_L": 39
+      }
+    },
+    {
+      "beatmap_id": 1898692,
+      "song_group": "99aecf13acfd21b5d5990f7003254d587179d6c49282bba4548ede9ab5ec3fd3",
+      "counts": {
+        "timing_points": 97,
+        "kiai_points": 0,
+        "inherited_points": 95,
+        "objects": 1249,
+        "new_combo": 327,
+        "additional_hitsound": 0,
+        "sliders": 239,
+        "repeat_sliders": 13,
+        "curve_P": 144,
+        "more_than_2_inner_anchors": 28,
+        "explicit_edge_sounds": 4,
+        "curve_L": 51,
+        "curve_B": 44,
+        "accented_edges": 0
+      }
+    },
+    {
+      "beatmap_id": 5172264,
+      "song_group": "53b18c95284cb67e9e2d3e976acfc45a044a9e751e3b81e7b1a107718c2a8832",
+      "counts": {
+        "timing_points": 153,
+        "kiai_points": 8,
+        "inherited_points": 152,
+        "objects": 304,
+        "new_combo": 72,
+        "additional_hitsound": 113,
+        "sliders": 179,
+        "repeat_sliders": 33,
+        "curve_P": 162,
+        "more_than_2_inner_anchors": 6,
+        "explicit_edge_sounds": 175,
+        "accented_edges": 349,
+        "curve_L": 11,
+        "curve_B": 6
+      }
+    },
+    {
+      "beatmap_id": 2169726,
+      "song_group": "c44555d5b071a42e04c3af66aa6c9390722e033df002475384c7998d097c1369",
+      "counts": {
+        "timing_points": 402,
+        "kiai_points": 98,
+        "inherited_points": 376,
+        "objects": 545,
+        "new_combo": 191,
+        "additional_hitsound": 306,
+        "sliders": 193,
+        "repeat_sliders": 39,
+        "curve_L": 45,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 193,
+        "accented_edges": 314,
+        "curve_P": 148
+      }
+    },
+    {
+      "beatmap_id": 217942,
+      "song_group": "c347e2eae85bdbfd946eb5f834d26fd7facc90a7572a35451c47dccbca6a4284",
+      "counts": {
+        "timing_points": 10,
+        "kiai_points": 4,
+        "inherited_points": 9,
+        "objects": 346,
+        "new_combo": 67,
+        "additional_hitsound": 83,
+        "sliders": 165,
+        "repeat_sliders": 34,
+        "curve_P": 115,
+        "more_than_2_inner_anchors": 6,
+        "explicit_edge_sounds": 135,
+        "accented_edges": 183,
+        "curve_L": 40,
+        "curve_B": 10
+      }
+    },
+    {
+      "beatmap_id": 1219193,
+      "song_group": "96915de68b9ae4ae18307cd67e9307e15189930e72b5ef9bcbff60b4f23cea0c",
+      "counts": {
+        "timing_points": 153,
+        "kiai_points": 77,
+        "inherited_points": 151,
+        "objects": 542,
+        "new_combo": 191,
+        "additional_hitsound": 152,
+        "sliders": 298,
+        "repeat_sliders": 69,
+        "curve_P": 135,
+        "more_than_2_inner_anchors": 45,
+        "explicit_edge_sounds": 296,
+        "accented_edges": 407,
+        "curve_B": 73,
+        "curve_L": 90
+      }
+    },
+    {
+      "beatmap_id": 967016,
+      "song_group": "cb578f33f51103a050f522cb804b9f3f270dbaf5be65033a6ef015848e15f368",
+      "counts": {
+        "timing_points": 109,
+        "kiai_points": 11,
+        "inherited_points": 105,
+        "objects": 901,
+        "new_combo": 161,
+        "additional_hitsound": 437,
+        "sliders": 285,
+        "repeat_sliders": 14,
+        "curve_B": 51,
+        "more_than_2_inner_anchors": 15,
+        "explicit_edge_sounds": 268,
+        "accented_edges": 352,
+        "curve_P": 115,
+        "curve_L": 119
+      }
+    },
+    {
+      "beatmap_id": 150272,
+      "song_group": "2e5721ffc0167863b5c39ba01fd294794493cdfac8c3f0746b004060a24b729f",
+      "counts": {
+        "timing_points": 17,
+        "kiai_points": 0,
+        "inherited_points": 16,
+        "objects": 120,
+        "new_combo": 29,
+        "additional_hitsound": 17,
+        "sliders": 42,
+        "repeat_sliders": 0,
+        "curve_B": 42,
+        "more_than_2_inner_anchors": 11,
+        "explicit_edge_sounds": 31,
+        "accented_edges": 30
+      }
+    },
+    {
+      "beatmap_id": 141446,
+      "song_group": "f682c878dc2b4137f5007c492c42158c27d8ae10e9ba5bfa8ec2978ab5e8a307",
+      "counts": {
+        "timing_points": 75,
+        "kiai_points": 0,
+        "inherited_points": 74,
+        "objects": 226,
+        "new_combo": 62,
+        "additional_hitsound": 155,
+        "sliders": 90,
+        "repeat_sliders": 21,
+        "curve_B": 90,
+        "more_than_2_inner_anchors": 86,
+        "explicit_edge_sounds": 77,
+        "accented_edges": 144
+      }
+    },
+    {
+      "beatmap_id": 4630406,
+      "song_group": "1eaef87794bf284cbbf9d3f14c0a3e3661999f9f69dbd77405de6c798e971c62",
+      "counts": {
+        "timing_points": 9,
+        "kiai_points": 0,
+        "inherited_points": 7,
+        "objects": 223,
+        "new_combo": 74,
+        "additional_hitsound": 82,
+        "sliders": 109,
+        "repeat_sliders": 18,
+        "curve_P": 81,
+        "more_than_2_inner_anchors": 17,
+        "explicit_edge_sounds": 109,
+        "accented_edges": 173,
+        "curve_B": 28
+      }
+    },
+    {
+      "beatmap_id": 143798,
+      "song_group": "46a401c6f1a7f673da10c7dee033ddd7c6bb62c2b0be738b7c69de2e0ab59b5d",
+      "counts": {
+        "timing_points": 18,
+        "kiai_points": 2,
+        "inherited_points": 17,
+        "objects": 724,
+        "new_combo": 121,
+        "additional_hitsound": 183,
+        "sliders": 267,
+        "repeat_sliders": 31,
+        "curve_B": 267,
+        "more_than_2_inner_anchors": 16,
+        "explicit_edge_sounds": 161,
+        "accented_edges": 165
+      }
+    },
+    {
+      "beatmap_id": 2707240,
+      "song_group": "48ff3d756ae7776f469320c03e57db1125242d7be866be58bb16735005ada0d5",
+      "counts": {
+        "timing_points": 68,
+        "kiai_points": 12,
+        "inherited_points": 67,
+        "objects": 446,
+        "new_combo": 75,
+        "additional_hitsound": 142,
+        "sliders": 172,
+        "repeat_sliders": 6,
+        "curve_P": 82,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 157,
+        "accented_edges": 159,
+        "curve_L": 67,
+        "curve_B": 23
+      }
+    },
+    {
+      "beatmap_id": 3818017,
+      "song_group": "18949793b03c9081664914397f6244269a10f5d8f35d6bb8b9524604d834ca8c",
+      "counts": {
+        "timing_points": 58,
+        "kiai_points": 0,
+        "inherited_points": 34,
+        "objects": 283,
+        "new_combo": 66,
+        "additional_hitsound": 97,
+        "sliders": 169,
+        "repeat_sliders": 19,
+        "curve_P": 38,
+        "more_than_2_inner_anchors": 1,
+        "explicit_edge_sounds": 169,
+        "accented_edges": 309,
+        "curve_L": 87,
+        "curve_B": 44
+      }
+    },
+    {
+      "beatmap_id": 68516,
+      "song_group": "eb31d05b28fdec0221a4649eedf72908d4bc8d264cd332479ece8b644e4d834b",
+      "counts": {
+        "timing_points": 12,
+        "kiai_points": 4,
+        "inherited_points": 10,
+        "objects": 287,
+        "new_combo": 53,
+        "additional_hitsound": 58,
+        "sliders": 79,
+        "repeat_sliders": 28,
+        "curve_B": 79,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 56,
+        "accented_edges": 67
+      }
+    },
+    {
+      "beatmap_id": 3983117,
+      "song_group": "348e6e5410adf54c2dec700606a3c043cc252936c8dcad2c3cd8452f678fb527",
+      "counts": {
+        "timing_points": 340,
+        "kiai_points": 84,
+        "inherited_points": 332,
+        "objects": 343,
+        "new_combo": 105,
+        "additional_hitsound": 66,
+        "sliders": 241,
+        "repeat_sliders": 6,
+        "curve_L": 6,
+        "more_than_2_inner_anchors": 39,
+        "explicit_edge_sounds": 241,
+        "accented_edges": 276,
+        "curve_P": 159,
+        "curve_B": 76
+      }
+    },
+    {
+      "beatmap_id": 4684609,
+      "song_group": "43e5f8ce6022f05388f2f0aa701c22ffb629fad088fdd4d8fd2be27e861f1280",
+      "counts": {
+        "timing_points": 179,
+        "kiai_points": 32,
+        "inherited_points": 169,
+        "objects": 536,
+        "new_combo": 175,
+        "additional_hitsound": 231,
+        "sliders": 270,
+        "repeat_sliders": 7,
+        "curve_P": 244,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 268,
+        "accented_edges": 361,
+        "curve_B": 4,
+        "curve_L": 22
+      }
+    },
+    {
+      "beatmap_id": 4465597,
+      "song_group": "337b903f425ae36132e7235afd4c8bd824413805ac9a7ceb16fc226ca5090f25",
+      "counts": {
+        "timing_points": 35,
+        "kiai_points": 8,
+        "inherited_points": 34,
+        "objects": 1042,
+        "new_combo": 245,
+        "additional_hitsound": 421,
+        "sliders": 405,
+        "repeat_sliders": 147,
+        "curve_L": 233,
+        "more_than_2_inner_anchors": 20,
+        "explicit_edge_sounds": 397,
+        "accented_edges": 603,
+        "curve_B": 70,
+        "curve_P": 102
+      }
+    },
+    {
+      "beatmap_id": 3750929,
+      "song_group": "b785aa0a14e8ead29929c28f95dc6d2b802e5b1269cfc299825c2cbb7ec25d0b",
+      "counts": {
+        "timing_points": 276,
+        "kiai_points": 34,
+        "inherited_points": 228,
+        "objects": 420,
+        "new_combo": 100,
+        "additional_hitsound": 162,
+        "sliders": 219,
+        "repeat_sliders": 22,
+        "curve_P": 176,
+        "more_than_2_inner_anchors": 37,
+        "explicit_edge_sounds": 212,
+        "accented_edges": 327,
+        "curve_B": 41,
+        "curve_L": 2
+      }
+    },
+    {
+      "beatmap_id": 1597953,
+      "song_group": "5806ecd305e705e98e153bb13fd62cc9be69508c4071000022025d20798643fc",
+      "counts": {
+        "timing_points": 9,
+        "kiai_points": 1,
+        "inherited_points": 8,
+        "objects": 391,
+        "new_combo": 99,
+        "additional_hitsound": 268,
+        "sliders": 117,
+        "repeat_sliders": 1,
+        "curve_L": 73,
+        "more_than_2_inner_anchors": 1,
+        "explicit_edge_sounds": 117,
+        "accented_edges": 145,
+        "curve_P": 43,
+        "curve_B": 1
+      }
+    },
+    {
+      "beatmap_id": 2008702,
+      "song_group": "363e4a83fe25372e163745b49d6ded2373507f673071895ceece100d08f672a8",
+      "counts": {
+        "timing_points": 6,
+        "kiai_points": 2,
+        "inherited_points": 5,
+        "objects": 217,
+        "new_combo": 48,
+        "additional_hitsound": 26,
+        "sliders": 148,
+        "repeat_sliders": 14,
+        "curve_P": 134,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 148,
+        "accented_edges": 190,
+        "curve_B": 13,
+        "curve_L": 1
+      }
+    },
+    {
+      "beatmap_id": 4683194,
+      "song_group": "f3753a3cb7d7e191d7165eb9f2808aca33e850164fc0322a0773ff379b9d9b5f",
+      "counts": {
+        "timing_points": 425,
+        "kiai_points": 132,
+        "inherited_points": 424,
+        "objects": 506,
+        "new_combo": 220,
+        "additional_hitsound": 151,
+        "sliders": 256,
+        "repeat_sliders": 5,
+        "curve_P": 158,
+        "more_than_2_inner_anchors": 18,
+        "explicit_edge_sounds": 254,
+        "accented_edges": 331,
+        "curve_B": 52,
+        "curve_L": 46
+      }
+    },
+    {
+      "beatmap_id": 2633532,
+      "song_group": "470c42cc1b6b97630bd7ed34098a5cd6b7c23fffd446599375758da01e318952",
+      "counts": {
+        "timing_points": 14,
+        "kiai_points": 1,
+        "inherited_points": 13,
+        "objects": 187,
+        "new_combo": 30,
+        "additional_hitsound": 77,
+        "sliders": 104,
+        "repeat_sliders": 15,
+        "curve_P": 32,
+        "more_than_2_inner_anchors": 3,
+        "explicit_edge_sounds": 104,
+        "accented_edges": 197,
+        "curve_B": 7,
+        "curve_L": 65
+      }
+    },
+    {
+      "beatmap_id": 1082882,
+      "song_group": "3870c367d6af968309370ca9691185f9a2f1b2fa3957f5e2ad29cb6a2e514faf",
+      "counts": {
+        "timing_points": 80,
+        "kiai_points": 12,
+        "inherited_points": 74,
+        "objects": 935,
+        "new_combo": 267,
+        "additional_hitsound": 167,
+        "sliders": 499,
+        "repeat_sliders": 45,
+        "curve_L": 175,
+        "more_than_2_inner_anchors": 34,
+        "explicit_edge_sounds": 491,
+        "accented_edges": 517,
+        "curve_P": 248,
+        "curve_B": 76
+      }
+    },
+    {
+      "beatmap_id": 2649521,
+      "song_group": "5ec38092429092ccdaa2e94ce87bf076b9896cc1ae288ce8c53d5beeeafa3f4d",
+      "counts": {
+        "timing_points": 259,
+        "kiai_points": 106,
+        "inherited_points": 258,
+        "objects": 386,
+        "new_combo": 107,
+        "additional_hitsound": 186,
+        "sliders": 197,
+        "repeat_sliders": 21,
+        "curve_B": 20,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 197,
+        "accented_edges": 344,
+        "curve_L": 124,
+        "curve_P": 53
+      }
+    },
+    {
+      "beatmap_id": 45663,
+      "song_group": "6197aa8d09c8a94e6929c85850a8c43d2ea2710be2fd4d1dec6c7819cf8b5f60",
+      "counts": {
+        "timing_points": 10,
+        "kiai_points": 3,
+        "inherited_points": 9,
+        "objects": 63,
+        "new_combo": 24,
+        "additional_hitsound": 14,
+        "sliders": 27,
+        "repeat_sliders": 5,
+        "curve_B": 25,
+        "more_than_2_inner_anchors": 3,
+        "explicit_edge_sounds": 10,
+        "accented_edges": 8,
+        "curve_L": 2
+      }
+    },
+    {
+      "beatmap_id": 1639736,
+      "song_group": "23dfe5b77a0d86a4e94ef67bbcc25fd0a3e566b2b95530261da3c67c58a5e28c",
+      "counts": {
+        "timing_points": 6,
+        "kiai_points": 2,
+        "inherited_points": 4,
+        "objects": 125,
+        "new_combo": 25,
+        "additional_hitsound": 52,
+        "sliders": 20,
+        "repeat_sliders": 1,
+        "curve_L": 12,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 20,
+        "accented_edges": 25,
+        "curve_P": 6,
+        "curve_B": 2
+      }
+    },
+    {
+      "beatmap_id": 2806785,
+      "song_group": "c8f4d00b6a0f07d27ec62c944b1bf9ef77dbe62e8f897b0d98ae2a7ff33658d9",
+      "counts": {
+        "timing_points": 95,
+        "kiai_points": 45,
+        "inherited_points": 94,
+        "objects": 250,
+        "new_combo": 110,
+        "additional_hitsound": 106,
+        "sliders": 70,
+        "repeat_sliders": 6,
+        "curve_B": 26,
+        "more_than_2_inner_anchors": 12,
+        "explicit_edge_sounds": 70,
+        "accented_edges": 96,
+        "curve_P": 28,
+        "curve_L": 16
+      }
+    },
+    {
+      "beatmap_id": 654453,
+      "song_group": "39134a84421589f0921d430c815452ebf196be2f1fa0a9ef7f32c6fb29a4de9f",
+      "counts": {
+        "timing_points": 14,
+        "kiai_points": 4,
+        "inherited_points": 13,
+        "objects": 365,
+        "new_combo": 70,
+        "additional_hitsound": 69,
+        "sliders": 174,
+        "repeat_sliders": 14,
+        "curve_P": 108,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 148,
+        "accented_edges": 175,
+        "curve_B": 9,
+        "curve_L": 57
+      }
+    },
+    {
+      "beatmap_id": 2229834,
+      "song_group": "8143999b7820b832188f9e73f7270fb34beb11021cd5a832d14274379eca4dd4",
+      "counts": {
+        "timing_points": 66,
+        "kiai_points": 20,
+        "inherited_points": 65,
+        "objects": 1152,
+        "new_combo": 223,
+        "additional_hitsound": 345,
+        "sliders": 294,
+        "repeat_sliders": 40,
+        "curve_P": 180,
+        "more_than_2_inner_anchors": 1,
+        "explicit_edge_sounds": 243,
+        "accented_edges": 199,
+        "curve_L": 111,
+        "curve_B": 3
+      }
+    },
+    {
+      "beatmap_id": 1064374,
+      "song_group": "89b65df1443aa9a363e9bb136ad5a0c9cb38dd03def71db64abeebeabcf610e7",
+      "counts": {
+        "timing_points": 51,
+        "kiai_points": 1,
+        "inherited_points": 49,
+        "objects": 130,
+        "new_combo": 41,
+        "additional_hitsound": 23,
+        "sliders": 105,
+        "repeat_sliders": 27,
+        "curve_P": 48,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 98,
+        "accented_edges": 160,
+        "curve_B": 16,
+        "curve_L": 41
+      }
+    },
+    {
+      "beatmap_id": 775348,
+      "song_group": "ef3449d2fc3df4d2eff82863773fccf53da2ba1acd8ef7d621ddf55fb622f7f9",
+      "counts": {
+        "timing_points": 12,
+        "kiai_points": 1,
+        "inherited_points": 11,
+        "objects": 579,
+        "new_combo": 109,
+        "additional_hitsound": 157,
+        "sliders": 206,
+        "repeat_sliders": 13,
+        "curve_P": 151,
+        "more_than_2_inner_anchors": 14,
+        "explicit_edge_sounds": 182,
+        "accented_edges": 242,
+        "curve_B": 17,
+        "curve_L": 38
+      }
+    },
+    {
+      "beatmap_id": 556162,
+      "song_group": "bc4b9f1f53a6113aa4e4c077ce4566a19b82ee22010e60570d8a389db67afdc3",
+      "counts": {
+        "timing_points": 49,
+        "kiai_points": 7,
+        "inherited_points": 46,
+        "objects": 770,
+        "new_combo": 134,
+        "additional_hitsound": 227,
+        "sliders": 224,
+        "repeat_sliders": 20,
+        "curve_B": 86,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 217,
+        "accented_edges": 269,
+        "curve_P": 136,
+        "curve_L": 2
+      }
+    },
+    {
+      "beatmap_id": 4577831,
+      "song_group": "5961e1953594acc1479ca4842af383d0a19ab89b7c023ffb480d5a309d55f05f",
+      "counts": {
+        "timing_points": 48,
+        "kiai_points": 0,
+        "inherited_points": 47,
+        "objects": 269,
+        "new_combo": 54,
+        "additional_hitsound": 138,
+        "sliders": 128,
+        "repeat_sliders": 29,
+        "curve_P": 40,
+        "more_than_2_inner_anchors": 7,
+        "explicit_edge_sounds": 128,
+        "accented_edges": 255,
+        "curve_L": 75,
+        "curve_B": 13
+      }
+    },
+    {
+      "beatmap_id": 30348,
+      "song_group": "18244c8769694d8df19c51279139cb46df54bdf46cf59ca07cdc385f2d3f19b4",
+      "counts": {
+        "timing_points": 1,
+        "kiai_points": 0,
+        "inherited_points": 0,
+        "objects": 615,
+        "new_combo": 103,
+        "additional_hitsound": 55,
+        "sliders": 70,
+        "repeat_sliders": 13,
+        "curve_B": 70,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 5,
+        "accented_edges": 1
+      }
+    },
+    {
+      "beatmap_id": 1149713,
+      "song_group": "d383f06c9e80f0670038948e0edf0e9790bcac9d945832f0ddf7a0f95e66d58e",
+      "counts": {
+        "timing_points": 16,
+        "kiai_points": 0,
+        "inherited_points": 15,
+        "objects": 126,
+        "new_combo": 32,
+        "additional_hitsound": 50,
+        "sliders": 37,
+        "repeat_sliders": 0,
+        "curve_L": 7,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 36,
+        "accented_edges": 27,
+        "curve_P": 28,
+        "curve_B": 2
+      }
+    },
+    {
+      "beatmap_id": 20990,
+      "song_group": "553082221f19fb2b888bb9c422adb2cca0ef3043a76ae6085b3819cb82597fd7",
+      "counts": {
+        "timing_points": 4,
+        "inherited_points": 0,
+        "objects": 262,
+        "new_combo": 44,
+        "additional_hitsound": 104,
+        "sliders": 134,
+        "repeat_sliders": 36,
+        "curve_B": 134,
+        "more_than_2_inner_anchors": 22,
+        "explicit_edge_sounds": 0
+      }
+    },
+    {
+      "beatmap_id": 1656912,
+      "song_group": "55da3bcc20b0de76dc7238959549091def763ce447a4a247167b74d4b741bcf0",
+      "counts": {
+        "timing_points": 138,
+        "kiai_points": 106,
+        "inherited_points": 137,
+        "objects": 262,
+        "new_combo": 74,
+        "additional_hitsound": 69,
+        "sliders": 176,
+        "repeat_sliders": 45,
+        "curve_L": 42,
+        "more_than_2_inner_anchors": 1,
+        "explicit_edge_sounds": 176,
+        "accented_edges": 346,
+        "curve_P": 121,
+        "curve_B": 13
+      }
+    },
+    {
+      "beatmap_id": 2505623,
+      "song_group": "763cb4d2b20c89be0e0ffa386fba7a7ccd575eaddb446e50196d309abb66394f",
+      "counts": {
+        "timing_points": 116,
+        "kiai_points": 0,
+        "inherited_points": 115,
+        "objects": 1331,
+        "new_combo": 342,
+        "additional_hitsound": 658,
+        "sliders": 488,
+        "repeat_sliders": 25,
+        "curve_B": 106,
+        "more_than_2_inner_anchors": 75,
+        "explicit_edge_sounds": 487,
+        "accented_edges": 578,
+        "curve_L": 169,
+        "curve_P": 213
+      }
+    },
+    {
+      "beatmap_id": 3203952,
+      "song_group": "a8202ae8a2bb915557439c8866bc6cb04773b4dc7916fa6c091948c13a33dd93",
+      "counts": {
+        "timing_points": 34,
+        "kiai_points": 0,
+        "inherited_points": 32,
+        "objects": 384,
+        "new_combo": 66,
+        "additional_hitsound": 111,
+        "sliders": 222,
+        "repeat_sliders": 17,
+        "curve_L": 164,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 221,
+        "accented_edges": 363,
+        "curve_B": 18,
+        "curve_P": 40
+      }
+    },
+    {
+      "beatmap_id": 1812657,
+      "song_group": "d3fb2b11151e33126867d34154d7e218ba90bec2b491b735fae51733e60b5f39",
+      "counts": {
+        "timing_points": 27,
+        "kiai_points": 3,
+        "inherited_points": 26,
+        "objects": 456,
+        "new_combo": 76,
+        "additional_hitsound": 107,
+        "sliders": 309,
+        "repeat_sliders": 33,
+        "curve_L": 75,
+        "more_than_2_inner_anchors": 24,
+        "explicit_edge_sounds": 301,
+        "curve_P": 175,
+        "curve_B": 59,
+        "accented_edges": 390
+      }
+    },
+    {
+      "beatmap_id": 259036,
+      "song_group": "808d1a80d29bdb9a09aee45c7ebc7389e6bb15cd4dbbfc7d714515fc33f0b881",
+      "counts": {
+        "timing_points": 27,
+        "kiai_points": 3,
+        "inherited_points": 7,
+        "objects": 211,
+        "new_combo": 56,
+        "additional_hitsound": 57,
+        "sliders": 115,
+        "repeat_sliders": 34,
+        "curve_P": 89,
+        "more_than_2_inner_anchors": 3,
+        "explicit_edge_sounds": 112,
+        "accented_edges": 164,
+        "curve_L": 22,
+        "curve_B": 4
+      }
+    },
+    {
+      "beatmap_id": 74104,
+      "song_group": "a67b119a047a78a1716e1d4bb1837468e9dd50830e815719e0c902fa3d875657",
+      "counts": {
+        "timing_points": 4,
+        "kiai_points": 1,
+        "inherited_points": 3,
+        "objects": 170,
+        "new_combo": 34,
+        "additional_hitsound": 70,
+        "sliders": 69,
+        "repeat_sliders": 18,
+        "curve_B": 67,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 62,
+        "accented_edges": 90,
+        "curve_L": 2
+      }
+    },
+    {
+      "beatmap_id": 4658073,
+      "song_group": "0c50fa4f03cec2a5ca24349fe33f21e27ae01f5123194b048e24a26aae6d2cb6",
+      "counts": {
+        "timing_points": 220,
+        "kiai_points": 40,
+        "inherited_points": 104,
+        "objects": 617,
+        "new_combo": 127,
+        "additional_hitsound": 321,
+        "sliders": 188,
+        "repeat_sliders": 27,
+        "curve_P": 58,
+        "more_than_2_inner_anchors": 63,
+        "explicit_edge_sounds": 188,
+        "accented_edges": 272,
+        "curve_B": 93,
+        "curve_L": 37
+      }
+    },
+    {
+      "beatmap_id": 4337919,
+      "song_group": "f5fdec1a7eeb20ebb625b6faf5c48f7907a5bb8844ad2bedebe3bfdc5337994b",
+      "counts": {
+        "timing_points": 24,
+        "kiai_points": 0,
+        "inherited_points": 23,
+        "objects": 512,
+        "new_combo": 118,
+        "additional_hitsound": 271,
+        "sliders": 128,
+        "repeat_sliders": 8,
+        "curve_P": 46,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 128,
+        "accented_edges": 160,
+        "curve_L": 70,
+        "curve_B": 12
+      }
+    },
+    {
+      "beatmap_id": 4585338,
+      "song_group": "f5caec8b469f180fcec135537ce8df14734cd5759ab80245ab29967da1a23084",
+      "counts": {
+        "timing_points": 101,
+        "kiai_points": 0,
+        "inherited_points": 88,
+        "objects": 797,
+        "new_combo": 186,
+        "additional_hitsound": 284,
+        "sliders": 378,
+        "repeat_sliders": 49,
+        "curve_P": 112,
+        "more_than_2_inner_anchors": 21,
+        "explicit_edge_sounds": 373,
+        "accented_edges": 561,
+        "curve_L": 229,
+        "curve_B": 37
+      }
+    },
+    {
+      "beatmap_id": 2135932,
+      "song_group": "53235972102361dca1b2bdbf976754884d1c8d5decb6e2983436440baa261bbf",
+      "counts": {
+        "timing_points": 140,
+        "kiai_points": 67,
+        "inherited_points": 138,
+        "objects": 436,
+        "new_combo": 85,
+        "additional_hitsound": 138,
+        "sliders": 250,
+        "repeat_sliders": 2,
+        "curve_L": 58,
+        "more_than_2_inner_anchors": 27,
+        "explicit_edge_sounds": 250,
+        "accented_edges": 310,
+        "curve_P": 158,
+        "curve_B": 34
+      }
+    },
+    {
+      "beatmap_id": 1366147,
+      "song_group": "2f4c2507dc8af719ce08ef8710722586afc5fef61e7d80707ae968d8c20ecb92",
+      "counts": {
+        "timing_points": 113,
+        "kiai_points": 12,
+        "inherited_points": 112,
+        "objects": 605,
+        "new_combo": 211,
+        "additional_hitsound": 287,
+        "sliders": 234,
+        "repeat_sliders": 16,
+        "curve_L": 112,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 232,
+        "accented_edges": 225,
+        "curve_P": 103,
+        "curve_B": 19
+      }
+    },
+    {
+      "beatmap_id": 1062124,
+      "song_group": "1be8cc7f756a4c3fa5366fe2cb29637a075892b39233dc76fc60f4fad17577e2",
+      "counts": {
+        "timing_points": 64,
+        "kiai_points": 14,
+        "inherited_points": 63,
+        "objects": 395,
+        "new_combo": 89,
+        "additional_hitsound": 64,
+        "sliders": 255,
+        "repeat_sliders": 15,
+        "curve_B": 40,
+        "more_than_2_inner_anchors": 24,
+        "explicit_edge_sounds": 241,
+        "accented_edges": 311,
+        "curve_P": 140,
+        "curve_L": 75
+      }
+    },
+    {
+      "beatmap_id": 3823636,
+      "song_group": "9c16e87a49c99997690bba1e63f59d9654d1c93be933cb3b0698a9ae2141be88",
+      "counts": {
+        "timing_points": 341,
+        "kiai_points": 7,
+        "inherited_points": 340,
+        "objects": 283,
+        "new_combo": 67,
+        "additional_hitsound": 121,
+        "sliders": 142,
+        "repeat_sliders": 8,
+        "curve_L": 34,
+        "more_than_2_inner_anchors": 3,
+        "explicit_edge_sounds": 142,
+        "accented_edges": 230,
+        "curve_P": 99,
+        "curve_B": 9
+      }
+    },
+    {
+      "beatmap_id": 70654,
+      "song_group": "f6a9a7b27db0b8ed4d9cb635ad562148186146994db908a66298632a1e410f08",
+      "counts": {
+        "timing_points": 31,
+        "kiai_points": 17,
+        "inherited_points": 30,
+        "objects": 386,
+        "new_combo": 83,
+        "additional_hitsound": 103,
+        "sliders": 221,
+        "repeat_sliders": 67,
+        "curve_B": 218,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 175,
+        "accented_edges": 246,
+        "curve_C": 1,
+        "curve_L": 2
+      }
+    },
+    {
+      "beatmap_id": 2789730,
+      "song_group": "03ecbe1ebfc22bd99c9e741265438982582927e3accde4eb5d5cf7a42359411b",
+      "counts": {
+        "timing_points": 40,
+        "kiai_points": 4,
+        "inherited_points": 35,
+        "objects": 374,
+        "new_combo": 78,
+        "additional_hitsound": 162,
+        "sliders": 186,
+        "repeat_sliders": 53,
+        "curve_P": 176,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 186,
+        "accented_edges": 319,
+        "curve_B": 10
+      }
+    },
+    {
+      "beatmap_id": 5208768,
+      "song_group": "da32bf5feecf66f98b5adc31e6572ac97d56a193d43f3e834fa4b4ab9f02be44",
+      "counts": {
+        "timing_points": 44,
+        "kiai_points": 2,
+        "inherited_points": 43,
+        "objects": 663,
+        "new_combo": 139,
+        "additional_hitsound": 434,
+        "sliders": 182,
+        "repeat_sliders": 11,
+        "curve_L": 52,
+        "more_than_2_inner_anchors": 24,
+        "explicit_edge_sounds": 182,
+        "accented_edges": 205,
+        "curve_P": 89,
+        "curve_B": 41
+      }
+    },
+    {
+      "beatmap_id": 216795,
+      "song_group": "83175c8c47959c588d747a7bd333b37a95e4a71bdc9efee22e16bd91669f8fdd",
+      "counts": {
+        "timing_points": 30,
+        "kiai_points": 2,
+        "inherited_points": 29,
+        "objects": 206,
+        "new_combo": 47,
+        "additional_hitsound": 37,
+        "sliders": 122,
+        "repeat_sliders": 44,
+        "curve_L": 74,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 83,
+        "accented_edges": 96,
+        "curve_P": 47,
+        "curve_B": 1
+      }
+    },
+    {
+      "beatmap_id": 37642,
+      "song_group": "8a4e88351da58454bd9e413be7f8522af35e39f43e18ec1744436e9ac45ddbd6",
+      "counts": {
+        "timing_points": 42,
+        "kiai_points": 2,
+        "inherited_points": 41,
+        "objects": 549,
+        "new_combo": 99,
+        "additional_hitsound": 261,
+        "sliders": 31,
+        "repeat_sliders": 1,
+        "curve_B": 31,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 22,
+        "accented_edges": 29
+      }
+    },
+    {
+      "beatmap_id": 37917,
+      "song_group": "b117aef3dc05f4a8a906be47ad533b95592551da82284b0141773e275b28265a",
+      "counts": {
+        "timing_points": 11,
+        "kiai_points": 3,
+        "inherited_points": 10,
+        "objects": 183,
+        "new_combo": 37,
+        "additional_hitsound": 76,
+        "sliders": 65,
+        "repeat_sliders": 6,
+        "curve_B": 65,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 26,
+        "accented_edges": 25
+      }
+    },
+    {
+      "beatmap_id": 141199,
+      "song_group": "f84c65cc356d5254b96364b73238aaea5ca19dde416447ab672eac3d7a718d2f",
+      "counts": {
+        "timing_points": 3,
+        "kiai_points": 1,
+        "inherited_points": 2,
+        "objects": 148,
+        "new_combo": 35,
+        "additional_hitsound": 37,
+        "sliders": 87,
+        "repeat_sliders": 19,
+        "curve_B": 78,
+        "more_than_2_inner_anchors": 7,
+        "explicit_edge_sounds": 79,
+        "accented_edges": 109,
+        "curve_L": 9
+      }
+    },
+    {
+      "beatmap_id": 139507,
+      "song_group": "4c49a8012c2d652062278ef206adc5b79199acc2c9880cde8bbcce7d0588e75a",
+      "counts": {
+        "timing_points": 77,
+        "kiai_points": 25,
+        "inherited_points": 76,
+        "objects": 90,
+        "new_combo": 29,
+        "additional_hitsound": 20,
+        "sliders": 68,
+        "repeat_sliders": 16,
+        "curve_B": 68,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 61,
+        "accented_edges": 89
+      }
+    },
+    {
+      "beatmap_id": 4370692,
+      "song_group": "16d7a83538019afcad3cbd131f5fea669d29d989e2a50d447451ff6c7a9685fc",
+      "counts": {
+        "timing_points": 16,
+        "kiai_points": 4,
+        "inherited_points": 11,
+        "objects": 623,
+        "new_combo": 101,
+        "additional_hitsound": 286,
+        "sliders": 259,
+        "repeat_sliders": 47,
+        "curve_L": 145,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 259,
+        "accented_edges": 419,
+        "curve_P": 114
+      }
+    },
+    {
+      "beatmap_id": 2716017,
+      "song_group": "264589231c9174b991f28772f9c7d0f8f7c1e5ebee570c5f1953b6fa04a1725b",
+      "counts": {
+        "timing_points": 31,
+        "kiai_points": 3,
+        "inherited_points": 30,
+        "objects": 297,
+        "new_combo": 74,
+        "additional_hitsound": 107,
+        "sliders": 148,
+        "repeat_sliders": 40,
+        "curve_L": 69,
+        "more_than_2_inner_anchors": 12,
+        "explicit_edge_sounds": 148,
+        "accented_edges": 252,
+        "curve_P": 67,
+        "curve_B": 12
+      }
+    },
+    {
+      "beatmap_id": 2410945,
+      "song_group": "e6ef8d5090ee36c2ef02937857523c0903b38f856e1e58c79a27e437bc62a868",
+      "counts": {
+        "timing_points": 31,
+        "kiai_points": 4,
+        "inherited_points": 30,
+        "objects": 341,
+        "new_combo": 79,
+        "additional_hitsound": 116,
+        "sliders": 155,
+        "repeat_sliders": 14,
+        "curve_P": 62,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 155,
+        "accented_edges": 188,
+        "curve_L": 63,
+        "curve_B": 30
+      }
+    },
+    {
+      "beatmap_id": 141155,
+      "song_group": "beefb943773ea3ea7a1d790711987066b6cad64be88c2bbe55892964368aca04",
+      "counts": {
+        "timing_points": 78,
+        "kiai_points": 2,
+        "inherited_points": 77,
+        "objects": 96,
+        "new_combo": 24,
+        "additional_hitsound": 26,
+        "sliders": 65,
+        "repeat_sliders": 23,
+        "curve_B": 65,
+        "more_than_2_inner_anchors": 12,
+        "explicit_edge_sounds": 65,
+        "accented_edges": 143
+      }
+    },
+    {
+      "beatmap_id": 132206,
+      "song_group": "a1cd38db1a6aaca4fb33a8115dd318a42ee2fc8c8859ac1e1158de3d4d16b969",
+      "counts": {
+        "timing_points": 17,
+        "kiai_points": 4,
+        "inherited_points": 16,
+        "objects": 211,
+        "new_combo": 56,
+        "additional_hitsound": 82,
+        "sliders": 91,
+        "repeat_sliders": 21,
+        "curve_B": 91,
+        "more_than_2_inner_anchors": 6,
+        "explicit_edge_sounds": 88,
+        "accented_edges": 133
+      }
+    },
+    {
+      "beatmap_id": 4815733,
+      "song_group": "c1c45b7da5462f4d58c9e10332ac72d4d229b1d02e8086d4fbcc203ac377098e",
+      "counts": {
+        "timing_points": 34,
+        "kiai_points": 4,
+        "inherited_points": 33,
+        "objects": 630,
+        "new_combo": 120,
+        "additional_hitsound": 228,
+        "sliders": 263,
+        "repeat_sliders": 60,
+        "curve_P": 76,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 237,
+        "accented_edges": 322,
+        "curve_L": 162,
+        "curve_B": 25
+      }
+    },
+    {
+      "beatmap_id": 4155338,
+      "song_group": "709017b005a881e787225adf3136376806586694915c2bcc187ad1f6afe94c23",
+      "counts": {
+        "timing_points": 173,
+        "kiai_points": 23,
+        "inherited_points": 171,
+        "objects": 912,
+        "new_combo": 272,
+        "additional_hitsound": 440,
+        "sliders": 369,
+        "repeat_sliders": 29,
+        "curve_L": 119,
+        "more_than_2_inner_anchors": 16,
+        "explicit_edge_sounds": 369,
+        "accented_edges": 494,
+        "curve_P": 224,
+        "curve_B": 26
+      }
+    },
+    {
+      "beatmap_id": 2509341,
+      "song_group": "0fcdd165a34b7208d230935d257450cce9830a3bfd8a27148e27b6eb7ebd9616",
+      "counts": {
+        "timing_points": 82,
+        "kiai_points": 6,
+        "inherited_points": 60,
+        "objects": 1355,
+        "new_combo": 265,
+        "additional_hitsound": 691,
+        "sliders": 493,
+        "repeat_sliders": 69,
+        "curve_P": 401,
+        "more_than_2_inner_anchors": 26,
+        "explicit_edge_sounds": 493,
+        "accented_edges": 575,
+        "curve_L": 64,
+        "curve_B": 28
+      }
+    },
+    {
+      "beatmap_id": 2589725,
+      "song_group": "847aebfc3a61763dc98287f6310bfaace37b65c4a0bba47eb553b954bbabd3c5",
+      "counts": {
+        "timing_points": 111,
+        "kiai_points": 27,
+        "inherited_points": 109,
+        "objects": 483,
+        "new_combo": 114,
+        "additional_hitsound": 163,
+        "sliders": 148,
+        "repeat_sliders": 10,
+        "curve_L": 31,
+        "more_than_2_inner_anchors": 32,
+        "explicit_edge_sounds": 148,
+        "accented_edges": 156,
+        "curve_P": 66,
+        "curve_B": 51
+      }
+    },
+    {
+      "beatmap_id": 3995406,
+      "song_group": "c9d2901618f5761b3a88493d85a3cf97fcb1b0c741d433035b025151e9a34ae1",
+      "counts": {
+        "timing_points": 1019,
+        "kiai_points": 68,
+        "inherited_points": 1018,
+        "objects": 750,
+        "new_combo": 239,
+        "additional_hitsound": 131,
+        "sliders": 424,
+        "repeat_sliders": 43,
+        "curve_L": 201,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 424,
+        "accented_edges": 281,
+        "curve_P": 194,
+        "curve_B": 29
+      }
+    },
+    {
+      "beatmap_id": 978628,
+      "song_group": "ec4d1ad37febe174be0a22c2fc4d1cc28a3508ad484db392747eda7e0dc57a2c",
+      "counts": {
+        "timing_points": 146,
+        "kiai_points": 12,
+        "inherited_points": 145,
+        "objects": 1451,
+        "new_combo": 499,
+        "additional_hitsound": 322,
+        "sliders": 680,
+        "repeat_sliders": 93,
+        "curve_B": 190,
+        "more_than_2_inner_anchors": 47,
+        "explicit_edge_sounds": 673,
+        "accented_edges": 603,
+        "curve_L": 341,
+        "curve_P": 149
+      }
+    },
+    {
+      "beatmap_id": 993361,
+      "song_group": "a92771bd06b32924372ae0994c4c65082f4700152ae46b05c940923ad3e74518",
+      "counts": {
+        "timing_points": 72,
+        "kiai_points": 4,
+        "inherited_points": 71,
+        "objects": 364,
+        "new_combo": 88,
+        "additional_hitsound": 130,
+        "sliders": 157,
+        "repeat_sliders": 5,
+        "curve_L": 69,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 157,
+        "accented_edges": 197,
+        "curve_P": 62,
+        "curve_B": 26
+      }
+    },
+    {
+      "beatmap_id": 5172683,
+      "song_group": "0a4ecb4add77f81ad2ad7e5b6ee370500c8619a5d7d1a5e1a7fbeb1e4f420fd1",
+      "counts": {
+        "timing_points": 53,
+        "kiai_points": 0,
+        "inherited_points": 52,
+        "objects": 648,
+        "new_combo": 158,
+        "additional_hitsound": 185,
+        "sliders": 407,
+        "repeat_sliders": 28,
+        "curve_P": 338,
+        "more_than_2_inner_anchors": 20,
+        "explicit_edge_sounds": 405,
+        "accented_edges": 633,
+        "curve_B": 69
+      }
+    },
+    {
+      "beatmap_id": 4397881,
+      "song_group": "cf28396c7ade490c0b72f7ce19ed755f3ba88560989f03a4df61b5f5a4d34b3d",
+      "counts": {
+        "timing_points": 41,
+        "kiai_points": 8,
+        "inherited_points": 40,
+        "objects": 186,
+        "new_combo": 33,
+        "additional_hitsound": 58,
+        "sliders": 98,
+        "repeat_sliders": 11,
+        "curve_P": 42,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 98,
+        "accented_edges": 101,
+        "curve_L": 54,
+        "curve_B": 2
+      }
+    },
+    {
+      "beatmap_id": 4626650,
+      "song_group": "362d48cb5a47ecd3e3e4d17f2ffdf98d2b1075d83308c15e8fcb5c2868ba1be2",
+      "counts": {
+        "timing_points": 11,
+        "kiai_points": 3,
+        "inherited_points": 6,
+        "objects": 625,
+        "new_combo": 136,
+        "additional_hitsound": 288,
+        "sliders": 278,
+        "repeat_sliders": 41,
+        "curve_L": 89,
+        "more_than_2_inner_anchors": 5,
+        "explicit_edge_sounds": 278,
+        "accented_edges": 412,
+        "curve_B": 189
+      }
+    },
+    {
+      "beatmap_id": 1969904,
+      "song_group": "ad9594d7a37dd208ce3bdd1063a077bb4a09d5a1df2a96a58219f6ebcaf9fb36",
+      "counts": {
+        "timing_points": 49,
+        "kiai_points": 11,
+        "inherited_points": 48,
+        "objects": 160,
+        "new_combo": 31,
+        "additional_hitsound": 64,
+        "sliders": 95,
+        "repeat_sliders": 23,
+        "curve_P": 24,
+        "more_than_2_inner_anchors": 28,
+        "explicit_edge_sounds": 95,
+        "accented_edges": 212,
+        "curve_L": 42,
+        "curve_B": 29
+      }
+    },
+    {
+      "beatmap_id": 3590290,
+      "song_group": "fa97a311344731d65b7a8c626ae6976ff093b05be19b62d951bc99690c95369b",
+      "counts": {
+        "timing_points": 135,
+        "kiai_points": 70,
+        "inherited_points": 134,
+        "objects": 574,
+        "new_combo": 174,
+        "additional_hitsound": 130,
+        "sliders": 297,
+        "repeat_sliders": 23,
+        "curve_B": 32,
+        "more_than_2_inner_anchors": 15,
+        "explicit_edge_sounds": 260,
+        "accented_edges": 254,
+        "curve_P": 196,
+        "curve_L": 69
+      }
+    },
+    {
+      "beatmap_id": 4555360,
+      "song_group": "2df247670569a0b41839f285d1a117456183a1ac983d9f1dceea5457984c038d",
+      "counts": {
+        "timing_points": 36,
+        "kiai_points": 18,
+        "inherited_points": 35,
+        "objects": 838,
+        "new_combo": 182,
+        "additional_hitsound": 467,
+        "sliders": 208,
+        "repeat_sliders": 6,
+        "curve_B": 36,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 203,
+        "accented_edges": 216,
+        "curve_P": 137,
+        "curve_L": 35
+      }
+    },
+    {
+      "beatmap_id": 33322,
+      "song_group": "18751405a85901bffcace4319ce7fff922880927a21b3c14f3c149f46b656a34",
+      "counts": {
+        "timing_points": 29,
+        "kiai_points": 5,
+        "inherited_points": 28,
+        "objects": 277,
+        "new_combo": 73,
+        "additional_hitsound": 97,
+        "sliders": 91,
+        "repeat_sliders": 22,
+        "curve_B": 91,
+        "more_than_2_inner_anchors": 8,
+        "explicit_edge_sounds": 43,
+        "accented_edges": 54
+      }
+    },
+    {
+      "beatmap_id": 26763,
+      "song_group": "5b170ce609ce298c0c1c4d09a6ac0e59eeae05588e5bb33c137933fd2fcdbaa8",
+      "counts": {
+        "timing_points": 7,
+        "kiai_points": 3,
+        "inherited_points": 6,
+        "objects": 521,
+        "new_combo": 106,
+        "additional_hitsound": 217,
+        "sliders": 51,
+        "repeat_sliders": 13,
+        "curve_B": 51,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 16,
+        "accented_edges": 30
+      }
+    },
+    {
+      "beatmap_id": 4047104,
+      "song_group": "362a596242f3a798178cffadb578407f543cf175cb78cdbd5dbacb9cf236a26a",
+      "counts": {
+        "timing_points": 36,
+        "kiai_points": 4,
+        "inherited_points": 22,
+        "objects": 110,
+        "new_combo": 20,
+        "additional_hitsound": 42,
+        "sliders": 61,
+        "repeat_sliders": 1,
+        "curve_P": 61,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 61,
+        "accented_edges": 117
+      }
+    },
+    {
+      "beatmap_id": 4725729,
+      "song_group": "754d7d64e198d321bff8b5bfef83bcb1a693b3dae6271a96962709df034d8638",
+      "counts": {
+        "timing_points": 44,
+        "kiai_points": 11,
+        "inherited_points": 43,
+        "objects": 735,
+        "new_combo": 197,
+        "additional_hitsound": 552,
+        "sliders": 151,
+        "repeat_sliders": 5,
+        "curve_P": 105,
+        "more_than_2_inner_anchors": 3,
+        "explicit_edge_sounds": 150,
+        "accented_edges": 207,
+        "curve_L": 41,
+        "curve_B": 5
+      }
+    },
+    {
+      "beatmap_id": 1038611,
+      "song_group": "f3927f93af9bdf49351a5fa25167fb4f649a56a9fe4c956657b81982d4454427",
+      "counts": {
+        "timing_points": 70,
+        "kiai_points": 10,
+        "inherited_points": 69,
+        "objects": 404,
+        "new_combo": 95,
+        "additional_hitsound": 118,
+        "sliders": 221,
+        "repeat_sliders": 39,
+        "curve_L": 93,
+        "more_than_2_inner_anchors": 10,
+        "explicit_edge_sounds": 221,
+        "accented_edges": 327,
+        "curve_P": 94,
+        "curve_B": 34
+      }
+    },
+    {
+      "beatmap_id": 85762,
+      "song_group": "e360923073ddd3ffade5a6e09f27b144d15c67fdccd2207bbc95ed4ed9e78755",
+      "counts": {
+        "timing_points": 13,
+        "kiai_points": 3,
+        "inherited_points": 12,
+        "objects": 456,
+        "new_combo": 74,
+        "additional_hitsound": 159,
+        "sliders": 207,
+        "repeat_sliders": 44,
+        "curve_B": 207,
+        "more_than_2_inner_anchors": 2,
+        "explicit_edge_sounds": 60,
+        "accented_edges": 75
+      }
+    },
+    {
+      "beatmap_id": 1524241,
+      "song_group": "5323236610a01453b1bbaf60cefb1f0eab4a943248e1ac7d83167b63e3cb6a63",
+      "counts": {
+        "timing_points": 30,
+        "kiai_points": 7,
+        "inherited_points": 29,
+        "objects": 501,
+        "new_combo": 125,
+        "additional_hitsound": 220,
+        "sliders": 213,
+        "repeat_sliders": 16,
+        "curve_P": 87,
+        "more_than_2_inner_anchors": 6,
+        "explicit_edge_sounds": 205,
+        "accented_edges": 254,
+        "curve_B": 15,
+        "curve_L": 111
+      }
+    },
+    {
+      "beatmap_id": 1937596,
+      "song_group": "fce95c5f525b09892279bc2ca9be5eacb3f1fce64ef47709cf6f5b84cc870ad4",
+      "counts": {
+        "timing_points": 165,
+        "kiai_points": 8,
+        "inherited_points": 164,
+        "objects": 828,
+        "new_combo": 265,
+        "additional_hitsound": 439,
+        "sliders": 333,
+        "repeat_sliders": 20,
+        "curve_B": 110,
+        "more_than_2_inner_anchors": 61,
+        "explicit_edge_sounds": 333,
+        "accented_edges": 538,
+        "curve_P": 98,
+        "curve_L": 125
+      }
+    },
+    {
+      "beatmap_id": 526282,
+      "song_group": "16cd2011d92ee94b6a346bc74f23e6a14ec121dab9344e6cc603e78e9836bf53",
+      "counts": {
+        "timing_points": 12,
+        "kiai_points": 2,
+        "inherited_points": 11,
+        "objects": 231,
+        "new_combo": 50,
+        "additional_hitsound": 35,
+        "sliders": 106,
+        "repeat_sliders": 0,
+        "curve_P": 44,
+        "more_than_2_inner_anchors": 4,
+        "explicit_edge_sounds": 97,
+        "accented_edges": 124,
+        "curve_L": 40,
+        "curve_B": 22
+      }
+    },
+    {
+      "beatmap_id": 62041,
+      "song_group": "5091cfdcd6628c192eb1e51a9e970c99eb1630473beca7aa8657187cb4171851",
+      "counts": {
+        "timing_points": 5,
+        "kiai_points": 2,
+        "inherited_points": 4,
+        "objects": 117,
+        "new_combo": 32,
+        "additional_hitsound": 36,
+        "sliders": 36,
+        "repeat_sliders": 23,
+        "curve_B": 35,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 31,
+        "accented_edges": 40,
+        "curve_L": 1
+      }
+    },
+    {
+      "beatmap_id": 279558,
+      "song_group": "ed478a39b02496e44f646511ccd0315b019a2829d3c9d2c945f0bd401196d1fb",
+      "counts": {
+        "timing_points": 78,
+        "kiai_points": 39,
+        "inherited_points": 77,
+        "objects": 117,
+        "new_combo": 34,
+        "additional_hitsound": 49,
+        "sliders": 48,
+        "repeat_sliders": 9,
+        "curve_P": 26,
+        "more_than_2_inner_anchors": 0,
+        "explicit_edge_sounds": 41,
+        "accented_edges": 39,
+        "curve_L": 21,
+        "curve_B": 1
+      }
+    }
+  ]
+}

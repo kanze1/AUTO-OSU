@@ -53,6 +53,8 @@ class Slider(HitObject):
     duration: int = 0                          # ms for the whole slider (all slides)
     end_x: int = 0
     end_y: int = 0
+    edge_sounds: List[int] = field(default_factory=list)
+    body_hitsound: int = 0  # continuous slide / whistle; independent of the clickable head
 
     @property
     def end_time(self) -> int:
@@ -64,10 +66,13 @@ class Slider(HitObject):
 
     def to_line(self) -> str:
         pts = "|".join(f"{px}:{py}" for px, py in self.points)
-        edge_sounds = "|".join(["0"] * (self.repeats + 1))
+        sounds = self.edge_sounds or [self.hitsound] + [0] * self.repeats
+        if len(sounds) != self.repeats + 1:
+            raise ValueError("Slider edge sound count must equal slides plus one")
+        edge_sounds = "|".join(map(str, sounds))
         edge_sets = "|".join(["0:0"] * (self.repeats + 1))
         return (
-            f"{self.x},{self.y},{self.time},{self._type(TYPE_SLIDER)},{self.hitsound},"
+            f"{self.x},{self.y},{self.time},{self._type(TYPE_SLIDER)},{self.body_hitsound},"
             f"{self.curve_type}|{pts},{self.repeats},{self.length:.4f},{edge_sounds},{edge_sets},0:0:0:0:"
         )
 
