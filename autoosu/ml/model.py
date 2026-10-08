@@ -111,7 +111,7 @@ class TickTransformer(nn.Module):
         x = h + self.token_emb(tokens) + self.dec_pos_emb(torch.arange(L, device=tokens.device)).unsqueeze(0)
         x = self.drop(x)
         if self.causal:
-            mask = nn.Transformer.generate_square_subsequent_mask(L, device=tokens.device)
+            mask = torch.ones((L, L), dtype=torch.bool, device=tokens.device).triu(1)
             x = self.blocks(x, mask=mask, src_key_padding_mask=pad_mask, is_causal=True)
         else:
             x = self.blocks(x, src_key_padding_mask=pad_mask)
@@ -328,12 +328,15 @@ def sample_masked(model: TickTransformer, audio: torch.Tensor, metrical: torch.T
 
 
 @torch.no_grad()
-def sample_attributes(model, audio, metrical, extra, cond, labels, *, generator=None, temperature=.9, chunk=1024):
+def sample_attributes(model, audio, metrical, extra, cond, labels, *, generator=None, temperature=.9, chunk=1024, prev0=BOS):
     """Predict object attributes after rhythm decoding; no attribute is supplied as input."""
     result = {name: np.full(len(labels), -100, dtype=np.int64) for name in model.attribute_heads}
     for start in range(0, len(labels), chunk):
         end = min(start + chunk, len(labels))
         tokens = torch.as_tensor(labels[start:end], dtype=torch.long, device=audio.device)[None]
+        if model.causal:
+            previous = prev0 if start == 0 else int(labels[start - 1])
+            tokens = ar_inputs(tokens, torch.tensor([previous], device=audio.device))
         with torch.autocast("cuda", dtype=torch.bfloat16, enabled=audio.device.type == "cuda"):
             h = model.encode_audio(audio[start:end][None], metrical[start:end][None], extra[start:end][None], cond[None])
             features = model.decode_features(h, tokens)[0]

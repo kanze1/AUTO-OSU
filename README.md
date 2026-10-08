@@ -272,6 +272,8 @@ powershell -ExecutionPolicy Bypass -File scripts/build_exe.ps1            # dist
 
 人工谱对照尚未显示更满意的体验，后续转向[音乐条件空间模型设计](docs/coordinate-v1-design.md)。音频条件、物件归属和折返出口原型已通过工程测试，但[两种子对照](docs/coordinate-object-audit.md)仍未改善验证误差；可学习运动规划、联合几何训练与可玩性验收仍待完成，默认坐标模型保持 v0。
 
+节奏与空间模型另有[双模型架构验证队列](docs/overnight-architectures.md)：每类四个候选、各两个种子，接入 W&B；实验结果通过验收后才考虑更换默认模型。
+
 以下按优先级和依赖顺序推进，不设时间承诺；每项以验收结果、PR 和 Release 为准。
 
 | 优先级 / 顺序 | 任务 | 完成标准 | 状态 |

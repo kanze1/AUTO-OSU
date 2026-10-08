@@ -28,6 +28,10 @@ The maintainer subsequently reported no increased satisfaction after the Haru hu
 
 States: Planned, In progress, Validated, Merged, Research gate, or Out of scope. Record missing external verification as a specific limitation, not a passing result.
 
+## Overnight architecture queue
+
+M2 and M3 share the maintainer-authorized [two-family architecture queue](overnight-architectures.md): four rhythm and four coordinate variants, two seeds each, online W&B. This is bounded selection; execution and results remain separate from acceptance and release.
+
 ## Release gates
 
 - Shared pipeline changes preserve standard generation, folder batches, and managed-runtime behavior.

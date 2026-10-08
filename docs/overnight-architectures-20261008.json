@@ -1,0 +1,17 @@
+{
+  "group": "overnight-20261008",
+  "wandb_project": "autoosu-architecture",
+  "wandb_entity": "kanzei",
+  "source_revision": "Recorded in deployed source-revision.txt; recipes also hash all ML source modules",
+  "seeds": [20261008, 20261009],
+  "rhythm": {
+    "variants": ["spectral_attributes", "attributes", "spectral_context4_attributes", "spectral_ar_attributes"],
+    "training": {"steps": 6000, "batch": 32, "seq": 512, "lr": 0.0003, "warmup": 400, "eval_every": 1000, "eval_maps": 128, "workers": 4}
+  },
+  "coordinate": {
+    "variants": ["audio-frozen", "object-frozen", "object-joint", "spacing-joint"],
+    "training": {"steps": 6000, "length": 256, "accumulate": 4, "lr": 0.0001, "base_lr": 0.00001, "plan_weight": 0.1, "eval_every": 1000}
+  },
+  "selection": "Compare seed-paired validation and generated outputs within each family. No test-set tuning, automatic full retraining, retries, release or default checkpoint replacement.",
+  "failure_policy": "Nonfinite objectives/gradients and process failures terminate that run. Independent remaining cases continue once; failed jobs are never restarted."
+}

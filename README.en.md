@@ -274,6 +274,8 @@ After 20,000 initial steps and a [continuation phase](docs/rhythm-convergence.md
 
 The human-map comparison has not shown a more satisfying experience, prompting a [music-conditioned spatial model design](docs/coordinate-v1-design.md). Audio conditioning, object ownership and repeat-aware exit prototypes passed engineering tests, but the [two-seed ablation](docs/coordinate-object-audit.md) still did not improve validation error. Learned motion planning, joint geometry training and playability acceptance remain unfinished; the default coordinate model is still v0.
 
+A [two-model architecture queue](docs/overnight-architectures.md) compares four candidates per family with two seeds each and W&B tracking. Default models change only after acceptance of the experimental results.
+
 Work follows priority and dependency order, without time commitments. Completion and release depend on validation, PRs, and Release notes.
 
 | Priority / order | Work | Completion criteria | Status |

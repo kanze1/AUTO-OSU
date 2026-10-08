@@ -17,6 +17,7 @@ from .coord.models import timestep_embedding
 from .dataset import FRAME_MS, gather_patches
 from .model import SpectralEncoder
 from .coord_objects import ObjectContextEncoder
+from .coord_plan import SpacingPlanner
 
 
 @dataclass(frozen=True)
@@ -26,6 +27,7 @@ class MusicContextConfig:
     song_layers: int = 2
     whole_song: bool = True
     object_context: bool = False
+    spacing_plan: bool = False
 
     def __post_init__(self):
         if self.heads < 1 or self.width < 4 or self.width % self.heads or self.width % 2 or self.song_layers < 1:
@@ -115,9 +117,21 @@ class AudioConditionedCoord(nn.Module):
         self.music = MusicContextEncoder(self.context_size, cfg)
         if cfg.object_context:
             self.objects = ObjectContextEncoder(cfg.width, cfg.heads)
+        if cfg.spacing_plan:
+            self.planner = SpacingPlanner(cfg.width, cfg.heads)
+
+    def encode_condition(self, c, music, objects):
+        context = self.music(c, **music)
+        parameters = None
+        if self.cfg.spacing_plan:
+            if objects is None:
+                raise ValueError('Spacing planner requires complete object layout')
+            plan, parameters = self.planner(context, objects)
+            context = context + plan
+        return context, parameters
 
     def condition(self, c, music, x, t, objects):
-        context = self.music(c, **music)
+        context, _ = self.encode_condition(c, music, objects)
         if self.cfg.object_context:
             if objects is None:
                 raise ValueError('Object-conditioned model requires complete object layout')
@@ -128,9 +142,13 @@ class AudioConditionedCoord(nn.Module):
         return self.base(x, t, self.condition(c, music, x, t, objects), y, attn_mask=attn_mask)
 
     def save_adapter(self, path: str | Path, base_sha256: str):
+        if any(p.requires_grad for p in self.base.context_embedder.original.parameters()) or any(
+                p.requires_grad for p in self.base.blocks.parameters()):
+            raise ValueError('A jointly trained model requires a full checkpoint, not an adapter')
         torch.save(dict(format="autoosu-coordinate-audio-prototype/2", config=asdict(self.cfg),
             base_sha256=base_sha256, music=self.music.state_dict(),
             objects=self.objects.state_dict() if self.cfg.object_context else None,
+            planner=self.planner.state_dict() if self.cfg.spacing_plan else None,
             projection=self.base.context_embedder.audio_projection.state_dict()), path)
 
     @classmethod
@@ -142,5 +160,7 @@ class AudioConditionedCoord(nn.Module):
         model.music.load_state_dict(record["music"])
         if model.cfg.object_context:
             model.objects.load_state_dict(record['objects'])
+        if model.cfg.spacing_plan:
+            model.planner.load_state_dict(record['planner'])
         model.base.context_embedder.audio_projection.load_state_dict(record["projection"])
         return model
