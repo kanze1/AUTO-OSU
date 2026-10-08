@@ -1,5 +1,7 @@
 # Rhythm v1 convergence continuation
 
+Current state: **stopped by the maintainer for actual map comparisons**, not converged. At 2026-10-08 19:03:50 Asia/Shanghai, an ownership-checked SIGTERM stopped torchrun PID 3556363 and its four ranks. All four GPU processes exited. Last logged cumulative step: 23,900; last full saved state: 23,000. The original 20,000-step phase had completed successfully at 18:47, followed immediately by continuation. The supervisor's nonzero termination was annotated `stopped_by_user`, retaining the original exit diagnostic and a separate `user-stop.json`. No restart is scheduled.
+
 The maintainer requested training to a validation plateau instead of stopping at 20,000 updates on 2026-10-08. The original four-GPU run remains intact. After its successful completion, `scripts/continue_architecture_training.py` hands GPUs 0–3 to `autoosu.ml.train_convergence`, initialized from its final checkpoint. No failed job is automatically restarted.
 
 ## Continuation boundary

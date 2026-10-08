@@ -17,7 +17,9 @@ Tasks follow priority and dependencies, without time estimates. This file record
 | M1 | — | Learned skill-label controls | Q1, S1 | Out of scope | Maintainer discontinued this direction after the [failed pilot](m1-skill-pilot.md); insufficient validated supervision for reliable control. Raw hitsound / combo / slider attributes remain learnable and are tracked in M2 |
 | M2 | P2 | Architecture cases, source-attribute supervision and retrained preview | Q1; frozen song splits | In progress | [Issue #10](https://github.com/kanze1/AUTO-OSU/issues/10); [scope and execution record](model-training-plan.md); [four completed architecture cases](rhythm-v1-cases-20261008.json), 195 tests and four actual excerpt exports. Selected spectral_attributes; four-GPU from-scratch training started. Final training completion, independent acceptance and release remain unfinished |
 
-M2 execution update: a [validation-plateau continuation](rhythm-convergence.md) is queued after the original 20,000-step run. The four-rank continuation smoke passed; convergence and final acceptance have not yet been reached.
+M2 execution update: the original 20,000-step run completed and [continuation](rhythm-convergence.md) started successfully. The maintainer stopped it at approximately 23,900 cumulative steps for actual map auditions; latest full state is 23,000, and convergence is not claimed. Best checkpoints remain available; final acceptance and release are unfinished.
+
+The [12-map full-song A/B/C audition](rhythm-v1-audition.md) is generated and independently parsed. It shows per-song improvements and regressions, including Mesheer long runs falling from 33 to 4 circles. Human review remains pending; these outputs do not establish a release-quality improvement.
 
 States: Planned, In progress, Validated, Merged, Research gate, or Out of scope. Record missing external verification as a specific limitation, not a passing result.
 

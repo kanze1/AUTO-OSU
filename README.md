@@ -268,7 +268,7 @@ powershell -ExecutionPolicy Bypass -File scripts/build_exe.ps1            # dist
 
 ## 开发排期
 
-模型重训将按[验证集收敛规则](docs/rhythm-convergence.md)继续：20,000 步之后进入续训阶段，平台期降低学习率并保留最佳权重。当前仍为实验，新权重尚未发布。
+模型完成 20,000 步并进入[收敛续训阶段](docs/rhythm-convergence.md)后，维护者在累计约 23,900 步要求停止，转为新旧权重实际谱面对照；未宣称达到收敛。当前仍为实验，新权重尚未发布。
 
 以下按优先级和依赖顺序推进，不设时间承诺；每项以验收结果、PR 和 Release 为准。
 

@@ -270,7 +270,7 @@ and put them into the `models/` folder next to the exe (or `~/.autoosu/models/`)
 
 ## Development schedule
 
-Model retraining will continue under a [validation-plateau policy](docs/rhythm-convergence.md): after 20,000 steps, a continuation phase reduces the learning rate on plateaus and retains the best checkpoints. This remains experimental; new weights have not been released.
+After 20,000 initial steps and a [continuation phase](docs/rhythm-convergence.md), the maintainer stopped training at approximately 23,900 cumulative steps to compare generated maps from old and new checkpoints; convergence is not claimed. This remains experimental; new weights have not been released.
 
 Work follows priority and dependency order, without time commitments. Completion and release depend on validation, PRs, and Release notes.
 

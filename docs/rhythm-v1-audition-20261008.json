@@ -1,0 +1,757 @@
+{
+  "schema": "autoosu.rhythm-v1-audition/1",
+  "date": "2026-10-08",
+  "scope": "Development full-song audition, not independent test acceptance or osu! client playtesting",
+  "recipe": {
+    "models": {
+      "A-v0": {
+        "path": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\models\\rhythm_v0.pt",
+        "sha256": "e01267c647e103a36801109e3c34f508dd2d04d228b07b4a299cddbd55dd52f6",
+        "step": 40000
+      },
+      "B-v1-best": {
+        "path": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\rhythm-v1-20261008\\rhythm-v1-best-10000.pt",
+        "sha256": "a861be0c7d87b16351fe2a6a6083658e9e541925867f0186284466c75531d076",
+        "step": 10000
+      },
+      "C-v1-continued": {
+        "path": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\rhythm-v1-20261008\\rhythm-v1-continuation-best.pt",
+        "sha256": "734d1bc6c80c1b6dd0adaaf3f62050bd5dd338612236fe4df6f776aead4eef7b",
+        "step": 21000
+      }
+    },
+    "coord_sha256": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040",
+    "settings": {
+      "seed": 240924,
+      "star_rating": 6.5,
+      "decode_steps": 12,
+      "coord_steps": 100,
+      "temperature": 0.9,
+      "cfg_scale": 1.0,
+      "device": "cuda"
+    },
+    "controls": {
+      "highlight_mode": "off"
+    },
+    "timing": "reference; no reference rhythm supplied",
+    "groups": [
+      "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+      "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+      "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+      "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45"
+    ],
+    "corpus_sha256": "4475e3b7fa0c93f7706a890e3a203cc8c3f38a41deb5d6eb581b0c71217decee",
+    "source_sha256": {
+      "autoosu\\audio.py": "d7eb49cf92623edf454545ab1db423580dc1c49f8c4e4f07eef349f97fc2091a",
+      "autoosu\\audio_io.py": "8d88eead00a98519b5dadaaddc82b5deb8d369abe2f9093bd9cf644662dd64de",
+      "autoosu\\batch.py": "80ee92c954f7395e12e6bf6d47b7f334b7492740d84f58812124e88360c46769",
+      "autoosu\\beatmap.py": "ec43cca023c08d2175413bee546b7f8626f43a73738ccde6aae141f749d9c6e5",
+      "autoosu\\cli.py": "d16541eca13ccac641f8a70fd89fe9f17aed403829e3052da92241661fb91c2f",
+      "autoosu\\controls.py": "2c39eef599235728ee5eea5c6ebdd7f5f228fa83d7194934d5a20a3ff5acc70f",
+      "autoosu\\control_gui.py": "fad9d370ab840302dcd47f58ec6948155845c627a19c930ba8f8cc7c278b7197",
+      "autoosu\\debug.py": "e74f58a5d5b9bdec77d02630efb797cbf8425f9cabf63ee2dbb94271f09ca398",
+      "autoosu\\devices.py": "f1923fbafde4a15531aaa81454cbacc6ae93c785d03ad5b8cb9f3d572a30b71d",
+      "autoosu\\difficulty.py": "59ebc25f9887673b1004ff20458392ec17ae95cf10f93437981de0d37f4ec0c9",
+      "autoosu\\generate.py": "21c1e6178392f9f083dba276d4124f8ffdc198ec622c9b1d68a8651537da20be",
+      "autoosu\\gui.py": "536c75f035fef902add73baabd5d5fb710ef95e3420e31a8c9540cb34eab83fd",
+      "autoosu\\gui_layout.py": "27b980d8fc02f6e6d19edd12941f7bbc9936846a8a4986d29851f82178641d1a",
+      "autoosu\\i18n.py": "916357734fc9599ba32322dc2a4669138365b6c6d64aadbab824867bebb4190a",
+      "autoosu\\metrics.py": "3610d7c135e2336176249a070af039ee311eab0b96d978aab533fd3ea1423a50",
+      "autoosu\\models.py": "cdbc84c2c611935ceb804f1117bc82384e12a12a12b8382c4404f2db58823bbb",
+      "autoosu\\package.py": "1aa96c74c64dee082c660714df9f009244859c4f2ec5a45f71819d19de1fcf19",
+      "autoosu\\placement.py": "1b2bf038368e4cbc7ad76136c473bf811fd3cb14827e0934120bfc6fa381399a",
+      "autoosu\\preferences.py": "bc5aa297c45130d106e64cbc1931fe40ca3c9be2e3692ab40716f4c19ac672ae",
+      "autoosu\\preview.py": "ffab46c1db9409183d2732383463dd5fc2e8211c365b3a5c967cd58d05ad2314",
+      "autoosu\\provenance.py": "8bff71f4a3989c38c67bdda89b73a44e3f7a2e877228146ffb8e18e31d1539d7",
+      "autoosu\\rhythm.py": "7ea47d88f830380c4e03f42cc82bbb07b4a23dc1f9547236288feb1962f017d7",
+      "autoosu\\runtime.py": "12e0d6992a1e8553c5c62192a887f11530e7430e2fb152699b9498d20e849f2b",
+      "autoosu\\sliderpath.py": "01ea35bfc9d3cdb6d7f469a609cee9481561442edff3e87ee29e7f523ffb5bef",
+      "autoosu\\source_check.py": "81b64208db0ca2fd0ddd90a16c4e5957c7e3a6958f7b5d2818db01ebcd860e7c",
+      "autoosu\\source_gui.py": "0ee227f17f67794f64f9586734a2ea6bbc6770cf739b42f65a840c4231bc3a5f",
+      "autoosu\\timing.py": "f6a4f0abd0ddda849527cd4bf081239ff00614b9f4f0c51181f6d65c52a04e26",
+      "autoosu\\watermark.py": "dc2b2be578c42a6c9e028c84f110229d5cf9b034ccb9141be66d07270f618ce4",
+      "autoosu\\worker.py": "d1264bc024b23621a6584a4e1a15a8dda8e70ca1f5e12ae3a7a78cac320da53c",
+      "autoosu\\__init__.py": "81d4659299ab71569c8b00156f464f7a03ed86eeb77e06b3f5c6ad1926618b47",
+      "autoosu\\__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "autoosu\\ml\\attributes.py": "e13478e6ffa80028775beb2f05d7e6323846380f71467a76c15c5646ffc877bd",
+      "autoosu\\ml\\convergence.py": "a3479d73c16b7a9b8482295e35f40cecf210de1957846179a280212218f51083",
+      "autoosu\\ml\\coord_infer.py": "adf2b1ac4d234bd4be6d8b06874eefdc62ac62dc0ce6d2d3424d498e09f58e0b",
+      "autoosu\\ml\\dataset.py": "abbabc746e862ddf051f144764dc191e7f4d630d6f91d4a2ea94d5a7127a68cd",
+      "autoosu\\ml\\model.py": "ee1d40d9285bfdf9feb2e859fc12fe56950249f4f491088b0c58711a1edb6402",
+      "autoosu\\ml\\osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+      "autoosu\\ml\\prepare_data.py": "e4ba7f80cfe446bf73d735c447f8139a49b862adec7e759348191bb7745af3b1",
+      "autoosu\\ml\\sample.py": "4c0f88cdadf6fad4fd03e83460520814642cd8d3103b46d17b6e8281c4e1305d",
+      "autoosu\\ml\\skills.py": "c7c3b283e7468a9320d7c908574aa87d8b29d4e9c0b87e4734f87adaaec1f6c2",
+      "autoosu\\ml\\train.py": "a499e6b824a67c88a991a3f701d9820da12fc6498b2910744f7f9a3f47dd9065",
+      "autoosu\\ml\\train_architecture.py": "a67fc6571c44f7b6bdb1213e3a8cf95abcb72027976e03805907dc5ef21cd7da",
+      "autoosu\\ml\\train_convergence.py": "0eb0f5eab85a8923857bf0262d7852699e18af319587ea2bdf7d47f6137c584a",
+      "autoosu\\ml\\train_skills.py": "a0587eb8eaa284a333ef41aad49c4db863d5c96a498174914edfed2e75b5c6eb",
+      "autoosu\\ml\\__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946",
+      "autoosu\\ml\\coord\\models.py": "441612e0e4c1aa6a544338b81ffb4bc655a99882dd83e1ec6ff28ea4a5d304ba",
+      "autoosu\\ml\\coord\\positional_embedding.py": "a367927c8fce550ca5033ff2dac183f62df549bb36802e7698842c4a88b58ec3",
+      "autoosu\\ml\\coord\\__init__.py": "0f3dce649301bb382dc67674ff1c6f516a29fd54495154a18e7fdef4dc7ee535",
+      "autoosu\\ml\\coord\\diffusion\\diffusion_utils.py": "a1190b787dda95a8fa4b0e6a78bb21f6bd6acb7ce120754ec22c8125473621d9",
+      "autoosu\\ml\\coord\\diffusion\\gaussian_diffusion.py": "4ed3b9c12c80bcae086b9bb91845b9586a3f91abc99bf73f1fddcd6566f84ce9",
+      "autoosu\\ml\\coord\\diffusion\\respace.py": "d2e956b964ac49e2330ae9b502b1a78e9a4d0ab768615c402058f8cb54ce3b6f",
+      "autoosu\\ml\\coord\\diffusion\\__init__.py": "510e36fc348598cbee2ea1e3d0b5e170b1737cd22034edd3463a5787141b6e20"
+    },
+    "script_sha256": "d449424b5449a91b1821e967a0be8a1d18d64b3d8020750c443d92584ebc605f",
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "slider": "0.8.4",
+      "rosu-pp-py": "4.0.2"
+    },
+    "scope": "Development full-song audition, not independent test acceptance or osu! client playtesting"
+  },
+  "package_sha256": "b197b3e7e1b4c88cf9cf1626172bcf76175e50f429d41620fa8d3e3bcda73080",
+  "objects": 5187,
+  "sliders": 1679,
+  "parser": "slider",
+  "curve_samples": 1001,
+  "client_playtest": false,
+  "rows": [
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "artist": "KOTOKO",
+      "bpm": 164.00000000000017,
+      "mode": "A-v0",
+      "stars": 5.639612807947204,
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "attributes": {
+        "new_combos": 66,
+        "hitsounds": {
+          "0": 260,
+          "8": 189,
+          "2": 3,
+          "4": 10,
+          "12": 6
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 0,
+        "curve_types": {
+          "L": 13,
+          "B": 12,
+          "P": 2
+        }
+      },
+      "diagnostics": {
+        "objects": 468,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 211.11608181282637,
+        "spacing_p95_px": 360.36904124165034
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 468,
+      "elapsed_s": 24.81230100002722,
+      "warnings": [],
+      "file": "maps/01-A-v0-5.64star.osz",
+      "sha256": "c1cfc678d24059f8aa9393fabbcc0362612fcb598aaabe4044eeaca3b35c3c70",
+      "objects": 468,
+      "sliders": 27
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "artist": "KOTOKO",
+      "bpm": 164.00000000000017,
+      "mode": "B-v1-best",
+      "stars": 5.151382997485496,
+      "runs": {
+        "short_run_objects": 15,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "attributes": {
+        "new_combos": 94,
+        "hitsounds": {
+          "2": 153,
+          "0": 117,
+          "8": 51,
+          "4": 11,
+          "10": 50,
+          "6": 14,
+          "12": 1,
+          "14": 2
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 14,
+        "curve_types": {
+          "B": 6,
+          "P": 19,
+          "L": 23
+        }
+      },
+      "diagnostics": {
+        "objects": 399,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 1,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 175.2046638414917,
+        "spacing_p95_px": 299.86177927231324
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 399,
+      "elapsed_s": 16.725447100005113,
+      "warnings": [],
+      "file": "maps/01-B-v1-best-5.15star.osz",
+      "sha256": "ce45b16e4c9d9d6d5e0f39df4adc30056ac1c2663e7e4bf13537378118085f65",
+      "objects": 399,
+      "sliders": 48
+    },
+    {
+      "song": 1,
+      "title": "Joushiki! Butler Koushinkyoku (Cut Ver.)",
+      "artist": "KOTOKO",
+      "bpm": 164.00000000000017,
+      "mode": "C-v1-continued",
+      "stars": 4.998705441624578,
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "attributes": {
+        "new_combos": 104,
+        "hitsounds": {
+          "2": 77,
+          "0": 230,
+          "8": 62,
+          "10": 9,
+          "6": 5,
+          "14": 1,
+          "4": 9
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 16,
+        "curve_types": {
+          "B": 7,
+          "P": 15,
+          "L": 18
+        }
+      },
+      "diagnostics": {
+        "objects": 393,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 1,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 186.9625052384231,
+        "spacing_p95_px": 270.40867362724526
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 393,
+      "elapsed_s": 18.551974000001792,
+      "warnings": [],
+      "file": "maps/01-C-v1-continued-5.00star.osz",
+      "sha256": "f17e03c20bfd410f52e772e58bdcec4a3f2b46123d34b6cf27d829d6703f647e",
+      "objects": 393,
+      "sliders": 40
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "artist": "Tierra Whack",
+      "bpm": 139.99999999999986,
+      "mode": "A-v0",
+      "stars": 4.416302008220585,
+      "runs": {
+        "short_run_objects": 6,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "attributes": {
+        "new_combos": 32,
+        "hitsounds": {
+          "0": 182,
+          "8": 38,
+          "2": 16,
+          "4": 5
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 0,
+        "curve_types": {
+          "B": 84,
+          "L": 120
+        }
+      },
+      "diagnostics": {
+        "objects": 241,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 103.8387608854116,
+        "spacing_p95_px": 184.4603166445996
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 241,
+      "elapsed_s": 23.123087399988435,
+      "warnings": [],
+      "file": "maps/02-A-v0-4.42star.osz",
+      "sha256": "e6fddc131920f6f8280549ced71cae4f525dc34c234a7b89a00118d60dcd4ba4",
+      "objects": 241,
+      "sliders": 204
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "artist": "Tierra Whack",
+      "bpm": 139.99999999999986,
+      "mode": "B-v1-best",
+      "stars": 4.643491519164176,
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "attributes": {
+        "new_combos": 104,
+        "hitsounds": {
+          "0": 44,
+          "2": 128,
+          "6": 3,
+          "10": 21,
+          "8": 15,
+          "4": 16
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 7,
+        "curve_types": {
+          "B": 31,
+          "P": 109,
+          "L": 60
+        }
+      },
+      "diagnostics": {
+        "objects": 227,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 5.5,
+        "spacing_p50_px": 180.49644476699632,
+        "spacing_p95_px": 266.76310997366136
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 227,
+      "elapsed_s": 25.01173079997534,
+      "warnings": [],
+      "file": "maps/02-B-v1-best-4.64star.osz",
+      "sha256": "65a573ebf29b853c8703cac1fe83e528348ba668c7065083452c93adb7a7ed48",
+      "objects": 227,
+      "sliders": 200
+    },
+    {
+      "song": 2,
+      "title": "Fruit Salad",
+      "artist": "Tierra Whack",
+      "bpm": 139.99999999999986,
+      "mode": "C-v1-continued",
+      "stars": 3.9227068236731917,
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 2
+      },
+      "attributes": {
+        "new_combos": 64,
+        "hitsounds": {
+          "0": 97,
+          "2": 50,
+          "6": 4,
+          "10": 5,
+          "8": 28,
+          "4": 16,
+          "12": 1,
+          "14": 2
+        },
+        "repeat_sliders": 4,
+        "nonzero_tail_sounds": 4,
+        "curve_types": {
+          "L": 25,
+          "P": 19,
+          "B": 5
+        }
+      },
+      "diagnostics": {
+        "objects": 203,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 2,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 128.75738056789726,
+        "spacing_p95_px": 239.67795303295023
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 203,
+      "elapsed_s": 23.24326529999962,
+      "warnings": [],
+      "file": "maps/02-C-v1-continued-3.92star.osz",
+      "sha256": "a8cf23a834edf8d7fcbefe3579cfb5cd55aaf5c1e43b5381bf6f07a5e5fcef54",
+      "objects": 203,
+      "sliders": 49
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "artist": "Duca",
+      "bpm": 130.99999999999986,
+      "mode": "A-v0",
+      "stars": 5.709676047883182,
+      "runs": {
+        "short_run_objects": 100,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 5
+      },
+      "attributes": {
+        "new_combos": 62,
+        "hitsounds": {
+          "0": 174,
+          "2": 154,
+          "8": 143,
+          "4": 12,
+          "12": 7
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 0,
+        "curve_types": {
+          "B": 117,
+          "L": 160,
+          "P": 1
+        }
+      },
+      "diagnostics": {
+        "objects": 490,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 5,
+        "peak_nps_2s": 6.0,
+        "spacing_p50_px": 115.37545916357948,
+        "spacing_p95_px": 216.43111724812286
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 490,
+      "elapsed_s": 9.868138700025156,
+      "warnings": [],
+      "file": "maps/03-A-v0-5.71star.osz",
+      "sha256": "f550502dd34e7e0ad5fdfb07f89038a24b86d86a0aeb2af92f1eb454f7ca08d6",
+      "objects": 490,
+      "sliders": 278
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "artist": "Duca",
+      "bpm": 130.99999999999986,
+      "mode": "B-v1-best",
+      "stars": 5.9487075248581345,
+      "runs": {
+        "short_run_objects": 35,
+        "long_run_objects": 30,
+        "sustained_run_objects": 0,
+        "longest_run": 12
+      },
+      "attributes": {
+        "new_combos": 150,
+        "hitsounds": {
+          "2": 276,
+          "0": 97,
+          "4": 23,
+          "8": 43,
+          "6": 23,
+          "10": 45,
+          "12": 2,
+          "14": 7
+        },
+        "repeat_sliders": 2,
+        "nonzero_tail_sounds": 27,
+        "curve_types": {
+          "B": 28,
+          "P": 201,
+          "L": 67
+        }
+      },
+      "diagnostics": {
+        "objects": 516,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 12,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 139.27631139564227,
+        "spacing_p95_px": 232.6794500639527
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 516,
+      "elapsed_s": 10.269021199987037,
+      "warnings": [],
+      "file": "maps/03-B-v1-best-5.95star.osz",
+      "sha256": "6d5cc9acee973866abb2146bd198ccfbe555ddc3246d36c30297371191bf5a8a",
+      "objects": 516,
+      "sliders": 296
+    },
+    {
+      "song": 3,
+      "title": "eyes to eyes",
+      "artist": "Duca",
+      "bpm": 130.99999999999986,
+      "mode": "C-v1-continued",
+      "stars": 6.3433069793027155,
+      "runs": {
+        "short_run_objects": 79,
+        "long_run_objects": 57,
+        "sustained_run_objects": 0,
+        "longest_run": 14
+      },
+      "attributes": {
+        "new_combos": 144,
+        "hitsounds": {
+          "2": 302,
+          "0": 105,
+          "14": 8,
+          "10": 58,
+          "8": 36,
+          "6": 17,
+          "4": 8,
+          "12": 2
+        },
+        "repeat_sliders": 1,
+        "nonzero_tail_sounds": 40,
+        "curve_types": {
+          "B": 27,
+          "P": 163,
+          "L": 50
+        }
+      },
+      "diagnostics": {
+        "objects": 536,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 14,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 122.17378841210295,
+        "spacing_p95_px": 248.93485572109674
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 536,
+      "elapsed_s": 9.937289099994814,
+      "warnings": [],
+      "file": "maps/03-C-v1-continued-6.34star.osz",
+      "sha256": "17c1da1218316b822ccdfa626f7f804ad0196eef8739da2f9dfa7e7f75ca4f09",
+      "objects": 536,
+      "sliders": 240
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "artist": "MisoilePunch",
+      "bpm": 222.00000000000026,
+      "mode": "A-v0",
+      "stars": 6.72080576595536,
+      "runs": {
+        "short_run_objects": 20,
+        "long_run_objects": 241,
+        "sustained_run_objects": 83,
+        "longest_run": 33
+      },
+      "attributes": {
+        "new_combos": 97,
+        "hitsounds": {
+          "8": 105,
+          "2": 358,
+          "0": 143,
+          "4": 36,
+          "12": 3
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 0,
+        "curve_types": {
+          "L": 66,
+          "B": 52,
+          "P": 10
+        }
+      },
+      "diagnostics": {
+        "objects": 645,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 33,
+        "peak_nps_2s": 15.0,
+        "spacing_p50_px": 70.09279563550022,
+        "spacing_p95_px": 198.85543707324908
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 645,
+      "elapsed_s": 11.507461500004865,
+      "warnings": [],
+      "file": "maps/04-A-v0-6.72star.osz",
+      "sha256": "cdfb4342b7b386d744df4f217a30bdd51fba3c3b25a16c9e3407e1fa3a5bd1d5",
+      "objects": 645,
+      "sliders": 128
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "artist": "MisoilePunch",
+      "bpm": 222.00000000000026,
+      "mode": "B-v1-best",
+      "stars": 6.382945328312446,
+      "runs": {
+        "short_run_objects": 4,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 4
+      },
+      "attributes": {
+        "new_combos": 150,
+        "hitsounds": {
+          "6": 33,
+          "0": 128,
+          "2": 168,
+          "4": 46,
+          "10": 72,
+          "8": 97,
+          "14": 8,
+          "12": 6
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 36,
+        "curve_types": {
+          "P": 74,
+          "B": 12,
+          "L": 27
+        }
+      },
+      "diagnostics": {
+        "objects": 558,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 151.3373711340315,
+        "spacing_p95_px": 251.73745908433364
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 558,
+      "elapsed_s": 9.134289700014051,
+      "warnings": [],
+      "file": "maps/04-B-v1-best-6.38star.osz",
+      "sha256": "7b21e5329fe53b5936d60c0bb9cc8708992518765189e311acb8fc18402c3275",
+      "objects": 558,
+      "sliders": 113
+    },
+    {
+      "song": 4,
+      "title": "Mesheer",
+      "artist": "MisoilePunch",
+      "bpm": 222.00000000000026,
+      "mode": "C-v1-continued",
+      "stars": 6.1297834733319725,
+      "runs": {
+        "short_run_objects": 4,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 4
+      },
+      "attributes": {
+        "new_combos": 134,
+        "hitsounds": {
+          "6": 15,
+          "0": 204,
+          "2": 76,
+          "4": 57,
+          "8": 108,
+          "10": 38,
+          "14": 7,
+          "12": 6
+        },
+        "repeat_sliders": 0,
+        "nonzero_tail_sounds": 3,
+        "curve_types": {
+          "L": 20,
+          "B": 9,
+          "P": 27
+        }
+      },
+      "diagnostics": {
+        "objects": 511,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 8.5,
+        "spacing_p50_px": 118.51160280748886,
+        "spacing_p95_px": 235.59709747651857
+      },
+      "curves_outside_or_nonfinite_ms": [],
+      "independent_parser_objects": 511,
+      "elapsed_s": 8.130362500000047,
+      "warnings": [],
+      "file": "maps/04-C-v1-continued-6.13star.osz",
+      "sha256": "79f5c5459baa55697b28e28e469254efb213fae3abb5e4354c77a8e68e7ea905",
+      "objects": 511,
+      "sliders": 56
+    }
+  ]
+}
