@@ -16,6 +16,7 @@ from torch import nn
 from .coord.models import timestep_embedding
 from .dataset import FRAME_MS, gather_patches
 from .model import SpectralEncoder
+from .coord_objects import ObjectContextEncoder
 
 
 @dataclass(frozen=True)
@@ -24,6 +25,7 @@ class MusicContextConfig:
     heads: int = 4
     song_layers: int = 2
     whole_song: bool = True
+    object_context: bool = False
 
     def __post_init__(self):
         if self.heads < 1 or self.width < 4 or self.width % self.heads or self.width % 2 or self.song_layers < 1:
@@ -111,24 +113,34 @@ class AudioConditionedCoord(nn.Module):
         base.context_embedder = ContextResidual(base.context_embedder, self.context_size, cfg.width, hidden_size)
         self.base = base
         self.music = MusicContextEncoder(self.context_size, cfg)
+        if cfg.object_context:
+            self.objects = ObjectContextEncoder(cfg.width, cfg.heads)
 
-    def condition(self, c, music):
-        return torch.cat((c, self.music(c, **music).transpose(1, 2)), dim=1)
+    def condition(self, c, music, x, t, objects):
+        context = self.music(c, **music)
+        if self.cfg.object_context:
+            if objects is None:
+                raise ValueError('Object-conditioned model requires complete object layout')
+            context = context + self.objects(x, t, context, objects)
+        return torch.cat((c, context.transpose(1, 2)), dim=1)
 
-    def forward(self, x, t, c, y, music, attn_mask=None):
-        return self.base(x, t, self.condition(c, music), y, attn_mask=attn_mask)
+    def forward(self, x, t, c, y, music, attn_mask=None, objects=None):
+        return self.base(x, t, self.condition(c, music, x, t, objects), y, attn_mask=attn_mask)
 
     def save_adapter(self, path: str | Path, base_sha256: str):
-        torch.save(dict(format="autoosu-coordinate-audio-prototype/1", config=asdict(self.cfg),
+        torch.save(dict(format="autoosu-coordinate-audio-prototype/2", config=asdict(self.cfg),
             base_sha256=base_sha256, music=self.music.state_dict(),
+            objects=self.objects.state_dict() if self.cfg.object_context else None,
             projection=self.base.context_embedder.audio_projection.state_dict()), path)
 
     @classmethod
     def load_adapter(cls, base, path, base_sha256):
         record = torch.load(path, map_location="cpu", weights_only=True)
-        if record["format"] != "autoosu-coordinate-audio-prototype/1" or record["base_sha256"] != base_sha256:
+        if record["format"] not in ("autoosu-coordinate-audio-prototype/1", "autoosu-coordinate-audio-prototype/2") or record["base_sha256"] != base_sha256:
             raise ValueError("Adapter format or base checkpoint identity mismatch")
         model = cls(base, MusicContextConfig(**record["config"]))
         model.music.load_state_dict(record["music"])
+        if model.cfg.object_context:
+            model.objects.load_state_dict(record['objects'])
         model.base.context_embedder.audio_projection.load_state_dict(record["projection"])
         return model

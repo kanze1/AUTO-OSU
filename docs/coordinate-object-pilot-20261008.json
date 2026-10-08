@@ -1,0 +1,5453 @@
+{
+  "date": "2026-10-08",
+  "scope": "Development-only object representation ablation. Six train songs, two validation songs; base pretraining overlap unknown. No quality or generalization claim.",
+  "recipe": {
+    "sources": [
+      {
+        "name": "1b03caaee2c6",
+        "group": "1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505",
+        "partition": "development",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505.osu",
+        "audio_sha256": "f7471b6a48aedbc43a9b504cf783aab6cffa972b69555231a6ddaa85fe229b51",
+        "map_sha256": "a836f1ecb3140d3d72fb45fe915b288502133d2f1f4489681408319c0da967d4"
+      },
+      {
+        "name": "1a31ebe776cd",
+        "group": "1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb",
+        "partition": "development",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\1a31ebe776cde765e8a2d07653125e1d26213f74cec7344bf301ffe6976f5beb.osu",
+        "audio_sha256": "400a2032008020a1c3c2b25e3c1d17351a9222b0a2815fa475f9f0dcb559c616",
+        "map_sha256": "45df969618cfb22a6272e5ad36ea5ce1feefefa849842e423b97fcafd98b1db4"
+      },
+      {
+        "name": "193214fecc87",
+        "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+        "partition": "development",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2.osu",
+        "audio_sha256": "606000f5d88f250686b46282c6dcfafa01827b8b70dfea4e80b590a310f8a3b7",
+        "map_sha256": "be8d580a79b54fa60c1e847d328bc9723c981c86a7ecf78b452cdafdb1a871db"
+      },
+      {
+        "name": "10483e0c557b",
+        "group": "10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9",
+        "partition": "development",
+        "split": "validation",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9.osu",
+        "audio_sha256": "0f0c5d5e5101a7755c3fdcd8c7c0364df3fce9be2639c0bfb7a6b5afcb38651e",
+        "map_sha256": "cd9abd8d19e20f17011ebabb7178b9d16f9821f2e103285ea65fc5a042d781f7"
+      },
+      {
+        "name": "02f892e29b08",
+        "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+        "partition": "development",
+        "split": "validation",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45.osu",
+        "audio_sha256": "44e3824b2e98537948b0d990afb4067a90aa78ada3ab3cc3908c37bc9a48c191",
+        "map_sha256": "0036b03aaff89335faff879a061f51edd8d79bed4c484d28d3a2a82332596ca6"
+      },
+      {
+        "name": "0dc236517cea",
+        "group": "0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc",
+        "partition": "development",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\0dc236517ceabe61af3951f1200c207f23d1a2bae73cb0622d06f4c0bdb000cc.osu",
+        "audio_sha256": "9ea3a516957dbb37f005cd8168cbd74869c13819bd2295ff5b588b8d14229fbb",
+        "map_sha256": "a2c9cb4c7dc3e035507d63e36bc4bed8615c398c9e727ab938afc799414f1edd"
+      },
+      {
+        "name": "0d3b640df910",
+        "group": "0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926",
+        "partition": "development",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\0d3b640df91022fdfee2524ef69940b7af3fa3170c81791cc87a830caa3e4926.osu",
+        "audio_sha256": "13d3f00790582cd2abf57e1ac6f045184e0d44f35fd4f5ae6ce925f4c865b4ec",
+        "map_sha256": "b9153fa04f383cb53f72df6b82426c6dabc792b2d1797477c7b8785149dc0c86"
+      },
+      {
+        "name": "05498db5cb5c",
+        "group": "05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c",
+        "partition": "development",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\05498db5cb5c78a24d44bfb43f7b33a33b03a85b3771dbff6b8e80513a30146c.osu",
+        "audio_sha256": "dfacacf1fd4fa37dcd2ba8a0805fc961bb0cc861c9ac8fe80ccad4ac4dbf99e3",
+        "map_sha256": "7d792324679da812a5685e79d93ec011657012b04363f80a77e5d027c18a741e"
+      }
+    ],
+    "base_sha256": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040",
+    "steps": 256,
+    "length": 128,
+    "learning_rate": 0.0002,
+    "seeds": [
+      20261008,
+      20261009
+    ],
+    "variants": [
+      "local-and-song",
+      "object-aware"
+    ],
+    "milestones": [
+      64
+    ],
+    "script_sha256": "eb4e173bbce575d5cbdfb28cd9e8df999875e704e730e840feef2a9dd13d73e7",
+    "source_sha256": {
+      "autoosu\\ml\\coord_context.py": "396d7c1d0add0fdcac24d52e5e5e1bf1d41eab22bf11cad6d7807589baed5e3a",
+      "autoosu\\ml\\coord_objects.py": "18b62091b80b188780b58790fbd895363d289c246b22c564c0e21894ac5f9e81",
+      "coord\\osu_diffusion\\utils\\data_loading.py": "bdaa565c7052fa054229606826e6a3f88705423692c13f37a83f9e030c5ee56a"
+    },
+    "scope": "Development architecture probe only; base pretraining overlap unknown. No release-quality claim."
+  },
+  "crops": {
+    "train": [
+      {
+        "song": "1b03caaee2c6",
+        "start": 0,
+        "tokens": 128,
+        "objects": 56
+      },
+      {
+        "song": "1b03caaee2c6",
+        "start": 203,
+        "tokens": 125,
+        "objects": 61
+      },
+      {
+        "song": "1b03caaee2c6",
+        "start": 400,
+        "tokens": 128,
+        "objects": 69
+      },
+      {
+        "song": "1b03caaee2c6",
+        "start": 573,
+        "tokens": 128,
+        "objects": 61
+      },
+      {
+        "song": "1a31ebe776cd",
+        "start": 0,
+        "tokens": 125,
+        "objects": 67
+      },
+      {
+        "song": "1a31ebe776cd",
+        "start": 265,
+        "tokens": 127,
+        "objects": 58
+      },
+      {
+        "song": "1a31ebe776cd",
+        "start": 636,
+        "tokens": 128,
+        "objects": 85
+      },
+      {
+        "song": "1a31ebe776cd",
+        "start": 857,
+        "tokens": 128,
+        "objects": 63
+      },
+      {
+        "song": "193214fecc87",
+        "start": 0,
+        "tokens": 125,
+        "objects": 49
+      },
+      {
+        "song": "193214fecc87",
+        "start": 123,
+        "tokens": 128,
+        "objects": 40
+      },
+      {
+        "song": "193214fecc87",
+        "start": 271,
+        "tokens": 125,
+        "objects": 50
+      },
+      {
+        "song": "193214fecc87",
+        "start": 386,
+        "tokens": 126,
+        "objects": 36
+      },
+      {
+        "song": "0dc236517cea",
+        "start": 0,
+        "tokens": 127,
+        "objects": 46
+      },
+      {
+        "song": "0dc236517cea",
+        "start": 871,
+        "tokens": 125,
+        "objects": 37
+      },
+      {
+        "song": "0dc236517cea",
+        "start": 1442,
+        "tokens": 128,
+        "objects": 73
+      },
+      {
+        "song": "0dc236517cea",
+        "start": 2053,
+        "tokens": 128,
+        "objects": 38
+      },
+      {
+        "song": "0d3b640df910",
+        "start": 0,
+        "tokens": 128,
+        "objects": 79
+      },
+      {
+        "song": "0d3b640df910",
+        "start": 134,
+        "tokens": 125,
+        "objects": 69
+      },
+      {
+        "song": "0d3b640df910",
+        "start": 289,
+        "tokens": 128,
+        "objects": 72
+      },
+      {
+        "song": "0d3b640df910",
+        "start": 442,
+        "tokens": 128,
+        "objects": 69
+      },
+      {
+        "song": "05498db5cb5c",
+        "start": 0,
+        "tokens": 126,
+        "objects": 59
+      },
+      {
+        "song": "05498db5cb5c",
+        "start": 271,
+        "tokens": 128,
+        "objects": 65
+      },
+      {
+        "song": "05498db5cb5c",
+        "start": 562,
+        "tokens": 125,
+        "objects": 62
+      },
+      {
+        "song": "05498db5cb5c",
+        "start": 836,
+        "tokens": 128,
+        "objects": 73
+      }
+    ],
+    "validation": [
+      {
+        "song": "10483e0c557b",
+        "start": 0,
+        "tokens": 127,
+        "objects": 68
+      },
+      {
+        "song": "10483e0c557b",
+        "start": 224,
+        "tokens": 127,
+        "objects": 56
+      },
+      {
+        "song": "10483e0c557b",
+        "start": 485,
+        "tokens": 126,
+        "objects": 60
+      },
+      {
+        "song": "10483e0c557b",
+        "start": 747,
+        "tokens": 127,
+        "objects": 75
+      },
+      {
+        "song": "02f892e29b08",
+        "start": 0,
+        "tokens": 127,
+        "objects": 56
+      },
+      {
+        "song": "02f892e29b08",
+        "start": 397,
+        "tokens": 127,
+        "objects": 64
+      },
+      {
+        "song": "02f892e29b08",
+        "start": 786,
+        "tokens": 128,
+        "objects": 50
+      },
+      {
+        "song": "02f892e29b08",
+        "start": 1187,
+        "tokens": 128,
+        "objects": 55
+      }
+    ]
+  },
+  "results": [
+    {
+      "name": "local-and-song",
+      "seed": 20261008,
+      "config": {
+        "width": 128,
+        "heads": 4,
+        "song_layers": 2,
+        "whole_song": true,
+        "object_context": false
+      },
+      "trainable_parameters": 871488,
+      "steps": 256,
+      "elapsed_s": 29.046999999991385,
+      "warm_start_max_mse_difference": 0.0,
+      "baseline": {
+        "mean_mse": 0.15125246594349542,
+        "mean_object_mse": 0.16910960220654184,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.30452439188957214,
+            "object_mse": 0.35312196612358093
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10070747882127762,
+            "object_mse": 0.11171714216470718
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006942697335034609,
+            "object_mse": 0.006891865748912096
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3007042407989502,
+            "object_mse": 0.34470444917678833
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13538528978824615,
+            "object_mse": 0.14386674761772156
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005760241765528917,
+            "object_mse": 0.00570782832801342
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.28548961877822876,
+            "object_mse": 0.31436610221862793
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08232384920120239,
+            "object_mse": 0.08718264102935791
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.005666933488100767,
+            "object_mse": 0.005426390096545219
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39007365703582764,
+            "object_mse": 0.3768306374549866
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.1119624525308609,
+            "object_mse": 0.11565890163183212
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.00619156239554286,
+            "object_mse": 0.006524022202938795
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.44772711396217346,
+            "object_mse": 0.5812411308288574
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14788594841957092,
+            "object_mse": 0.16119074821472168
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006507021375000477,
+            "object_mse": 0.006092643365263939
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.33253228664398193,
+            "object_mse": 0.3794349431991577
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0969185084104538,
+            "object_mse": 0.0991704910993576
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.006460955366492271,
+            "object_mse": 0.006649843882769346
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3717002868652344,
+            "object_mse": 0.42825523018836975
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07618450373411179,
+            "object_mse": 0.08361118286848068
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.005907242186367512,
+            "object_mse": 0.0060119591653347015
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.26779744029045105,
+            "object_mse": 0.30681198835372925
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12816926836967468,
+            "object_mse": 0.1205066442489624
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.0065361931920051575,
+            "object_mse": 0.007654953747987747
+          }
+        ]
+      },
+      "validation": {
+        "mean_mse": 0.15257006239456436,
+        "mean_object_mse": 0.1707516415238691,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.31146952509880066,
+            "object_mse": 0.36573326587677
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10145064443349838,
+            "object_mse": 0.11269461363554001
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007286750711500645,
+            "object_mse": 0.00725875748321414
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3052529990673065,
+            "object_mse": 0.34781306982040405
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13516198098659515,
+            "object_mse": 0.14471787214279175
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005626375321298838,
+            "object_mse": 0.0055620912462472916
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2863536775112152,
+            "object_mse": 0.31665217876434326
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.084190733730793,
+            "object_mse": 0.08833323419094086
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.006230590399354696,
+            "object_mse": 0.005919098388403654
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39724454283714294,
+            "object_mse": 0.38440757989883423
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11240500956773758,
+            "object_mse": 0.11591489613056183
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.006469557527452707,
+            "object_mse": 0.006745047867298126
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4554336965084076,
+            "object_mse": 0.5933402180671692
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14723943173885345,
+            "object_mse": 0.16090986132621765
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006980984006077051,
+            "object_mse": 0.006396644748747349
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3303307294845581,
+            "object_mse": 0.37492281198501587
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.09609737247228622,
+            "object_mse": 0.09733986854553223
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.007478872314095497,
+            "object_mse": 0.007705375552177429
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.366546094417572,
+            "object_mse": 0.4200372099876404
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07710111141204834,
+            "object_mse": 0.08418205380439758
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.0062505705282092094,
+            "object_mse": 0.006415374111384153
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.27078017592430115,
+            "object_mse": 0.3132816553115845
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.1307174265384674,
+            "object_mse": 0.12295449525117874
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.007582644931972027,
+            "object_mse": 0.008802122436463833
+          }
+        ]
+      },
+      "shifted_audio": {
+        "mean_mse": 0.1526253313641064,
+        "mean_object_mse": 0.17080233102509132,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3116421401500702,
+            "object_mse": 0.365925133228302
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10157375037670135,
+            "object_mse": 0.11292622238397598
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007309945300221443,
+            "object_mse": 0.007269738707691431
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.30529892444610596,
+            "object_mse": 0.3479416072368622
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13519465923309326,
+            "object_mse": 0.1446947157382965
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.00562290707603097,
+            "object_mse": 0.005549104884266853
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.28618913888931274,
+            "object_mse": 0.3165160119533539
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08416404575109482,
+            "object_mse": 0.08819199353456497
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.00625432888045907,
+            "object_mse": 0.0059657045640051365
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39706090092658997,
+            "object_mse": 0.3843682110309601
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11253929883241653,
+            "object_mse": 0.11614133417606354
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.0064635672606527805,
+            "object_mse": 0.006752869579941034
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.45514267683029175,
+            "object_mse": 0.5931347608566284
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14750057458877563,
+            "object_mse": 0.16087040305137634
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007020389195531607,
+            "object_mse": 0.006427594926208258
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3305076062679291,
+            "object_mse": 0.37470710277557373
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.09614523500204086,
+            "object_mse": 0.09742901474237442
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.007470786105841398,
+            "object_mse": 0.00767863355576992
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3669285178184509,
+            "object_mse": 0.42047232389450073
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07708669453859329,
+            "object_mse": 0.08420846611261368
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.006273641251027584,
+            "object_mse": 0.006467679515480995
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.2712388038635254,
+            "object_mse": 0.31383758783340454
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.13077452778816223,
+            "object_mse": 0.12294851988554001
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.007604892365634441,
+            "object_mse": 0.008831210434436798
+          }
+        ]
+      },
+      "milestones": [
+        {
+          "step": 64,
+          "validation": {
+            "mean_mse": 0.15170226335370293,
+            "mean_object_mse": 0.16975489827260995,
+            "rows": [
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.3096367418766022,
+                "object_mse": 0.36063408851623535
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.100320003926754,
+                "object_mse": 0.11127379536628723
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.007363093085587025,
+                "object_mse": 0.007304221857339144
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 100,
+                "mse": 0.3029175400733948,
+                "object_mse": 0.3466685712337494
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 500,
+                "mse": 0.1355578601360321,
+                "object_mse": 0.14493009448051453
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 900,
+                "mse": 0.005860510747879744,
+                "object_mse": 0.005715408828109503
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 100,
+                "mse": 0.28731900453567505,
+                "object_mse": 0.317420095205307
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 500,
+                "mse": 0.08317670226097107,
+                "object_mse": 0.08797895908355713
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 900,
+                "mse": 0.005705475341528654,
+                "object_mse": 0.005639357957988977
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 100,
+                "mse": 0.3925718069076538,
+                "object_mse": 0.3784733712673187
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 500,
+                "mse": 0.11282779276371002,
+                "object_mse": 0.11675883084535599
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 900,
+                "mse": 0.0062902215868234634,
+                "object_mse": 0.006677944213151932
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.4509643316268921,
+                "object_mse": 0.5856960415840149
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.14728309214115143,
+                "object_mse": 0.15994413197040558
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.006668787449598312,
+                "object_mse": 0.006158268079161644
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 100,
+                "mse": 0.32924869656562805,
+                "object_mse": 0.3758774697780609
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 500,
+                "mse": 0.09682445228099823,
+                "object_mse": 0.09927301108837128
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 900,
+                "mse": 0.006463601719588041,
+                "object_mse": 0.006733469665050507
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 100,
+                "mse": 0.36983180046081543,
+                "object_mse": 0.4268636107444763
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 500,
+                "mse": 0.0751427412033081,
+                "object_mse": 0.0826260894536972
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 900,
+                "mse": 0.005751340184360743,
+                "object_mse": 0.005887955892831087
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 100,
+                "mse": 0.2682926654815674,
+                "object_mse": 0.30706366896629333
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 500,
+                "mse": 0.1283579021692276,
+                "object_mse": 0.12094257771968842
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 900,
+                "mse": 0.006478155963122845,
+                "object_mse": 0.007576524745672941
+              }
+            ]
+          }
+        }
+      ],
+      "sampling": {
+        "source": "10483e0c557b",
+        "crop": 0,
+        "steps": 100,
+        "shape": [
+          1,
+          2,
+          127
+        ],
+        "finite": true,
+        "normalized_range": [
+          -1.0460213422775269,
+          1.0010960102081299
+        ],
+        "raw_heads_outside_playfield": 1,
+        "raw_tokens_outside_playfield": 4,
+        "sha256": "0817019752a36802be28c064d66dafafed25c1a60cd94b931a61d842ebd196d2",
+        "scope": "Raw coordinate tokens only; no slider fitting, osu export or playtest"
+      }
+    },
+    {
+      "name": "object-aware",
+      "seed": 20261008,
+      "config": {
+        "width": 128,
+        "heads": 4,
+        "song_layers": 2,
+        "whole_song": true,
+        "object_context": true
+      },
+      "trainable_parameters": 1304128,
+      "steps": 256,
+      "elapsed_s": 17.078000000008615,
+      "warm_start_max_mse_difference": 0.0,
+      "baseline": {
+        "mean_mse": 0.15125246594349542,
+        "mean_object_mse": 0.16910960220654184,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.30452439188957214,
+            "object_mse": 0.35312196612358093
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10070747882127762,
+            "object_mse": 0.11171714216470718
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006942697335034609,
+            "object_mse": 0.006891865748912096
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3007042407989502,
+            "object_mse": 0.34470444917678833
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13538528978824615,
+            "object_mse": 0.14386674761772156
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005760241765528917,
+            "object_mse": 0.00570782832801342
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.28548961877822876,
+            "object_mse": 0.31436610221862793
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08232384920120239,
+            "object_mse": 0.08718264102935791
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.005666933488100767,
+            "object_mse": 0.005426390096545219
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39007365703582764,
+            "object_mse": 0.3768306374549866
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.1119624525308609,
+            "object_mse": 0.11565890163183212
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.00619156239554286,
+            "object_mse": 0.006524022202938795
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.44772711396217346,
+            "object_mse": 0.5812411308288574
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14788594841957092,
+            "object_mse": 0.16119074821472168
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006507021375000477,
+            "object_mse": 0.006092643365263939
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.33253228664398193,
+            "object_mse": 0.3794349431991577
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0969185084104538,
+            "object_mse": 0.0991704910993576
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.006460955366492271,
+            "object_mse": 0.006649843882769346
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3717002868652344,
+            "object_mse": 0.42825523018836975
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07618450373411179,
+            "object_mse": 0.08361118286848068
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.005907242186367512,
+            "object_mse": 0.0060119591653347015
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.26779744029045105,
+            "object_mse": 0.30681198835372925
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12816926836967468,
+            "object_mse": 0.1205066442489624
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.0065361931920051575,
+            "object_mse": 0.007654953747987747
+          }
+        ]
+      },
+      "validation": {
+        "mean_mse": 0.154233512817882,
+        "mean_object_mse": 0.1722074729623273,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.314139723777771,
+            "object_mse": 0.3676420748233795
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10424142330884933,
+            "object_mse": 0.1156349778175354
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007413129322230816,
+            "object_mse": 0.007270768750458956
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3040010333061218,
+            "object_mse": 0.3458016812801361
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.1366923600435257,
+            "object_mse": 0.14625972509384155
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005609262268990278,
+            "object_mse": 0.0056136478669941425
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2843554615974426,
+            "object_mse": 0.3145565688610077
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08501805365085602,
+            "object_mse": 0.08924587815999985
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.0067388080060482025,
+            "object_mse": 0.0063098641112446785
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39622941613197327,
+            "object_mse": 0.38353273272514343
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11162534356117249,
+            "object_mse": 0.11466598510742188
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.0064726704731583595,
+            "object_mse": 0.00676657073199749
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4583550989627838,
+            "object_mse": 0.597491443157196
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1477036029100418,
+            "object_mse": 0.16151098906993866
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007357009686529636,
+            "object_mse": 0.006741750985383987
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3379208445549011,
+            "object_mse": 0.38196563720703125
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0968925878405571,
+            "object_mse": 0.09696605056524277
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.00920369103550911,
+            "object_mse": 0.009328490123152733
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3739829659461975,
+            "object_mse": 0.41997379064559937
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.08060288429260254,
+            "object_mse": 0.08795949816703796
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.007457259576767683,
+            "object_mse": 0.007828550413250923
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.27847710251808167,
+            "object_mse": 0.32369691133499146
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.13213150203227997,
+            "object_mse": 0.1257937252521515
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.008983072824776173,
+            "object_mse": 0.010422038845717907
+          }
+        ]
+      },
+      "shifted_audio": {
+        "mean_mse": 0.15425102843437344,
+        "mean_object_mse": 0.17220745565524945,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3145517110824585,
+            "object_mse": 0.367935448884964
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1041756123304367,
+            "object_mse": 0.11551579087972641
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007398729212582111,
+            "object_mse": 0.007247965782880783
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3038559556007385,
+            "object_mse": 0.3455793261528015
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.1367773562669754,
+            "object_mse": 0.14653223752975464
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005607021972537041,
+            "object_mse": 0.005619061645120382
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2840224802494049,
+            "object_mse": 0.3142167925834656
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08547069132328033,
+            "object_mse": 0.08974097669124603
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.006770292297005653,
+            "object_mse": 0.006344771943986416
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.3961666524410248,
+            "object_mse": 0.38326773047447205
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11191122978925705,
+            "object_mse": 0.11496765166521072
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.006490746978670359,
+            "object_mse": 0.006788742728531361
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.45839473605155945,
+            "object_mse": 0.5974407196044922
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1478082835674286,
+            "object_mse": 0.16144679486751556
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007358616217970848,
+            "object_mse": 0.006765801925212145
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3374323844909668,
+            "object_mse": 0.38144171237945557
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0967591255903244,
+            "object_mse": 0.09688292443752289
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.009227405302226543,
+            "object_mse": 0.00934316124767065
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3734891414642334,
+            "object_mse": 0.418996661901474
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.08044596761465073,
+            "object_mse": 0.08778202533721924
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.007547285873442888,
+            "object_mse": 0.007913980633020401
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.2792551517486572,
+            "object_mse": 0.324979692697525
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.1320754885673523,
+            "object_mse": 0.12574873864650726
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.009032616391777992,
+            "object_mse": 0.010480225086212158
+          }
+        ]
+      },
+      "milestones": [
+        {
+          "step": 64,
+          "validation": {
+            "mean_mse": 0.1518988290335983,
+            "mean_object_mse": 0.1701530679517115,
+            "rows": [
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.31106850504875183,
+                "object_mse": 0.36363697052001953
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.10036620497703552,
+                "object_mse": 0.11148259043693542
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.0075525883585214615,
+                "object_mse": 0.007493026088923216
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 100,
+                "mse": 0.30366888642311096,
+                "object_mse": 0.3486209511756897
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 500,
+                "mse": 0.1362484097480774,
+                "object_mse": 0.14579413831233978
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 900,
+                "mse": 0.0061880601570010185,
+                "object_mse": 0.006012169644236565
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 100,
+                "mse": 0.2870119512081146,
+                "object_mse": 0.3150525689125061
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 500,
+                "mse": 0.08371627330780029,
+                "object_mse": 0.08869005739688873
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 900,
+                "mse": 0.005932890344411135,
+                "object_mse": 0.005893436726182699
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 100,
+                "mse": 0.39055636525154114,
+                "object_mse": 0.3770749866962433
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 500,
+                "mse": 0.11238967627286911,
+                "object_mse": 0.11680871248245239
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 900,
+                "mse": 0.0064124674536287785,
+                "object_mse": 0.006760640535503626
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.4511783719062805,
+                "object_mse": 0.5859390497207642
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.14820320904254913,
+                "object_mse": 0.1602148413658142
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.006931917741894722,
+                "object_mse": 0.006383726838976145
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 100,
+                "mse": 0.32939964532852173,
+                "object_mse": 0.376788854598999
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 500,
+                "mse": 0.09787075966596603,
+                "object_mse": 0.10056081414222717
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 900,
+                "mse": 0.0067009772174060345,
+                "object_mse": 0.007141852285712957
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 100,
+                "mse": 0.3717890977859497,
+                "object_mse": 0.4326028823852539
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 500,
+                "mse": 0.07462179660797119,
+                "object_mse": 0.08160417526960373
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 900,
+                "mse": 0.005803446285426617,
+                "object_mse": 0.005921451840549707
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 100,
+                "mse": 0.2674049139022827,
+                "object_mse": 0.30537477135658264
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 500,
+                "mse": 0.12804003059864044,
+                "object_mse": 0.12034641206264496
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 900,
+                "mse": 0.0065154521726071835,
+                "object_mse": 0.007474550046026707
+              }
+            ]
+          }
+        }
+      ],
+      "sampling": {
+        "source": "10483e0c557b",
+        "crop": 0,
+        "steps": 100,
+        "shape": [
+          1,
+          2,
+          127
+        ],
+        "finite": true,
+        "normalized_range": [
+          -1.0410642623901367,
+          1.0080206394195557
+        ],
+        "raw_heads_outside_playfield": 4,
+        "raw_tokens_outside_playfield": 8,
+        "sha256": "221ac4b05d13ee34146b8bea5810659e3b22e6f83ff536b0aa80a618383a8242",
+        "scope": "Raw coordinate tokens only; no slider fitting, osu export or playtest"
+      }
+    },
+    {
+      "name": "local-and-song",
+      "seed": 20261009,
+      "config": {
+        "width": 128,
+        "heads": 4,
+        "song_layers": 2,
+        "whole_song": true,
+        "object_context": false
+      },
+      "trainable_parameters": 871488,
+      "steps": 256,
+      "elapsed_s": 14.328000000008615,
+      "warm_start_max_mse_difference": 0.0,
+      "baseline": {
+        "mean_mse": 0.15125246594349542,
+        "mean_object_mse": 0.1691096025169827,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.30452439188957214,
+            "object_mse": 0.35312196612358093
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10070747882127762,
+            "object_mse": 0.11171714216470718
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006942697335034609,
+            "object_mse": 0.006891865748912096
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3007042407989502,
+            "object_mse": 0.34470444917678833
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13538528978824615,
+            "object_mse": 0.14386674761772156
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005760241765528917,
+            "object_mse": 0.00570782832801342
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.28548961877822876,
+            "object_mse": 0.31436610221862793
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08232384920120239,
+            "object_mse": 0.08718264847993851
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.005666933488100767,
+            "object_mse": 0.005426390096545219
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39007365703582764,
+            "object_mse": 0.3768306374549866
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.1119624525308609,
+            "object_mse": 0.11565890163183212
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.00619156239554286,
+            "object_mse": 0.006524022202938795
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.44772711396217346,
+            "object_mse": 0.5812411308288574
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14788594841957092,
+            "object_mse": 0.16119074821472168
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006507021375000477,
+            "object_mse": 0.006092643365263939
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.33253228664398193,
+            "object_mse": 0.3794349431991577
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0969185084104538,
+            "object_mse": 0.0991704910993576
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.006460955366492271,
+            "object_mse": 0.006649843882769346
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3717002868652344,
+            "object_mse": 0.42825523018836975
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07618450373411179,
+            "object_mse": 0.08361118286848068
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.005907242186367512,
+            "object_mse": 0.0060119591653347015
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.26779744029045105,
+            "object_mse": 0.30681198835372925
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12816926836967468,
+            "object_mse": 0.1205066442489624
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.0065361931920051575,
+            "object_mse": 0.007654953747987747
+          }
+        ]
+      },
+      "validation": {
+        "mean_mse": 0.1521590257373949,
+        "mean_object_mse": 0.1704619482237225,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.29969656467437744,
+            "object_mse": 0.34794700145721436
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09954135864973068,
+            "object_mse": 0.11016786843538284
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007119905669242144,
+            "object_mse": 0.007408306933939457
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3059537708759308,
+            "object_mse": 0.34978583455085754
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.1371174305677414,
+            "object_mse": 0.1469891518354416
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.006388061214238405,
+            "object_mse": 0.006324476562440395
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2885271906852722,
+            "object_mse": 0.31753775477409363
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08477342873811722,
+            "object_mse": 0.0897655338048935
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.0062547060661017895,
+            "object_mse": 0.00627027777954936
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39111751317977905,
+            "object_mse": 0.3800266981124878
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11326802521944046,
+            "object_mse": 0.11755053699016571
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.006794672459363937,
+            "object_mse": 0.0070810336619615555
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4540432393550873,
+            "object_mse": 0.5914719700813293
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14848099648952484,
+            "object_mse": 0.16127613186836243
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0068102325312793255,
+            "object_mse": 0.006296301260590553
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.33496904373168945,
+            "object_mse": 0.3822256326675415
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.09785153716802597,
+            "object_mse": 0.10110081732273102
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.00698593445122242,
+            "object_mse": 0.007514588069170713
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.37106505036354065,
+            "object_mse": 0.42864736914634705
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07581707090139389,
+            "object_mse": 0.08362402021884918
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.0059112124145030975,
+            "object_mse": 0.0059700775891542435
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.2675498127937317,
+            "object_mse": 0.3073403835296631
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.1292697787284851,
+            "object_mse": 0.1213221400976181
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.006510080769658089,
+            "object_mse": 0.00744285061955452
+          }
+        ]
+      },
+      "shifted_audio": {
+        "mean_mse": 0.15209807738816986,
+        "mean_object_mse": 0.17037983471527696,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3003559708595276,
+            "object_mse": 0.34864863753318787
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09953533113002777,
+            "object_mse": 0.11017648130655289
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007163133937865496,
+            "object_mse": 0.007463530637323856
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.30554842948913574,
+            "object_mse": 0.34924256801605225
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13691246509552002,
+            "object_mse": 0.14670342206954956
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.006374279037117958,
+            "object_mse": 0.006316253449767828
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2884165942668915,
+            "object_mse": 0.3171716630458832
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08464082330465317,
+            "object_mse": 0.08958740532398224
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.00626544002443552,
+            "object_mse": 0.006289604119956493
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.3909476101398468,
+            "object_mse": 0.38008439540863037
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11329317092895508,
+            "object_mse": 0.11764968186616898
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.006805752404034138,
+            "object_mse": 0.007091209292411804
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.45350292325019836,
+            "object_mse": 0.5903290510177612
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1486857831478119,
+            "object_mse": 0.16145621240139008
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.00678777601569891,
+            "object_mse": 0.00627648551017046
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3346572518348694,
+            "object_mse": 0.3823520541191101
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.09771765023469925,
+            "object_mse": 0.10094133019447327
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.006996957119554281,
+            "object_mse": 0.007511730305850506
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3710777163505554,
+            "object_mse": 0.4289400279521942
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07579483091831207,
+            "object_mse": 0.08351274579763412
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.005922703072428703,
+            "object_mse": 0.005955617409199476
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.26719391345977783,
+            "object_mse": 0.3067542612552643
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12923084199428558,
+            "object_mse": 0.12122444808483124
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.006526509299874306,
+            "object_mse": 0.007437217049300671
+          }
+        ]
+      },
+      "milestones": [
+        {
+          "step": 64,
+          "validation": {
+            "mean_mse": 0.15169663059835634,
+            "mean_object_mse": 0.17002724347791323,
+            "rows": [
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.30656418204307556,
+                "object_mse": 0.3556651473045349
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.10225783288478851,
+                "object_mse": 0.11352082341909409
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.00710816727951169,
+                "object_mse": 0.006967319641262293
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 100,
+                "mse": 0.3004010021686554,
+                "object_mse": 0.34488317370414734
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 500,
+                "mse": 0.13510391116142273,
+                "object_mse": 0.1431470513343811
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 900,
+                "mse": 0.006116194650530815,
+                "object_mse": 0.006173749454319477
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 100,
+                "mse": 0.28558048605918884,
+                "object_mse": 0.3156740367412567
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 500,
+                "mse": 0.082594133913517,
+                "object_mse": 0.08724965155124664
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 900,
+                "mse": 0.005918472073972225,
+                "object_mse": 0.005519214551895857
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 100,
+                "mse": 0.3865888714790344,
+                "object_mse": 0.374905526638031
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 500,
+                "mse": 0.11195361614227295,
+                "object_mse": 0.11553066223859787
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 900,
+                "mse": 0.0062477439641952515,
+                "object_mse": 0.006503382697701454
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.4479179084300995,
+                "object_mse": 0.5828540921211243
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.14874297380447388,
+                "object_mse": 0.16272936761379242
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.006661357823759317,
+                "object_mse": 0.006234305445104837
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 100,
+                "mse": 0.3362366259098053,
+                "object_mse": 0.3838132619857788
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 500,
+                "mse": 0.09653148055076599,
+                "object_mse": 0.0981767326593399
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 900,
+                "mse": 0.006758589297533035,
+                "object_mse": 0.007025059778243303
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 100,
+                "mse": 0.37177565693855286,
+                "object_mse": 0.43221935629844666
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 500,
+                "mse": 0.07764679938554764,
+                "object_mse": 0.08527330309152603
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 900,
+                "mse": 0.0062325261533260345,
+                "object_mse": 0.006377178244292736
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 100,
+                "mse": 0.2690650522708893,
+                "object_mse": 0.30890175700187683
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 500,
+                "mse": 0.12972423434257507,
+                "object_mse": 0.12313400954008102
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 900,
+                "mse": 0.006991315633058548,
+                "object_mse": 0.008175680413842201
+              }
+            ]
+          }
+        }
+      ],
+      "sampling": {
+        "source": "10483e0c557b",
+        "crop": 0,
+        "steps": 100,
+        "shape": [
+          1,
+          2,
+          127
+        ],
+        "finite": true,
+        "normalized_range": [
+          -1.0281155109405518,
+          0.988747239112854
+        ],
+        "raw_heads_outside_playfield": 0,
+        "raw_tokens_outside_playfield": 1,
+        "sha256": "577000ca2f8655daf7d068f67eac40149570f057611ff0e228e2931c8dae3b79",
+        "scope": "Raw coordinate tokens only; no slider fitting, osu export or playtest"
+      }
+    },
+    {
+      "name": "object-aware",
+      "seed": 20261009,
+      "config": {
+        "width": 128,
+        "heads": 4,
+        "song_layers": 2,
+        "whole_song": true,
+        "object_context": true
+      },
+      "trainable_parameters": 1304128,
+      "steps": 256,
+      "elapsed_s": 14.609000000025844,
+      "warm_start_max_mse_difference": 0.0,
+      "baseline": {
+        "mean_mse": 0.15125246594349542,
+        "mean_object_mse": 0.16910960220654184,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.30452439188957214,
+            "object_mse": 0.35312196612358093
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.10070747882127762,
+            "object_mse": 0.11171714216470718
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006942697335034609,
+            "object_mse": 0.006891865748912096
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3007042407989502,
+            "object_mse": 0.34470444917678833
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13538528978824615,
+            "object_mse": 0.14386674761772156
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.005760241765528917,
+            "object_mse": 0.00570782832801342
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.28548961877822876,
+            "object_mse": 0.31436610221862793
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08232384920120239,
+            "object_mse": 0.08718264102935791
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.005666933488100767,
+            "object_mse": 0.005426390096545219
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39007365703582764,
+            "object_mse": 0.3768306374549866
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.1119624525308609,
+            "object_mse": 0.11565890163183212
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.00619156239554286,
+            "object_mse": 0.006524022202938795
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.44772711396217346,
+            "object_mse": 0.5812411308288574
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14788594841957092,
+            "object_mse": 0.16119074821472168
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006507021375000477,
+            "object_mse": 0.006092643365263939
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.33253228664398193,
+            "object_mse": 0.3794349431991577
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0969185084104538,
+            "object_mse": 0.0991704910993576
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.006460955366492271,
+            "object_mse": 0.006649843882769346
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3717002868652344,
+            "object_mse": 0.42825523018836975
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.07618450373411179,
+            "object_mse": 0.08361118286848068
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.005907242186367512,
+            "object_mse": 0.0060119591653347015
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.26779744029045105,
+            "object_mse": 0.30681198835372925
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12816926836967468,
+            "object_mse": 0.1205066442489624
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.0065361931920051575,
+            "object_mse": 0.007654953747987747
+          }
+        ]
+      },
+      "validation": {
+        "mean_mse": 0.1525222184912612,
+        "mean_object_mse": 0.17115895170718431,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.29879987239837646,
+            "object_mse": 0.347768098115921
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.0992233157157898,
+            "object_mse": 0.10996384918689728
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007129685487598181,
+            "object_mse": 0.0074866232462227345
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.3057134449481964,
+            "object_mse": 0.35026755928993225
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.1374218612909317,
+            "object_mse": 0.1479576826095581
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.006893998011946678,
+            "object_mse": 0.0068918331526219845
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2898155450820923,
+            "object_mse": 0.31791624426841736
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08680105954408646,
+            "object_mse": 0.091477170586586
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.006955866236239672,
+            "object_mse": 0.00696662999689579
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.39049986004829407,
+            "object_mse": 0.38297444581985474
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11439714580774307,
+            "object_mse": 0.11865372955799103
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.007039143703877926,
+            "object_mse": 0.0073107341304421425
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.454568088054657,
+            "object_mse": 0.5936930775642395
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.15186244249343872,
+            "object_mse": 0.164758563041687
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007327964063733816,
+            "object_mse": 0.006679735146462917
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3372651934623718,
+            "object_mse": 0.38344162702560425
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.09771612286567688,
+            "object_mse": 0.10039696097373962
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.007703177630901337,
+            "object_mse": 0.008301054127514362
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.3685642182826996,
+            "object_mse": 0.4278112053871155
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.0757065862417221,
+            "object_mse": 0.08399930596351624
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.006079544313251972,
+            "object_mse": 0.0061120567843317986
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.26678168773651123,
+            "object_mse": 0.30761387944221497
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12937353551387787,
+            "object_mse": 0.12169992178678513
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.006893884856253862,
+            "object_mse": 0.007672853767871857
+          }
+        ]
+      },
+      "shifted_audio": {
+        "mean_mse": 0.15266739371387908,
+        "mean_object_mse": 0.1713343900240337,
+        "rows": [
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.29910892248153687,
+            "object_mse": 0.3480472266674042
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09950210899114609,
+            "object_mse": 0.11017519980669022
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007123521063476801,
+            "object_mse": 0.007471899967640638
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 100,
+            "mse": 0.30623072385787964,
+            "object_mse": 0.35068175196647644
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 500,
+            "mse": 0.13731418550014496,
+            "object_mse": 0.14783771336078644
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 224,
+            "timestep": 900,
+            "mse": 0.006861812435090542,
+            "object_mse": 0.006862759590148926
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 100,
+            "mse": 0.2905588448047638,
+            "object_mse": 0.318775475025177
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 500,
+            "mse": 0.08661742508411407,
+            "object_mse": 0.09134026616811752
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 485,
+            "timestep": 900,
+            "mse": 0.0069000087678432465,
+            "object_mse": 0.006953772157430649
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 100,
+            "mse": 0.3909461498260498,
+            "object_mse": 0.3832146227359772
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 500,
+            "mse": 0.11431018263101578,
+            "object_mse": 0.11862447112798691
+          },
+          {
+            "song": "10483e0c557b",
+            "crop": 747,
+            "timestep": 900,
+            "mse": 0.007074621506035328,
+            "object_mse": 0.0073383585549890995
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4548836350440979,
+            "object_mse": 0.5940693616867065
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.15187667310237885,
+            "object_mse": 0.16470873355865479
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007337137591093779,
+            "object_mse": 0.006676873192191124
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 100,
+            "mse": 0.3378904163837433,
+            "object_mse": 0.38421252369880676
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 500,
+            "mse": 0.0978843942284584,
+            "object_mse": 0.10054028034210205
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 397,
+            "timestep": 900,
+            "mse": 0.007705648895353079,
+            "object_mse": 0.008320920169353485
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 100,
+            "mse": 0.36858993768692017,
+            "object_mse": 0.4281843602657318
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 500,
+            "mse": 0.0757354348897934,
+            "object_mse": 0.08391033113002777
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 786,
+            "timestep": 900,
+            "mse": 0.0060713030397892,
+            "object_mse": 0.006091905292123556
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.2670880854129791,
+            "object_mse": 0.30833205580711365
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.12950047850608826,
+            "object_mse": 0.12196134775876999
+          },
+          {
+            "song": "02f892e29b08",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.006905797403305769,
+            "object_mse": 0.007693150546401739
+          }
+        ]
+      },
+      "milestones": [
+        {
+          "step": 64,
+          "validation": {
+            "mean_mse": 0.1519644119349929,
+            "mean_object_mse": 0.170193095652697,
+            "rows": [
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.30965664982795715,
+                "object_mse": 0.3597303330898285
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.10307037085294724,
+                "object_mse": 0.11445587128400803
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.007185547146946192,
+                "object_mse": 0.006996053270995617
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 100,
+                "mse": 0.301029771566391,
+                "object_mse": 0.3445320427417755
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 500,
+                "mse": 0.13458633422851562,
+                "object_mse": 0.1429731845855713
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 224,
+                "timestep": 900,
+                "mse": 0.006119607016444206,
+                "object_mse": 0.006194408051669598
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 100,
+                "mse": 0.28545254468917847,
+                "object_mse": 0.3153890073299408
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 500,
+                "mse": 0.08292943239212036,
+                "object_mse": 0.08731063455343246
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 485,
+                "timestep": 900,
+                "mse": 0.006034834310412407,
+                "object_mse": 0.005603790748864412
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 100,
+                "mse": 0.38543087244033813,
+                "object_mse": 0.3714393377304077
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 500,
+                "mse": 0.11174274235963821,
+                "object_mse": 0.11532977968454361
+              },
+              {
+                "song": "10483e0c557b",
+                "crop": 747,
+                "timestep": 900,
+                "mse": 0.006362606305629015,
+                "object_mse": 0.006631484255194664
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 100,
+                "mse": 0.4501841962337494,
+                "object_mse": 0.5850970149040222
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 500,
+                "mse": 0.14795374870300293,
+                "object_mse": 0.1623726338148117
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 0,
+                "timestep": 900,
+                "mse": 0.006772907450795174,
+                "object_mse": 0.0063544465228915215
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 100,
+                "mse": 0.3350314497947693,
+                "object_mse": 0.38485485315322876
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 500,
+                "mse": 0.09680841118097305,
+                "object_mse": 0.0986698567867279
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 397,
+                "timestep": 900,
+                "mse": 0.006862216163426638,
+                "object_mse": 0.007248368114233017
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 100,
+                "mse": 0.3722479045391083,
+                "object_mse": 0.4284326732158661
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 500,
+                "mse": 0.07797212898731232,
+                "object_mse": 0.08542560040950775
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 786,
+                "timestep": 900,
+                "mse": 0.006282095797359943,
+                "object_mse": 0.006468554493039846
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 100,
+                "mse": 0.27028173208236694,
+                "object_mse": 0.3114359974861145
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 500,
+                "mse": 0.1300722062587738,
+                "object_mse": 0.12342677265405655
+              },
+              {
+                "song": "02f892e29b08",
+                "crop": 1187,
+                "timestep": 900,
+                "mse": 0.007075576111674309,
+                "object_mse": 0.008261596783995628
+              }
+            ]
+          }
+        }
+      ],
+      "sampling": {
+        "source": "10483e0c557b",
+        "crop": 0,
+        "steps": 100,
+        "shape": [
+          1,
+          2,
+          127
+        ],
+        "finite": true,
+        "normalized_range": [
+          -1.0005435943603516,
+          0.9885833859443665
+        ],
+        "raw_heads_outside_playfield": 0,
+        "raw_tokens_outside_playfield": 1,
+        "sha256": "4a26aa120541b8686bda842f9e8a05d2d4022cba278828184e89182ccb5b67eb",
+        "scope": "Raw coordinate tokens only; no slider fitting, osu export or playtest"
+      }
+    }
+  ],
+  "training_probe": {
+    "seed": 314159,
+    "scope": "Post-hoc fixed training-song noise bank; not a test set",
+    "results": [
+      {
+        "model": "base",
+        "mean_mse": 0.1621731036963562,
+        "rows": [
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3360382318496704
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.07921971380710602
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005498419515788555
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 100,
+            "mse": 0.20891112089157104
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 500,
+            "mse": 0.13348804414272308
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 900,
+            "mse": 0.00495857372879982
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 100,
+            "mse": 0.3126645088195801
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 500,
+            "mse": 0.10989491641521454
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 900,
+            "mse": 0.005129462108016014
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 100,
+            "mse": 0.262912392616272
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 500,
+            "mse": 0.09992830455303192
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 900,
+            "mse": 0.006297572050243616
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4290156662464142
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14651785790920258
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.008630438707768917
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 100,
+            "mse": 0.4531334638595581
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 500,
+            "mse": 0.1444786638021469
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 900,
+            "mse": 0.006833810359239578
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 100,
+            "mse": 0.46056777238845825
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 500,
+            "mse": 0.1785787045955658
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 900,
+            "mse": 0.007354822009801865
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 100,
+            "mse": 0.41429567337036133
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 500,
+            "mse": 0.11348307877779007
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 900,
+            "mse": 0.00798071175813675
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3578794598579407
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09249389171600342
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006528058554977179
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 100,
+            "mse": 0.36216598749160767
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 500,
+            "mse": 0.13656927645206451
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 900,
+            "mse": 0.006495123729109764
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.451284259557724
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.1570453941822052
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.008350810036063194
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 100,
+            "mse": 0.3970145285129547
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 500,
+            "mse": 0.11191253364086151
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 900,
+            "mse": 0.005459433887153864
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.2726323902606964
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09176754951477051
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007660925388336182
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 100,
+            "mse": 0.26850625872612
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 500,
+            "mse": 0.10351364314556122
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 900,
+            "mse": 0.005791796371340752
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 100,
+            "mse": 0.314054936170578
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 500,
+            "mse": 0.15391406416893005
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 900,
+            "mse": 0.005927507299929857
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 100,
+            "mse": 0.2562616467475891
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 500,
+            "mse": 0.09001277387142181
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 900,
+            "mse": 0.007371199317276478
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.5042530298233032
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1323866993188858
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.004668296314775944
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 100,
+            "mse": 0.5156289935112
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 500,
+            "mse": 0.1486934870481491
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 900,
+            "mse": 0.004879632964730263
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 100,
+            "mse": 0.30256038904190063
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 500,
+            "mse": 0.12221242487430573
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 900,
+            "mse": 0.004778690170496702
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 100,
+            "mse": 0.40914613008499146
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 500,
+            "mse": 0.15791255235671997
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 900,
+            "mse": 0.005411935038864613
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.325706422328949
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14982348680496216
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005460747051984072
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.37300485372543335
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.10650554299354553
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.005126430653035641
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 100,
+            "mse": 0.2330653816461563
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 500,
+            "mse": 0.1133914366364479
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 900,
+            "mse": 0.005151416175067425
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 100,
+            "mse": 0.3283592462539673
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 500,
+            "mse": 0.10600046813488007
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 900,
+            "mse": 0.005910400301218033
+          }
+        ]
+      },
+      {
+        "model": "local-and-song-20261008",
+        "mean_mse": 0.1598912667767662,
+        "rows": [
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3346327543258667
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.07665406167507172
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005326978862285614
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 100,
+            "mse": 0.20776976644992828
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 500,
+            "mse": 0.1291089653968811
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 900,
+            "mse": 0.004529662895947695
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 100,
+            "mse": 0.2961011230945587
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 500,
+            "mse": 0.10925091803073883
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 900,
+            "mse": 0.004750940017402172
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 100,
+            "mse": 0.2621801197528839
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 500,
+            "mse": 0.09801103919744492
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 900,
+            "mse": 0.005861885845661163
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4323640465736389
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.13938209414482117
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.00870668888092041
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 100,
+            "mse": 0.4484400749206543
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 500,
+            "mse": 0.13998554646968842
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 900,
+            "mse": 0.006721103098243475
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 100,
+            "mse": 0.46185100078582764
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 500,
+            "mse": 0.1730867475271225
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 900,
+            "mse": 0.006887323688715696
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 100,
+            "mse": 0.405231773853302
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 500,
+            "mse": 0.10978375375270844
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 900,
+            "mse": 0.007691234815865755
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3562906086444855
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09166045486927032
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0067996010184288025
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 100,
+            "mse": 0.34891483187675476
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 500,
+            "mse": 0.13153859972953796
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 900,
+            "mse": 0.007098595146089792
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.4513607323169708
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.1482015997171402
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.007857696153223515
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 100,
+            "mse": 0.39949750900268555
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 500,
+            "mse": 0.11062578856945038
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 900,
+            "mse": 0.005798757541924715
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.2626746594905853
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.0912664383649826
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007678525988012552
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 100,
+            "mse": 0.263728529214859
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 500,
+            "mse": 0.10151755064725876
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 900,
+            "mse": 0.005839176010340452
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 100,
+            "mse": 0.3117119073867798
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 500,
+            "mse": 0.15181845426559448
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 900,
+            "mse": 0.005411867052316666
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 100,
+            "mse": 0.2554890215396881
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 500,
+            "mse": 0.08959946036338806
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 900,
+            "mse": 0.007399235852062702
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.48625481128692627
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1347133219242096
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005060565657913685
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 100,
+            "mse": 0.5157418251037598
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 500,
+            "mse": 0.1486351191997528
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 900,
+            "mse": 0.004688154440373182
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 100,
+            "mse": 0.29958561062812805
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 500,
+            "mse": 0.11696161329746246
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 900,
+            "mse": 0.004600405693054199
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 100,
+            "mse": 0.4048827886581421
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 500,
+            "mse": 0.1566772758960724
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 900,
+            "mse": 0.005516829900443554
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3161487281322479
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14803096652030945
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005410316865891218
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.36653655767440796
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.1056826114654541
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.005505437962710857
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 100,
+            "mse": 0.2350151538848877
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 500,
+            "mse": 0.11335187405347824
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 900,
+            "mse": 0.0051611606031656265
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 100,
+            "mse": 0.3236677050590515
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 500,
+            "mse": 0.10440953075885773
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 900,
+            "mse": 0.005843638442456722
+          }
+        ]
+      },
+      {
+        "model": "local-and-song-20261009",
+        "mean_mse": 0.16076744504324678,
+        "rows": [
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.33256569504737854
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.0795757919549942
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005694590508937836
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 100,
+            "mse": 0.2073739916086197
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 500,
+            "mse": 0.12843336164951324
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 900,
+            "mse": 0.004879665561020374
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 100,
+            "mse": 0.31079375743865967
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 500,
+            "mse": 0.11061832308769226
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 900,
+            "mse": 0.004826996009796858
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 100,
+            "mse": 0.2608729600906372
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 500,
+            "mse": 0.09730430692434311
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 900,
+            "mse": 0.006005620118230581
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.43011391162872314
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1424429565668106
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.009156692773103714
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 100,
+            "mse": 0.45279833674430847
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 500,
+            "mse": 0.14163675904273987
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 900,
+            "mse": 0.0069975825026631355
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 100,
+            "mse": 0.45747774839401245
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 500,
+            "mse": 0.17270801961421967
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 900,
+            "mse": 0.006630030460655689
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 100,
+            "mse": 0.4062879979610443
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 500,
+            "mse": 0.1106298416852951
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 900,
+            "mse": 0.007932201959192753
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3522299826145172
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09215063601732254
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0069266799837350845
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 100,
+            "mse": 0.35159409046173096
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 500,
+            "mse": 0.13357305526733398
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 900,
+            "mse": 0.007286866195499897
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.4477369487285614
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.15061557292938232
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.007704996503889561
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 100,
+            "mse": 0.38928768038749695
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 500,
+            "mse": 0.10794922709465027
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 900,
+            "mse": 0.0060905166901648045
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.275672972202301
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09150411188602448
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007514219731092453
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 100,
+            "mse": 0.26585450768470764
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 500,
+            "mse": 0.10443184524774551
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 900,
+            "mse": 0.006430226843804121
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 100,
+            "mse": 0.31190621852874756
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 500,
+            "mse": 0.15350964665412903
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 900,
+            "mse": 0.006065596826374531
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 100,
+            "mse": 0.25611305236816406
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 500,
+            "mse": 0.08899203687906265
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 900,
+            "mse": 0.0076401508413255215
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.5027709007263184
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.13191089034080505
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0052425432950258255
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 100,
+            "mse": 0.5146631002426147
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 500,
+            "mse": 0.14784666895866394
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 900,
+            "mse": 0.005449158605188131
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 100,
+            "mse": 0.30385756492614746
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 500,
+            "mse": 0.11846798658370972
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 900,
+            "mse": 0.004719978664070368
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 100,
+            "mse": 0.40853163599967957
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 500,
+            "mse": 0.15709328651428223
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 900,
+            "mse": 0.005584043450653553
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3191259801387787
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1465841680765152
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0054359110072255135
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.37023910880088806
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.1079234927892685
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.006252703256905079
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 100,
+            "mse": 0.23201923072338104
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 500,
+            "mse": 0.11534205824136734
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 900,
+            "mse": 0.005079642403870821
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 100,
+            "mse": 0.3272680640220642
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 500,
+            "mse": 0.10563972592353821
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 900,
+            "mse": 0.005670221522450447
+          }
+        ]
+      },
+      {
+        "model": "object-aware-20261008",
+        "mean_mse": 0.15878625858264664,
+        "rows": [
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.33358830213546753
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.07724285125732422
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0056454213336110115
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 100,
+            "mse": 0.20322808623313904
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 500,
+            "mse": 0.13146525621414185
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 900,
+            "mse": 0.004672411363571882
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 100,
+            "mse": 0.2920980751514435
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 500,
+            "mse": 0.10815608501434326
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 900,
+            "mse": 0.005028483923524618
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 100,
+            "mse": 0.26193320751190186
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 500,
+            "mse": 0.09783761203289032
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 900,
+            "mse": 0.006099753547459841
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.43206900358200073
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.13833072781562805
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.00897257775068283
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 100,
+            "mse": 0.44561684131622314
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 500,
+            "mse": 0.13879060745239258
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 900,
+            "mse": 0.0065856496803462505
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 100,
+            "mse": 0.4663339853286743
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 500,
+            "mse": 0.17150862514972687
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 900,
+            "mse": 0.007210970856249332
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 100,
+            "mse": 0.40391191840171814
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 500,
+            "mse": 0.10452492535114288
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 900,
+            "mse": 0.008331860415637493
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.35176947712898254
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.090008445084095
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0061120237223804
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 100,
+            "mse": 0.34704267978668213
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 500,
+            "mse": 0.12989051640033722
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 900,
+            "mse": 0.007084619719535112
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.45163577795028687
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.14667794108390808
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.008032710291445255
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 100,
+            "mse": 0.39355185627937317
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 500,
+            "mse": 0.11107227206230164
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 900,
+            "mse": 0.0055392226204276085
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.25939711928367615
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09056013822555542
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0072746905498206615
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 100,
+            "mse": 0.26136231422424316
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 500,
+            "mse": 0.10009152442216873
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 900,
+            "mse": 0.00608183816075325
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 100,
+            "mse": 0.3121553361415863
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 500,
+            "mse": 0.15024679899215698
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 900,
+            "mse": 0.005321079399436712
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 100,
+            "mse": 0.2524207830429077
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 500,
+            "mse": 0.08881288766860962
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 900,
+            "mse": 0.008321445435285568
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4760758876800537
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.13463367521762848
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005099226254969835
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 100,
+            "mse": 0.512413740158081
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 500,
+            "mse": 0.14884336292743683
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 900,
+            "mse": 0.004559401888400316
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 100,
+            "mse": 0.29632368683815
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 500,
+            "mse": 0.11619588732719421
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 900,
+            "mse": 0.005131212063133717
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 100,
+            "mse": 0.3987259268760681
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 500,
+            "mse": 0.15730735659599304
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 900,
+            "mse": 0.005620856769382954
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.31282153725624084
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14964038133621216
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005782900843769312
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.3591788411140442
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.10482239723205566
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.005410334095358849
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 100,
+            "mse": 0.23713025450706482
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 500,
+            "mse": 0.11218925565481186
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 900,
+            "mse": 0.005671776365488768
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 100,
+            "mse": 0.32077351212501526
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 500,
+            "mse": 0.10184052586555481
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 900,
+            "mse": 0.006771944463253021
+          }
+        ]
+      },
+      {
+        "model": "object-aware-20261009",
+        "mean_mse": 0.16012936742562386,
+        "rows": [
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3271459937095642
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.07899399101734161
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005824707448482513
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 100,
+            "mse": 0.2053413987159729
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 500,
+            "mse": 0.1264674961566925
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 203,
+            "timestep": 900,
+            "mse": 0.005201402120292187
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 100,
+            "mse": 0.3146544098854065
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 500,
+            "mse": 0.11085354536771774
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 400,
+            "timestep": 900,
+            "mse": 0.005067449528723955
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 100,
+            "mse": 0.2584083080291748
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 500,
+            "mse": 0.09616407752037048
+          },
+          {
+            "song": "1b03caaee2c6",
+            "crop": 573,
+            "timestep": 900,
+            "mse": 0.005984860472381115
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.4299096465110779
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14034287631511688
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.00957462377846241
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 100,
+            "mse": 0.44848737120628357
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 500,
+            "mse": 0.14085949957370758
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 265,
+            "timestep": 900,
+            "mse": 0.007411384955048561
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 100,
+            "mse": 0.4554906189441681
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 500,
+            "mse": 0.16890057921409607
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 636,
+            "timestep": 900,
+            "mse": 0.006391532253473997
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 100,
+            "mse": 0.39910560846328735
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 500,
+            "mse": 0.10921265929937363
+          },
+          {
+            "song": "1a31ebe776cd",
+            "crop": 857,
+            "timestep": 900,
+            "mse": 0.008093340322375298
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.34967920184135437
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09155025333166122
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007055038586258888
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 100,
+            "mse": 0.3468116521835327
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 500,
+            "mse": 0.13433535397052765
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 123,
+            "timestep": 900,
+            "mse": 0.008176196366548538
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.44784751534461975
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.14783811569213867
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.007855892181396484
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 100,
+            "mse": 0.38612937927246094
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 500,
+            "mse": 0.10678974539041519
+          },
+          {
+            "song": "193214fecc87",
+            "crop": 386,
+            "timestep": 900,
+            "mse": 0.0069681755267083645
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.2765362858772278
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09048496186733246
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007187983486801386
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 100,
+            "mse": 0.26489973068237305
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 500,
+            "mse": 0.10464459657669067
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 871,
+            "timestep": 900,
+            "mse": 0.006738472729921341
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 100,
+            "mse": 0.31215786933898926
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 500,
+            "mse": 0.15184631943702698
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 1442,
+            "timestep": 900,
+            "mse": 0.0056469799019396305
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 100,
+            "mse": 0.25573915243148804
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 500,
+            "mse": 0.08952759206295013
+          },
+          {
+            "song": "0dc236517cea",
+            "crop": 2053,
+            "timestep": 900,
+            "mse": 0.008110727183520794
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.5010689496994019
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.1321173757314682
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005705029238015413
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 100,
+            "mse": 0.5135663747787476
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 500,
+            "mse": 0.14710447192192078
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 134,
+            "timestep": 900,
+            "mse": 0.006010526325553656
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 100,
+            "mse": 0.3036584258079529
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 500,
+            "mse": 0.11629877984523773
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 289,
+            "timestep": 900,
+            "mse": 0.005032277200371027
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 100,
+            "mse": 0.40915584564208984
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 500,
+            "mse": 0.15673837065696716
+          },
+          {
+            "song": "0d3b640df910",
+            "crop": 442,
+            "timestep": 900,
+            "mse": 0.005804423242807388
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3189612627029419
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.14614763855934143
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.005532079841941595
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 100,
+            "mse": 0.3714838922023773
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 500,
+            "mse": 0.11003169417381287
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 271,
+            "timestep": 900,
+            "mse": 0.006995710544288158
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 100,
+            "mse": 0.23101916909217834
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 500,
+            "mse": 0.1159910187125206
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 562,
+            "timestep": 900,
+            "mse": 0.005295659881085157
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 100,
+            "mse": 0.3269570469856262
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 500,
+            "mse": 0.10465088486671448
+          },
+          {
+            "song": "05498db5cb5c",
+            "crop": 836,
+            "timestep": 900,
+            "mse": 0.005542974919080734
+          }
+        ]
+      }
+    ]
+  },
+  "training_probe_source": "import sys, json\nfrom pathlib import Path\nroot=Path('C:/Users/kanzei/.codex/worktrees/rhythm-convergence/AUTO-OSU')\nsys.path.insert(0,str(root))\nfrom scripts.coord_context_pilot import prepare, digest\nfrom autoosu.ml.coord import create_diffusion\nfrom autoosu.ml.coord_infer import load_coord_model\nfrom autoosu.ml.coord_context import AudioConditionedCoord\nimport torch\nout=Path('C:/Users/kanzei/Desktop/AUTO-OSU/out/coord-object-20261008/pilot')\nbase=Path('C:/Users/kanzei/Desktop/AUTO-OSU/models/coord_v0.pt')\nrecords=json.loads((out/'recipe.json').read_text())['sources']\nexamples=[]\nfor r in records:\n    if r['split']=='train': examples+=prepare(r,'cuda',128)\ndiffusion=create_diffusion(timestep_respacing='',diffusion_steps=1000,noise_schedule='squaredcos_cap_v2')\ng=torch.Generator(device='cpu').manual_seed(314159)\nbank=[(e,t,torch.randn(e['clean'].shape,generator=g).cuda()) for e in examples for t in (100,500,900)]\nresults=[]\nfor path in [None,*sorted(out.glob('*.pt'))]:\n    cm=load_coord_model(base,'cuda')\n    model=cm.net if path is None else AudioConditionedCoord.load_adapter(cm.net,path,digest(base)).cuda()\n    model.eval()\n    rows=[]\n    with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):\n        for e,t,noise in bank:\n            ts=torch.tensor([t],device='cuda')\n            kw=dict(c=e['c'],y=cm.class_vector(e['stars'],e['cs'])[None].cuda())\n            if path is not None: kw.update(music=e['music'],objects=e['objects'])\n            pred=model(diffusion.q_sample(e['clean'],ts,noise=noise),ts,**kw)[:,:2].float()\n            rows.append(dict(song=e['name'],crop=e['start'],timestep=t,mse=float((pred-noise).square().mean())))\n    row=dict(model='base' if path is None else path.stem,mean_mse=sum(r['mse'] for r in rows)/len(rows),rows=rows)\n    results.append(row)\n    print(row['model'],row['mean_mse'],flush=True)\n    del cm,model\n(out/'training-probe.json').write_text(json.dumps(dict(seed=314159,scope='Post-hoc fixed training-song noise bank; not a test set',results=results),indent=2))\n",
+  "raw_results_sha256": "10bb343e40e3fca034b3fc60d017e7a0504d4f4821c21e2aabee94ac2d6eca10",
+  "verification": {
+    "full_pytest": 220,
+    "actual_sampling": "Four 100-step pure-noise samples, finite raw coordinates; no osu export or client playtest"
+  },
+  "decision": "Do not promote frozen-input-adapter route. Retain object ownership fixes; investigate learned motion planning and joint fine-tuning under song-grouped validation."
+}
