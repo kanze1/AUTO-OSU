@@ -28,3 +28,22 @@ Observed differences: eyes to eyes has longer circle runs (5 / 12 / 14), while M
 Verification: 5187 objects and 1679 sliders independently parsed; slider repeat counts and head / tail / body sound fields match exports. All slider curves were sampled at 1,001 points, with no nonfinite or out-of-playfield samples. Two sliders were shortened by the existing placement correction, one in each new first-song version. Manifest and local-record raw matches were checked only within this local store. All 12 generation calls succeeded; the final archive passed its CRC check. Local full suite: 201 passed; no osu! client playtest is claimed.
 
 The audition package contains 12 `.osz` files, 12 synthesized-click rhythm previews, instructions, recipe and results. Click previews expose timing and new-combo differences, not actual osu! hitsound samples. Import the maps in osu! to review real sound additions, slider geometry and play feel. The package stays outside Git under `out/rhythm-v1-20261008/abc-audition-v2`.
+
+## Requested 3.5-star and harder boundary cases
+
+Six additional full-song maps use the same A/B/C checkpoints, coordinate model, seed and reference timing. The [case recipe](rhythm-v1-boundary-cases.json) selects Fruit Salad with the Hard preset and target 3.5 stars, and Mesheer at 222 BPM with the Insane preset, target 9 stars and density condition 12 objects per measure. Run the same audition script with `--cases docs/rhythm-v1-boundary-cases.json`; the other model, corpus and output arguments are unchanged. Actual density remains model-dependent.
+
+| Case | Variant | Measured stars | Objects | Sliders | Longest quarter-beat circle run | Peak objects/s over 2s |
+|---|---|---:|---:|---:|---:|---:|
+| Fruit Salad, target 3.5 | A-v0 | 3.35 | 179 | 47 | 1 | 4.5 |
+| Fruit Salad, target 3.5 | B-v1-best | 3.36 | 170 | 57 | 3 | 4.5 |
+| Fruit Salad, target 3.5 | C-v1-continued | 3.45 | 179 | 49 | 3 | 5.0 |
+| Mesheer, dense target 9 | A-v0 | 8.68 | 1257 | 1 | 30 | 15.0 |
+| Mesheer, dense target 9 | B-v1-best | 8.76 | 1161 | 54 | 133 | 15.0 |
+| Mesheer, dense target 9 | C-v1-continued | 8.82 | 837 | 1 | 3 | 8.0 |
+
+All three low-difficulty maps met the controller's ±0.5-star tolerance on their first candidate. All three high-difficulty maps selected the third candidate: measured-star feedback adjusted the model condition and then spacing. Final spacing multipliers were approximately 1.36 / 1.25 / 1.41 for A/B/C. These are comparisons under the same target-selection policy, with differing final conditions; they are not a fixed-condition causal comparison. Full attempts, settings, hashes and outcomes are retained in the [boundary report](rhythm-v1-boundary-20261008.json).
+
+The high-density case exposes an important distinction hidden by similar star ratings: B generates a 133-circle quarter-beat run, while C reaches a slightly higher rating with a longest run of only 3 and a much lower peak rate. The earlier Mesheer result at a 6.5-star input therefore does not describe every control regime. Neither case establishes which variant feels better or is suitable for release.
+
+Verification: all 3783 objects and 209 sliders independently parsed with matching slider sound fields and repeat counts. Curves sampled at 1001 points each had no nonfinite or out-of-playfield points; diagnostics reported no overlaps, invalid sliders or shortening. All six calls completed without warnings, all map hashes and ZIP CRCs passed, and the 15-entry delivery archive passed CRC validation. Local full suite: 201 passed. Client playtesting remains pending. Maps, synthesized-click previews and instructions remain outside Git under `out/rhythm-v1-20261008/abc-boundary`.

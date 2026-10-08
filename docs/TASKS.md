@@ -21,6 +21,8 @@ M2 execution update: the original 20,000-step run completed and [continuation](r
 
 The [12-map full-song A/B/C audition](rhythm-v1-audition.md) is generated and independently parsed. It shows per-song improvements and regressions, including Mesheer long runs falling from 33 to 4 circles. Human review remains pending; these outputs do not establish a release-quality improvement.
 
+Six additional [3.5-star and harder boundary maps](rhythm-v1-audition.md#requested-35-star-and-harder-boundary-cases) are ready for review: measured 3.35 / 3.36 / 3.45 stars and 8.68 / 8.76 / 8.82 stars. All 3783 objects and 209 sliders passed independent parsing and curve checks. Under the high-density target policy, B produces a 133-circle run while C produces only 3; similar star ratings do not imply similar patterns. Human playtesting and release acceptance remain pending.
+
 States: Planned, In progress, Validated, Merged, Research gate, or Out of scope. Record missing external verification as a specific limitation, not a passing result.
 
 ## Release gates
