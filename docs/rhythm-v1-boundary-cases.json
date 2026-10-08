@@ -1,0 +1,16 @@
+[
+  {
+    "name": "target-3.5",
+    "group": "193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2",
+    "preset": "Hard",
+    "star_rating": 3.5,
+    "controls": {"highlight_mode": "off", "target_stars": 3.5, "candidates": 3}
+  },
+  {
+    "name": "dense-222bpm-target-9",
+    "group": "02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45",
+    "preset": "Insane",
+    "star_rating": 9.0,
+    "controls": {"highlight_mode": "off", "target_stars": 9.0, "candidates": 3, "density": 12.0}
+  }
+]

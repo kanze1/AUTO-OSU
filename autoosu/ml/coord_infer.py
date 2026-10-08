@@ -31,6 +31,7 @@ from ..rhythm import RhythmEvent
 from ..sliderpath import fit_slider, path_points
 from ..timing import Timing
 from .coord import DiT_models, create_diffusion, timestep_embedding
+from .skills import skill_vector
 
 N_TYPES = 16
 CONTEXT_SIZE = 272
@@ -55,12 +56,13 @@ class CoordModel:
     max_difficulty: float = 12.0
     num_cs_classes: int = 22
     arch: str = "DiT-B"
+    skill_names: tuple[str, ...] = ()
 
     @property
     def num_tokens(self) -> int:
-        return self.num_diff_classes + self.num_cs_classes
+        return self.num_diff_classes + self.num_cs_classes + len(self.skill_names)
 
-    def class_vector(self, star: Optional[float], cs: Optional[float]) -> torch.Tensor:
+    def class_vector(self, star: Optional[float], cs: Optional[float], skills: Optional[dict] = None) -> torch.Tensor:
         """One-hot difficulty class + one-hot circle-size class (unknown slots when None)."""
         v = torch.zeros(self.num_tokens)
         nd, ncs = self.num_diff_classes, self.num_cs_classes
@@ -72,6 +74,8 @@ class CoordModel:
             v[nd + ncs - 1] = 1
         else:
             v[nd + int(np.clip(int(cs * (ncs - 2) / 10), 0, ncs - 2))] = 1
+        if self.skill_names or skills:
+            v[nd + ncs:] = torch.from_numpy(skill_vector(self.skill_names, skills))
         return v
 
 
@@ -94,7 +98,8 @@ def load_coord_model(path: str | Path, device: Optional[str] = None) -> CoordMod
     ckpt = torch.load(path, map_location="cpu", weights_only=True)
     meta = ckpt["meta"]
     cm = CoordModel(net=None, device=device, num_diff_classes=meta["num_diff_classes"],
-                    max_difficulty=meta["max_difficulty"], num_cs_classes=meta["num_cs_classes"], arch=meta["arch"])
+                    max_difficulty=meta["max_difficulty"], num_cs_classes=meta["num_cs_classes"], arch=meta["arch"],
+                    skill_names=tuple(meta.get("skill_names", ())))
     net = DiT_models[meta["arch"]](context_size=meta.get("context_size", CONTEXT_SIZE), class_size=cm.num_tokens)
     net.load_state_dict({k: v.float() for k, v in ckpt["state_dict"].items()})
     cm.net = net.to(device).eval()
@@ -154,19 +159,30 @@ def build_sequence(events: Sequence[RhythmEvent], preset: DifficultyPreset, timi
         elif ev.kind == "slider":
             span = (ev.end_time - ev.time) / max(1, ev.repeats)
             length = max(1.0, preset.slider_multiplier * 100.0 * sv_at(ev.time) * span / timing.beat_length)
-            curve, n_mid = _slider_structure(length, diam, rng)
+            if ev.slider_topology is None:
+                curve, n_mid = _slider_structure(length, diam, rng)
+                anchor_types = [T_PERFECT if curve == "P" else T_BEZIER] * n_mid
+            else:
+                curve, topology = ev.slider_topology.split(":", 1)
+                anchor_types = [int(t) for t in topology.split(".")] if topology else []
             head = len(times)
             times.append(ev.time)
             types.append(T_HEAD + (1 if ev.new_combo else 0))
-            for k in range(n_mid):
-                times.append(ev.time + (k + 1) / (n_mid + 1) * span)
-                types.append(T_PERFECT if curve == "P" else T_BEZIER)
+            anchors = [head]
+            for k, token_type in enumerate(anchor_types):
+                anchors.append(len(times))
+                # Red Bezier anchors are a duplicated path point, but one coordinate token.
+                if curve == "B" and token_type == T_RED:
+                    anchors.append(len(times))
+                times.append(ev.time + (k + 1) / (len(anchor_types) + 1) * span)
+                types.append(token_type)
+            anchors.append(len(times))
             times.append(ev.time + span)
             types.append(T_LAST)
             end = len(times)
             times.append(ev.end_time)
             types.append(T_END + repeat_type(max(1, ev.repeats)))
-            sliders.append(SeqSlider(ev, curve, list(range(head, end)), end, length))
+            sliders.append(SeqSlider(ev, curve, anchors, end, length))
         else:
             times.append(ev.time)
             types.append(T_CIRCLE + (1 if ev.new_combo else 0))
@@ -214,13 +230,13 @@ def _from_pixels(p: np.ndarray, like: torch.Tensor) -> torch.Tensor:
 def sample_positions(cm: CoordModel, seq: Sequence, star: Optional[float], cs: Optional[float], *,
                      steps: int = 100, seed: int = 0, cfg_scale: float = 1.0, max_seq_len: int = 1024,
                      overlap: int = 128, band: int = 128, progress: Optional[ProgressFn] = None,
-                     distances: Optional[np.ndarray] = None) -> np.ndarray:
+                     distances: Optional[np.ndarray] = None, skills: Optional[dict] = None) -> np.ndarray:
     """Denoise positions for the whole sequence; returns (N, 2) pixel coordinates."""
     n = len(seq)
     device = cm.device
     diffusion = create_diffusion(timestep_respacing=[int(steps)], diffusion_steps=1000, noise_schedule="squaredcos_cap_v2")
     c_all = sequence_context(seq, distances).to(device)
-    y = cm.class_vector(star, cs).to(device).unsqueeze(0)
+    y = cm.class_vector(star, cs, skills).to(device).unsqueeze(0)
     y_null = cm.class_vector(None, None).to(device).unsqueeze(0)
     gen = torch.Generator(device="cpu").manual_seed(seed)
     noise_all = torch.randn(1, 2, n, generator=gen).to(device)
@@ -303,19 +319,20 @@ class Placement:
 def place_with_model(events: List[RhythmEvent], preset: DifficultyPreset, timing: Timing, cm: CoordModel,
                      sv_sections: Sequence[SvSection] = (), *, star: Optional[float] = None, seed: int = 0,
                      steps: int = 100, cfg_scale: float = 1.0, progress: Optional[ProgressFn] = None,
-                     spacing_scale: Optional[float] = None, highlight_regions=()) -> Placement:
+                     spacing_scale: Optional[float] = None, highlight_regions=(), skills: Optional[dict] = None) -> Placement:
     rng = np.random.default_rng(seed)
     seq = build_sequence(events, preset, timing, sv_sections, rng)
     if len(seq) == 0:
         return Placement([])
     controlled = spacing_scale is not None or bool(highlight_regions)
     first_progress = (lambda f, m: progress(f*.5, "reference: " + m)) if controlled and progress else progress
-    pos = sample_positions(cm, seq, star, preset.cs, steps=steps, seed=seed, cfg_scale=cfg_scale, progress=first_progress)
+    pos = sample_positions(cm, seq, star, preset.cs, steps=steps, seed=seed, cfg_scale=cfg_scale,
+                           progress=first_progress, skills=skills)
     if controlled:
         distances = distance_condition(seq, pos, 1. if spacing_scale is None else spacing_scale, highlight_regions)
         second_progress = (lambda f, m: progress(.5+f*.5, "controlled: " + m)) if progress else None
         pos = sample_positions(cm, seq, star, preset.cs, steps=steps, seed=seed, cfg_scale=cfg_scale,
-                               progress=second_progress, distances=distances)
+                               progress=second_progress, distances=distances, skills=skills)
     by_head = {sl.anchor_idx[0]: sl for sl in seq.sliders}
     objects: List[HitObject] = []
     overrides: List[Tuple[int, int, float]] = []
@@ -330,7 +347,9 @@ def place_with_model(events: List[RhythmEvent], preset: DifficultyPreset, timing
             end = (hx, hy) if ev.repeats % 2 == 0 else (int(round(fit.end[0])), int(round(fit.end[1])))
             objects.append(Slider(hx, hy, ev.time, ev.new_combo, ev.hitsound, curve_type=sl.curve,
                                   points=list(fit.anchors[1:]), repeats=max(1, ev.repeats), length=fit.length,
-                                  duration=ev.end_time - ev.time, end_x=end[0], end_y=end[1]))
+                                  duration=ev.end_time - ev.time, end_x=end[0], end_y=end[1],
+                                  edge_sounds=([ev.hitsound] + [0] * (ev.repeats - 1) + [ev.tail_hitsound]
+                                               if ev.tail_hitsound is not None else [])))
             if fit.sv_scale < 0.999:
                 overrides.append((ev.time, ev.end_time, fit.sv_scale))
         else:

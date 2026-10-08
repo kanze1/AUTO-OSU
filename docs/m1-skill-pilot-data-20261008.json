@@ -1,0 +1,64 @@
+{
+  "schema": "autoosu.skill-pilot-data/1",
+  "skill_names": [
+    "jumps",
+    "bursts",
+    "streams",
+    "slider_tech"
+  ],
+  "min_votes": 2,
+  "source_revision": "ea7e5b8b39d45ffa4f8d0ee3769024778bf3ea8f",
+  "selected": 13005,
+  "retained": 12832,
+  "file_md5_serialization": "UTF-8 CRLF reconstructed from HF normalized text",
+  "exclusions": {
+    "metadata_version_md5_mismatch": 167,
+    "short_or_nonfinite_sequence": 6
+  },
+  "splits": {
+    "train": {
+      "maps": 10132,
+      "groups": 5391,
+      "labels": {
+        "streams": 2249,
+        "bursts": 4404,
+        "jumps": 5734,
+        "slider_tech": 877
+      },
+      "sha256": "8b980b8248f3e470c10d5eefb1159373b541d394e4de9b3cbcec032eeb0e08cf"
+    },
+    "validation": {
+      "maps": 1316,
+      "groups": 677,
+      "labels": {
+        "streams": 303,
+        "jumps": 742,
+        "bursts": 573,
+        "slider_tech": 105
+      },
+      "sha256": "1f07715084a71106cde74a97998c94ddfc5590f4c1fcb9ef765d7e5cd3d027fa"
+    },
+    "test": {
+      "maps": 1384,
+      "groups": 712,
+      "labels": {
+        "bursts": 577,
+        "streams": 292,
+        "jumps": 833,
+        "slider_tech": 123
+      },
+      "sha256": "cd027a1545f506580c60d985f94d55ef84202d74427f7f098b03218de23bfcd7"
+    }
+  },
+  "sources": {
+    "README.md": "70140adb887b74cc216f839325bcde2a93592e60bdae12a7533b3315c5849288",
+    "tags.csv": "80a0777791c873cd8a1ee3cbe43e336a133d1db965c159da2c6bdc17e941b694",
+    "metadata.csv": "dd1feff71644262c2080a2f194980405e9474231a56d2c497a00e2a0868c2a99"
+  },
+  "limits": [
+    "Community votes are positive evidence, not exhaustive labels; missing is unknown.",
+    "No local human agreement audit yet; this is an exploratory pilot, not M1 release acceptance.",
+    "Split holds out audio/artist-title groups from fine-tuning, not from v0 pretraining.",
+    "Exact compressed-audio hashes and conservative title grouping do not prove all acoustic near duplicates absent."
+  ]
+}

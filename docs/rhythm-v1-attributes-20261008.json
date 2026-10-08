@@ -1,0 +1,909 @@
+{
+  "schema": "autoosu.object-attributes/1",
+  "vocabulary_source": "train only",
+  "splits": {
+    "train": {
+      "maps": 125230,
+      "covered": {
+        "new_combo": 56537662,
+        "hitsound": 56537662,
+        "tail_hitsound": 24119962,
+        "repeats": 24119962,
+        "topology": 24119962
+      },
+      "unknown": {
+        "unmatched_or_ambiguous_object": 36965
+      }
+    },
+    "validation": {
+      "maps": 6669,
+      "covered": {
+        "new_combo": 2973147,
+        "hitsound": 2973147,
+        "tail_hitsound": 1268705,
+        "repeats": 1268704,
+        "topology": 1268016
+      },
+      "unknown": {
+        "topology": 689,
+        "repeats": 1
+      }
+    },
+    "test": {
+      "maps": 7013,
+      "covered": {
+        "new_combo": 3142841,
+        "hitsound": 3142841,
+        "tail_hitsound": 1344667,
+        "repeats": 1344666,
+        "topology": 1344130
+      },
+      "unknown": {
+        "topology": 537,
+        "unmatched_or_ambiguous_object": 556,
+        "repeats": 1
+      }
+    }
+  },
+  "vocabulary_sha256": "a3e992b8d359b4659d0d5ff05ff18df0e6c7f2ae4f0545278714bffb0d02be7e",
+  "classes": {
+    "new_combo": 2,
+    "hitsound": 8,
+    "tail_hitsound": 8,
+    "repeats": 113,
+    "topology": 14821
+  },
+  "exclusions": [
+    {
+      "beatmap_id": 144986,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 497680,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225398,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225386,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225399,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225394,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225395,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225391,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225385,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225384,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5225396,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 155706,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 1849131,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 1935058,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 781296,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 2573166,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4802503,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 21454,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 907822,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 3079907,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 312484,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 21107,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 1151178,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 3578111,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5172780,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 5218932,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 2015822,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 1398167,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 2568364,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 76190,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 857411,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 665080,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 784105,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 2573493,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845640,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845656,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4820468,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845652,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845651,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845648,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845641,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845645,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845646,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845657,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845658,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845643,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845649,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845642,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845644,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845650,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845638,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845639,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845637,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845655,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845659,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845654,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845660,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845647,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845653,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845669,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845663,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845662,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845684,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845672,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845685,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845680,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845664,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845670,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845671,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845674,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845673,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845681,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845667,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845661,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845683,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845679,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845676,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845677,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845668,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845682,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845665,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845678,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845675,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 4845666,
+      "reason": "Invalid source slider curve",
+      "stage": "vocabulary"
+    },
+    {
+      "beatmap_id": 144986,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 497680,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225398,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225386,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225399,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225394,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225395,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225391,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225385,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225384,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5225396,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 155706,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 1849131,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 1935058,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 781296,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 2573166,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4802503,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 21454,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 907822,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 3079907,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 312484,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 21107,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 1151178,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 3578111,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5172780,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 5218932,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 2015822,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 1398167,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 2568364,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 76190,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 857411,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 665080,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 784105,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 2573493,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845640,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845656,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4820468,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845652,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845651,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845648,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845641,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845645,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845646,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845657,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845658,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845643,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845649,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845642,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845644,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845650,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845638,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845639,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845637,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845655,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845659,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845654,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845660,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845647,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845653,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845669,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845663,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845662,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845684,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845672,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845685,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845680,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845664,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845670,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845671,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845674,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845673,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845681,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845667,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845661,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845683,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845679,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845676,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845677,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845668,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845682,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845665,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845678,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845675,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 4845666,
+      "reason": "Invalid source slider curve",
+      "stage": "train"
+    },
+    {
+      "beatmap_id": 1186086,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "test"
+    },
+    {
+      "beatmap_id": 2883509,
+      "reason": "Source slider edge count differs from repeat count",
+      "stage": "test"
+    }
+  ],
+  "limits": "Quarter-beat rhythm grid retained. Standard head/tail sound flags only; sample banks, custom audio and internal repeat sounds are not learned by this version."
+}

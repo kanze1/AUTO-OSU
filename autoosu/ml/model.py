@@ -16,7 +16,7 @@ features (loudness, beat length, local density) and the global conditioning.
 from __future__ import annotations
 
 import math
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field, replace
 from typing import Optional
 
 import numpy as np
@@ -37,6 +37,23 @@ class ModelConfig:
     max_len: int = 2048
     mode: str = "ar"             # "ar" | "masked"
     audio_ctx_layers: int = 0    # bidirectional label-free layers over the audio features first
+    audio_frontend: str = "linear"  # linear v0 patch projection or learned convolutional spectrum encoder
+    skill_names: tuple[str, ...] = ()  # positive-only skill conditions appended to global features
+    attribute_vocab: dict = field(default_factory=dict)  # source-supervised object attributes
+
+
+class SpectralEncoder(nn.Module):
+    """Learn local time/frequency patterns before the shared beat-context encoder."""
+    def __init__(self, width: int):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Conv2d(1, 16, 3, stride=2, padding=1), nn.GELU(),
+            nn.Conv2d(16, 32, 3, stride=2, padding=1), nn.GELU(),
+            nn.Flatten(), nn.Linear(32 * (PATCH // 4) * (N_MELS // 4), width), nn.GELU())
+
+    def forward(self, audio: torch.Tensor) -> torch.Tensor:
+        batch, length = audio.shape[:2]
+        return self.net(audio.reshape(batch * length, 1, PATCH, N_MELS)).reshape(batch, length, -1)
 
 
 class TickTransformer(nn.Module):
@@ -44,11 +61,16 @@ class TickTransformer(nn.Module):
         super().__init__()
         self.cfg = cfg
         d = cfg.d_model
-        self.audio_proj = nn.Sequential(nn.Flatten(-2), nn.Linear(PATCH * N_MELS, d), nn.GELU(), nn.Linear(d, d))
+        if cfg.audio_frontend == "linear":
+            self.audio_proj = nn.Sequential(nn.Flatten(-2), nn.Linear(PATCH * N_MELS, d), nn.GELU(), nn.Linear(d, d))
+        elif cfg.audio_frontend == "conv":
+            self.audio_proj = SpectralEncoder(d)
+        else:
+            raise ValueError(f"Unknown audio frontend: {cfg.audio_frontend}")
         self.token_emb = nn.Embedding(N_INPUT_TOKENS, d)
         self.met_emb = nn.Embedding(MAX_METER_SLOTS, d)
         self.extra_proj = nn.Sequential(nn.Linear(EXTRA_DIM, d), nn.GELU(), nn.Linear(d, d))
-        self.cond_proj = nn.Sequential(nn.Linear(COND_DIM, d), nn.GELU(), nn.Linear(d, d))
+        self.cond_proj = nn.Sequential(nn.Linear(COND_DIM + len(cfg.skill_names), d), nn.GELU(), nn.Linear(d, d))
         self.pos_emb = nn.Embedding(cfg.max_len, d)
         self.dec_pos_emb = nn.Embedding(cfg.max_len, d)
 
@@ -61,6 +83,8 @@ class TickTransformer(nn.Module):
         self.blocks = nn.TransformerEncoder(layer(), cfg.n_layers, enable_nested_tensor=False)
         self.norm = nn.LayerNorm(d)
         self.head = nn.Linear(d, N_CLASSES)
+        self.attribute_heads = nn.ModuleDict({name: nn.Linear(d, len(values))
+                                             for name, values in cfg.attribute_vocab.items()})
         self.drop = nn.Dropout(cfg.dropout)
 
     @property
@@ -79,6 +103,10 @@ class TickTransformer(nn.Module):
 
     def decode(self, h: torch.Tensor, tokens: torch.Tensor, pad_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
         """h (B,L,d) from encode_audio + label tokens (B,L) -> logits (B,L,C)."""
+        return self.head(self.decode_features(h, tokens, pad_mask))
+
+    def decode_features(self, h: torch.Tensor, tokens: torch.Tensor,
+                        pad_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
         L = tokens.shape[1]
         x = h + self.token_emb(tokens) + self.dec_pos_emb(torch.arange(L, device=tokens.device)).unsqueeze(0)
         x = self.drop(x)
@@ -87,15 +115,35 @@ class TickTransformer(nn.Module):
             x = self.blocks(x, mask=mask, src_key_padding_mask=pad_mask, is_causal=True)
         else:
             x = self.blocks(x, src_key_padding_mask=pad_mask)
-        return self.head(self.norm(x))
+        return self.norm(x)
 
     def forward(self, audio: torch.Tensor, tokens: torch.Tensor, metrical: torch.Tensor, extra: torch.Tensor,
-                cond: torch.Tensor, pad_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
+                cond: torch.Tensor, pad_mask: Optional[torch.Tensor] = None,
+                attribute_targets: Optional[torch.Tensor] = None):
         """audio (B,L,PATCH,64) tokens (B,L) metrical (B,L) extra (B,L,EXTRA_DIM) cond (B,COND_DIM) -> (B,L,C)"""
-        return self.decode(self.encode_audio(audio, metrical, extra, cond, pad_mask), tokens, pad_mask)
+        features = self.decode_features(self.encode_audio(audio, metrical, extra, cond, pad_mask), tokens, pad_mask)
+        logits = self.head(features)
+        if attribute_targets is None:
+            return logits
+        from .attributes import ATTRIBUTE_NAMES
+        # Only applicable source objects allocate attribute logits. Empty heads remain in autograd.
+        predictions = {name: head(features[attribute_targets[..., ATTRIBUTE_NAMES.index(name)] != -100])
+                       for name, head in self.attribute_heads.items()}
+        return logits, predictions
 
     def save(self, path: str, extra: Optional[dict] = None) -> None:
         torch.save({"config": asdict(self.cfg), "state_dict": self.state_dict(), **(extra or {})}, path)
+
+    def with_skills(self, names) -> "TickTransformer":
+        """Initialize new condition columns at zero, preserving the pretrained function."""
+        if self.cfg.skill_names:
+            raise ValueError("Model already has a skill schema")
+        model = TickTransformer(replace(self.cfg, skill_names=tuple(names)))
+        state = dict(self.state_dict())
+        weight = state["cond_proj.0.weight"]
+        state["cond_proj.0.weight"] = F.pad(weight, (0, len(names)))
+        model.load_state_dict(state)
+        return model
 
     @classmethod
     def load(cls, path: str, device: str = "cpu") -> "TickTransformer":
@@ -277,3 +325,27 @@ def sample_masked(model: TickTransformer, audio: torch.Tensor, metrical: torch.T
         final[start:end] = tokens.cpu().numpy()
         start = end - overlap if end < n else n
     return repair_structure(final)
+
+
+@torch.no_grad()
+def sample_attributes(model, audio, metrical, extra, cond, labels, *, generator=None, temperature=.9, chunk=1024):
+    """Predict object attributes after rhythm decoding; no attribute is supplied as input."""
+    result = {name: np.full(len(labels), -100, dtype=np.int64) for name in model.attribute_heads}
+    for start in range(0, len(labels), chunk):
+        end = min(start + chunk, len(labels))
+        tokens = torch.as_tensor(labels[start:end], dtype=torch.long, device=audio.device)[None]
+        with torch.autocast("cuda", dtype=torch.bfloat16, enabled=audio.device.type == "cuda"):
+            h = model.encode_audio(audio[start:end][None], metrical[start:end][None], extra[start:end][None], cond[None])
+            features = model.decode_features(h, tokens)[0]
+            for name, head in model.attribute_heads.items():
+                valid = np.isin(labels[start:end], [1, 2]) if name in ("new_combo", "hitsound") else labels[start:end] == 2
+                indices = np.flatnonzero(valid)
+                if not len(indices):
+                    continue
+                logits = head(features[torch.as_tensor(indices, device=audio.device)]).float()
+                if temperature <= 0:
+                    selected = logits.argmax(-1)
+                else:
+                    selected = torch.multinomial(F.softmax(logits / temperature, -1), 1, generator=generator)[:, 0]
+                result[name][start + indices] = selected.cpu().numpy()
+    return result
