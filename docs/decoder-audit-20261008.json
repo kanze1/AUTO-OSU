@@ -1,0 +1,667 @@
+{
+  "date": "2026-10-08",
+  "scope": "Two development songs, one seed; structural and sampling diagnostics, not a playability or preference evaluation.",
+  "recipe": {
+    "cases": [
+      {
+        "name": "Haru-TV-Hard",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\haru-human-comparison-20261008\\human-original\\audio.mp3",
+        "bpm": 204.0,
+        "offset_ms": 321.0,
+        "preset": "Hard",
+        "star": 3.737256690698223
+      },
+      {
+        "name": "Mesheer",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45.opus",
+        "bpm": 222.00000000000026,
+        "offset_ms": 1089.0,
+        "preset": "Insane",
+        "star": 6.5
+      }
+    ],
+    "variants": [
+      {
+        "name": "D0-baseline",
+        "steps": 12,
+        "temperature": 0.9,
+        "attribute_temperature": 0.9
+      },
+      {
+        "name": "D1-24rounds",
+        "steps": 24,
+        "temperature": 0.9,
+        "attribute_temperature": 0.9
+      },
+      {
+        "name": "D2-24rounds-T0.7",
+        "steps": 24,
+        "temperature": 0.7,
+        "attribute_temperature": 0.7
+      },
+      {
+        "name": "D3-attribute-argmax",
+        "steps": 12,
+        "temperature": 0.9,
+        "attribute_temperature": 0.0
+      }
+    ],
+    "seed": 240924,
+    "coord_steps": 100,
+    "checkpoint_sha256": "a861be0c7d87b16351fe2a6a6083658e9e541925867f0186284466c75531d076",
+    "coord_sha256": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040",
+    "source_sha256": {
+      "autoosu\\audio.py": "d7eb49cf92623edf454545ab1db423580dc1c49f8c4e4f07eef349f97fc2091a",
+      "autoosu\\audio_io.py": "8d88eead00a98519b5dadaaddc82b5deb8d369abe2f9093bd9cf644662dd64de",
+      "autoosu\\batch.py": "80ee92c954f7395e12e6bf6d47b7f334b7492740d84f58812124e88360c46769",
+      "autoosu\\beatmap.py": "ec43cca023c08d2175413bee546b7f8626f43a73738ccde6aae141f749d9c6e5",
+      "autoosu\\cli.py": "d16541eca13ccac641f8a70fd89fe9f17aed403829e3052da92241661fb91c2f",
+      "autoosu\\controls.py": "2c39eef599235728ee5eea5c6ebdd7f5f228fa83d7194934d5a20a3ff5acc70f",
+      "autoosu\\control_gui.py": "fad9d370ab840302dcd47f58ec6948155845c627a19c930ba8f8cc7c278b7197",
+      "autoosu\\debug.py": "e74f58a5d5b9bdec77d02630efb797cbf8425f9cabf63ee2dbb94271f09ca398",
+      "autoosu\\devices.py": "f1923fbafde4a15531aaa81454cbacc6ae93c785d03ad5b8cb9f3d572a30b71d",
+      "autoosu\\difficulty.py": "59ebc25f9887673b1004ff20458392ec17ae95cf10f93437981de0d37f4ec0c9",
+      "autoosu\\generate.py": "21c1e6178392f9f083dba276d4124f8ffdc198ec622c9b1d68a8651537da20be",
+      "autoosu\\gui.py": "536c75f035fef902add73baabd5d5fb710ef95e3420e31a8c9540cb34eab83fd",
+      "autoosu\\gui_layout.py": "27b980d8fc02f6e6d19edd12941f7bbc9936846a8a4986d29851f82178641d1a",
+      "autoosu\\i18n.py": "916357734fc9599ba32322dc2a4669138365b6c6d64aadbab824867bebb4190a",
+      "autoosu\\metrics.py": "3610d7c135e2336176249a070af039ee311eab0b96d978aab533fd3ea1423a50",
+      "autoosu\\models.py": "cdbc84c2c611935ceb804f1117bc82384e12a12a12b8382c4404f2db58823bbb",
+      "autoosu\\package.py": "1aa96c74c64dee082c660714df9f009244859c4f2ec5a45f71819d19de1fcf19",
+      "autoosu\\placement.py": "1b2bf038368e4cbc7ad76136c473bf811fd3cb14827e0934120bfc6fa381399a",
+      "autoosu\\preferences.py": "bc5aa297c45130d106e64cbc1931fe40ca3c9be2e3692ab40716f4c19ac672ae",
+      "autoosu\\preview.py": "ffab46c1db9409183d2732383463dd5fc2e8211c365b3a5c967cd58d05ad2314",
+      "autoosu\\provenance.py": "8bff71f4a3989c38c67bdda89b73a44e3f7a2e877228146ffb8e18e31d1539d7",
+      "autoosu\\rhythm.py": "7ea47d88f830380c4e03f42cc82bbb07b4a23dc1f9547236288feb1962f017d7",
+      "autoosu\\runtime.py": "12e0d6992a1e8553c5c62192a887f11530e7430e2fb152699b9498d20e849f2b",
+      "autoosu\\sliderpath.py": "01ea35bfc9d3cdb6d7f469a609cee9481561442edff3e87ee29e7f523ffb5bef",
+      "autoosu\\source_check.py": "81b64208db0ca2fd0ddd90a16c4e5957c7e3a6958f7b5d2818db01ebcd860e7c",
+      "autoosu\\source_gui.py": "0ee227f17f67794f64f9586734a2ea6bbc6770cf739b42f65a840c4231bc3a5f",
+      "autoosu\\timing.py": "f6a4f0abd0ddda849527cd4bf081239ff00614b9f4f0c51181f6d65c52a04e26",
+      "autoosu\\watermark.py": "dc2b2be578c42a6c9e028c84f110229d5cf9b034ccb9141be66d07270f618ce4",
+      "autoosu\\worker.py": "d1264bc024b23621a6584a4e1a15a8dda8e70ca1f5e12ae3a7a78cac320da53c",
+      "autoosu\\__init__.py": "81d4659299ab71569c8b00156f464f7a03ed86eeb77e06b3f5c6ad1926618b47",
+      "autoosu\\__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "autoosu\\ml\\attributes.py": "e13478e6ffa80028775beb2f05d7e6323846380f71467a76c15c5646ffc877bd",
+      "autoosu\\ml\\convergence.py": "a3479d73c16b7a9b8482295e35f40cecf210de1957846179a280212218f51083",
+      "autoosu\\ml\\coord_infer.py": "adf2b1ac4d234bd4be6d8b06874eefdc62ac62dc0ce6d2d3424d498e09f58e0b",
+      "autoosu\\ml\\dataset.py": "abbabc746e862ddf051f144764dc191e7f4d630d6f91d4a2ea94d5a7127a68cd",
+      "autoosu\\ml\\model.py": "ee1d40d9285bfdf9feb2e859fc12fe56950249f4f491088b0c58711a1edb6402",
+      "autoosu\\ml\\osu_parse.py": "3130b901f43771d57dd93999129c36d224e40a0c1ce82ece4a95a519a940600c",
+      "autoosu\\ml\\prepare_data.py": "e4ba7f80cfe446bf73d735c447f8139a49b862adec7e759348191bb7745af3b1",
+      "autoosu\\ml\\sample.py": "4c0f88cdadf6fad4fd03e83460520814642cd8d3103b46d17b6e8281c4e1305d",
+      "autoosu\\ml\\skills.py": "c7c3b283e7468a9320d7c908574aa87d8b29d4e9c0b87e4734f87adaaec1f6c2",
+      "autoosu\\ml\\train.py": "a499e6b824a67c88a991a3f701d9820da12fc6498b2910744f7f9a3f47dd9065",
+      "autoosu\\ml\\train_architecture.py": "a67fc6571c44f7b6bdb1213e3a8cf95abcb72027976e03805907dc5ef21cd7da",
+      "autoosu\\ml\\train_convergence.py": "0eb0f5eab85a8923857bf0262d7852699e18af319587ea2bdf7d47f6137c584a",
+      "autoosu\\ml\\train_skills.py": "a0587eb8eaa284a333ef41aad49c4db863d5c96a498174914edfed2e75b5c6eb",
+      "autoosu\\ml\\__init__.py": "9ca6af01fa163a37d62348eb177e6d09614a86275504b45f1e2806cd5908d946",
+      "autoosu\\ml\\coord\\models.py": "441612e0e4c1aa6a544338b81ffb4bc655a99882dd83e1ec6ff28ea4a5d304ba",
+      "autoosu\\ml\\coord\\positional_embedding.py": "a367927c8fce550ca5033ff2dac183f62df549bb36802e7698842c4a88b58ec3",
+      "autoosu\\ml\\coord\\__init__.py": "0f3dce649301bb382dc67674ff1c6f516a29fd54495154a18e7fdef4dc7ee535",
+      "autoosu\\ml\\coord\\diffusion\\diffusion_utils.py": "a1190b787dda95a8fa4b0e6a78bb21f6bd6acb7ce120754ec22c8125473621d9",
+      "autoosu\\ml\\coord\\diffusion\\gaussian_diffusion.py": "4ed3b9c12c80bcae086b9bb91845b9586a3f91abc99bf73f1fddcd6566f84ce9",
+      "autoosu\\ml\\coord\\diffusion\\respace.py": "d2e956b964ac49e2330ae9b502b1a78e9a4d0ab768615c402058f8cb54ce3b6f",
+      "autoosu\\ml\\coord\\diffusion\\__init__.py": "510e36fc348598cbee2ea1e3d0b5e170b1737cd22034edd3463a5787141b6e20"
+    },
+    "audio_sha256": {
+      "Haru-TV-Hard": "c43564a4da74b65841817e54668c0f02b6425be8af69714abc9ac2bebe9b0480",
+      "Mesheer": "44e3824b2e98537948b0d990afb4067a90aa78ada3ab3cc3908c37bc9a48c191"
+    },
+    "script_sha256": "fd059de865a518537e9e63c7b9a398f3973e0d216ebe1b87c107d9ac5d0a9165",
+    "scope": "Two development songs, one seed; no quality preference or generalization claim. Target controller disabled to isolate decoding."
+  },
+  "rows": [
+    {
+      "case": "Haru-TV-Hard",
+      "variant": {
+        "name": "D0-baseline",
+        "steps": 12,
+        "temperature": 0.9,
+        "attribute_temperature": 0.9
+      },
+      "stars": 3.2635661193357937,
+      "traces": [
+        {
+          "ticks": 1207,
+          "changed_ticks": 25,
+          "change_rate": 0.020712510356255178,
+          "raw_classes": [
+            511,
+            83,
+            137,
+            314,
+            138,
+            24
+          ],
+          "repaired_classes": [
+            530,
+            86,
+            134,
+            299,
+            134,
+            24
+          ],
+          "changed_classes": {
+            "3->0": 12,
+            "4->0": 7,
+            "2->1": 3,
+            "3->4": 3
+          },
+          "illegal_adjacent_transitions": 21,
+          "changed_within_16_ticks_of_seam": 4,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 3
+        }
+      ],
+      "new_combos": 57,
+      "nonzero_hitsounds": 179,
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 2
+      },
+      "diagnostics": {
+        "objects": 221,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 2,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 78.66697965399706,
+        "spacing_p95_px": 142.89436281855615
+      },
+      "warnings": [],
+      "file": "maps/Haru-TV-Hard-D0-baseline-3.26star.osz",
+      "sha256": "a12eb56af1818a41c8dc6854c2306fc42ef54b949b698f2275c40b98f9bbf8b4",
+      "objects": 221,
+      "sliders": 134
+    },
+    {
+      "case": "Haru-TV-Hard",
+      "variant": {
+        "name": "D1-24rounds",
+        "steps": 24,
+        "temperature": 0.9,
+        "attribute_temperature": 0.9
+      },
+      "stars": 3.394143978964513,
+      "traces": [
+        {
+          "ticks": 1207,
+          "changed_ticks": 22,
+          "change_rate": 0.018227009113504555,
+          "raw_classes": [
+            586,
+            88,
+            115,
+            271,
+            123,
+            24
+          ],
+          "repaired_classes": [
+            605,
+            90,
+            113,
+            262,
+            113,
+            24
+          ],
+          "changed_classes": {
+            "3->4": 1,
+            "2->1": 2,
+            "4->0": 11,
+            "3->0": 8
+          },
+          "illegal_adjacent_transitions": 20,
+          "changed_within_16_ticks_of_seam": 5,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 2
+        }
+      ],
+      "new_combos": 52,
+      "nonzero_hitsounds": 169,
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "diagnostics": {
+        "objects": 204,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 4.5,
+        "spacing_p50_px": 81.49233092751734,
+        "spacing_p95_px": 203.2141727340886
+      },
+      "warnings": [],
+      "file": "maps/Haru-TV-Hard-D1-24rounds-3.39star.osz",
+      "sha256": "87b0d01d5e9dc0ef8cf05bfd2a1882f52a064aa0196196af3adbdbb35a13d948",
+      "objects": 204,
+      "sliders": 113
+    },
+    {
+      "case": "Haru-TV-Hard",
+      "variant": {
+        "name": "D2-24rounds-T0.7",
+        "steps": 24,
+        "temperature": 0.7,
+        "attribute_temperature": 0.7
+      },
+      "stars": 3.50219524957739,
+      "traces": [
+        {
+          "ticks": 1207,
+          "changed_ticks": 11,
+          "change_rate": 0.009113504556752278,
+          "raw_classes": [
+            573,
+            98,
+            117,
+            274,
+            121,
+            24
+          ],
+          "repaired_classes": [
+            583,
+            98,
+            117,
+            268,
+            117,
+            24
+          ],
+          "changed_classes": {
+            "3->4": 1,
+            "3->0": 5,
+            "4->0": 5
+          },
+          "illegal_adjacent_transitions": 8,
+          "changed_within_16_ticks_of_seam": 5,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 0
+        }
+      ],
+      "new_combos": 53,
+      "nonzero_hitsounds": 179,
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 1
+      },
+      "diagnostics": {
+        "objects": 216,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 1,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 84.17244204607586,
+        "spacing_p95_px": 217.22159859488383
+      },
+      "warnings": [],
+      "file": "maps/Haru-TV-Hard-D2-24rounds-T0.7-3.50star.osz",
+      "sha256": "99179cbfef39341b5e14019fcd87f8b5ecb93fd9cbe10541b98076f7b5f1d088",
+      "objects": 216,
+      "sliders": 117
+    },
+    {
+      "case": "Haru-TV-Hard",
+      "variant": {
+        "name": "D3-attribute-argmax",
+        "steps": 12,
+        "temperature": 0.9,
+        "attribute_temperature": 0.0
+      },
+      "stars": 3.297168569448664,
+      "traces": [
+        {
+          "ticks": 1207,
+          "changed_ticks": 25,
+          "change_rate": 0.020712510356255178,
+          "raw_classes": [
+            511,
+            83,
+            137,
+            314,
+            138,
+            24
+          ],
+          "repaired_classes": [
+            530,
+            86,
+            134,
+            299,
+            134,
+            24
+          ],
+          "changed_classes": {
+            "3->0": 12,
+            "4->0": 7,
+            "2->1": 3,
+            "3->4": 3
+          },
+          "illegal_adjacent_transitions": 21,
+          "changed_within_16_ticks_of_seam": 4,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 3
+        }
+      ],
+      "new_combos": 54,
+      "nonzero_hitsounds": 183,
+      "runs": {
+        "short_run_objects": 0,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 2
+      },
+      "diagnostics": {
+        "objects": 221,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 2,
+        "peak_nps_2s": 5.0,
+        "spacing_p50_px": 77.66225036468913,
+        "spacing_p95_px": 150.38861156038956
+      },
+      "warnings": [],
+      "file": "maps/Haru-TV-Hard-D3-attribute-argmax-3.30star.osz",
+      "sha256": "422d415f3c8e5a7eeb14af66543b7d555a69dfcc74c8576028a44e5a11a90f3a",
+      "objects": 221,
+      "sliders": 134
+    },
+    {
+      "case": "Mesheer",
+      "variant": {
+        "name": "D0-baseline",
+        "steps": 12,
+        "temperature": 0.9,
+        "attribute_temperature": 0.9
+      },
+      "stars": 6.382945328312446,
+      "traces": [
+        {
+          "ticks": 1968,
+          "changed_ticks": 61,
+          "change_rate": 0.030995934959349592,
+          "raw_classes": [
+            931,
+            431,
+            126,
+            296,
+            121,
+            63
+          ],
+          "repaired_classes": [
+            974,
+            444,
+            113,
+            261,
+            113,
+            63
+          ],
+          "changed_classes": {
+            "3->4": 5,
+            "2->1": 13,
+            "3->0": 30,
+            "4->0": 13
+          },
+          "illegal_adjacent_transitions": 59,
+          "changed_within_16_ticks_of_seam": 0,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 13
+        }
+      ],
+      "new_combos": 150,
+      "nonzero_hitsounds": 430,
+      "runs": {
+        "short_run_objects": 4,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 4
+      },
+      "diagnostics": {
+        "objects": 558,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 151.3373711340315,
+        "spacing_p95_px": 251.73745908433364
+      },
+      "warnings": [],
+      "file": "maps/Mesheer-D0-baseline-6.38star.osz",
+      "sha256": "94180d2c35e22f83234f0d49dc3d0d4bad55bf026c2def52312c11d5be32b496",
+      "objects": 558,
+      "sliders": 113
+    },
+    {
+      "case": "Mesheer",
+      "variant": {
+        "name": "D1-24rounds",
+        "steps": 24,
+        "temperature": 0.9,
+        "attribute_temperature": 0.9
+      },
+      "stars": 6.243068218182945,
+      "traces": [
+        {
+          "ticks": 1968,
+          "changed_ticks": 19,
+          "change_rate": 0.009654471544715448,
+          "raw_classes": [
+            920,
+            413,
+            135,
+            305,
+            133,
+            62
+          ],
+          "repaired_classes": [
+            932,
+            417,
+            131,
+            295,
+            131,
+            62
+          ],
+          "changed_classes": {
+            "2->1": 4,
+            "4->0": 5,
+            "3->0": 7,
+            "3->4": 3
+          },
+          "illegal_adjacent_transitions": 18,
+          "changed_within_16_ticks_of_seam": 0,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 4
+        }
+      ],
+      "new_combos": 142,
+      "nonzero_hitsounds": 434,
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "diagnostics": {
+        "objects": 549,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 7.5,
+        "spacing_p50_px": 155.68236894394946,
+        "spacing_p95_px": 246.96052102592057
+      },
+      "warnings": [],
+      "file": "maps/Mesheer-D1-24rounds-6.24star.osz",
+      "sha256": "225c9356db01785543f4483cdf6bb4f5d58cfe49c20d0113c4218d11a35d6ec1",
+      "objects": 549,
+      "sliders": 131
+    },
+    {
+      "case": "Mesheer",
+      "variant": {
+        "name": "D2-24rounds-T0.7",
+        "steps": 24,
+        "temperature": 0.7,
+        "attribute_temperature": 0.7
+      },
+      "stars": 6.686278859708619,
+      "traces": [
+        {
+          "ticks": 1968,
+          "changed_ticks": 22,
+          "change_rate": 0.011178861788617886,
+          "raw_classes": [
+            947,
+            417,
+            126,
+            291,
+            126,
+            61
+          ],
+          "repaired_classes": [
+            963,
+            421,
+            122,
+            279,
+            122,
+            61
+          ],
+          "changed_classes": {
+            "2->1": 4,
+            "4->0": 6,
+            "3->0": 10,
+            "3->4": 2
+          },
+          "illegal_adjacent_transitions": 28,
+          "changed_within_16_ticks_of_seam": 0,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 4
+        }
+      ],
+      "new_combos": 121,
+      "nonzero_hitsounds": 406,
+      "runs": {
+        "short_run_objects": 3,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 3
+      },
+      "diagnostics": {
+        "objects": 544,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 3,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 159.84826091049527,
+        "spacing_p95_px": 268.7417079294834
+      },
+      "warnings": [],
+      "file": "maps/Mesheer-D2-24rounds-T0.7-6.69star.osz",
+      "sha256": "f40204109897f847161fbc676f12f1f418c42669680a213cd7d20e92c25ecba3",
+      "objects": 544,
+      "sliders": 122
+    },
+    {
+      "case": "Mesheer",
+      "variant": {
+        "name": "D3-attribute-argmax",
+        "steps": 12,
+        "temperature": 0.9,
+        "attribute_temperature": 0.0
+      },
+      "stars": 6.271971470256624,
+      "traces": [
+        {
+          "ticks": 1968,
+          "changed_ticks": 61,
+          "change_rate": 0.030995934959349592,
+          "raw_classes": [
+            931,
+            431,
+            126,
+            296,
+            121,
+            63
+          ],
+          "repaired_classes": [
+            974,
+            444,
+            113,
+            261,
+            113,
+            63
+          ],
+          "changed_classes": {
+            "3->4": 5,
+            "2->1": 13,
+            "3->0": 30,
+            "4->0": 13
+          },
+          "illegal_adjacent_transitions": 59,
+          "changed_within_16_ticks_of_seam": 0,
+          "onset_ticks_removed": 0,
+          "heads_turned_to_circles": 13
+        }
+      ],
+      "new_combos": 116,
+      "nonzero_hitsounds": 430,
+      "runs": {
+        "short_run_objects": 4,
+        "long_run_objects": 0,
+        "sustained_run_objects": 0,
+        "longest_run": 4
+      },
+      "diagnostics": {
+        "objects": 558,
+        "simultaneous_or_reversed_starts": 0,
+        "overlapping_objects": 0,
+        "heads_outside_playfield": 0,
+        "anchors_outside_playfield": 0,
+        "invalid_sliders": 0,
+        "shortened_sliders": 0,
+        "longest_quarter_beat_circle_run": 4,
+        "peak_nps_2s": 8.0,
+        "spacing_p50_px": 140.92014005069956,
+        "spacing_p95_px": 246.50450005844033
+      },
+      "warnings": [],
+      "file": "maps/Mesheer-D3-attribute-argmax-6.27star.osz",
+      "sha256": "88b43a1409b9ae9e6da978cccb80f2a9c80647be9e7eb91c4e60ceb5253ccdc3",
+      "objects": 558,
+      "sliders": 113
+    }
+  ]
+}
