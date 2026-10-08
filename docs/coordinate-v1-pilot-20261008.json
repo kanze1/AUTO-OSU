@@ -1,0 +1,1652 @@
+{
+  "date": "2026-10-08",
+  "scope": "Engineering prototype and bounded developmental pilot; not a validated coordinate model or release.",
+  "recipe": {
+    "sources": [
+      {
+        "name": "KOTOKO",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\1b03caaee2c6f160d693ff9a6727f49267e3f5777d51e428e36e7ddea29b2505.osu",
+        "audio_sha256": "f7471b6a48aedbc43a9b504cf783aab6cffa972b69555231a6ddaa85fe229b51",
+        "map_sha256": "a836f1ecb3140d3d72fb45fe915b288502133d2f1f4489681408319c0da967d4"
+      },
+      {
+        "name": "Fruit Salad",
+        "split": "train",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\193214fecc8770b97767a43f00a8e63e5d491e9a3208afb8466c507beda867d2.osu",
+        "audio_sha256": "606000f5d88f250686b46282c6dcfafa01827b8b70dfea4e80b590a310f8a3b7",
+        "map_sha256": "be8d580a79b54fa60c1e847d328bc9723c981c86a7ecf78b452cdafdb1a871db"
+      },
+      {
+        "name": "eyes to eyes",
+        "split": "validation",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\10483e0c557b4fb9ddb63680a8dc09b7178afdae8c77fc4e6c482384fe821dd9.osu",
+        "audio_sha256": "0f0c5d5e5101a7755c3fdcd8c7c0364df3fce9be2639c0bfb7a6b5afcb38651e",
+        "map_sha256": "cd9abd8d19e20f17011ebabb7178b9d16f9821f2e103285ea65fc5a042d781f7"
+      },
+      {
+        "name": "Mesheer",
+        "split": "validation",
+        "audio": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\audio\\02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45.opus",
+        "map": "C:\\Users\\kanzei\\Desktop\\AUTO-OSU\\out\\difficulty-evaluation\\reference\\02f892e29b0847cf4be34326e328a738c6716741e4c4f14a0d50e64bd6b28b45.osu",
+        "audio_sha256": "44e3824b2e98537948b0d990afb4067a90aa78ada3ab3cc3908c37bc9a48c191",
+        "map_sha256": "0036b03aaff89335faff879a061f51edd8d79bed4c484d28d3a2a82332596ca6"
+      }
+    ],
+    "base_sha256": "52163effa16b7cb8172013245deef5c87cc022023e42501f5a61007215252040",
+    "steps": 64,
+    "length": 128,
+    "learning_rate": 0.0002,
+    "seed": 20261008,
+    "script_sha256": "e97a254fd1a1c04195cd9b9e323e5b9346fdcd084f53dcd255fd701805cf23ff",
+    "module_sha256": "861e99bf669fc3c08e579f9d44e3bcea1b105f3672da0a9f25b567e3b086e59b",
+    "scope": "Development architecture probe only; base pretraining overlap unknown. No release-quality claim."
+  },
+  "results": [
+    {
+      "name": "local-only",
+      "config": {
+        "width": 128,
+        "heads": 4,
+        "song_layers": 2,
+        "whole_song": false
+      },
+      "trainable_parameters": 400576,
+      "steps": 64,
+      "elapsed_s": 18.296999999991385,
+      "warm_start_max_mse_difference": 0.0,
+      "baseline": {
+        "mean_mse": 0.14496269364220402,
+        "rows": [
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3435097634792328
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09938712418079376
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006465227343142033
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 100,
+            "mse": 0.3136165142059326
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 500,
+            "mse": 0.14528310298919678
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 900,
+            "mse": 0.006371811963617802
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 100,
+            "mse": 0.222730353474617
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 500,
+            "mse": 0.07747684419155121
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 900,
+            "mse": 0.005056893453001976
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 100,
+            "mse": 0.4030596613883972
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 500,
+            "mse": 0.11680053919553757
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 900,
+            "mse": 0.0069125196896493435
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.36255574226379395
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.12578287720680237
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0070274099707603455
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 100,
+            "mse": 0.31469041109085083
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 500,
+            "mse": 0.11333232372999191
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 900,
+            "mse": 0.005577969364821911
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 100,
+            "mse": 0.28298377990722656
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 500,
+            "mse": 0.10495433211326599
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 900,
+            "mse": 0.006688207853585482
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.31009435653686523
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.09146606177091599
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.007280820049345493
+          }
+        ]
+      },
+      "validation": {
+        "mean_mse": 0.14515343981717402,
+        "rows": [
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.34357142448425293
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09934496879577637
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006456397473812103
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 100,
+            "mse": 0.3109057545661926
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 500,
+            "mse": 0.14701735973358154
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 900,
+            "mse": 0.006797676905989647
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 100,
+            "mse": 0.22349978983402252
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 500,
+            "mse": 0.07746367156505585
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 900,
+            "mse": 0.005392793565988541
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 100,
+            "mse": 0.4061760902404785
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 500,
+            "mse": 0.11839763820171356
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 900,
+            "mse": 0.007525988854467869
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3676517605781555
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.12416647374629974
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.00732300104573369
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 100,
+            "mse": 0.3150680959224701
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 500,
+            "mse": 0.11264745146036148
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 900,
+            "mse": 0.005550225265324116
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 100,
+            "mse": 0.28019019961357117
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 500,
+            "mse": 0.10363230109214783
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 900,
+            "mse": 0.006569857709109783
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.3094492256641388
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.09153558313846588
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.00734882615506649
+          }
+        ]
+      },
+      "shifted_audio": {
+        "mean_mse": 0.14511372158691907,
+        "rows": [
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.34418243169784546
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.0993116945028305
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006457061972469091
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 100,
+            "mse": 0.3109681010246277
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 500,
+            "mse": 0.14702582359313965
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 900,
+            "mse": 0.006808222737163305
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 100,
+            "mse": 0.22392341494560242
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 500,
+            "mse": 0.07742208987474442
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 900,
+            "mse": 0.005417200271040201
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 100,
+            "mse": 0.4058865010738373
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 500,
+            "mse": 0.11840486526489258
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 900,
+            "mse": 0.007532981224358082
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.36645424365997314
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.12427441030740738
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.007297264877706766
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 100,
+            "mse": 0.3150062561035156
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 500,
+            "mse": 0.11256133019924164
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 900,
+            "mse": 0.005554658826440573
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 100,
+            "mse": 0.2797086536884308
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 500,
+            "mse": 0.10356026887893677
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 900,
+            "mse": 0.006567982956767082
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.30961310863494873
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.091441810131073
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.0073489416390657425
+          }
+        ]
+      },
+      "train_trace": [
+        {
+          "step": 1,
+          "loss": 0.005851948633790016,
+          "grad_norm": 0.008445927873253822
+        },
+        {
+          "step": 2,
+          "loss": 0.0082103805616498,
+          "grad_norm": 0.01215509045869112
+        },
+        {
+          "step": 3,
+          "loss": 0.002264549257233739,
+          "grad_norm": 0.005705016665160656
+        },
+        {
+          "step": 4,
+          "loss": 0.1505909264087677,
+          "grad_norm": 0.0862261950969696
+        },
+        {
+          "step": 5,
+          "loss": 0.31240254640579224,
+          "grad_norm": 0.07569115608930588
+        },
+        {
+          "step": 6,
+          "loss": 0.2395138144493103,
+          "grad_norm": 0.06850173324346542
+        },
+        {
+          "step": 7,
+          "loss": 0.06116493418812752,
+          "grad_norm": 0.026199597865343094
+        },
+        {
+          "step": 8,
+          "loss": 0.025587501004338264,
+          "grad_norm": 0.018563689664006233
+        },
+        {
+          "step": 9,
+          "loss": 0.31136560440063477,
+          "grad_norm": 0.09964130073785782
+        },
+        {
+          "step": 10,
+          "loss": 0.03155089542269707,
+          "grad_norm": 0.01806645654141903
+        },
+        {
+          "step": 11,
+          "loss": 0.38633495569229126,
+          "grad_norm": 0.17473748326301575
+        },
+        {
+          "step": 12,
+          "loss": 0.04152897372841835,
+          "grad_norm": 0.020078975707292557
+        },
+        {
+          "step": 13,
+          "loss": 0.0906122475862503,
+          "grad_norm": 0.03217298164963722
+        },
+        {
+          "step": 14,
+          "loss": 0.4584103226661682,
+          "grad_norm": 0.1366381049156189
+        },
+        {
+          "step": 15,
+          "loss": 0.06016477197408676,
+          "grad_norm": 0.026817241683602333
+        },
+        {
+          "step": 16,
+          "loss": 0.1414126306772232,
+          "grad_norm": 0.051606182008981705
+        },
+        {
+          "step": 17,
+          "loss": 0.15792344510555267,
+          "grad_norm": 0.07854178547859192
+        },
+        {
+          "step": 18,
+          "loss": 0.1725585013628006,
+          "grad_norm": 0.06471909582614899
+        },
+        {
+          "step": 19,
+          "loss": 0.00183285481762141,
+          "grad_norm": 0.005015279166400433
+        },
+        {
+          "step": 20,
+          "loss": 0.19029851257801056,
+          "grad_norm": 0.12608620524406433
+        },
+        {
+          "step": 21,
+          "loss": 0.11737586557865143,
+          "grad_norm": 0.04401404410600662
+        },
+        {
+          "step": 22,
+          "loss": 0.12853801250457764,
+          "grad_norm": 0.03150568902492523
+        },
+        {
+          "step": 23,
+          "loss": 0.0251450277864933,
+          "grad_norm": 0.020216021686792374
+        },
+        {
+          "step": 24,
+          "loss": 0.08719751238822937,
+          "grad_norm": 0.0477091446518898
+        },
+        {
+          "step": 25,
+          "loss": 0.0714295282959938,
+          "grad_norm": 0.03248855099081993
+        },
+        {
+          "step": 26,
+          "loss": 0.07045828551054001,
+          "grad_norm": 0.036342278122901917
+        },
+        {
+          "step": 27,
+          "loss": 0.04845217615365982,
+          "grad_norm": 0.025046737864613533
+        },
+        {
+          "step": 28,
+          "loss": 0.09503255039453506,
+          "grad_norm": 0.04462108761072159
+        },
+        {
+          "step": 29,
+          "loss": 0.18318058550357819,
+          "grad_norm": 0.05488051474094391
+        },
+        {
+          "step": 30,
+          "loss": 0.00844600424170494,
+          "grad_norm": 0.013433840125799179
+        },
+        {
+          "step": 31,
+          "loss": 0.14499953389167786,
+          "grad_norm": 0.049385394901037216
+        },
+        {
+          "step": 32,
+          "loss": 0.49103519320487976,
+          "grad_norm": 0.12889117002487183
+        },
+        {
+          "step": 33,
+          "loss": 0.09693717211484909,
+          "grad_norm": 0.03560222312808037
+        },
+        {
+          "step": 34,
+          "loss": 0.03072328306734562,
+          "grad_norm": 0.021517619490623474
+        },
+        {
+          "step": 35,
+          "loss": 0.30304551124572754,
+          "grad_norm": 0.10728703439235687
+        },
+        {
+          "step": 36,
+          "loss": 0.18377642333507538,
+          "grad_norm": 0.062140852212905884
+        },
+        {
+          "step": 37,
+          "loss": 0.0043683429248631,
+          "grad_norm": 0.012786217033863068
+        },
+        {
+          "step": 38,
+          "loss": 0.2503434717655182,
+          "grad_norm": 0.06508511304855347
+        },
+        {
+          "step": 39,
+          "loss": 0.29996541142463684,
+          "grad_norm": 0.1108027845621109
+        },
+        {
+          "step": 40,
+          "loss": 0.008482200093567371,
+          "grad_norm": 0.011254548095166683
+        },
+        {
+          "step": 41,
+          "loss": 0.2563672661781311,
+          "grad_norm": 0.08647968620061874
+        },
+        {
+          "step": 42,
+          "loss": 0.3756404519081116,
+          "grad_norm": 0.15859399735927582
+        },
+        {
+          "step": 43,
+          "loss": 0.08872973918914795,
+          "grad_norm": 0.03556331247091293
+        },
+        {
+          "step": 44,
+          "loss": 0.26317620277404785,
+          "grad_norm": 0.08566414564847946
+        },
+        {
+          "step": 45,
+          "loss": 0.03031373769044876,
+          "grad_norm": 0.022049738094210625
+        },
+        {
+          "step": 46,
+          "loss": 0.16983821988105774,
+          "grad_norm": 0.055188149213790894
+        },
+        {
+          "step": 47,
+          "loss": 0.46837666630744934,
+          "grad_norm": 0.17485831677913666
+        },
+        {
+          "step": 48,
+          "loss": 0.04254775121808052,
+          "grad_norm": 0.0191709715873003
+        },
+        {
+          "step": 49,
+          "loss": 0.060400377959012985,
+          "grad_norm": 0.02571827359497547
+        },
+        {
+          "step": 50,
+          "loss": 0.007900655269622803,
+          "grad_norm": 0.010579741559922695
+        },
+        {
+          "step": 51,
+          "loss": 0.005697531159967184,
+          "grad_norm": 0.0063320342451334
+        },
+        {
+          "step": 52,
+          "loss": 0.09261849522590637,
+          "grad_norm": 0.03602870553731918
+        },
+        {
+          "step": 53,
+          "loss": 0.22250039875507355,
+          "grad_norm": 0.07434570044279099
+        },
+        {
+          "step": 54,
+          "loss": 0.05338707193732262,
+          "grad_norm": 0.028634432703256607
+        },
+        {
+          "step": 55,
+          "loss": 0.12565457820892334,
+          "grad_norm": 0.04249072074890137
+        },
+        {
+          "step": 56,
+          "loss": 0.4081924259662628,
+          "grad_norm": 0.10475095361471176
+        },
+        {
+          "step": 57,
+          "loss": 0.11103343218564987,
+          "grad_norm": 0.0335022509098053
+        },
+        {
+          "step": 58,
+          "loss": 0.015689240768551826,
+          "grad_norm": 0.014736747369170189
+        },
+        {
+          "step": 59,
+          "loss": 0.31320494413375854,
+          "grad_norm": 0.1487552672624588
+        },
+        {
+          "step": 60,
+          "loss": 0.051739148795604706,
+          "grad_norm": 0.02371140383183956
+        },
+        {
+          "step": 61,
+          "loss": 0.0479891300201416,
+          "grad_norm": 0.024727292358875275
+        },
+        {
+          "step": 62,
+          "loss": 0.02076917514204979,
+          "grad_norm": 0.014737548306584358
+        },
+        {
+          "step": 63,
+          "loss": 0.4917890131473541,
+          "grad_norm": 0.16352806985378265
+        },
+        {
+          "step": 64,
+          "loss": 0.005526837892830372,
+          "grad_norm": 0.010357128456234932
+        }
+      ],
+      "sampling": {
+        "source": "eyes to eyes",
+        "crop": 0,
+        "steps": 100,
+        "shape": [
+          1,
+          2,
+          128
+        ],
+        "finite": true,
+        "normalized_range": [
+          -1.0779197216033936,
+          0.9991540312767029
+        ],
+        "raw_heads_outside_playfield": 0,
+        "raw_tokens_outside_playfield": 3,
+        "sha256": "92e8fe0bfc4c8bb220dca347d2c37fcff3690e498ed16c6f7b065c8136cbd9df",
+        "scope": "Raw coordinate tokens only; no slider fitting, osu export or playtest"
+      }
+    },
+    {
+      "name": "local-and-song",
+      "config": {
+        "width": 128,
+        "heads": 4,
+        "song_layers": 2,
+        "whole_song": true
+      },
+      "trainable_parameters": 871488,
+      "steps": 64,
+      "elapsed_s": 19.469000000011874,
+      "warm_start_max_mse_difference": 0.0,
+      "baseline": {
+        "mean_mse": 0.14496269364220402,
+        "rows": [
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3435097634792328
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09938712418079376
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006465227343142033
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 100,
+            "mse": 0.3136165142059326
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 500,
+            "mse": 0.14528310298919678
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 900,
+            "mse": 0.006371811963617802
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 100,
+            "mse": 0.222730353474617
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 500,
+            "mse": 0.07747684419155121
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 900,
+            "mse": 0.005056893453001976
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 100,
+            "mse": 0.4030596613883972
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 500,
+            "mse": 0.11680053919553757
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 900,
+            "mse": 0.0069125196896493435
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.36255574226379395
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.12578287720680237
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.0070274099707603455
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 100,
+            "mse": 0.31469041109085083
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 500,
+            "mse": 0.11333232372999191
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 900,
+            "mse": 0.005577969364821911
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 100,
+            "mse": 0.28298377990722656
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 500,
+            "mse": 0.10495433211326599
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 900,
+            "mse": 0.006688207853585482
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.31009435653686523
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.09146606177091599
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.007280820049345493
+          }
+        ]
+      },
+      "validation": {
+        "mean_mse": 0.145272246930593,
+        "rows": [
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3412074148654938
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09952356666326523
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006820559035986662
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 100,
+            "mse": 0.3119503855705261
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 500,
+            "mse": 0.1456947922706604
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 900,
+            "mse": 0.006827949080616236
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 100,
+            "mse": 0.22099751234054565
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 500,
+            "mse": 0.07835100591182709
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 900,
+            "mse": 0.005844053812325001
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 100,
+            "mse": 0.40816837549209595
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 500,
+            "mse": 0.11873830854892731
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 900,
+            "mse": 0.00833726767450571
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3614124059677124
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.12530536949634552
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.008426323533058167
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 100,
+            "mse": 0.31350791454315186
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 500,
+            "mse": 0.11371038854122162
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 900,
+            "mse": 0.005893215537071228
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 100,
+            "mse": 0.2849436104297638
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 500,
+            "mse": 0.10232611000537872
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 900,
+            "mse": 0.006538139656186104
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.31236720085144043
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.09191136807203293
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.007730688434094191
+          }
+        ]
+      },
+      "shifted_audio": {
+        "mean_mse": 0.14523019451492777,
+        "rows": [
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.3408627510070801
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.09947876632213593
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.006770521402359009
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 100,
+            "mse": 0.3123129904270172
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 500,
+            "mse": 0.14578761160373688
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 249,
+            "timestep": 900,
+            "mse": 0.006845660973340273
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 100,
+            "mse": 0.22071009874343872
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 500,
+            "mse": 0.07820416986942291
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 498,
+            "timestep": 900,
+            "mse": 0.005859507247805595
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 100,
+            "mse": 0.40796008706092834
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 500,
+            "mse": 0.11865725368261337
+          },
+          {
+            "song": "eyes to eyes",
+            "crop": 748,
+            "timestep": 900,
+            "mse": 0.008303871378302574
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 100,
+            "mse": 0.36150652170181274
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 500,
+            "mse": 0.12528322637081146
+          },
+          {
+            "song": "Mesheer",
+            "crop": 0,
+            "timestep": 900,
+            "mse": 0.008415757678449154
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 100,
+            "mse": 0.3137338161468506
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 500,
+            "mse": 0.11384695768356323
+          },
+          {
+            "song": "Mesheer",
+            "crop": 395,
+            "timestep": 900,
+            "mse": 0.00590963289141655
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 100,
+            "mse": 0.28473418951034546
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 500,
+            "mse": 0.10241913795471191
+          },
+          {
+            "song": "Mesheer",
+            "crop": 791,
+            "timestep": 900,
+            "mse": 0.006556487176567316
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 100,
+            "mse": 0.31177830696105957
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 500,
+            "mse": 0.09189566969871521
+          },
+          {
+            "song": "Mesheer",
+            "crop": 1187,
+            "timestep": 900,
+            "mse": 0.007691674865782261
+          }
+        ]
+      },
+      "train_trace": [
+        {
+          "step": 1,
+          "loss": 0.005851948633790016,
+          "grad_norm": 0.008508339524269104
+        },
+        {
+          "step": 2,
+          "loss": 0.008152887225151062,
+          "grad_norm": 0.011945611797273159
+        },
+        {
+          "step": 3,
+          "loss": 0.0022564369719475508,
+          "grad_norm": 0.005561846308410168
+        },
+        {
+          "step": 4,
+          "loss": 0.15052488446235657,
+          "grad_norm": 0.08634400367736816
+        },
+        {
+          "step": 5,
+          "loss": 0.3125419318675995,
+          "grad_norm": 0.07239919155836105
+        },
+        {
+          "step": 6,
+          "loss": 0.23954373598098755,
+          "grad_norm": 0.06892375648021698
+        },
+        {
+          "step": 7,
+          "loss": 0.0611259825527668,
+          "grad_norm": 0.0266976710408926
+        },
+        {
+          "step": 8,
+          "loss": 0.02563389763236046,
+          "grad_norm": 0.01853477582335472
+        },
+        {
+          "step": 9,
+          "loss": 0.31181907653808594,
+          "grad_norm": 0.09591024369001389
+        },
+        {
+          "step": 10,
+          "loss": 0.03153577446937561,
+          "grad_norm": 0.017711050808429718
+        },
+        {
+          "step": 11,
+          "loss": 0.3861750364303589,
+          "grad_norm": 0.16821236908435822
+        },
+        {
+          "step": 12,
+          "loss": 0.04162135720252991,
+          "grad_norm": 0.019706297665834427
+        },
+        {
+          "step": 13,
+          "loss": 0.09042000025510788,
+          "grad_norm": 0.029945356771349907
+        },
+        {
+          "step": 14,
+          "loss": 0.458536833524704,
+          "grad_norm": 0.13547664880752563
+        },
+        {
+          "step": 15,
+          "loss": 0.06044089049100876,
+          "grad_norm": 0.02742192894220352
+        },
+        {
+          "step": 16,
+          "loss": 0.14126425981521606,
+          "grad_norm": 0.05178195983171463
+        },
+        {
+          "step": 17,
+          "loss": 0.15836289525032043,
+          "grad_norm": 0.08109511435031891
+        },
+        {
+          "step": 18,
+          "loss": 0.17258566617965698,
+          "grad_norm": 0.06375163048505783
+        },
+        {
+          "step": 19,
+          "loss": 0.0018663197988644242,
+          "grad_norm": 0.0057332804426550865
+        },
+        {
+          "step": 20,
+          "loss": 0.19055114686489105,
+          "grad_norm": 0.12249637395143509
+        },
+        {
+          "step": 21,
+          "loss": 0.11743351817131042,
+          "grad_norm": 0.04268936440348625
+        },
+        {
+          "step": 22,
+          "loss": 0.12846159934997559,
+          "grad_norm": 0.030561786144971848
+        },
+        {
+          "step": 23,
+          "loss": 0.025250546634197235,
+          "grad_norm": 0.020502576604485512
+        },
+        {
+          "step": 24,
+          "loss": 0.08722596615552902,
+          "grad_norm": 0.04874681681394577
+        },
+        {
+          "step": 25,
+          "loss": 0.07139118760824203,
+          "grad_norm": 0.03182321786880493
+        },
+        {
+          "step": 26,
+          "loss": 0.07042547315359116,
+          "grad_norm": 0.03757695481181145
+        },
+        {
+          "step": 27,
+          "loss": 0.04846159741282463,
+          "grad_norm": 0.025061268359422684
+        },
+        {
+          "step": 28,
+          "loss": 0.09486231207847595,
+          "grad_norm": 0.04459509253501892
+        },
+        {
+          "step": 29,
+          "loss": 0.18331655859947205,
+          "grad_norm": 0.053873781114816666
+        },
+        {
+          "step": 30,
+          "loss": 0.008402501232922077,
+          "grad_norm": 0.013260452076792717
+        },
+        {
+          "step": 31,
+          "loss": 0.14486388862133026,
+          "grad_norm": 0.04953499883413315
+        },
+        {
+          "step": 32,
+          "loss": 0.49098968505859375,
+          "grad_norm": 0.1264171451330185
+        },
+        {
+          "step": 33,
+          "loss": 0.0966540202498436,
+          "grad_norm": 0.03521314263343811
+        },
+        {
+          "step": 34,
+          "loss": 0.03047868236899376,
+          "grad_norm": 0.019772078841924667
+        },
+        {
+          "step": 35,
+          "loss": 0.3050817847251892,
+          "grad_norm": 0.11176104843616486
+        },
+        {
+          "step": 36,
+          "loss": 0.18305134773254395,
+          "grad_norm": 0.0596303790807724
+        },
+        {
+          "step": 37,
+          "loss": 0.004181238356977701,
+          "grad_norm": 0.011893287301063538
+        },
+        {
+          "step": 38,
+          "loss": 0.25014162063598633,
+          "grad_norm": 0.06347071379423141
+        },
+        {
+          "step": 39,
+          "loss": 0.2989451289176941,
+          "grad_norm": 0.10962726920843124
+        },
+        {
+          "step": 40,
+          "loss": 0.008244886994361877,
+          "grad_norm": 0.007964683696627617
+        },
+        {
+          "step": 41,
+          "loss": 0.25580519437789917,
+          "grad_norm": 0.085809625685215
+        },
+        {
+          "step": 42,
+          "loss": 0.37564095854759216,
+          "grad_norm": 0.15621082484722137
+        },
+        {
+          "step": 43,
+          "loss": 0.08922076970338821,
+          "grad_norm": 0.03684743866324425
+        },
+        {
+          "step": 44,
+          "loss": 0.26343557238578796,
+          "grad_norm": 0.08566787093877792
+        },
+        {
+          "step": 45,
+          "loss": 0.029517708346247673,
+          "grad_norm": 0.017546292394399643
+        },
+        {
+          "step": 46,
+          "loss": 0.16888540983200073,
+          "grad_norm": 0.05306060239672661
+        },
+        {
+          "step": 47,
+          "loss": 0.46907368302345276,
+          "grad_norm": 0.16818244755268097
+        },
+        {
+          "step": 48,
+          "loss": 0.042843665927648544,
+          "grad_norm": 0.019811883568763733
+        },
+        {
+          "step": 49,
+          "loss": 0.06028933823108673,
+          "grad_norm": 0.025568054988980293
+        },
+        {
+          "step": 50,
+          "loss": 0.007873902097344398,
+          "grad_norm": 0.009775685146450996
+        },
+        {
+          "step": 51,
+          "loss": 0.005714332684874535,
+          "grad_norm": 0.006105000618845224
+        },
+        {
+          "step": 52,
+          "loss": 0.09257495403289795,
+          "grad_norm": 0.03541329875588417
+        },
+        {
+          "step": 53,
+          "loss": 0.2225668579339981,
+          "grad_norm": 0.07216176390647888
+        },
+        {
+          "step": 54,
+          "loss": 0.05322696641087532,
+          "grad_norm": 0.02781984768807888
+        },
+        {
+          "step": 55,
+          "loss": 0.1262216717004776,
+          "grad_norm": 0.04333226755261421
+        },
+        {
+          "step": 56,
+          "loss": 0.40814435482025146,
+          "grad_norm": 0.10293824970722198
+        },
+        {
+          "step": 57,
+          "loss": 0.11070292443037033,
+          "grad_norm": 0.03238886222243309
+        },
+        {
+          "step": 58,
+          "loss": 0.015331261791288853,
+          "grad_norm": 0.011949868872761726
+        },
+        {
+          "step": 59,
+          "loss": 0.31049850583076477,
+          "grad_norm": 0.1523197591304779
+        },
+        {
+          "step": 60,
+          "loss": 0.05116485804319382,
+          "grad_norm": 0.021326398476958275
+        },
+        {
+          "step": 61,
+          "loss": 0.048199545592069626,
+          "grad_norm": 0.024943843483924866
+        },
+        {
+          "step": 62,
+          "loss": 0.020782478153705597,
+          "grad_norm": 0.014869149774312973
+        },
+        {
+          "step": 63,
+          "loss": 0.4923820197582245,
+          "grad_norm": 0.16438017785549164
+        },
+        {
+          "step": 64,
+          "loss": 0.005508674308657646,
+          "grad_norm": 0.01034074742347002
+        }
+      ],
+      "sampling": {
+        "source": "eyes to eyes",
+        "crop": 0,
+        "steps": 100,
+        "shape": [
+          1,
+          2,
+          128
+        ],
+        "finite": true,
+        "normalized_range": [
+          -1.0650970935821533,
+          1.0029881000518799
+        ],
+        "raw_heads_outside_playfield": 1,
+        "raw_tokens_outside_playfield": 5,
+        "sha256": "22166a42bc8d25d61ac63bfd38f9855e1804156636ed6c046c82a027773d4cb2",
+        "scope": "Raw coordinate tokens only; no slider fitting, osu export or playtest"
+      }
+    }
+  ]
+}

@@ -272,6 +272,8 @@ and put them into the `models/` folder next to the exe (or `~/.autoosu/models/`)
 
 After 20,000 initial steps and a [continuation phase](docs/rhythm-convergence.md), the maintainer stopped training at approximately 23,900 cumulative steps to compare generated maps from old and new checkpoints; convergence is not claimed. This remains experimental; new weights have not been released.
 
+The human-map comparison has not shown a more satisfying experience, prompting a [music-conditioned spatial model design](docs/coordinate-v1-design.md). Local/whole-song audio prototypes passed engineering tests, but the short pilots did not improve validation error. Object-level geometry, full training and playability acceptance remain unfinished; the default coordinate model is still v0.
+
 Work follows priority and dependency order, without time commitments. Completion and release depend on validation, PRs, and Release notes.
 
 | Priority / order | Work | Completion criteria | Status |
