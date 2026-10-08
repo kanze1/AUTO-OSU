@@ -1,0 +1,224 @@
+{
+  "observed_utc": "2026-10-08T14:32:12.881589+00:00",
+  "source_revision": "fa833aa4d0f9ef9ea1881bd6e4fb0dcee73aeab2",
+  "owner": "p2522808",
+  "controller_pid": 4161825,
+  "stage": "running",
+  "gpu_uuids": [
+    "GPU-501277bc-4895-648b-ad00-0709092be078",
+    "GPU-eff8864c-9830-23bb-4dc9-104389c8ddad",
+    "GPU-74f54117-182b-6fcc-429b-876cc116be10",
+    "GPU-eae722c8-ceb2-d760-90d2-1203feaaeea3"
+  ],
+  "jobs": [
+    {
+      "name": "rhythm-spectral_attributes-20261008",
+      "family": "rhythm",
+      "status": "running",
+      "pid": 4161831,
+      "gpu": "GPU-501277bc-4895-648b-ad00-0709092be078",
+      "latest_local_record": {
+        "step": 600,
+        "loss": 1.6626042461395263,
+        "rhythm_loss": 1.1781686425209046,
+        "attribute_loss": 0.9688712084293365,
+        "lr": 0.00029910398990978706,
+        "grad_norm": 0.7932090163230896,
+        "elapsed_s": 51.88945744745433
+      },
+      "wandb": {
+        "id": "na4nneby",
+        "url": "https://wandb.ai/kanzei/autoosu-architecture/runs/na4nneby",
+        "project": "autoosu-architecture",
+        "group": "overnight-20261008",
+        "mode": "online",
+        "cloud_state": "running",
+        "cloud_update": 500
+      }
+    },
+    {
+      "name": "rhythm-attributes-20261008",
+      "family": "rhythm",
+      "status": "running",
+      "pid": 4161835,
+      "gpu": "GPU-eff8864c-9830-23bb-4dc9-104389c8ddad",
+      "latest_local_record": {
+        "step": 650,
+        "loss": 1.670473313331604,
+        "rhythm_loss": 1.1843968081474303,
+        "attribute_loss": 0.9721529936790466,
+        "lr": 0.00029860081036044346,
+        "grad_norm": 0.7119687795639038,
+        "elapsed_s": 51.06992514897138
+      },
+      "wandb": {
+        "id": "q6uas5rm",
+        "url": "https://wandb.ai/kanzei/autoosu-architecture/runs/q6uas5rm",
+        "project": "autoosu-architecture",
+        "group": "overnight-20261008",
+        "mode": "online",
+        "cloud_state": "running",
+        "cloud_update": 550
+      }
+    },
+    {
+      "name": "rhythm-spectral_context4_attributes-20261008",
+      "family": "rhythm",
+      "status": "pending"
+    },
+    {
+      "name": "rhythm-spectral_ar_attributes-20261008",
+      "family": "rhythm",
+      "status": "pending"
+    },
+    {
+      "name": "coordinate-audio-frozen-20261008",
+      "family": "coordinate",
+      "status": "running",
+      "pid": 4161839,
+      "gpu": "GPU-74f54117-182b-6fcc-429b-876cc116be10",
+      "latest_local_record": {
+        "step": 250,
+        "train": {
+          "diffusion_loss": 0.12493086187168956,
+          "plan_nll": 0.0,
+          "grad_norm": 0.025133436545729637
+        },
+        "elapsed_s": 46.501340557821095
+      },
+      "wandb": {
+        "id": "dt73ny7g",
+        "url": "https://wandb.ai/kanzei/autoosu-architecture/runs/dt73ny7g",
+        "project": "autoosu-architecture",
+        "group": "overnight-20261008",
+        "mode": "online",
+        "cloud_state": "running",
+        "cloud_update": 150
+      }
+    },
+    {
+      "name": "coordinate-object-frozen-20261008",
+      "family": "coordinate",
+      "status": "running",
+      "pid": 4161843,
+      "gpu": "GPU-eae722c8-ceb2-d760-90d2-1203feaaeea3",
+      "latest_local_record": {
+        "step": 200,
+        "train": {
+          "diffusion_loss": 0.08101869509846438,
+          "plan_nll": 0.0,
+          "grad_norm": 0.0553390234708786
+        },
+        "elapsed_s": 41.509493929333985
+      },
+      "wandb": {
+        "id": "0xet6vn8",
+        "url": "https://wandb.ai/kanzei/autoosu-architecture/runs/0xet6vn8",
+        "project": "autoosu-architecture",
+        "group": "overnight-20261008",
+        "mode": "online",
+        "cloud_state": "running",
+        "cloud_update": 150
+      }
+    },
+    {
+      "name": "coordinate-object-joint-20261008",
+      "family": "coordinate",
+      "status": "pending"
+    },
+    {
+      "name": "coordinate-spacing-joint-20261008",
+      "family": "coordinate",
+      "status": "pending"
+    },
+    {
+      "name": "rhythm-spectral_attributes-20261009",
+      "family": "rhythm",
+      "status": "pending"
+    },
+    {
+      "name": "rhythm-attributes-20261009",
+      "family": "rhythm",
+      "status": "pending"
+    },
+    {
+      "name": "rhythm-spectral_context4_attributes-20261009",
+      "family": "rhythm",
+      "status": "pending"
+    },
+    {
+      "name": "rhythm-spectral_ar_attributes-20261009",
+      "family": "rhythm",
+      "status": "pending"
+    },
+    {
+      "name": "coordinate-audio-frozen-20261009",
+      "family": "coordinate",
+      "status": "pending"
+    },
+    {
+      "name": "coordinate-object-frozen-20261009",
+      "family": "coordinate",
+      "status": "pending"
+    },
+    {
+      "name": "coordinate-object-joint-20261009",
+      "family": "coordinate",
+      "status": "pending"
+    },
+    {
+      "name": "coordinate-spacing-joint-20261009",
+      "family": "coordinate",
+      "status": "pending"
+    }
+  ],
+  "verification": {
+    "pytest_passed": 226,
+    "repository_check": "passed",
+    "preflight_rhythm": [
+      {
+        "architecture": "spectral_attributes",
+        "pid": 4132411,
+        "exit_code": 0
+      },
+      {
+        "architecture": "attributes",
+        "pid": 4132412,
+        "exit_code": 0
+      },
+      {
+        "architecture": "spectral_context4_attributes",
+        "pid": 4132413,
+        "exit_code": 0
+      },
+      {
+        "architecture": "spectral_ar_attributes",
+        "pid": 4132414,
+        "exit_code": 0
+      }
+    ],
+    "preflight_coordinate": [
+      {
+        "variant": "audio-frozen",
+        "pid": 4139326,
+        "exit_code": 0
+      },
+      {
+        "variant": "object-frozen",
+        "pid": 4139327,
+        "exit_code": 0
+      },
+      {
+        "variant": "object-joint",
+        "pid": 4139328,
+        "exit_code": 0
+      },
+      {
+        "variant": "spacing-joint",
+        "pid": 4139329,
+        "exit_code": 0
+      }
+    ]
+  },
+  "scope": "Launch observation only, not completed comparison or model quality acceptance."
+}
